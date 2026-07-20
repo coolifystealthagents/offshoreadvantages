@@ -62,6 +62,51 @@ export const blogPosts = [
     "minutes": 9
   }
 ] as const;
+export const blogDetails = {
+  'offshore-advantages-provider-questions': {
+    keyTakeaways: [
+      'Ask who manages quality before you ask about price.',
+      'Write down what the offshore worker can decide, and what stays with you.',
+      'Treat passwords, customer data, and admin access as part of the hiring plan.',
+    ],
+    sections: [
+      {
+        title: 'Start with work fit',
+        body: 'A good provider call starts with the actual work. Bring five tasks, two sample outputs, the tools used, and the hours you need covered. If the provider cannot explain who would do the work and how they would be checked, keep asking. Cheap help gets expensive when nobody owns review.',
+      },
+      {
+        title: 'Ask who checks the first two weeks',
+        body: 'The first two weeks show whether the match is real. Ask who reviews the first drafts, tickets, reports, calls, or inbox replies. Ask what happens when the work is late or off brand. A clear answer sounds plain: named manager, review time, scorecard, and replacement path.',
+      },
+      {
+        title: 'Protect accounts before the handoff',
+        body: 'Remote staff may need inboxes, CRMs, phone tools, file drives, or bookkeeping systems. Do not share owner passwords. Use named accounts, limited permissions, and a written list of tasks that need approval. NIST and the FTC both tell small businesses to control access and protect accounts. That advice matters here.',
+      },
+      {
+        title: 'Keep the offer tied to business rules',
+        body: 'A staffing provider can help with people, training, backup, and management. They still need your rules. Write the approval line for refunds, discounts, customer promises, vendor payments, hiring decisions, and anything legal or financial. The offshore role should remove work, not move owner judgment to someone who lacks context.',
+      },
+    ],
+    comparisonRows: [
+      ['Screening', 'Who tests skill and fit before I meet the candidate?', 'We screen for communication and tool fit before the owner call.'],
+      ['Management', 'Who checks quality during week one?', 'A manager reviews output with a simple scorecard.'],
+      ['Security', 'How do you handle tool access?', 'Use named accounts, limited access, and approval rules.'],
+      ['Replacement', 'What happens if the person is not the right fit?', 'There is a clear replacement path instead of starting over alone.'],
+    ],
+    quoteBox: 'Send this before the call: "We need help with these five recurring tasks. Here are two examples of good work. Please show us who would do the work, who checks it in week one, and what access they need."',
+    faqs: [
+      { question: 'Should I ask for public pricing first?', answer: 'Ask for scope first. Price only makes sense after the provider knows the role, hours, tools, management level, and backup needs.' },
+      { question: 'What is the biggest red flag?', answer: 'A vague answer about quality control. If nobody can name who checks work in the first two weeks, the owner will likely become the manager.' },
+      { question: 'Can offshore staff handle sensitive systems?', answer: 'Sometimes, but access should be limited. Use named accounts, approval rules, and a manager review before expanding permissions.' },
+    ],
+    sources: [
+      { name: 'NIST Small Business Cybersecurity Corner', url: 'https://www.nist.gov/itl/smallbusinesscyber', note: 'Small business guidance for access, passwords, and basic security controls.' },
+      { name: 'FTC Cybersecurity for Small Business', url: 'https://www.ftc.gov/business-guidance/small-businesses/cybersecurity', note: 'Plain guidance on protecting accounts, devices, and customer data.' },
+      { name: 'SBA hiring and managing employees', url: 'https://www.sba.gov/business-guide/manage-your-business/hire-manage-employees', note: 'General hiring planning guidance useful when comparing staff support models.' },
+    ],
+  },
+} as const;
+
 export const stats = [{label:'Typical savings target',value:'30-60%',note:'depends on role, management, and local hiring plan'},{label:'Best pilot length',value:'14 days',note:'enough time to test quality before scaling'},{label:'Start with',value:'5-10 tasks',note:'clear recurring tasks beat vague job descriptions'}] as const;
 
 export const stealthOffer = {
