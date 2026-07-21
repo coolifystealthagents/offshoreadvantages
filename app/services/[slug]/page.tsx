@@ -44,7 +44,7 @@ export default async function Service({ params }: { params: Promise<{ slug: stri
         '@type': 'Service',
         '@id': `${url}#service`,
         name: service.title,
-        serviceType: `Offshore ${service.title}`,
+        serviceType: `Philippines ${service.title}`,
         description: service.desc,
         url,
         provider: {
@@ -64,5 +64,5 @@ export default async function Service({ params }: { params: Promise<{ slug: stri
     ],
   };
 
-  return <><Header/><main><JsonLd data={schema}/><section className='service-hero'><div className='container two'><div><p className='eyebrow'>{site.brand} service</p><h1>{service.title}</h1><p className='lead'>{service.desc}</p><a className='btn' href='/contact'>Plan this role</a></div><div className='hero-card'><img src={site.serviceImage} alt={`${service.title} offshore service team`}/></div></div></section><section className='section'><div className='container cards'><div className='card'><h3>Best tasks</h3><ul><li>Recurring work with examples</li><li>Inbox, tickets, reports, updates, or follow-up</li><li>Tasks with clear approval rules</li></ul></div><div className='card'><h3>Quality controls</h3><ul><li>Daily notes</li><li>Weekly scorecard</li><li>Escalation list</li></ul></div><div className='card'><h3>First week</h3><ul><li>Tool access</li><li>Sample work</li><li>Review call</li></ul></div></div></section><CTA/></main><Footer/></>;
+  return <><Header/><main><JsonLd data={schema}/><section className='service-hero'><div className='container two'><div><p className='eyebrow'>Philippines role brief</p><h1>{service.title}</h1><p className='lead'>{service.desc}</p><a className='btn primary' href='/contact'>Map this Philippines role</a></div><div className='hero-card'><img src={site.serviceImage} alt="Colleagues planning work around a table"/></div></div></section><section className='section'><div className='container cards'><div className='card'><h3>Start with these tasks</h3><ul><li>Recurring work with a good example</li><li>Inbox, ticket, report, update, or follow-up work</li><li>Tasks with clear approval rules</li></ul></div><div className='card'><h3>Set the review rhythm</h3><ul><li>A short daily handoff note</li><li>A named weekly reviewer</li><li>One escalation list</li></ul></div><div className='card'><h3>Prepare the first week</h3><ul><li>Named tool accounts</li><li>Sample work</li><li>A scheduled feedback call</li></ul></div></div></section><CTA/></main><Footer/></>;
 }

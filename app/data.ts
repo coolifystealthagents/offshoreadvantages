@@ -1,149 +1,99 @@
 export const site = {
-  "domain": "OffshoreAdvantages.com",
-  "slug": "offshoreadvantages",
-  "brand": "Offshore Advantages",
-  "primary": "offshore advantages",
-  "audience": "leaders comparing the pros, cons, planning, and risks of offshore staffing",
-  "angle": "plan math, coverage, role fit, quality controls, and what to avoid",
-  "style": "Advantages bold scorecard",
-  "dark": "#2c1608",
-  "color": "#f97316",
-  "accent": "#0f766e",
-  "heroImage": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
-  "serviceImage": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80",
-  "alt": "business team comparing charts and savings",
-  "badge": "Advantage map"
+  domain: 'OffshoreAdvantages.com',
+  slug: 'offshoreadvantages',
+  brand: 'Offshore Advantages',
+  primary: 'Philippines staffing planning',
+  audience: 'leaders deciding whether Filipino talent fits a defined role',
+  angle: 'role fit, coverage, handoffs, access, and quality control',
+  dark: '#071f2b',
+  color: '#15c8d1',
+  accent: '#ff6b6b',
+  heroImage: '/philippines-team.jpg',
+  serviceImage: '/philippines-team.jpg',
+  alt: 'Colleagues working through a planning session around a table',
 } as const;
+
 export const services = [
-  {
-    "slug": "operations-support",
-    "title": "Operations Support",
-    "desc": "Operations Support for teams using offshore advantages with clear SOPs, weekly review, and measurable handoffs."
-  },
-  {
-    "slug": "customer-support",
-    "title": "Customer Support",
-    "desc": "Customer Support for teams using offshore advantages with clear SOPs, weekly review, and measurable handoffs."
-  },
-  {
-    "slug": "admin-support",
-    "title": "Admin Support",
-    "desc": "Admin Support for teams using offshore advantages with clear SOPs, weekly review, and measurable handoffs."
-  },
-  {
-    "slug": "reporting-and-qa",
-    "title": "Reporting and QA",
-    "desc": "Reporting and QA for teams using offshore advantages with clear SOPs, weekly review, and measurable handoffs."
-  }
+  { slug: 'operations-support', title: 'Operations support', desc: 'Build a Filipino operations role around recurring reports, handoffs, vendor follow-up, and documented checks.' },
+  { slug: 'customer-support', title: 'Customer support', desc: 'Plan Philippines-based inbox, chat, or ticket support with clear tone, escalation, and review rules.' },
+  { slug: 'admin-support', title: 'Admin support', desc: 'Move calendar, inbox, research, and coordination work to Filipino talent without losing approval control.' },
+  { slug: 'reporting-and-qa', title: 'Reporting and QA', desc: 'Give a Philippines-based reporting specialist defined source data, deadlines, exception rules, and a named reviewer.' },
 ] as const;
+
 export const blogPosts = [
-  {
-    "slug": "offshore-advantages-planning",
-    "title": "Offshore Advantages: What does it plan?",
-    "excerpt": "A plain-English guide to staffing details, scope, and hidden planning.",
-    "minutes": 6
-  },
-  {
-    "slug": "offshore-advantages-tasks-to-outsource",
-    "title": "Offshore Advantages: What tasks should you outsource first?",
-    "excerpt": "Start with recurring work that has examples and clear review rules.",
-    "minutes": 7
-  },
-  {
-    "slug": "offshore-advantages-provider-questions",
-    "title": "Offshore Advantages: Questions to ask before hiring",
-    "excerpt": "Use these questions before you sign with a provider or freelancer.",
-    "minutes": 8
-  },
-  {
-    "slug": "offshore-advantages-onboarding-checklist",
-    "title": "Offshore Advantages: First week onboarding checklist",
-    "excerpt": "A simple checklist for tools, SOPs, calls, QA, and reporting.",
-    "minutes": 9
-  }
+  { slug: 'offshore-advantages-planning', title: 'How to plan a Philippines staffing role', excerpt: 'Turn a loose wish list into a role that a Filipino professional can own.', minutes: 6 },
+  { slug: 'offshore-advantages-tasks-to-outsource', title: 'Which tasks should move first?', excerpt: 'Choose recurring work with examples, a clear finish line, and sensible access.', minutes: 7 },
+  { slug: 'offshore-advantages-provider-questions', title: 'Questions to ask a Philippines staffing provider', excerpt: 'Use these questions to uncover who recruits, employs, manages, and checks the work.', minutes: 8 },
+  { slug: 'offshore-advantages-onboarding-checklist', title: 'A practical first-week checklist', excerpt: 'Set up tools, sample work, feedback, and escalation before the role goes live.', minutes: 9 },
 ] as const;
+
 export const blogDetails = {
   'offshore-advantages-provider-questions': {
     keyTakeaways: [
-      'Ask who manages quality before you ask about price.',
-      'Write down what the offshore worker can decide, and what stays with you.',
-      'Treat passwords, customer data, and admin access as part of the hiring plan.',
+      'Ask who recruits and employs the Filipino talent.',
+      'Write down what the person can decide and what still needs your approval.',
+      'Treat passwords, customer data, and admin access as part of the role plan.',
     ],
     sections: [
-      {
-        title: 'Start with work fit',
-        body: 'A good provider call starts with the actual work. Bring five tasks, two sample outputs, the tools used, and the hours you need covered. If the provider cannot explain who would do the work and how they would be checked, keep asking. Cheap help gets expensive when nobody owns review.',
-      },
-      {
-        title: 'Ask who checks the first two weeks',
-        body: 'The first two weeks show whether the match is real. Ask who reviews the first drafts, tickets, reports, calls, or inbox replies. Ask what happens when the work is late or off brand. A clear answer sounds plain: named manager, review time, scorecard, and replacement path.',
-      },
-      {
-        title: 'Protect accounts before the handoff',
-        body: 'Remote staff may need inboxes, CRMs, phone tools, file drives, or bookkeeping systems. Do not share owner passwords. Use named accounts, limited permissions, and a written list of tasks that need approval. NIST and the FTC both tell small businesses to control access and protect accounts. That advice matters here.',
-      },
-      {
-        title: 'Keep the offer tied to business rules',
-        body: 'A staffing provider can help with people, training, backup, and management. They still need your rules. Write the approval line for refunds, discounts, customer promises, vendor payments, hiring decisions, and anything legal or financial. The offshore role should remove work, not move owner judgment to someone who lacks context.',
-      },
+      { title: 'Start with the work', body: 'Bring a short task list, two examples of good output, the tools involved, and the hours that need coverage. Ask the Philippines staffing provider who would own each task and who checks the first drafts. If the answer stays vague, the role is not ready.' },
+      { title: 'Ask who checks the first two weeks', body: 'The first two weeks tell you whether the handoff works. Name the person reviewing tickets, reports, calls, or inbox replies. Agree on when feedback happens and what triggers an escalation.' },
+      { title: 'Protect accounts before the handoff', body: 'Filipino talent may need inboxes, CRMs, file drives, or bookkeeping systems. Use named accounts and limited permissions. Keep a written list of actions that need approval. NIST and the FTC both publish useful small-business guidance for account access and data safety.' },
+      { title: 'Keep judgment with the right person', body: 'A Philippines staffing team can help with recruitment, onboarding, and day-to-day support. Your business still owns its rules. Define approval lines for refunds, customer promises, payments, hiring decisions, and legal or financial matters.' },
     ],
     comparisonRows: [
-      ['Screening', 'Who tests skill and fit before I meet the candidate?', 'We screen for communication and tool fit before the owner call.'],
-      ['Management', 'Who checks quality during week one?', 'A manager reviews output with a simple scorecard.'],
-      ['Security', 'How do you handle tool access?', 'Use named accounts, limited access, and approval rules.'],
-      ['Replacement', 'What happens if the person is not the right fit?', 'There is a clear replacement path instead of starting over alone.'],
+      ['Recruitment', 'Who finds and screens the Filipino candidates?', 'The provider explains its screening steps and who makes the final hiring decision.'],
+      ['Management', 'Who checks quality in week one?', 'A named reviewer checks real output against an agreed example.'],
+      ['Security', 'How will this person access our tools?', 'Each person gets a named account, limited access, and written approval rules.'],
+      ['Fit', 'What happens if the match is wrong?', 'The provider explains the review and replacement process before launch.'],
     ],
-    quoteBox: 'Send this before the call: "We need help with these five recurring tasks. Here are two examples of good work. Please show us who would do the work, who checks it in week one, and what access they need."',
+    quoteBox: 'We need Philippines-based help with these recurring tasks. Here are two examples of good work. Please explain who would do the work, who checks it in week one, and what access they need.',
     faqs: [
-      { question: 'Should I ask for public pricing first?', answer: 'Ask for scope first. Price only makes sense after the provider knows the role, hours, tools, management level, and backup needs.' },
-      { question: 'What is the biggest red flag?', answer: 'A vague answer about quality control. If nobody can name who checks work in the first two weeks, the owner will likely become the manager.' },
-      { question: 'Can offshore staff handle sensitive systems?', answer: 'Sometimes, but access should be limited. Use named accounts, approval rules, and a manager review before expanding permissions.' },
+      { question: 'What should I ask first?', answer: 'Ask who recruits, employs, and manages the Filipino talent. Then walk through the actual work and its approval rules.' },
+      { question: 'What is a warning sign?', answer: 'Be wary when nobody can name who reviews early work. That usually leaves the client managing every detail.' },
+      { question: 'Can Filipino talent work in sensitive systems?', answer: 'It depends on the role. Use named accounts, limited permissions, and manager review before expanding access.' },
     ],
     sources: [
-      { name: 'NIST Small Business Cybersecurity Corner', url: 'https://www.nist.gov/itl/smallbusinesscyber', note: 'Small business guidance for access, passwords, and basic security controls.' },
-      { name: 'FTC Cybersecurity for Small Business', url: 'https://www.ftc.gov/business-guidance/small-businesses/cybersecurity', note: 'Plain guidance on protecting accounts, devices, and customer data.' },
-      { name: 'SBA hiring and managing employees', url: 'https://www.sba.gov/business-guide/manage-your-business/hire-manage-employees', note: 'General hiring planning guidance useful when comparing staff support models.' },
+      { name: 'NIST Small Business Cybersecurity Corner', url: 'https://www.nist.gov/itl/smallbusinesscyber', note: 'Guidance for accounts, passwords, and basic security controls.' },
+      { name: 'FTC Cybersecurity for Small Business', url: 'https://www.ftc.gov/business-guidance/small-businesses/cybersecurity', note: 'Guidance on protecting devices, accounts, and customer data.' },
     ],
   },
 } as const;
 
-export const stats = [{label:'Typical savings target',value:'30-60%',note:'depends on role, management, and local hiring plan'},{label:'Best pilot length',value:'14 days',note:'enough time to test quality before scaling'},{label:'Start with',value:'5-10 tasks',note:'clear recurring tasks beat vague job descriptions'}] as const;
+export const stats = [
+  { label: 'Sourcing location', value: 'Philippines', note: 'Every staffing plan is built for Filipino talent.' },
+  { label: 'Better starting point', value: 'One role', note: 'Begin with a clear owner and a short recurring task list.' },
+  { label: 'Control to define', value: 'Access', note: 'Set permissions and approval rules before launch.' },
+] as const;
 
 export const staffingOffer = {
-  partner: 'our staffing team',
-  promise: 'Get a managed offshore staffing plan built around the work you need removed from your plate.',
+  promise: 'Get a Philippines staffing plan built around the work you need handled.',
   fit: [
-    'business owners who need reliable remote staff but do not want to screen alone',
-    'teams that want trained support, backup coverage, and a clear manager path',
-    'companies that need help with admin, operations, customer support, calls, bookkeeping, development, or marketing work',
+    'owners who want Filipino talent but need help shaping the role',
+    'teams that want recruitment, onboarding, and a clear support path',
+    'companies moving admin, operations, customer support, or reporting work to the Philippines',
   ],
   included: [
-    'role planning call to turn your task list into a clear staffing scope',
-    'candidate matching based on skills, schedule, tools, and communication needs',
-    'onboarding guidance for SOPs, scorecards, reporting, and safe tool access',
-    'managed support so quality, attendance, and replacement questions do not sit only on the owner',
+    'a role brief tied to tasks, tools, schedule, and decision limits',
+    'candidate matching focused on Filipino talent',
+    'an onboarding outline for sample work, feedback, and safe access',
+    'a review path for attendance, quality, and fit questions',
   ],
-  proof: [
-    'clear task scope before hiring',
-    'weekly reporting rhythm',
-    'named accountability and escalation path',
-    'simple handoff plan for tools, SOPs, and quality checks',
-  ],
+  proof: ['clear scope before interviews', 'named review owner', 'written access rules', 'a practical handoff plan'],
 } as const;
 
 export const leadQuestions = [
-  'What work do you want off your plate first?',
-  'Which tools, inboxes, phones, CRMs, or systems will the staff member use?',
-  'What hours, time zone, and response time do you need?',
-  'Who checks quality during the first two weeks?',
-  'What should the staff member never decide without approval?',
+  'What work should the Filipino team member own first?',
+  'Which tools or inboxes will they use?',
+  'What hours and response windows matter?',
+  'Who reviews work during the first two weeks?',
+  'Which decisions must stay with your team?',
 ] as const;
 
 export const staffingProcess = [
-  { step: '1', title: 'Map the role', body: 'We turn messy tasks into one clear role with outcomes, tools, limits, and a first-week checklist.' },
-  { step: '2', title: 'Match the staff', body: 'our staffing team can help match remote staff to the work, schedule, communication style, and skill level you need.' },
-  { step: '3', title: 'Launch with control', body: 'Start with SOPs, sample work, limited access, daily review, and a simple scorecard so quality is easy to see.' },
-  { step: '4', title: 'Scale what works', body: 'Once the first tasks are stable, add more work, better reporting, and stronger delegation without guessing.' },
+  { step: '1', title: 'Map the work', body: 'Turn recurring tasks into one role with examples, tools, limits, and a first-week checklist.' },
+  { step: '2', title: 'Meet Filipino talent', body: 'Review candidates against the work, schedule, and communication style instead of a vague job title.' },
+  { step: '3', title: 'Set the controls', body: 'Create named accounts, approval rules, feedback times, and one escalation path.' },
+  { step: '4', title: 'Expand carefully', body: 'Add work only after the first handoff is stable and the review rhythm feels manageable.' },
 ] as const;
 
-export const staffingFitNote = 'Every staffing plan depends on role scope, schedule, skills, tools, and management needs. Send the role details and our staffing team can guide the best fit.';
+export const staffingFitNote = 'We focus exclusively on Filipino talent. Each plan still depends on the role, tools, schedule, access, and support you need.';
