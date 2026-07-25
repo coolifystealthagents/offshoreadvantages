@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Header, Footer, CTA, JsonLd } from '../../components';
+import { Header, Footer, JsonLd } from '../../components';
 import { blogDetails, blogPosts, site } from '../../data';
 
 const siteUrl = 'https://offshoreadvantages.com';
@@ -9,39 +9,32 @@ type BlogDetail = {
   keyTakeaways: readonly string[];
   sections: readonly { title: string; body: string }[];
   comparisonRows?: readonly (readonly [string, string, string])[];
+  tableTitle?: string;
+  tableHeaders?: readonly [string, string, string];
   quoteBox?: string;
+  expertQuote?: { quote: string; person: string; title: string; sourceName: string; sourceUrl: string };
+  threatChart?: boolean;
+  handoffGraphic?: boolean;
+  internalLinks?: readonly { label: string; href: string; note: string }[];
+  banners?: readonly { label: string; title: string; body: string; href: string; linkText: string }[];
   faqs?: readonly { question: string; answer: string }[];
   sources?: readonly { name: string; url: string; note?: string }[];
 };
 
 const detailsBySlug = blogDetails as Record<string, BlogDetail>;
 
-export function generateStaticParams() {
-  return blogPosts.map((post) => ({ slug: post.slug }));
-}
+export function generateStaticParams() { return blogPosts.map((post) => ({ slug: post.slug })); }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = blogPosts.find((item) => item.slug === slug);
   if (!post) return {};
-
-  return {
-    title: post.title,
-    description: post.excerpt,
-    alternates: { canonical: `/blog/${slug}` },
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      url: `${siteUrl}/blog/${slug}`,
-      type: 'article',
-    },
-  };
+  return { title: post.title, description: post.excerpt, alternates: { canonical: `/blog/${slug}` }, openGraph: { title: post.title, description: post.excerpt, url: `${siteUrl}/blog/${slug}`, type: 'article' } };
 }
 
 function sectionParagraphs(body: string) {
   const sentences = body.match(/[^.!?]+[.!?]+(?:["']|$)?/g)?.map((sentence) => sentence.trim()) ?? [body];
   if (sentences.length < 4) return [body];
-
   const paragraphs: string[] = [];
   for (let index = 0; index < sentences.length;) {
     const remaining = sentences.length - index;
@@ -52,129 +45,24 @@ function sectionParagraphs(body: string) {
   return paragraphs;
 }
 
+function ThreatChart() {
+  return <section className="card visual-card" aria-labelledby="threat-chart-title"><h2 id="threat-chart-title">2026 global breach signals</h2><div className="visual-scroll" role="region" aria-label="Bar chart of three global breach signals" tabIndex={0}><svg className="article-visual" viewBox="0 0 760 360" role="img" aria-labelledby="chart-title chart-desc"><title id="chart-title">Three findings from the 2026 Verizon Data Breach Investigations Report</title><desc id="chart-desc">Software vulnerabilities start 31 percent of breaches. Ransomware appears in 48 percent of breaches. Mobile lures get a 40 percent higher click rate.</desc><line x1="190" y1="40" x2="190" y2="300" className="axis"/><line x1="190" y1="300" x2="710" y2="300" className="axis"/>{[[70,'Software vulnerabilities',31],[160,'Ransomware involvement',48],[250,'Mobile click uplift',40]].map(([y,label,value])=><g key={String(label)}><text x="18" y={Number(y)+25}>{label}</text><rect x="190" y={y} width={Number(value)*9} height="42" rx="8"/><text className="bar-value" x={205+Number(value)*9} y={Number(y)+27}>{value}%</text></g>)}</svg></div><p className="method-note">Units: percent. Method note: these are three separate global findings from Verizon's 2026 DBIR, not a combined scale and not Philippines-specific incident rates.</p></section>;
+}
+
+function HandoffGraphic() {
+  const steps = [['1','Approve','Named owner and role'],['2','Open','One account per agent'],['3','Work','Ticket holds the record'],['4','Review','Logs and exceptions'],['5','Close','Revoke and attest']];
+  return <section className="card visual-card" aria-labelledby="handoff-title"><h2 id="handoff-title">The access handoff path</h2><div className="visual-scroll" role="region" aria-label="Five step access lifecycle graphic" tabIndex={0}><svg className="article-visual" viewBox="0 0 900 250" role="img" aria-labelledby="flow-title flow-desc"><title id="flow-title">Access lifecycle for a Philippines customer support role</title><desc id="flow-desc">Approve, open, work, review, and close access in five documented steps.</desc>{steps.map(([n,title,note],i)=>{const x=22+i*176;return <g key={n}><rect className="flow-box" x={x} y="55" width="150" height="130" rx="18"/><circle cx={x+28} cy="83" r="17"/><text className="step-number" x={x+28} y="89" textAnchor="middle">{n}</text><text className="flow-title" x={x+18} y="126">{title}</text><text className="flow-note" x={x+18} y="153">{note}</text>{i<4?<path className="flow-arrow" d={`M ${x+150} 120 L ${x+174} 120`}/>:null}</g>})}</svg></div><p className="method-note">The ticket or case system carries the customer context. Passwords, MFA codes, screenshots, and local files do not move between agents.</p></section>;
+}
+
 export default async function Post({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = blogPosts.find((item) => item.slug === slug);
   if (!post) notFound();
-
   const detail = detailsBySlug[slug];
   const url = `${siteUrl}/blog/${post.slug}`;
-  const schema = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'BlogPosting',
-        headline: post.title,
-        description: post.excerpt,
-        url,
-        mainEntityOfPage: url,
-        publisher: { '@type': 'Organization', name: site.brand, url: siteUrl },
-        ...(detail?.sources?.length ? { citation: detail.sources.map((source) => source.url) } : {}),
-        ...(detail?.sections?.length ? {
-          hasPart: detail.sections.map((section, index) => ({
-            '@type': 'WebPageElement',
-            position: index + 1,
-            name: section.title,
-          })),
-        } : {}),
-      },
-      ...(detail?.faqs?.length ? [{
-        '@type': 'FAQPage',
-        mainEntity: detail.faqs.map((faq) => ({
-          '@type': 'Question',
-          name: faq.question,
-          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-        })),
-      }] : []),
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
-          { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteUrl}/blog` },
-          { '@type': 'ListItem', position: 3, name: post.title, item: url },
-        ],
-      },
-    ],
-  };
-
-  return (
-    <>
-      <Header />
-      <main>
-        <article className="section">
-          <div className="container article-shell">
-            <JsonLd data={schema} />
-            <p className="eyebrow">{site.brand} guide</p>
-            <h1>{post.title}</h1>
-            <p className="lead">{post.excerpt}</p>
-
-            {detail ? (
-              <>
-                <section className="card">
-                  <h2>Key takeaways</h2>
-                  <ul>{detail.keyTakeaways.map((item) => <li key={item}>{item}</li>)}</ul>
-                </section>
-
-                {detail.sections.map((section) => (
-                  <section className="card" key={section.title}>
-                    <h2>{section.title}</h2>
-                    {sectionParagraphs(section.body).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-                  </section>
-                ))}
-
-                {detail.comparisonRows?.length ? (
-                  <section className="card table-card">
-                    <h2>Provider call scorecard</h2>
-                    <div className="table-scroll" role="region" aria-label="Provider call scorecard" tabIndex={0}>
-                      <table>
-                        <thead><tr><th>Area</th><th>Question to ask</th><th>Good answer</th></tr></thead>
-                        <tbody>{detail.comparisonRows.map(([area, question, answer]) => (
-                          <tr key={area}><td><b>{area}</b></td><td>{question}</td><td>{answer}</td></tr>
-                        ))}</tbody>
-                      </table>
-                    </div>
-                    <p className="table-cue">On a small screen, swipe the table to see every column.</p>
-                  </section>
-                ) : null}
-
-                {detail.quoteBox ? (
-                  <section className="card">
-                    <h2>Copy-ready provider note</h2>
-                    <blockquote>{detail.quoteBox}</blockquote>
-                  </section>
-                ) : null}
-
-                {detail.faqs?.length ? (
-                  <section className="card">
-                    <h2>Common questions</h2>
-                    {detail.faqs.map((faq) => <div key={faq.question}><h3>{faq.question}</h3><p>{faq.answer}</p></div>)}
-                  </section>
-                ) : null}
-
-                {detail.sources?.length ? (
-                  <section className="card">
-                    <h2>Sources</h2>
-                    <ul>{detail.sources.map((source) => (
-                      <li key={source.url}><a href={source.url}>{source.name}</a>{source.note ? `: ${source.note}` : ''}</li>
-                    ))}</ul>
-                  </section>
-                ) : null}
-              </>
-            ) : (
-              <section className="card">
-                <h2>Start with a defined workflow</h2>
-                <p>For Philippines-based staffing, document the work, tools, schedule, and desired outcome before candidate matching. Keep business judgment and final approvals with a named manager.</p>
-                <h2>Prepare representative examples</h2>
-                <p>Use real, redacted examples to explain quality. Review early work together and update the written process when an exception appears.</p>
-                <h2>Plan access and handoffs</h2>
-                <p>Provide only the access needed for the position and use named accounts where possible. Write down which questions must be escalated and who receives them.</p>
-              </section>
-            )}
-          </div>
-        </article>
-        <CTA />
-      </main>
-      <Footer />
-    </>
-  );
+  const schema = { '@context': 'https://schema.org', '@graph': [{ '@type': 'BlogPosting', headline: post.title, description: post.excerpt, url, mainEntityOfPage: url, publisher: { '@type': 'Organization', name: site.brand, url: siteUrl }, ...(detail?.sources?.length ? { citation: detail.sources.map((source) => source.url) } : {}), ...(detail?.sections?.length ? { hasPart: detail.sections.map((section, index) => ({ '@type': 'WebPageElement', position: index + 1, name: section.title })) } : {}) }, ...(detail?.faqs?.length ? [{ '@type': 'FAQPage', mainEntity: detail.faqs.map((faq) => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) }] : []), { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl }, { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteUrl}/blog` }, { '@type': 'ListItem', position: 3, name: post.title, item: url }] }] };
+  const headers = detail?.tableHeaders ?? ['Area','Question to ask','Good answer'];
+  return <><Header/><main><article className="section"><div className="container article-shell"><JsonLd data={schema}/><p className="eyebrow">{site.brand} guide</p><h1>{post.title}</h1><p className="lead">{post.excerpt}</p>{detail ? <><section className="card"><h2>Key takeaways</h2><ul>{detail.keyTakeaways.map((item) => <li key={item}>{item}</li>)}</ul></section>{detail.sections.map((section,index) => <div key={section.title}><section className="card"><h2>{section.title}</h2>{sectionParagraphs(section.body).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</section>{index===1&&detail.banners?.[0]?<ArticleBanner banner={detail.banners[0]}/>:null}{index===4&&detail.banners?.[1]?<ArticleBanner banner={detail.banners[1]}/>:null}</div>)}{detail.comparisonRows?.length?<section className="card table-card"><h2>{detail.tableTitle ?? 'Provider call scorecard'}</h2><div className="table-scroll" role="region" aria-label={detail.tableTitle ?? 'Provider call scorecard'} tabIndex={0}><table><thead><tr>{headers.map(h=><th key={h}>{h}</th>)}</tr></thead><tbody>{detail.comparisonRows.map(([a,b,c])=><tr key={a}><td><b>{a}</b></td><td>{b}</td><td>{c}</td></tr>)}</tbody></table></div><p className="table-cue">On a small screen, swipe the table to see every column.</p></section>:null}{detail.threatChart?<ThreatChart/>:null}{detail.handoffGraphic?<HandoffGraphic/>:null}{detail.expertQuote?<section className="card expert-quote"><h2>Expert view</h2><blockquote>"{detail.expertQuote.quote}"</blockquote><p><b>{detail.expertQuote.person}</b>, {detail.expertQuote.title}, in <a href={detail.expertQuote.sourceUrl}>{detail.expertQuote.sourceName}</a>.</p></section>:null}{detail.quoteBox?<section className="card"><h2>Copy-ready handoff note</h2><blockquote>{detail.quoteBox}</blockquote></section>:null}{detail.internalLinks?.length?<section className="card"><h2>Plan the role around the work</h2><ul className="resource-links">{detail.internalLinks.map(link=><li key={link.href}><a href={link.href}>{link.label}</a>: {link.note}</li>)}</ul></section>:null}{detail.faqs?.length?<section className="card"><h2>Common questions</h2>{detail.faqs.map(faq=><div key={faq.question}><h3>{faq.question}</h3><p>{faq.answer}</p></div>)}</section>:null}{detail.banners?.[2]?<ArticleBanner banner={detail.banners[2]}/>:null}{detail.sources?.length?<section className="card sources-card"><h2>Sources</h2><ol>{detail.sources.map(source=><li key={source.url}><a href={source.url}>{source.name}</a>{source.note?`: ${source.note}`:''}</li>)}</ol></section>:null}</>:<section className="card"><h2>Start with a defined workflow</h2><p>For Philippines-based staffing, document the work, tools, schedule, and desired outcome before candidate matching. Keep business judgment and final approvals with a named manager.</p></section>}</div></article></main><Footer/></>;
 }
+
+function ArticleBanner({banner}:{banner:{label:string;title:string;body:string;href:string;linkText:string}}){return <aside className="article-banner" aria-label={banner.label}><p className="eyebrow light">{banner.label}</p><h2>{banner.title}</h2><p>{banner.body}</p><a className="btn primary" href={banner.href}>{banner.linkText}</a></aside>}
