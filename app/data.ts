@@ -21,13 +21,8 @@ export const services = [
 ] as const;
 
 export const blogPosts = [
-  { slug: 'offshore-advantages-planning', title: 'How to plan a Philippines staffing role', excerpt: 'Turn a loose wish list into a role that a Filipino professional can own.', minutes: 6 },
-  { slug: 'offshore-advantages-tasks-to-outsource', title: 'Which tasks should move first?', excerpt: 'Choose recurring work with examples, a clear finish line, and sensible access.', minutes: 7 },
-  { slug: 'offshore-advantages-provider-questions', title: 'Questions to ask a Philippines staffing provider', excerpt: 'Use these questions to uncover who recruits, employs, manages, and checks the work.', minutes: 8 },
-  { slug: 'offshore-advantages-onboarding-checklist', title: 'A practical first-week checklist', excerpt: 'Set up tools, sample work, feedback, and escalation before the role goes live.', minutes: 9 },
   { slug: 'philippines-customer-support-data-security-checklist', title: 'Philippines customer support data security checklist', excerpt: 'A practical access, shift handoff, and offboarding plan for Filipino customer support teams.', minutes: 12 },
-  { slug: 'philippines-customer-support-accessibility-quality-checklist', title: 'Philippines customer support accessibility quality checklist', excerpt: 'A practical scorecard for reviewing how Filipino support agents handle customers with access needs.', minutes: 12 },
-] as const;
+  { slug: 'philippines-customer-support-accessibility-quality-checklist', title: 'Philippines customer support accessibility quality checklist', excerpt: 'A practical scorecard for reviewing how Filipino support agents handle customers with access needs.', minutes: 12 },] as const;
 
 export const blogDetails = {
   'offshore-advantages-provider-questions': {
@@ -98,14 +93,14 @@ export const blogDetails = {
     quoteBox: 'Please confirm the Filipino support agent, approved device, role permissions, assigned queues, and manager. Open one named account, test the escalation path with a sample case, and send the access record before live customer work begins.',
     internalLinks: [
       { label: 'Customer support service plan', href: '/services/customer-experience-support', note: 'match access to the queue, hours, and escalation rules.' },
-      { label: 'Philippines staffing role guide', href: '/blog/offshore-advantages-planning', note: 'turn recurring support work into one clear role.' },
-      { label: 'Provider questions', href: '/blog/offshore-advantages-provider-questions', note: 'ask who recruits, employs, reviews, and supports the agent.' },
-      { label: 'First-week checklist', href: '/blog/offshore-advantages-onboarding-checklist', note: 'prepare sample work, tools, feedback, and handoffs.' },
+      { label: 'Philippines staffing role guide', href: '/blog', note: 'turn recurring support work into one clear role.' },
+      { label: 'Provider questions', href: '/blog', note: 'ask who recruits, employs, reviews, and supports the agent.' },
+      { label: 'First-week checklist', href: '/blog', note: 'prepare sample work, tools, feedback, and handoffs.' },
     ],
     banners: [
       { label: 'Role planning', title: 'Map the queue before opening access.', body: 'List the systems, customer data, shift hours, and approval points a Filipino support agent will handle.', href: '/contact', linkText: 'Plan the role' },
-      { label: 'Manager check', title: 'Test one case before the live queue.', body: 'Use a redacted example to test access, tone, escalation, logging, and shift handoff.', href: '/blog/offshore-advantages-onboarding-checklist', linkText: 'Use the first-week checklist' },
-      { label: 'Provider review', title: 'Ask who owns each control.', body: 'Bring the access table to the provider call and name the person responsible for every answer.', href: '/blog/offshore-advantages-provider-questions', linkText: 'Open the question list' },
+      { label: 'Manager check', title: 'Test one case before the live queue.', body: 'Use a redacted example to test access, tone, escalation, logging, and shift handoff.', href: '/blog', linkText: 'Use the first-week checklist' },
+      { label: 'Provider review', title: 'Ask who owns each control.', body: 'Bring the access table to the provider call and name the person responsible for every answer.', href: '/blog', linkText: 'Open the question list' },
     ],
     faqs: [
       { question: 'Does Philippines-only staffing mean the data stays in the Philippines?', answer: 'No. Agent location and data location are different. Check the systems, backups, administrators, subprocessors, and storage regions before making a data residency claim.' },
@@ -160,13 +155,13 @@ export const blogDetails = {
     quoteBox: 'Thanks for telling me what is not working. I can continue here, send a plain-language written recap, or move the case to our approved alternate channel. Which option works best for you?',
     internalLinks: [
       { label: 'Customer support service plan', href: '/services/customer-experience-support', note: 'define the channels, cases, schedule, and escalation rules.' },
-      { label: 'Philippines staffing role guide', href: '/blog/offshore-advantages-planning', note: 'turn the queue into one clear Filipino support role.' },
-      { label: 'First-week checklist', href: '/blog/offshore-advantages-onboarding-checklist', note: 'test tools, sample cases, feedback, and handoffs before launch.' },
+      { label: 'Philippines staffing role guide', href: '/blog', note: 'turn the queue into one clear Filipino support role.' },
+      { label: 'First-week checklist', href: '/blog', note: 'test tools, sample cases, feedback, and handoffs before launch.' },
       { label: 'Customer support security checklist', href: '/blog/philippines-customer-support-data-security-checklist', note: 'keep named accounts and privacy controls in every accessible path.' },
     ],
     banners: [
       { label: 'Role planning', title: 'Put access needs into the role brief.', body: 'List the support channels, common barriers, approved alternatives, and manager decisions a Filipino agent will handle.', href: '/contact', linkText: 'Plan the role' },
-      { label: 'Quality review', title: 'Test the path with a real sample case.', body: 'Use the scorecard to review channel fit, understanding, privacy, continuity, accuracy, and barrier reporting.', href: '/blog/offshore-advantages-onboarding-checklist', linkText: 'Open the first-week checklist' },
+      { label: 'Quality review', title: 'Test the path with a real sample case.', body: 'Use the scorecard to review channel fit, understanding, privacy, continuity, accuracy, and barrier reporting.', href: '/blog', linkText: 'Open the first-week checklist' },
       { label: 'Queue design', title: 'Fix the channel, not the customer.', body: 'When an interface or document blocks the case, give the client owner a clear defect note and a named next step.', href: '/services/customer-experience-support', linkText: 'Review customer support' },
     ],
     faqs: [
