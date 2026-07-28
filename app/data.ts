@@ -22,7 +22,9 @@ export const services = [
 
 export const blogPosts = [
   { slug: 'philippines-customer-support-data-security-checklist', title: 'Philippines customer support data security checklist', excerpt: 'A practical access, shift handoff, and offboarding plan for Filipino customer support teams.', minutes: 12 },
-  { slug: 'philippines-customer-support-accessibility-quality-checklist', title: 'Philippines customer support accessibility quality checklist', excerpt: 'A practical scorecard for reviewing how Filipino support agents handle customers with access needs.', minutes: 12 },] as const;
+  { slug: 'philippines-customer-support-accessibility-quality-checklist', title: 'Philippines customer support accessibility quality checklist', excerpt: 'A practical scorecard for reviewing how Filipino support agents handle customers with access needs.', minutes: 12 },
+  { slug: 'philippines-customer-support-identity-verification-checklist', title: 'Philippines customer support identity verification checklist', excerpt: 'A practical identity, account recovery, and impersonation plan for Filipino customer support teams.', minutes: 13 },
+] as const;
 
 export const blogDetails = {
   'offshore-advantages-provider-questions': {
@@ -178,6 +180,68 @@ export const blogDetails = {
       { name: 'W3C Web Content Accessibility Guidelines 2.2', url: 'https://www.w3.org/TR/WCAG22/', note: 'Technical recommendations for making web content more accessible.' },
       { name: 'W3C accessibility mission', url: 'https://www.w3.org/mission/accessibility/', note: 'Contains the exact Tim Berners-Lee quotation used above.' },
       { name: 'US Department of Justice, Guidance on Web Accessibility and the ADA', url: 'https://www.ada.gov/resources/web-guidance/', note: 'Explains web accessibility duties for state and local governments and businesses open to the public.' },
+    ],
+  },
+  'philippines-customer-support-identity-verification-checklist': {
+    keyTakeaways: [
+      'Give Filipino support agents one written verification path for each contact channel and account action.',
+      'Keep password resets, recovery-factor changes, refunds, and payment-detail changes behind a separate manager approval.',
+      'Record what was checked and who approved the action, but never copy full identity documents or secret answers into an open ticket note.',
+    ],
+    sections: [
+      { title: 'Start with the action, not the caller story', body: 'A customer may sound rushed, frightened, or convincing. The Filipino support agent still begins with the requested action: reading account details, changing an email, resetting a password, moving a refund, or replacing a recovery factor. Each action needs a proof rule and approval owner. Routine order status may use a low-risk check, while a password reset or bank-detail change needs stronger proof and a second person. The agent should never change the check because the customer sounds trustworthy.' },
+      { title: 'Separate identity proof from account knowledge', body: 'Knowing an order number, address, recent purchase, or manager name does not always prove who is asking. Those details may appear in email, discarded documents, public posts, or an earlier data leak. Use the company\'s approved factors and do not treat a long personal story as another factor. Give the Filipino agent exact fields to request, where to view them, and what counts as a match. Mask values on screen when the whole value is not needed, and never ask the customer to send a password, one-time code, full card number, or secret recovery answer through chat. If the normal path fails, pause the action and move to recovery instead of piling on improvised questions.' },
+      { title: 'Use current fraud data as a warning, not a forecast', body: 'The Federal Trade Commission released its 2024 fraud data on March 10, 2025. US consumers reported more than $12.5 billion in fraud losses, which was 25 percent higher than the year before, and the share of fraud reporters who said they lost money rose from 27 percent in 2023 to 38 percent in 2024. The same release says imposter-scam losses reached $2.95 billion in 2024. These are US reports, not a measure of fraud in the Philippines or of any staffing provider. They show why an international customer queue needs a calm verification path when someone claims to be a customer, executive, vendor, bank, or government worker. Use the figures to plan controls, not to label a caller or predict how many bad contacts a team will receive.' },
+      { title: 'Give every channel a safe verification route', body: 'Phone, email, chat, social messages, and ticket portals expose different clues and risks. A Filipino agent should know which channel can start a request and which trusted channel must finish it. A reply to an email does not prove identity when the mailbox may be compromised. For a sensitive change, send the customer through a signed-in account, a known phone number already on file, or another approved path that does not depend on contact details supplied in the same request. CISA warns people to resist pressure, think before clicking, and use a known contact route when a message may be phishing. The same habit works in support: slow down, open the approved record, and contact the customer through a route the company already trusts.' },
+      { title: 'Put account recovery behind its own gate', body: 'Recovery begins when the normal proof is missing, so it cannot be a looser version of the same check. NIST says organizations should encourage subscribers to keep at least two ways to authenticate, which can reduce the need for recovery. The client decides what evidence, waiting period, notice, and reviewer apply when both methods fail. Let the Filipino agent collect allowed facts and explain the next step, but keep high-risk approval with a named reviewer. A customer who cannot pass the rule needs a clear review path, not a secret shortcut.' },
+      { title: 'Keep manager decisions out of the frontline queue', body: 'Frontline Filipino agents can follow a script, compare approved fields, document a mismatch, and route the case. A manager should own exceptions that expose money, private records, account control, or another person\'s data. Write those lines into the role instead of asking agents to use judgment after a tense contact arrives. Common manager actions include approving a recovery exception, releasing a large refund, changing payout instructions, unmasking sensitive data, or overriding an account lock. The manager should review the original case record and contact path rather than relying on a private message from the agent. This protects the customer and gives the agent a firm way to say that the request needs review.' },
+      { title: 'Record enough evidence without making a new risk', body: 'A useful ticket says what action was requested, which approved checks ran, whether each check passed, who approved an exception, and what notice went to the customer. It should not contain passwords, one-time codes, complete card numbers, full identity documents, or copied security answers. Store protected evidence only in the system and field approved for it. Philippine law matters when Filipino talent handles personal information. Section 20 of the Data Privacy Act requires reasonable organizational, physical, and technical measures against unlawful access, disclosure, alteration, and other misuse. The client and staffing provider should name who controls the data, where verification evidence sits, who can open it, and when it is removed.' },
+      { title: 'Train with pressure and polite refusal', body: 'A written rule can fail when the customer is angry, the queue is busy, or the request appears to come from an executive. Practice with redacted cases before a Filipino agent handles live accounts. Include a caller who knows correct facts but asks to change the recovery email, a fake executive changing a vendor payment, and a customer who needs an accessible option. Score whether the agent used the right factor, avoided secrets, kept the ticket complete, and sent the exception to the right owner. Reward a correct pause even when it adds time.' },
+      { title: 'Review failures and false blocks together', body: 'A strict process can still harm customers when a tool is inaccessible, a record is stale, or a name does not fit the form. Review blocked legitimate cases beside suspicious contacts so the team can fix both failures. The Filipino team lead brings a small sample, while the client owner decides policy changes. Look for agents accepting caller-supplied numbers, managers approving through private chat, or customers trapped by an old contact method. Update the script after the owner approves the fix.' },
+    ],
+    tableTitle: 'Identity check and approval table',
+    tableHeaders: ['Customer request', 'Filipino agent role', 'Owner control'],
+    comparisonRows: [
+      ['Order or case status', 'Use the approved low-risk checks and reveal only the allowed status.', 'Set which details may be disclosed on each channel.'],
+      ['Password reset', 'Start the standard reset path and record failed checks.', 'Approve exceptions and review repeated recovery attempts.'],
+      ['Recovery email or phone change', 'Collect only the evidence named in policy.', 'Require a separate reviewer and notify the old contact point when allowed.'],
+      ['Refund request', 'Confirm the account and document the reason.', 'Keep approval above the written limit with the client.'],
+      ['Payment or payout detail change', 'Pause the change and route the case.', 'Verify through a known channel and require named approval.'],
+      ['Identity document received', 'Move it to the approved protected field or queue.', 'Set access, retention, redaction, and deletion rules.'],
+    ],
+    identityFraudChart: true,
+    verificationPathGraphic: true,
+    expertQuote: {
+      quote: 'The data we’re releasing today shows that scammers’ tactics are constantly evolving,',
+      person: 'Christopher Mufarrige',
+      title: 'Director of the FTC’s Bureau of Consumer Protection',
+      sourceName: 'FTC press release, March 10, 2025',
+      sourceUrl: 'https://www.ftc.gov/news-events/news/press-releases/2025/03/new-ftc-data-show-big-jump-reported-losses-fraud-125-billion-2024',
+    },
+    quoteBox: 'I can help with this request, but I cannot use a password, one-time code, or new contact detail as proof. I will send you through our approved verification path. If that path does not work, I will record the case and ask the named reviewer to check the recovery options.',
+    internalLinks: [
+      { label: 'Customer support service plan', href: '/services/customer-experience-support', note: 'match checks and approvals to the real queue.' },
+      { label: 'Customer support security checklist', href: '/blog/philippines-customer-support-data-security-checklist', note: 'protect named accounts, devices, logs, and offboarding.' },
+      { label: 'Accessible support quality checklist', href: '/blog/philippines-customer-support-accessibility-quality-checklist', note: 'offer a usable verification path without weakening the rule.' },
+      { label: 'Philippines staffing contact', href: '/contact', note: 'turn the actions and controls into a role brief.' },
+    ],
+    banners: [
+      { label: 'Role planning', title: 'Map sensitive customer actions first.', body: 'List the checks, tools, approval owners, and recovery path a Filipino support agent will use.', href: '/contact', linkText: 'Plan the role' },
+      { label: 'Security check', title: 'Keep identity work inside named systems.', body: 'Pair the verification table with clear account access, logging, and offboarding rules.', href: '/blog/philippines-customer-support-data-security-checklist', linkText: 'Open the security checklist' },
+      { label: 'Quality review', title: 'Test one hard recovery case before launch.', body: 'Watch for secret collection, weak channel changes, unclear ownership, and customers trapped by an unusable path.', href: '/blog/philippines-customer-support-accessibility-quality-checklist', linkText: 'Review accessible support' },
+    ],
+    faqs: [
+      { question: 'Can a Filipino support agent approve an account recovery?', answer: 'The agent can run the normal checks and collect the evidence allowed by policy. High-risk exceptions should go to the named client owner or senior reviewer.' },
+      { question: 'Should an agent ask for a one-time code in chat?', answer: 'No. A one-time code is meant for the customer to use in the approved authentication path, not to hand to an agent or caller.' },
+      { question: 'What if a legitimate customer cannot use the normal verification method?', answer: 'Move the case to the documented recovery or accessible verification path. Do not improvise questions or silently weaken the proof rule.' },
+      { question: 'Does this checklist replace legal or security advice?', answer: 'No. The client should have its privacy, security, and legal owners set the rule for its customers, systems, and markets.' },
+    ],
+    sources: [
+      { name: 'Federal Trade Commission, 2024 fraud data press release', url: 'https://www.ftc.gov/news-events/news/press-releases/2025/03/new-ftc-data-show-big-jump-reported-losses-fraud-125-billion-2024', note: 'Released March 10, 2025; reports $12.5 billion in consumer fraud losses, a 25 percent annual increase, a rise from 27 to 38 percent in reports with loss, and $2.95 billion in imposter-scam losses.' },
+      { name: 'CISA, Recognize and Report Phishing', url: 'https://www.cisa.gov/secure-our-world/recognize-and-report-phishing', note: 'Official guidance on pressure, suspicious messages, known contact routes, links, and reporting.' },
+      { name: 'NIST SP 800-63B, Authentication and Authenticator Management', url: 'https://pages.nist.gov/800-63-4/sp800-63b.html', note: 'Federal technical guidance for authentication, phishing resistance, multiple authenticators, and account recovery.' },
+      { name: 'Republic Act No. 10173, Data Privacy Act of 2012', url: 'https://lawphil.net/statutes/repacts/ra2012/ra_10173_2012.html', note: 'Section 20 covers reasonable organizational, physical, and technical protection for personal information.' },
+      { name: 'FTC, How To Recognize and Avoid Phishing Scams', url: 'https://consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams', note: 'Consumer guidance on unexpected messages, links, verification, reporting, and account protection.' },
     ],
   },
 } as const;
