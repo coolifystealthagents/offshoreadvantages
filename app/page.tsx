@@ -1,6 +1,13 @@
 import { Header, Footer, JsonLd } from './components';
 import { services, stats, staffingProcess, site } from './data';
 
+const advantageIcons = [
+  '/icons/getillustrations/blueprint-business-icons-svg/partnership.svg',
+  '/icons/getillustrations/blueprint-business-icons-svg/role-target.svg',
+  '/icons/getillustrations/blueprint-business-icons-svg/business-role.svg',
+  '/icons/getillustrations/blueprint-business-icons-svg/review-data.svg',
+];
+
 export default function Home() {
   const schema = {
     '@context': 'https://schema.org',
@@ -12,7 +19,7 @@ export default function Home() {
 
   return <>
     <Header />
-    <main data-design="philippines-advantage-board-2026">
+    <main data-design="philippines-advantage-board-2026" data-gi-rollout="two-illustration-packs-one-icon-pack">
       <JsonLd data={schema} />
       <section className="hero">
         <div className="container hero-grid">
@@ -27,10 +34,10 @@ export default function Home() {
             <p className="disclosure">OffshoreAdvantages.com is an independent informational site. Your inquiry may be shared with a suitable Philippines staffing provider.</p>
           </div>
           <div className="hero-visual">
-            <img src={site.heroImage} alt={site.alt} />
+            <img src="/illustrations/getillustrations/aurora-team-illustrations-svg/philippines-role-strategy.webp" alt="Illustration of a collaborative Philippines team planning the right work and role strategy" />
             <div className="image-stamp"><small>Role plan</small><strong>Work → owner → review</strong></div>
             <div className="orbit orbit-one">PH</div>
-            <div className="orbit orbit-two">✓</div>
+            <div className="orbit orbit-two"><img src={advantageIcons[0]} alt="" width="32" height="32" /></div>
           </div>
         </div>
         <div className="container advantage-strip">
@@ -43,7 +50,7 @@ export default function Home() {
           <div className="section-head"><div><p className="eyebrow">The decision board</p><h2>Four advantages. Four controls to get right.</h2></div><p>Filipino talent can give a team dependable coverage and capable support. The upside lasts when the role has boundaries, examples, and someone who reviews the work.</p></div>
           <div className="advantage-grid">
             {services.map((service, index) => <a href={`/services/${service.slug}`} className="advantage-card" key={service.slug}>
-              <span className="card-number">0{index + 1}</span>
+              <span className="card-badge"><span className="card-number">0{index + 1}</span><img className="card-icon" src={advantageIcons[index]} alt="" width="34" height="34" /></span>
               <div><h3>{service.title}</h3><p>{service.desc}</p><b>Open the role brief <span aria-hidden="true">→</span></b></div>
             </a>)}
           </div>
@@ -52,7 +59,7 @@ export default function Home() {
 
       <section className="section fit-section">
         <div className="container fit-grid">
-          <div className="fit-intro"><p className="eyebrow light">Good fit / poor fit</p><h2>Move repeatable work, not unfinished thinking.</h2><p>A Philippines staffing role is easier to launch when the result is visible and the approval line is written down.</p></div>
+          <div className="fit-intro"><p className="eyebrow light">Good fit / poor fit</p><h2>Move repeatable work, not unfinished thinking.</h2><p>A Philippines staffing role is easier to launch when the result is visible and the approval line is written down.</p><img src="/illustrations/getillustrations/grain-teamwork-illustrations-svg/controlled-team-handoff.webp" alt="" style={{ width: '100%', maxWidth: 360, marginTop: '1.5rem' }} loading="lazy" /></div>
           <div className="fit-board">
             <article><span>Good fit</span><h3>The task has an example.</h3><p>The Filipino team member can compare their output with something your team already considers correct.</p></article>
             <article><span>Good fit</span><h3>The finish line is clear.</h3><p>Everyone knows when the work is complete and which exceptions need escalation.</p></article>
