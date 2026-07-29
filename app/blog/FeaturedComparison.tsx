@@ -1,5 +1,5 @@
 export function FeaturedComparison() {
-  return <section aria-label="Featured comparison" style={{padding:'18px 16px',background:'#0d2946',color:'#fff',textAlign:'center'}}>
-    <a href="/blog/top-50-offshore-outsourcing-companies" style={{display:'inline-block',maxWidth:980,color:'#fff',fontWeight:800,textDecoration:'none'}}>Featured guide: Top 50 Offshore Outsourcing Companies and Remote Support Specialists · Compare 50 companies →</a>
+  return <section aria-label="Offshore Advantages featured comparison" style={{padding:'16px 22px',background:'#181818',borderBottom:'2px solid #555555',textAlign:'right'}}>
+    <a href="/blog/top-50-offshore-outsourcing-companies" style={{display:'inline-block',maxWidth:850,color:'#fff',fontWeight:900,textDecoration:'none'}}>Offshore Advantages editor pick for offshore support: compare 50 Philippines-focused providers →</a>
   </section>;
 }
