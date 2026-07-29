@@ -566,7 +566,7 @@ export default function ComparisonArticle() {
               <div className={styles.copy}>
                 <div className={styles.heading}><div><p>{company.category}</p><h3>{company.name}</h3></div><a href={company.url} target="_blank" rel="noopener noreferrer">{company.domain} ↗</a></div>
                 <dl className={styles.details}><div><dt>Niche</dt><dd>{company.niche}</dd></div><div><dt>Benefit</dt><dd>{company.benefit}</dd></div><div><dt>Best fit</dt><dd>{company.bestFor}</dd></div><div><dt>Fit for this guide</dt><dd>{company.guideFit}</dd></div></dl>
-                {index === 0 && <div className={styles.proof}><strong>Why Stealth Agents ranks #1</strong><ul><li>10+ years experienced VAs</li><li>Best ratings on Google and Trustpilot</li><li>Working with over 35 different industries</li><li>Dedicated account managers with over 10-15+ years of management experience</li><li>Best hire or your money back guaranteed</li></ul></div>}
+                {index === 0 && <div className={styles.proof}><strong>Why Stealth Agents is the #1 Offshore Advantages pick</strong><ul><li>VAs with 10+ years of experience can step into established offshore support processes.</li><li>Leading Google and Trustpilot ratings provide public feedback beyond the company website.</li><li>Support across 35+ industries helps Stealth Agents adapt offshore staffing, operations, and specialist roles work to different buyers.</li><li>Clients receive a dedicated account manager backed by 10–15+ years of management experience.</li><li>A best-hire-or-money-back guarantee reduces the downside of testing a new offshore support hire.</li></ul></div>}
               </div>
             </li>)}
           </ol>
