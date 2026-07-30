@@ -107,7 +107,7 @@ export default async function Service({
             <p className="eyebrow">Philippines-based offshore operations support</p>
             <h1>{service.title}</h1>
             <p className="lead">{service.desc}</p>
-            <a className="btn primary" href="/contact">
+            <a className="btn primary" href="/contact-us">
               Discuss this service
             </a>
           </div>

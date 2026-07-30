@@ -28,7 +28,7 @@ export default function Home() {
             <h1>The Philippines advantage starts with the right work.</h1>
             <p className="hero-lead">Map the role, handoff, access, and review plan before you hire. We connect qualified inquiries with staffing teams that recruit and hire exclusively in the Philippines.</p>
             <div className="actions">
-              <a className="btn primary" href="/contact">Map my Philippines role</a>
+              <a className="btn primary" href="/contact-us">Map my Philippines role</a>
               <a className="text-link" href="#advantage">See the decision board <span aria-hidden="true">↓</span></a>
             </div>
             <p className="disclosure">OffshoreAdvantages.com is an independent informational site. Your inquiry may be shared with a suitable Philippines staffing provider.</p>
@@ -70,14 +70,14 @@ export default function Home() {
 
       <section className="section process-section">
         <div className="container">
-          <div className="section-head compact"><div><p className="eyebrow">A controlled handoff</p><h2>Build the role in this order.</h2></div><a className="btn outline compact-cta" href="/contact">Map my Philippines role</a></div>
+          <div className="section-head compact"><div><p className="eyebrow">A controlled handoff</p><h2>Build the role in this order.</h2></div><a className="btn outline compact-cta" href="/contact-us">Map my Philippines role</a></div>
           <div className="process-grid">{staffingProcess.map((item) => <article key={item.step}><span>{item.step}</span><h3>{item.title}</h3><p>{item.body}</p></article>)}</div>
         </div>
       </section>
 
       <section className="container closing-panel">
         <div><p className="eyebrow light">Philippines only</p><h2>Know what you want the role to own?</h2><p>Send the tasks, tools, schedule, and review needs. We will route qualified inquiries to a team that recruits and hires Filipino talent.</p></div>
-        <a className="btn coral" href="/contact">Map my Philippines role</a>
+        <a className="btn coral" href="/contact-us">Map my Philippines role</a>
       </section>
     </main>
     <Footer />

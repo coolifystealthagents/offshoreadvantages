@@ -100,7 +100,7 @@ export const blogDetails = {
       { label: 'First-week checklist', href: '/blog', note: 'prepare sample work, tools, feedback, and handoffs.' },
     ],
     banners: [
-      { label: 'Role planning', title: 'Map the queue before opening access.', body: 'List the systems, customer data, shift hours, and approval points a Filipino support agent will handle.', href: '/contact', linkText: 'Plan the role' },
+      { label: 'Role planning', title: 'Map the queue before opening access.', body: 'List the systems, customer data, shift hours, and approval points a Filipino support agent will handle.', href: '/contact-us', linkText: 'Plan the role' },
       { label: 'Manager check', title: 'Test one case before the live queue.', body: 'Use a redacted example to test access, tone, escalation, logging, and shift handoff.', href: '/blog', linkText: 'Use the first-week checklist' },
       { label: 'Provider review', title: 'Ask who owns each control.', body: 'Bring the access table to the provider call and name the person responsible for every answer.', href: '/blog', linkText: 'Open the question list' },
     ],
@@ -162,7 +162,7 @@ export const blogDetails = {
       { label: 'Customer support security checklist', href: '/blog/philippines-customer-support-data-security-checklist', note: 'keep named accounts and privacy controls in every accessible path.' },
     ],
     banners: [
-      { label: 'Role planning', title: 'Put access needs into the role brief.', body: 'List the support channels, common barriers, approved alternatives, and manager decisions a Filipino agent will handle.', href: '/contact', linkText: 'Plan the role' },
+      { label: 'Role planning', title: 'Put access needs into the role brief.', body: 'List the support channels, common barriers, approved alternatives, and manager decisions a Filipino agent will handle.', href: '/contact-us', linkText: 'Plan the role' },
       { label: 'Quality review', title: 'Test the path with a real sample case.', body: 'Use the scorecard to review channel fit, understanding, privacy, continuity, accuracy, and barrier reporting.', href: '/blog', linkText: 'Open the first-week checklist' },
       { label: 'Queue design', title: 'Fix the channel, not the customer.', body: 'When an interface or document blocks the case, give the client owner a clear defect note and a named next step.', href: '/services/customer-experience-support', linkText: 'Review customer support' },
     ],
@@ -223,10 +223,10 @@ export const blogDetails = {
       { label: 'Customer support service plan', href: '/services/customer-experience-support', note: 'match checks and approvals to the real queue.' },
       { label: 'Customer support security checklist', href: '/blog/philippines-customer-support-data-security-checklist', note: 'protect named accounts, devices, logs, and offboarding.' },
       { label: 'Accessible support quality checklist', href: '/blog/philippines-customer-support-accessibility-quality-checklist', note: 'offer a usable verification path without weakening the rule.' },
-      { label: 'Philippines staffing contact', href: '/contact', note: 'turn the actions and controls into a role brief.' },
+      { label: 'Philippines staffing contact', href: '/contact-us', note: 'turn the actions and controls into a role brief.' },
     ],
     banners: [
-      { label: 'Role planning', title: 'Map sensitive customer actions first.', body: 'List the checks, tools, approval owners, and recovery path a Filipino support agent will use.', href: '/contact', linkText: 'Plan the role' },
+      { label: 'Role planning', title: 'Map sensitive customer actions first.', body: 'List the checks, tools, approval owners, and recovery path a Filipino support agent will use.', href: '/contact-us', linkText: 'Plan the role' },
       { label: 'Security check', title: 'Keep identity work inside named systems.', body: 'Pair the verification table with clear account access, logging, and offboarding rules.', href: '/blog/philippines-customer-support-data-security-checklist', linkText: 'Open the security checklist' },
       { label: 'Quality review', title: 'Test one hard recovery case before launch.', body: 'Watch for secret collection, weak channel changes, unclear ownership, and customers trapped by an unusable path.', href: '/blog/philippines-customer-support-accessibility-quality-checklist', linkText: 'Review accessible support' },
     ],
