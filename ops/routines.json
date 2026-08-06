@@ -1,0 +1,51 @@
+{
+  "version": "2.4",
+  "site": {
+    "title": "OffshoreAdvantages.com",
+    "domain": "offshoreadvantages.com",
+    "brand": "Offshore Advantages",
+    "niche": "offshore outsourcing benefits and strategy",
+    "repository": "coolifystealthagents/offshoreadvantages",
+    "productionBranch": "main",
+    "framework": "Next.js 15"
+  },
+  "timezone": "UTC",
+  "secretInjection": {
+    "allowed": ["github", "gemini"],
+    "values": "protected-only",
+    "coolify": false
+  },
+  "terminalBoundary": "github-push",
+  "routines": [
+    {
+      "id": "daily-blog-publishing",
+      "title": "Daily Blog Publishing",
+      "cron": "0 9 * * 1-5",
+      "timezone": "UTC",
+      "concurrency": "skip_if_active",
+      "catchUp": "skip_missed",
+      "priority": "medium",
+      "target": { "min": 20, "max": 25 },
+      "source": "app/data.ts",
+      "kind": "blog",
+      "runbook": "research -> brief -> draft -> validate -> blader-humanizer -> revalidate -> thumbnail -> build -> commit -> push"
+    },
+    {
+      "id": "daily-research-publishing",
+      "title": "Daily Research Publishing",
+      "cron": "0 6 * * *",
+      "timezone": "UTC",
+      "concurrency": "always_enqueue",
+      "catchUp": "skip_missed",
+      "priority": "high",
+      "target": { "min": 10, "max": 15 },
+      "source": "app/data.ts",
+      "kind": "research",
+      "runbook": "research -> brief -> draft -> validate -> blader-humanizer -> revalidate -> thumbnail -> build -> commit -> push"
+    }
+  ],
+  "prohibitedRoutines": [
+    "alternatives", "gsc", "seo-pulse", "audit", "sitemap-digest", "recovery", "deployment", "cro", "chat-status"
+  ],
+  "postPushActions": []
+}

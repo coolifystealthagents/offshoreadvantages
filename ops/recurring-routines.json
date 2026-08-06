@@ -1,0 +1,35 @@
+{
+  "version": "2.4",
+  "site": "offshoreadvantages.com",
+  "timezone": "UTC",
+  "routines": [
+    {
+      "id": "daily-blog-publishing",
+      "title": "Daily Blog Publishing",
+      "cron": "0 9 * * 1-5",
+      "timezone": "UTC",
+      "concurrency": "skip_if_active",
+      "catchUp": "skip_missed",
+      "priority": "medium",
+      "targetMin": 20,
+      "targetMax": 25,
+      "validator": "standard-blog",
+      "humanizer": { "source": "blader/humanizer", "version": "2.9.1+" },
+      "terminal": "validated GitHub push to main"
+    },
+    {
+      "id": "daily-research-publishing",
+      "title": "Daily Research Publishing",
+      "cron": "0 6 * * *",
+      "timezone": "UTC",
+      "concurrency": "always_enqueue",
+      "catchUp": "skip_missed",
+      "priority": "high",
+      "targetMin": 10,
+      "targetMax": 15,
+      "validator": "research",
+      "humanizer": { "source": "blader/humanizer", "version": "2.9.1+" },
+      "terminal": "validated GitHub push to main"
+    }
+  ]
+}
