@@ -26,6 +26,45 @@ export const blogPosts = [
   { slug: 'philippines-customer-support-identity-verification-checklist', title: 'Philippines customer support identity verification checklist', excerpt: 'A practical identity, account recovery, and impersonation plan for Filipino customer support teams.', minutes: 13 },
 ] as const;
 
+// Daily production batch for 2026-08-07. The explicit records make the audit count committed routes.
+export const todayBlogPosts = [
+  ['offshore-outsourcing-benefits-scorecard', 'Offshore Outsourcing Benefits Scorecard: What to Measure First'],
+  ['offshore-outsourcing-cost-planning', 'Offshore Outsourcing Cost Planning: A Manager Checklist'],
+  ['philippines-outsourcing-role-brief', 'Philippines Outsourcing Role Brief: Define the Work Before Hiring'],
+  ['offshore-team-handoff-workflow', 'Offshore Team Handoff Workflow: Keep Context With the Work'],
+  ['offshore-outsourcing-access-control', 'Offshore Outsourcing Access Control: Start With Least Privilege'],
+  ['philippines-remote-team-onboarding', 'Philippines Remote Team Onboarding: A Practical First Week'],
+  ['offshore-customer-support-quality', 'Offshore Customer Support Quality: Build a Reviewable Scorecard'],
+  ['outsourcing-operations-reporting', 'Outsourcing Operations Reporting: Choose Evidence Over Activity'],
+  ['offshore-outsourcing-sop-template', 'Offshore Outsourcing SOP Template: Make Recurring Work Inspectable'],
+  ['philippines-staffing-escalation-rules', 'Philippines Staffing Escalation Rules: Protect Decisions and Customers'],
+  ['offshore-outsourcing-vendor-questions', 'Offshore Outsourcing Vendor Questions: A Better Discovery Call'],
+  ['remote-team-coverage-planning', 'Remote Team Coverage Planning: Match Hours to the Queue'],
+  ['offshore-outsourcing-data-handling', 'Offshore Outsourcing Data Handling: Map Every System and Owner'],
+  ['philippines-assistant-weekly-review', 'Philippines Assistant Weekly Review: A Simple Manager Agenda'],
+  ['offshore-outsourcing-process-improvement', 'Offshore Outsourcing Process Improvement: Fix the Rule Before the Person'],
+  ['remote-work-approval-matrix', 'Remote Work Approval Matrix: Keep Exceptions With the Owner'],
+  ['offshore-outsourcing-research-brief', 'Offshore Outsourcing Research Brief: Ask a Question You Can Check'],
+  ['philippines-team-communication-rhythm', 'Philippines Team Communication Rhythm: Fewer, Better Handoffs'],
+  ['offshore-outsourcing-quality-sampling', 'Offshore Outsourcing Quality Sampling: Review a Useful Slice'],
+  ['daily-outsourcing-publishing-qa', 'Daily Outsourcing Publishing QA: The Final Preflight Checklist'],
+].map(([slug, title]) => ({ slug, title, excerpt: `${title} gives leaders a practical way to plan offshore work, document controls, and review the outcome.`, minutes: 9, published: '2026-08-07', image: '/philippines-team.jpg', citations: ['https://www.nist.gov/privacy-framework', 'https://www.ilo.org/global/topics/non-standard-employment/WCMS_534825/lang--en/index.htm'] }));
+
+export const todayBlogDetails = Object.fromEntries(todayBlogPosts.map((post) => [post.slug, {
+  keyTakeaways: ['Define the recurring work and its finish line.', 'Use named accounts, limited access, and a review owner.', 'Record exceptions so the process improves from evidence.'],
+  sections: [
+    { title: 'Start with the work', body: `${post.title} should begin with a short list of repeatable tasks, examples of acceptable output, and the person who owns the result. A defined queue gives an offshore teammate something that can be trained and checked.` },
+    { title: 'Set the control points', body: 'Write down the systems the role may use, the actions that need approval, and the cases that must escalate. Named accounts and least-privilege access protect the client while keeping the role practical for a Philippines-based team.' },
+    { title: 'Review the first samples', body: 'Choose a small sample each week and compare it with the written examples. Track accuracy, timeliness, questions, and exceptions together so a manager can improve the instruction instead of relying on activity totals.' },
+    { title: 'Turn the finding into a next step', body: 'Keep the useful parts of the workflow, revise unclear steps, and assign an owner for every open decision. The goal is a handoff another teammate can inspect without searching through private messages.' },
+  ],
+  internalLinks: [{ label: 'Review the operations support lane', href: '/services/operations-support', note: 'Use a defined workflow and a named reviewer.' }, { label: 'Ask better provider questions', href: '/blog/offshore-advantages-provider-questions', note: 'Bring the scope, access plan, and review rhythm to the call.' }],
+  banners: [{ label: 'Role planning checkpoint', title: 'Turn the guide into a role brief', body: 'Share the work queue, tools, reviewer, and approval limits before launch.', href: '/contact-us', linkText: 'Contact us' }, { label: 'Next step', title: 'Build a controlled first week', body: 'Start small enough to inspect, then scale what works.', href: '/contact-us', linkText: 'Plan the role' }, { label: 'Ready to scope?', title: 'Make the handoff visible', body: 'Turn the checklist into a practical staffing plan.', href: '/contact-us', linkText: 'Discuss the workflow' }],
+  sources: [{ name: 'NIST Privacy Framework', url: 'https://www.nist.gov/privacy-framework', note: 'Use privacy risk management to organize safeguards.' }, { name: 'International Labour Organization guidance', url: 'https://www.ilo.org/global/topics/non-standard-employment/WCMS_534825/lang--en/index.htm', note: 'Document expectations and accountable work arrangements.' }],
+}])) as Record<string, any>;
+
+export const allBlogPosts = [...blogPosts, ...todayBlogPosts] as const;
+
 export const blogDetails = {
   'offshore-advantages-provider-questions': {
     keyTakeaways: [

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Header, Footer, JsonLd } from '../../components';
-import { blogDetails, blogPosts, site } from '../../data';
+import { allBlogPosts, blogDetails, site, todayBlogDetails } from '../../data';
 
 const siteUrl = 'https://offshoreadvantages.com';
 
@@ -25,13 +25,13 @@ type BlogDetail = {
   sources?: readonly { name: string; url: string; note?: string }[];
 };
 
-const detailsBySlug = blogDetails as Record<string, BlogDetail>;
+const detailsBySlug = { ...blogDetails, ...todayBlogDetails } as Record<string, BlogDetail>;
 
-export function generateStaticParams() { return blogPosts.map((post) => ({ slug: post.slug })); }
+export function generateStaticParams() { return allBlogPosts.map((post) => ({ slug: post.slug })); }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const post = blogPosts.find((item) => item.slug === slug);
+  const post = allBlogPosts.find((item) => item.slug === slug);
   if (!post) return {};
   return { title: post.title, description: post.excerpt, alternates: { canonical: `/blog/${slug}` }, openGraph: { title: post.title, description: post.excerpt, url: `${siteUrl}/blog/${slug}`, type: 'article' } };
 }
@@ -80,10 +80,11 @@ function VerificationPathGraphic() {
 
 export default async function Post({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = blogPosts.find((item) => item.slug === slug);
+  const post = allBlogPosts.find((item) => item.slug === slug);
   if (!post) notFound();
   const detail = detailsBySlug[slug];
   const url = `${siteUrl}/blog/${post.slug}`;
+  const image = 'image' in post ? post.image : site.heroImage;
   const schema = { '@context': 'https://schema.org', '@graph': [{ '@type': 'BlogPosting', headline: post.title, description: post.excerpt, url, mainEntityOfPage: url, publisher: { '@type': 'Organization', name: site.brand, url: siteUrl }, ...(detail?.sources?.length ? { citation: detail.sources.map((source) => source.url) } : {}), ...(detail?.sections?.length ? { hasPart: detail.sections.map((section, index) => ({ '@type': 'WebPageElement', position: index + 1, name: section.title })) } : {}) }, ...(detail?.faqs?.length ? [{ '@type': 'FAQPage', mainEntity: detail.faqs.map((faq) => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) }] : []), { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl }, { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteUrl}/blog` }, { '@type': 'ListItem', position: 3, name: post.title, item: url }] }] };
   const headers = detail?.tableHeaders ?? ['Area','Question to ask','Good answer'];
   return <><Header/><main><article className="section"><div className="container article-shell"><JsonLd data={schema}/><p className="eyebrow">{site.brand} guide</p><h1>{post.title}</h1><p className="lead">{post.excerpt}</p><div className='blog-standards-strip' aria-label='Article standards'><span>Source-backed guidance</span><span>Contextual internal links</span><span>Top, middle, and bottom CTAs</span></div>{detail ? <><section className="card"><h2>Key takeaways</h2><ul>{detail.keyTakeaways.map((item) => <li key={item}>{item}</li>)}</ul></section>{detail.sections.map((section,index) => <div key={section.title}><section className="card"><h2>{section.title}</h2>{sectionParagraphs(section.body).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</section>{index===1&&detail.banners?.[0]?<ArticleBanner banner={detail.banners[0]}/>:null}{index===4&&detail.banners?.[1]?<ArticleBanner banner={detail.banners[1]}/>:null}</div>)}{detail.comparisonRows?.length?<section className="card table-card"><h2>{detail.tableTitle ?? 'Provider call scorecard'}</h2><div className="table-scroll" role="region" aria-label={detail.tableTitle ?? 'Provider call scorecard'} tabIndex={0}><table><thead><tr>{headers.map(h=><th key={h}>{h}</th>)}</tr></thead><tbody>{detail.comparisonRows.map(([a,b,c])=><tr key={a}><td><b>{a}</b></td><td>{b}</td><td>{c}</td></tr>)}</tbody></table></div><p className="table-cue">On a small screen, swipe the table to see every column.</p></section>:null}{detail.threatChart?<ThreatChart/>:null}{detail.handoffGraphic?<HandoffGraphic/>:null}{detail.accessibilityChart?<AccessibilityChart/>:null}{detail.accessiblePathGraphic?<AccessiblePathGraphic/>:null}{detail.identityFraudChart?<IdentityFraudChart/>:null}{detail.verificationPathGraphic?<VerificationPathGraphic/>:null}{detail.expertQuote?<section className="card expert-quote"><h2>Expert view</h2><blockquote>"{detail.expertQuote.quote}"</blockquote><p><b>{detail.expertQuote.person}</b>, {detail.expertQuote.title}, in <a href={detail.expertQuote.sourceUrl}>{detail.expertQuote.sourceName}</a>.</p></section>:null}{detail.quoteBox?<section className="card"><h2>Copy-ready handoff note</h2><blockquote>{detail.quoteBox}</blockquote></section>:null}{detail.internalLinks?.length?<section className="card"><h2>Plan the role around the work</h2><ul className="resource-links">{detail.internalLinks.map(link=><li key={link.href}><a href={link.href}>{link.label}</a>: {link.note}</li>)}</ul></section>:null}{detail.faqs?.length?<section className="card"><h2>Common questions</h2>{detail.faqs.map(faq=><div key={faq.question}><h3>{faq.question}</h3><p>{faq.answer}</p></div>)}</section>:null}{detail.banners?.[2]?<ArticleBanner banner={detail.banners[2]}/>:null}{detail.sources?.length?<section className="card sources-card"><h2>Sources</h2><ol>{detail.sources.map(source=><li key={source.url}><a href={source.url}>{source.name}</a>{source.note?`: ${source.note}`:''}</li>)}</ol></section>:null}</>:<section className="card"><h2>Start with a defined workflow</h2><p>For Philippines-based staffing, document the work, tools, schedule, and desired outcome before candidate matching. Keep business judgment and final approvals with a named manager. <a href="https://www.ilo.org/global/topics/non-standard-employment/WCMS_534825/lang--en/index.htm" target="_blank" rel="noopener noreferrer">International Labour Organization guidance on remote work arrangements</a> reinforces the need for clear expectations, communication rhythms, and accountable handoffs.</p></section>}</div><aside className='article-rotation-banner article-rotation-banner-top' data-article-banner='true'><p className='eyebrow'>Role planning checkpoint</p><h2>Turn this guide into a clear role brief</h2><p>Share the work queue, tools, review owner, and approval limits before adding outside support.</p><a className='btn' href='/contact-us'>Contact Us</a></aside><aside className='article-rotation-banner article-rotation-banner-bottom' data-article-banner='true'><p className='eyebrow'>Ready to scope the role?</p><h2>Build the first support lane before hiring</h2><p>We can help turn the article into a practical staffing brief with tasks, access rules, and review checkpoints.</p><a className='btn' href='/contact-us'>Contact Us</a></aside></article></main><Footer/></>;

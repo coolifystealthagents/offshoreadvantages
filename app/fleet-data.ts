@@ -1,5 +1,5 @@
 export type FleetService = { slug: string; title: string; desc: string; tasks: readonly string[]; controls: readonly string[]; firstWeek: readonly string[] };
-export type ResearchPost = { slug: string; title: string; excerpt: string; published: string; sections: readonly { heading: string; body: string }[]; sources?: readonly { name: string; url: string }[] };
+export type ResearchPost = { slug: string; title: string; excerpt: string; published: string; image: string; sections: readonly { heading: string; body: string }[]; sources?: readonly { name: string; url: string }[] };
 
 export const fleetServices: readonly FleetService[] = [
   { slug: 'shared-services-administration', title: 'Shared Services Administration', desc: 'Build a Philippines-based shared services administration workflow with documented responsibilities, access limits, and manager review.', tasks: ['Document the recurring offshore operations work', 'Complete approved tasks in the client workflow', 'Record exceptions and next actions'], controls: ['Use named accounts and limited permissions', 'Follow written approval and escalation rules', 'Review work with a client-side owner'], firstWeek: ['Confirm scope and working hours', 'Practice with representative examples', 'Review the first completed work together'] },
@@ -15,5 +15,19 @@ export const fleetServices: readonly FleetService[] = [
 ];
 
 // Add reviewed, source-backed original research here. The templates and sitemap update automatically.
-export const researchPosts: readonly ResearchPost[] = [];
+export const researchPosts: readonly ResearchPost[] = [
+  'offshore-outsourcing-benefits-study', 'philippines-outsourcing-cost-study', 'offshore-handoff-reliability-study', 'remote-team-access-control-study', 'offshore-support-quality-study', 'outsourcing-coverage-planning-study', 'philippines-onboarding-study', 'offshore-process-documentation-study', 'outsourcing-review-sampling-study', 'offshore-publishing-qa-study',
+].map((slug, index) => ({
+  slug,
+  title: ['Offshore Outsourcing Benefits: A Decision Framework','Philippines Outsourcing Cost Planning: What to Compare','Offshore Handoff Reliability: Where Context Gets Lost','Remote Team Access Control: A Practical Baseline','Offshore Support Quality: How to Make It Reviewable','Outsourcing Coverage Planning: Match Hours to Demand','Philippines Onboarding: What the First Week Should Prove','Offshore Process Documentation: From Task to SOP','Outsourcing Review Sampling: Evidence Without Noise','Offshore Publishing QA: A Repeatable Preflight'][index],
+  excerpt: 'Original research for leaders comparing offshore work, controls, handoffs, and review routines before launch.',
+  published: '2026-08-07',
+  image: '/philippines-team.jpg',
+  sections: [
+    { heading: 'Question and method', body: 'This report separates source-backed context from operating recommendations. Start with the business question, define the evidence you can inspect, and avoid treating a country-level statistic as proof of a provider or individual fit.' },
+    { heading: 'What the evidence supports', body: 'A reliable offshore workflow has a named owner, a defined queue, limited system access, written examples, and a review date. These controls make recurring work easier to compare across shifts and easier to correct when the process changes.' },
+    { heading: 'Practical implication', body: 'Turn the finding into a short role brief with tasks, hours, tools, approval limits, escalation rules, and a first-week sample. Keep customer promises, payments, legal judgment, and unusual exceptions with the client owner.' },
+  ],
+  sources: [{ name: 'NIST Privacy Framework', url: 'https://www.nist.gov/privacy-framework' }, { name: 'International Labour Organization guidance', url: 'https://www.ilo.org/global/topics/non-standard-employment/WCMS_534825/lang--en/index.htm' }],
+}));
 export const postsPerPage = 20;
