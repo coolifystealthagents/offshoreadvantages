@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Offshore Advantages Research</title>
+  <desc id="desc">Source-backed research for offshore operations planning.</desc>
+  <rect width="1200" height="630" fill="#112b3c"/>
+  <circle cx="1030" cy="80" r="260" fill="#1f5268" opacity=".75"/>
+  <circle cx="110" cy="600" r="220" fill="#d78d49" opacity=".22"/>
+  <path d="M0 510C270 420 410 560 650 470s360-40 550 10v150H0z" fill="#173f52"/>
+  <text x="86" y="160" fill="#f5c58a" font-family="Arial,sans-serif" font-size="28" letter-spacing="5">OFFSHOREADVANTAGES.COM</text>
+  <text x="86" y="290" fill="#fff" font-family="Arial,sans-serif" font-weight="700" font-size="72">RESEARCH</text>
+  <text x="90" y="350" fill="#d9e6eb" font-family="Arial,sans-serif" font-size="30">Evidence-first operating decisions</text>
+  <text x="90" y="540" fill="#f5c58a" font-family="Arial,sans-serif" font-size="24">PHILIPPINES • WORKFLOW • CONTROLS</text>
+</svg>
