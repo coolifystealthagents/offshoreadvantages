@@ -41,7 +41,7 @@ const commonSources = [
 ];
 
 // Reviewed, source-backed original research. Research is kept separate from Blog data.
-export const researchBatch: readonly ResearchPost[] = [
+const previousResearchBatch: readonly ResearchPost[] = [
   {
     slug: 'philippines-remote-operations-readiness', title: 'Philippines Remote Operations Readiness: The Evidence Checklist',
     excerpt: 'A source-backed checklist for deciding whether a recurring operations workflow is ready for distributed execution.', published: '2026-08-08', thumbnail: '/research/research-default.svg', cluster: 'Workflow Design', stats: ['64.4% 2024 Philippine labor-force participation rate', '57% of households lacked internet access in the World Bank\'s 2018 baseline'],
@@ -164,5 +164,130 @@ export const researchBatch: readonly ResearchPost[] = [
     ], sources: commonSources
   }
 ];
-export const researchPosts: readonly ResearchPost[] = [...priorResearchPosts, ...researchBatch];
+
+// Fresh 2026-08-09 batch. Kept separate from prior batches for family/count validation.
+export const researchBatch: readonly ResearchPost[] = [
+  {
+    slug: 'philippines-back-office-queue-design', title: 'Back-Office Queue Design for Philippines-Based Operations',
+    excerpt: 'A source-backed queue model for making recurring administrative work visible, bounded, and reviewable.', published: '2026-08-09', thumbnail: '/research/research-default.svg', cluster: 'Workflow Design', stats: ['64.4% 2024 Philippine labor-force participation rate', 'NIST recommends minimum necessary access'],
+    sections: [
+      { heading: 'Headline finding', body: 'Queue design is a control surface: each item needs an owner, due state, source record, and explicit exception route. A queue that only tracks volume makes risk and rework invisible.' },
+      { heading: 'Evidence and method', body: 'PSA labor data provides workforce context, while NIST guidance supports named accounts and least privilege. Neither source is treated as a performance guarantee; the benchmark is traceability across a representative queue sample.' },
+      { heading: 'Queue standard', body: 'Use stable statuses for intake, ready, in progress, blocked, review, accepted, and returned. Require a source link, next action, and reviewer disposition before closing work.' },
+      { heading: 'Key takeaways', body: 'Start with a narrow queue and a short service definition. Sample accepted and returned items, then revise the brief when the same ambiguity repeats.' },
+      { heading: 'FAQs', body: 'Should every item have a deadline? Every item needs an agreed priority or due rule. What if source material is missing? Mark blocked and escalate; do not infer.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-virtual-assistant-sop-readiness', title: 'Virtual Assistant SOP Readiness: A Research Checklist',
+    excerpt: 'How to test whether a procedure is ready for a Philippines-based operator before assigning recurring work.', published: '2026-08-09', thumbnail: '/research/research-default.svg', cluster: 'Scope Benchmarks', stats: ['NIST least privilege limits access to assigned tasks', 'World Bank digital-economy research identifies connectivity as an operating constraint'],
+    sections: [
+      { heading: 'Headline finding', body: 'An SOP is ready when a trained operator can complete the normal path, identify a boundary condition, and point to the authoritative record without relying on undocumented memory.' },
+      { heading: 'Evidence and method', body: 'NIST access guidance supports constrained permissions and review. World Bank research supplies context for continuity planning. We test the SOP with a representative sample rather than infer capability from market statistics.' },
+      { heading: 'Readiness test', body: 'Check purpose, trigger, inputs, ordered steps, examples, approval points, exception language, owner, revision date, and access prerequisites. Watch a fresh operator use it and log every clarification request.' },
+      { heading: 'Key takeaways', body: 'Treat repeated questions as documentation defects. Keep customer promises, payments, legal judgment, and unusual exceptions with the authorized client owner.' },
+      { heading: 'FAQs', body: 'Does more detail always improve an SOP? No; tested clarity matters more than length. Should screenshots contain sensitive data? Use redacted examples and link to the source system.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-remote-work-contingency-planning', title: 'Remote Work Contingency Planning for Offshore Support',
+    excerpt: 'A practical continuity framework for connectivity, access, and handoff interruptions in distributed work.', published: '2026-08-09', thumbnail: '/research/research-default.svg', cluster: 'Workflow Design', stats: ['World Bank baseline found about 57% of Philippine households without internet access in 2018', 'NIST recommends MFA for sensitive systems'],
+    sections: [
+      { heading: 'Headline finding', body: 'Continuity should be designed into the workflow before an outage occurs. A fallback channel, safe stop rule, and visible ownership reduce silent failures without widening permissions.' },
+      { heading: 'Evidence and method', body: 'World Bank digital-access research supports planning for connectivity variation; NIST guidance supports resilient identity controls. The report turns those contexts into a tabletop test, not a forecast of any individual worker.' },
+      { heading: 'Contingency map', body: 'Define what may be completed offline, what must stop, how work is timestamped, where evidence is stored, and who confirms recovery. Never move sensitive data to an unapproved personal channel.' },
+      { heading: 'Key takeaways', body: 'Run a short outage exercise, measure lost context and duplicate work, and update the procedure. The safest fallback is often a documented pause with an owner.' },
+      { heading: 'FAQs', body: 'Should a backup channel bypass MFA? No. Does a backup internet connection solve process risk? No; permissions and evidence handling still apply.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-customer-service-quality-sampling', title: 'Customer Service Quality Sampling in Distributed Teams',
+    excerpt: 'A review-sampling model that separates customer experience, policy adherence, and handoff completeness.', published: '2026-08-09', thumbnail: '/research/research-default.svg', cluster: 'Scope Benchmarks', stats: ['40.9 average weekly hours worked in PSA December 2024 data', 'NIST supports periodic access review'],
+    sections: [
+      { heading: 'Headline finding', body: 'A quality sample is useful only when its dimensions are explicit. Speed, tone, policy adherence, evidence, and escalation should be scored separately so a strong average does not hide a dangerous defect.' },
+      { heading: 'Evidence and method', body: 'PSA hours are contextual rather than a service promise. NIST control principles inform reviewer access and sampling records. We recommend a stratified sample across routine, returned, and escalated cases.' },
+      { heading: 'Sampling design', body: 'Select cases by channel, age, outcome, and exception status. Record the rule applied, customer impact, evidence link, reviewer decision, and coaching action. Increase sampling after a material defect.' },
+      { heading: 'Key takeaways', body: 'Set a quality floor before optimizing speed. Keep compensation, refunds, and policy exceptions with an authorized owner unless the written workflow says otherwise.' },
+      { heading: 'FAQs', body: 'Is a five-case sample always enough? No; risk and defect history should determine the sample. Can customer sentiment replace policy review? No; it is one signal.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-crm-access-review-routine', title: 'CRM Access Review Routines for Philippines Support Roles',
+    excerpt: 'A recurring access-review routine for CRM data entry, enrichment, and controlled customer-record changes.', published: '2026-08-09', thumbnail: '/research/research-default.svg', cluster: 'Hiring Controls', stats: ['NIST recommends minimum necessary access for assigned tasks', 'NIST identifies MFA as an important additional control'],
+    sections: [
+      { heading: 'Headline finding', body: 'CRM access should follow the actual change set, not the broad job title. A quarterly review is useful only when it compares current permissions to current tasks and removes stale access.' },
+      { heading: 'Evidence and method', body: 'NIST identity and access guidance supports least privilege, MFA, and review. We translate those principles into a role-to-field matrix and a sampled change audit.' },
+      { heading: 'Review routine', body: 'List editable objects, fields, exports, integrations, and approval rights. Confirm named-account ownership, MFA, manager approval, exception tickets, and timely removal after role changes.' },
+      { heading: 'Key takeaways', body: 'Prefer read-only enrichment where possible. Track reversals, duplicate creation, unapproved exports, and unresolved access exceptions.' },
+      { heading: 'FAQs', body: 'Is an annual review enough? Risk and change frequency may require more frequent review. Does MFA permit broad access? No; it complements least privilege.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-invoice-processing-control-map', title: 'Invoice Processing Control Maps for Offshore Teams',
+    excerpt: 'A control-first map for invoice intake, matching, exception routing, and review in distributed finance operations.', published: '2026-08-09', thumbnail: '/research/research-default.svg', cluster: 'Hiring Controls', stats: ['NIST 800-171 describes least privilege as necessary access for assigned tasks', 'PSA 2024 employment rate: 96.2%'],
+    sections: [
+      { heading: 'Headline finding', body: 'Invoice support is safest when intake, preparation, approval, posting, and reconciliation are visibly separated. The handoff record matters as much as the data entry step.' },
+      { heading: 'Evidence and method', body: 'NIST least-privilege guidance informs the permissions map. PSA employment context is not a proxy for accounting skill. The proposed test is control completeness on representative invoices.' },
+      { heading: 'Control map', body: 'Capture the source invoice, vendor identity, purchase reference, match result, exception reason, approval owner, posting status, and archive location. Never let an operator approve an item they prepared unless formally authorized with compensating review.' },
+      { heading: 'Key takeaways', body: 'Sample matched and unmatched invoices. Review returned items because they expose unclear policy and incomplete source documentation.' },
+      { heading: 'FAQs', body: 'Can the role contact vendors? Only within a written script and authority boundary. Can a checklist replace approval? No; it makes approval auditable.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-content-research-source-traceability', title: 'Content Research Source Traceability in Offshore Publishing',
+    excerpt: 'A research workflow for claims, citations, review ownership, and safe publication handoffs across time zones.', published: '2026-08-09', thumbnail: '/research/research-default.svg', cluster: 'Workflow Design', stats: ['NIST recommends MFA for sensitive systems', 'World Bank research connects digital access with remote-work feasibility'],
+    sections: [
+      { heading: 'Headline finding', body: 'A content claim is publication-ready when its source, retrieval context, interpretation, reviewer, and approved wording are visible in the brief. Unsupported confidence is not a workflow shortcut.' },
+      { heading: 'Evidence and method', body: 'World Bank research provides context for continuity, while NIST supports access separation and strong identity controls. The operating benchmark is traceability from claim to source record.' },
+      { heading: 'Source workflow', body: 'Record the question, source authority, date checked, exact finding, interpretation limits, draft usage, reviewer, and correction path. Separate research access from final publishing permission where possible.' },
+      { heading: 'Key takeaways', body: 'Make insufficient evidence a valid stop state. Track corrections, first-review acceptance, and claims whose source could not be reproduced.' },
+      { heading: 'FAQs', body: 'Can a researcher paraphrase? Yes, while preserving meaning and limits. Can a deadline justify an unsupported statistic? No; evidence quality outranks schedule.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-technical-ticket-evidence-standard', title: 'Technical Ticket Evidence Standards for Remote Support',
+    excerpt: 'A practical standard for diagnostics, safe escalation, and reproducible evidence in technical support queues.', published: '2026-08-09', thumbnail: '/research/research-default.svg', cluster: 'Scope Benchmarks', stats: ['NIST says passwords alone are not effective for sensitive assets', 'PSA December 2024 unemployment rate: 3.1%'],
+    sections: [
+      { heading: 'Headline finding', body: 'A technical ticket is complete when the next owner can reproduce the issue or understand why reproduction was impossible. A timestamped evidence trail prevents repeated troubleshooting.' },
+      { heading: 'Evidence and method', body: 'NIST guidance supports MFA and scoped access. PSA labor context does not set a support target. We benchmark diagnostic completeness, safe handling, and escalation clarity.' },
+      { heading: 'Evidence standard', body: 'Capture environment, impact, timestamp, reproduction steps, attempted changes, logs or redacted screenshots, and the exact next-owner question. Never request credentials in the ticket.' },
+      { heading: 'Key takeaways', body: 'Track avoidable escalations, reopened tickets, and missing-evidence categories. Give operators an explicit security stop rule.' },
+      { heading: 'FAQs', body: 'Should support staff have production admin access? Usually no. Is a screenshot enough? No; it is one evidence type, not reproducible context.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-project-status-reporting-standard', title: 'Project Status Reporting Across Philippines Time-Zone Handoffs',
+    excerpt: 'A status-reporting standard for dependencies, decisions, blockers, and next actions in distributed projects.', published: '2026-08-09', thumbnail: '/research/research-default.svg', cluster: 'Scope Benchmarks', stats: ['PSA reported 50.79 million Filipinos in the 2024 labor force', 'NIST recommends periodic privilege review'],
+    sections: [
+      { heading: 'Headline finding', body: 'Status is useful when it makes state inspectable: what changed, what is blocked, who owns the next action, and when a decision is due. Color alone is not evidence.' },
+      { heading: 'Evidence and method', body: 'PSA labor-force data is national context, not a delivery forecast. NIST contributes a control principle for reviewing access as responsibilities change. We evaluate report completeness against actual project records.' },
+      { heading: 'Reporting standard', body: 'Include reporting period, accomplished work, evidence link, dependency owner, decision needed, risk, next action, and due time. Mark stale information instead of silently carrying it forward.' },
+      { heading: 'Key takeaways', body: 'Measure freshness, blocker aging, decision latency, and evidence completeness. Keep scope, budget, and customer commitments with the authorized client owner.' },
+      { heading: 'FAQs', body: 'Can a coordinator run the report? Yes, if decision ownership is explicit. Should green status be accepted without evidence? No.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-procurement-vendor-record-hygiene', title: 'Vendor Record Hygiene for Philippines Procurement Support',
+    excerpt: 'A traceable routine for vendor intake, duplicate prevention, sensitive changes, and approval routing.', published: '2026-08-09', thumbnail: '/research/research-default.svg', cluster: 'Hiring Controls', stats: ['NIST third-party access falls under least-privilege review', 'PSA December 2024 employment rate: 96.9%'],
+    sections: [
+      { heading: 'Headline finding', body: 'Vendor records need provenance and an approval boundary. The support role can improve completeness and route requests, while bank, tax, payment, and terms changes require independent verification.' },
+      { heading: 'Evidence and method', body: 'NIST guidance supports minimum necessary access and review of third-party permissions. PSA indicators are context only. The benchmark is whether each record change can be traced to an authoritative request.' },
+      { heading: 'Hygiene routine', body: 'Check required fields, duplicate candidates, source document, requester identity, approval owner, change reason, and effective date. Flag sensitive changes for out-of-band owner verification.' },
+      { heading: 'Key takeaways', body: 'Review rejected and returned records, not only accepted ones. Keep payment authority and policy exceptions outside the administrative role.' },
+      { heading: 'FAQs', body: 'Can the operator contact vendors? Yes, if the script and scope are explicit. Can bank details be changed from an email alone? Require the client-defined verification path.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-shared-inbox-triage-controls', title: 'Shared Inbox Triage Controls for Distributed Support',
+    excerpt: 'How to turn shared-inbox work into a controlled queue with ownership, privacy boundaries, and review evidence.', published: '2026-08-09', thumbnail: '/research/research-default.svg', cluster: 'Workflow Design', stats: ['NIST recommends named accounts and MFA', '64.4% 2024 Philippine labor-force participation rate'],
+    sections: [
+      { heading: 'Headline finding', body: 'Inbox triage should classify and route work without becoming an uncontrolled authority channel. Clear ownership, labels, retention rules, and escalation paths prevent duplicate or missed responses.' },
+      { heading: 'Evidence and method', body: 'NIST identity guidance supports named accounts, MFA, and minimum necessary access. PSA labor data is background only. We evaluate triage using response ownership, routing accuracy, and exception evidence.' },
+      { heading: 'Control design', body: 'Define intake categories, urgency rules, assignment owner, draft-versus-send permission, sensitive-data handling, escalation timer, and closure evidence. Use labels that describe workflow state rather than personal judgment.' },
+      { heading: 'Key takeaways', body: 'Sample closed, reopened, and escalated messages. Keep commitments, refunds, legal responses, and unusual customer issues with the authorized owner.' },
+      { heading: 'FAQs', body: 'Can triage staff send replies? Only with approved templates and authority. Should a shared password be used? No; named accounts are easier to review and revoke.' }
+    ], sources: commonSources
+  }
+];
+export const researchPosts: readonly ResearchPost[] = [...priorResearchPosts, ...previousResearchBatch, ...researchBatch];
 export const postsPerPage = 20;
