@@ -291,7 +291,7 @@ export const aug9ResearchBatch: readonly ResearchPost[] = [
 ];
 
 // Fresh 2026-08-10 batch. Kept separate from prior batches for family/count validation.
-export const researchBatch: readonly ResearchPost[] = [
+export const aug10PriorResearchBatch: readonly ResearchPost[] = [
   {
     slug: 'philippines-work-intake-definition-standard', title: 'Work Intake Definition for Philippines-Based Support Roles',
     excerpt: 'A source-backed standard for turning ambiguous requests into bounded, reviewable work before handoff.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Scope Benchmarks', stats: ['NIST recommends access limited to assigned tasks', 'PSA reported a 96.2% 2024 employment rate'],
@@ -425,5 +425,130 @@ export const researchBatch: readonly ResearchPost[] = [
     ], sources: commonSources
   }
 ];
-export const researchPosts: readonly ResearchPost[] = [...priorResearchPosts, ...previousResearchBatch, ...aug9ResearchBatch, ...researchBatch];
+
+// Fresh 2026-08-10 batch for the current scheduled run. Kept separate from earlier same-day work.
+export const researchBatch: readonly ResearchPost[] = [
+  {
+    slug: 'philippines-workflow-owner-accountability', title: 'Workflow Owner Accountability in Offshore Support',
+    excerpt: 'A practical way to keep recurring offshore work attached to a real decision owner and review record.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Workflow Design', stats: ['NIST recommends access matched to assigned tasks', 'PSA reported 64.4% labor-force participation in 2024'],
+    sections: [
+      { heading: 'Headline finding', body: 'A workflow needs one accountable owner for scope, approvals, and changes. Operators can complete assigned steps, but they should not have to guess who can resolve a policy question.' },
+      { heading: 'Evidence and method', body: 'NIST access-control guidance supports assigning access to the task and role. PSA labor figures provide national context only. We turn those principles into a review of ownership, permissions, and escalation records.' },
+      { heading: 'Owner model', body: 'Name the workflow owner, queue operator, reviewer, approval owner, and backup. Record the boundary between preparation and decision-making, then test it with a normal case and an exception.' },
+      { heading: 'Key takeaways', body: 'A named owner is useful only when the queue and approval record point to that person. Review stale assignments and repeated escalations as process defects.' },
+      { heading: 'FAQs', body: 'Can a vendor own the workflow? A vendor may operate it, while the client retains the policy and approval decisions unless the agreement says otherwise. Is a team inbox an owner? No, assign an accountable person.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-task-definition-acceptance-criteria', title: 'Task Acceptance Criteria for Philippines-Based Operations',
+    excerpt: 'How to define done before recurring work moves between an offshore operator and a client reviewer.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Scope Benchmarks', stats: ['NIST recommends minimum necessary access', 'PSA reported a 96.2% 2024 employment rate'],
+    sections: [
+      { heading: 'Headline finding', body: 'Acceptance criteria make quality visible before a task enters review. They should describe the required result, supporting evidence, permitted exceptions, and the person who accepts the work.' },
+      { heading: 'Evidence and method', body: 'NIST least-privilege guidance informs the permission boundary. PSA employment statistics are not a quality forecast. We assess criteria by applying them to representative routine and returned items.' },
+      { heading: 'Acceptance test', body: 'Write the expected output, required fields, source record, validation rule, reviewer decision, and return reason. Keep subjective judgment out of the operator checklist unless the client has supplied examples and authority.' },
+      { heading: 'Key takeaways', body: 'Track return reasons instead of hiding them in a pass rate. If the same criterion is disputed twice, update the instruction and obtain owner approval.' },
+      { heading: 'FAQs', body: 'Should criteria measure speed? Only after the quality floor is clear. Can a reviewer accept missing evidence? Only under an explicit exception rule with an owner.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-offshore-queue-aging-review', title: 'Queue Aging Reviews for Offshore Support Work',
+    excerpt: 'A simple aging review that separates ordinary backlog from blocked, risky, and owner-dependent work.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Scope Benchmarks', stats: ['PSA reported 40.9 average weekly hours in December 2024', 'NIST recommends periodic privilege review'],
+    sections: [
+      { heading: 'Headline finding', body: 'Aging is useful when every old item has a reason and an owner. A single average age can hide blocked work, unapproved decisions, and records that were returned without a clear next step.' },
+      { heading: 'Evidence and method', body: 'PSA hours are contextual and do not establish a service promise. NIST access guidance informs the review of who can act on an item. We recommend checking age by state, risk, and dependency.' },
+      { heading: 'Aging review', body: 'Group items by ready, in progress, blocked, review, and returned. For each older item, record the last action, next owner, evidence, due rule, and whether an approval is pending.' },
+      { heading: 'Key takeaways', body: 'Do not ask an operator to clear an aged item by bypassing an approval boundary. Escalate missing inputs and repeated returns, then fix the queue rule.' },
+      { heading: 'FAQs', body: 'Is an old item always a failure? No; a documented external dependency may be valid. Should the oldest item always come first? Follow the agreed risk and priority rule.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-offshore-workflow-reviewer-independence', title: 'Reviewer Independence in Offshore Workflow Controls',
+    excerpt: 'When a second set of eyes improves a process, and how to keep review from becoming another unchecked approval.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Hiring Controls', stats: ['NIST calls for reviewing assigned privileges', 'NIST recommends MFA for sensitive systems'],
+    sections: [
+      { heading: 'Headline finding', body: 'A review is stronger when the reviewer can inspect the evidence without simply approving their own work. Independence does not require a large team, but it does require a defined second check for material actions.' },
+      { heading: 'Evidence and method', body: 'NIST access guidance supports separating permissions and reviewing them as responsibilities change. We test the control by mapping who prepares, approves, posts, and samples each work type.' },
+      { heading: 'Review design', body: 'Set a risk threshold, reviewer role, evidence requirement, return code, and escalation route. For small teams, use a client-side sample review or rotate the reviewer instead of pretending the same-person check is independent.' },
+      { heading: 'Key takeaways', body: 'Keep the review record tied to the source item. Study overrides and repeat defects separately from routine passes because averages can conceal authority failures.' },
+      { heading: 'FAQs', body: 'Can a team lead review an operator they coached? Yes, if the assigned control permits it and the review is documented. Is every task high risk? No, scale review to the consequence of error.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-offshore-workflow-rollback-plan', title: 'Rollback Plans for Offshore Workflow Changes',
+    excerpt: 'A change-control checklist for reversing a bad instruction, permission, or queue rule without losing work history.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Workflow Design', stats: ['NIST recommends access review when responsibilities change', 'World Bank research identifies connectivity as a continuity factor'],
+    sections: [
+      { heading: 'Headline finding', body: 'A workflow change needs a rollback path before it is introduced. The path should identify the prior approved version, the trigger for reversal, the owner, and how work completed during the change will be reconciled.' },
+      { heading: 'Evidence and method', body: 'NIST guidance supports revisiting privileges as work changes. World Bank research provides context for continuity planning. We assess rollback readiness across instructions, permissions, queue state, and evidence.' },
+      { heading: 'Rollback checklist', body: 'Record the old version, affected records, access changes, pause rule, communication owner, recovery test, and follow-up review. Preserve the change record rather than overwriting it.' },
+      { heading: 'Key takeaways', body: 'A rollback should narrow risk, not erase accountability. Reconcile duplicate or partially completed work and update the source procedure after the incident review.' },
+      { heading: 'FAQs', body: 'Can an operator roll back a rule? They can stop work and escalate unless the role explicitly allows the change. Does restoring an old document restore old permissions? Not necessarily; check both.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-offshore-source-correction-log', title: 'Source Correction Logs for Offshore Publishing Research',
+    excerpt: 'A traceable way to correct a research claim, its downstream wording, and the reviewer record before publication.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Workflow Design', stats: ['NIST recommends MFA for sensitive systems', 'World Bank research links digital adoption with operating context'],
+    sections: [
+      { heading: 'Headline finding', body: 'A correction is complete when the source issue, affected claim, revised wording, reviewer, and downstream locations are recorded. Quietly editing one paragraph can leave the same error in a title, summary, or index.' },
+      { heading: 'Evidence and method', body: 'NIST provides access-control context for editing and approval boundaries. World Bank research provides operating context, not proof of provider performance. We test the log by following a claim from source to published copy.' },
+      { heading: 'Correction routine', body: 'Assign a claim ID, record the old and new interpretation, link the source, identify affected files, obtain review, and search for the original wording before closing the item. Keep the correction date visible.' },
+      { heading: 'Key takeaways', body: 'Treat an unsupported statistic as a stop state. A clear correction history improves review speed and prevents the same weak claim from returning in a later draft.' },
+      { heading: 'FAQs', body: 'Does a new citation fix a wrong claim? Not always; check whether the cited evidence supports the wording. Should corrections be deleted after publication? Keep the internal record under the approved retention rule.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-offshore-work-instruction-versioning', title: 'Work Instruction Versioning for Offshore Teams',
+    excerpt: 'A versioning pattern that keeps examples, permissions, and reviewer expectations aligned as a routine changes.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Workflow Design', stats: ['NIST recommends review of privileges assigned to roles', 'PSA reported 50.79 million people in the 2024 labor force'],
+    sections: [
+      { heading: 'Headline finding', body: 'A work instruction is current only when its steps, examples, access requirements, owner, and effective date agree. A new paragraph cannot repair an old screenshot or a permission that no longer fits.' },
+      { heading: 'Evidence and method', body: 'NIST access guidance supports matching permissions to assigned work. PSA labor-force figures are background context. We review versioning by comparing the source document to the operator brief and a sampled task.' },
+      { heading: 'Version standard', body: 'Use a unique version, change reason, approver, effective date, affected systems, training note, and rollback reference. Archive the prior version and keep one authoritative location for active use.' },
+      { heading: 'Key takeaways', body: 'Test the updated instruction with a fresh example. Log questions that reveal ambiguity and do not let an informal message become the permanent source of truth.' },
+      { heading: 'FAQs', body: 'Can a minor wording change skip review? The owner should define that threshold. Is a timestamp enough for a version? No, include the approved version identifier and change record.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-offshore-workflow-risk-register', title: 'Risk Registers for Philippines-Based Support Workflows',
+    excerpt: 'A compact risk register for tracking authority, data, continuity, and handoff risks in recurring offshore work.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Hiring Controls', stats: ['NIST recommends minimum necessary access', 'World Bank research describes connectivity as an operating constraint'],
+    sections: [
+      { heading: 'Headline finding', body: 'A risk register helps when each risk has a condition, consequence, control, owner, and review date. A list of worries without an action or decision owner does not change the workflow.' },
+      { heading: 'Evidence and method', body: 'NIST least-privilege guidance informs access risks. World Bank research informs continuity risks. We keep the national context separate from provider or individual performance claims and test the register against actual task paths.' },
+      { heading: 'Register fields', body: 'Record risk statement, trigger, affected task, current control, residual concern, owner, response, evidence, and next review. Include safe-stop language for security, payment, legal, and customer-impact cases.' },
+      { heading: 'Key takeaways', body: 'Review the register after a material exception or workflow change. Close a risk only when the evidence shows the control changed, not because the item is old.' },
+      { heading: 'FAQs', body: 'Should every possible risk be listed? Start with credible and consequential risks. Can the operator own a risk? They can report and manage assigned controls, while the authorized owner accepts the exposure.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-offshore-handoff-rework-analysis', title: 'Handoff Rework Analysis for Distributed Operations',
+    excerpt: 'How to distinguish a training issue from a missing input, unclear authority, or broken handoff rule.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Scope Benchmarks', stats: ['PSA reported 3.1% unemployment in December 2024', 'NIST supports reviewable, least-privilege access'],
+    sections: [
+      { heading: 'Headline finding', body: 'Rework is a signal, not a diagnosis. The useful question is why the item returned: missing source, unclear instruction, authority boundary, data defect, or execution error.' },
+      { heading: 'Evidence and method', body: 'PSA unemployment data is context and does not measure an operator. NIST access principles support checking whether the person had the right permission for the assigned task. We classify returned work by cause and evidence.' },
+      { heading: 'Analysis method', body: 'Sample returned and accepted items, code the first material defect, identify the missing control, and assign a corrective action. Separate coaching from a change to the brief, queue, permission, or approval route.' },
+      { heading: 'Key takeaways', body: 'Do not solve a missing-input problem with more training. Use the pattern to improve the workflow and monitor whether the same return reason declines.' },
+      { heading: 'FAQs', body: 'Is all rework avoidable? No; some work changes after review. Should the operator be blamed for an unclear rule? Fix the rule first, then assess execution against the version they received.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-offshore-approval-evidence-retention', title: 'Approval Evidence Retention for Offshore Operations',
+    excerpt: 'A retention checklist for showing who approved an action, what they reviewed, and which version governed it.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Hiring Controls', stats: ['NIST recommends named accounts and MFA', 'NIST least-privilege guidance limits access to assigned tasks'],
+    sections: [
+      { heading: 'Headline finding', body: 'An approval record should let a later reviewer answer who decided, what evidence they saw, which rule applied, and when the decision took effect. A name without context is not a useful control record.' },
+      { heading: 'Evidence and method', body: 'NIST identity and access guidance supports attributable actions and constrained permissions. We evaluate approval evidence by tracing a decision to the source item, role, instruction version, and retained record.' },
+      { heading: 'Retention checklist', body: 'Keep the request, evidence link, decision, approver identity, timestamp, applicable version, exception reason, and follow-up. Restrict the record to people who need it and apply the approved retention rule.' },
+      { heading: 'Key takeaways', body: 'Do not collect more customer data than the approval needs. If an approval cannot be reproduced, stop relying on it and route the item to the current owner.' },
+      { heading: 'FAQs', body: 'Is a reaction or emoji an approval? Only if the process explicitly defines it and preserves the relevant context. Should every approval be permanent? Retain it according to risk and the approved policy.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-offshore-operator-readiness-gate', title: 'Operator Readiness Gates for Offshore Support Roles',
+    excerpt: 'A staged gate for moving from training examples to limited production work with evidence at each step.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Scope Benchmarks', stats: ['NIST recommends access matched to assigned tasks', 'PSA 2024 labor-force participation rate was 64.4%'],
+    sections: [
+      { heading: 'Headline finding', body: 'Readiness is easier to review when access expands in stages. A person can demonstrate task accuracy in a sample without being ready for live customer data, approvals, or exception handling.' },
+      { heading: 'Evidence and method', body: 'NIST least-privilege guidance supports staged access. PSA labor statistics provide workforce context only. We define gates using the evidence from work samples, supervised tasks, review outcomes, and safe escalations.' },
+      { heading: 'Gate sequence', body: 'Start with a redacted sample, move to supervised production, then limited routine work, and finally any explicitly approved extension. Record the rubric, reviewer, defects, permissions, and conditions for each move.' },
+      { heading: 'Key takeaways', body: 'A failed gate should narrow the task or improve the instruction. Do not widen access to compensate for an unresolved quality or authority problem.' },
+      { heading: 'FAQs', body: 'Does a completed training course prove readiness? No; the person must show the defined task and escalation behavior. Can every role use the same gate? Keep the pattern, but tailor evidence to the risk of the work.' }
+    ], sources: commonSources
+  }
+];
+export const researchPosts: readonly ResearchPost[] = [...priorResearchPosts, ...previousResearchBatch, ...aug9ResearchBatch, ...aug10PriorResearchBatch, ...researchBatch];
 export const postsPerPage = 20;
