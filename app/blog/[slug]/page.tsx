@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Header, Footer, JsonLd } from '../../components';
 import { allBlogPosts, blogDetails, site, todayBlogDetails } from '../../data';
+import { batchBlogDetails } from '../../blog-batch-2026-08-10';
 
 const siteUrl = 'https://offshoreadvantages.com';
 
@@ -20,12 +21,13 @@ type BlogDetail = {
   identityFraudChart?: boolean;
   verificationPathGraphic?: boolean;
   internalLinks?: readonly { label: string; href: string; note: string }[];
+  relatedArticles?: readonly string[];
   banners?: readonly { label: string; title: string; body: string; href: string; linkText: string }[];
   faqs?: readonly { question: string; answer: string }[];
   sources?: readonly { name: string; url: string; note?: string }[];
 };
 
-const detailsBySlug = { ...blogDetails, ...todayBlogDetails } as Record<string, BlogDetail>;
+const detailsBySlug = { ...blogDetails, ...todayBlogDetails, ...batchBlogDetails } as Record<string, BlogDetail>;
 
 export function generateStaticParams() { return allBlogPosts.map((post) => ({ slug: post.slug })); }
 

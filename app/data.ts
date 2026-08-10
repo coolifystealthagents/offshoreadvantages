@@ -1,3 +1,5 @@
+import { batchBlogPosts } from './blog-batch-2026-08-10';
+
 export const site = {
   domain: 'OffshoreAdvantages.com',
   slug: 'offshoreadvantages',
@@ -63,7 +65,7 @@ export const todayBlogDetails = Object.fromEntries(todayBlogPosts.map((post) => 
   sources: [{ name: 'NIST Privacy Framework', url: 'https://www.nist.gov/privacy-framework', note: 'Use privacy risk management to organize safeguards.' }, { name: 'International Labour Organization guidance', url: 'https://www.ilo.org/global/topics/non-standard-employment/WCMS_534825/lang--en/index.htm', note: 'Document expectations and accountable work arrangements.' }],
 }])) as Record<string, any>;
 
-export const allBlogPosts = [...blogPosts, ...todayBlogPosts] as const;
+export const allBlogPosts = [...blogPosts, ...todayBlogPosts, ...batchBlogPosts] as const;
 
 export const blogDetails = {
   'offshore-advantages-provider-questions': {
