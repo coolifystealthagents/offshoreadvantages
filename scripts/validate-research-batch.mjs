@@ -7,7 +7,7 @@ if (researchBatch.length < min || researchBatch.length > max) throw new Error(`R
 const slugs = researchBatch.map((post) => post.slug);
 if (new Set(slugs).size !== slugs.length) throw new Error('Duplicate Research slug');
 for (const post of researchBatch) {
-  if (!/^2026-08-09$/.test(post.published)) throw new Error(`${post.slug}: invalid publication date`);
+if (!/^2026-08-10$/.test(post.published)) throw new Error(`${post.slug}: invalid publication date`);
   if (!post.thumbnail.endsWith('.svg')) throw new Error(`${post.slug}: missing deterministic thumbnail`);
   const thumbnail = await readFile(`public${post.thumbnail}`, 'utf8');
   if (!thumbnail.includes('width="1200"') || !thumbnail.includes('height="630"')) throw new Error(`${post.slug}: thumbnail is not 1200x630`);

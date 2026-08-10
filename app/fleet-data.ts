@@ -166,7 +166,7 @@ const previousResearchBatch: readonly ResearchPost[] = [
 ];
 
 // Fresh 2026-08-09 batch. Kept separate from prior batches for family/count validation.
-export const researchBatch: readonly ResearchPost[] = [
+export const aug9ResearchBatch: readonly ResearchPost[] = [
   {
     slug: 'philippines-back-office-queue-design', title: 'Back-Office Queue Design for Philippines-Based Operations',
     excerpt: 'A source-backed queue model for making recurring administrative work visible, bounded, and reviewable.', published: '2026-08-09', thumbnail: '/research/research-default.svg', cluster: 'Workflow Design', stats: ['64.4% 2024 Philippine labor-force participation rate', 'NIST recommends minimum necessary access'],
@@ -289,5 +289,141 @@ export const researchBatch: readonly ResearchPost[] = [
     ], sources: commonSources
   }
 ];
-export const researchPosts: readonly ResearchPost[] = [...priorResearchPosts, ...previousResearchBatch, ...researchBatch];
+
+// Fresh 2026-08-10 batch. Kept separate from prior batches for family/count validation.
+export const researchBatch: readonly ResearchPost[] = [
+  {
+    slug: 'philippines-work-intake-definition-standard', title: 'Work Intake Definition for Philippines-Based Support Roles',
+    excerpt: 'A source-backed standard for turning ambiguous requests into bounded, reviewable work before handoff.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Scope Benchmarks', stats: ['NIST recommends access limited to assigned tasks', 'PSA reported a 96.2% 2024 employment rate'],
+    sections: [
+      { heading: 'Headline finding', body: 'The safest intake record defines the requested outcome, source material, authority boundary, due rule, and reviewer before work begins. A vague request creates hidden judgment and makes quality difficult to inspect.' },
+      { heading: 'Evidence and method', body: 'NIST least-privilege guidance supports matching access to assigned tasks. PSA labor statistics are context only, not a proxy for capability. We translate the evidence into an intake test against representative requests.' },
+      { heading: 'Intake standard', body: 'Require requester, outcome, inputs, exclusions, priority, approval point, exception route, and evidence location. Mark missing information as blocked and name the owner who must resolve it.' },
+      { heading: 'Key takeaways', body: 'Review returned work for recurring ambiguity. Improve the brief when operators repeatedly ask the same question, and keep customer promises, payments, and policy exceptions with the client owner.' },
+      { heading: 'FAQs', body: 'Should intake capture every edge case? Capture recurring or high-risk exceptions and provide a safe escalation for the rest. Can a deadline replace a missing source? No; do not infer.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-operations-exception-register', title: 'Exception Registers for Philippines-Based Operations',
+    excerpt: 'How to record unusual cases without turning an offshore workflow into an invisible private-message queue.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Workflow Design', stats: ['NIST recommends periodic access review', 'World Bank digital-economy research identifies continuity constraints'],
+    sections: [
+      { heading: 'Headline finding', body: 'An exception register is useful when it captures the rule that failed, the evidence, the safe temporary action, the decision owner, and the next review date. It should expose learning rather than become a shadow approval system.' },
+      { heading: 'Evidence and method', body: 'NIST access principles support constrained roles and reviewable actions. World Bank research supplies context for continuity planning. The benchmark is whether a second reviewer can understand and safely reproduce the disposition.' },
+      { heading: 'Register design', body: 'Use a case identifier, category, rule reference, impact, evidence link, proposed action, owner, decision, expiry, and follow-up. Keep secrets and unnecessary personal data out of the record.' },
+      { heading: 'Key takeaways', body: 'Sample open and closed exceptions. Escalate repeated exceptions as process defects, and do not let urgency widen access or bypass the named approver.' },
+      { heading: 'FAQs', body: 'Can the operator close an exception? Only when the written role permits it. Should every unusual event trigger a policy change? No; review patterns and material risk first.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-support-escalation-quality-metrics', title: 'Support Escalation Quality Metrics for Distributed Teams',
+    excerpt: 'A measurement model for whether escalations arrive with enough evidence, context, and a clear decision request.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Scope Benchmarks', stats: ['NIST says passwords alone are not enough for sensitive assets', 'PSA reported 40.9 average weekly hours in December 2024'],
+    sections: [
+      { heading: 'Headline finding', body: 'Escalation quality is more informative than escalation volume. A useful escalation states customer or business impact, checks completed, evidence, safe next action, and the exact decision needed.' },
+      { heading: 'Evidence and method', body: 'NIST authentication guidance informs safe handling and access boundaries. PSA hours are labor context, not a service-level target. We recommend measuring completeness and avoidable rework on a representative sample.' },
+      { heading: 'Measurement model', body: 'Track missing evidence, wrong owner, duplicate escalation, policy mismatch, reopened case, and time to decision. Separate urgent impact from ordinary queue aging so the average does not hide risk.' },
+      { heading: 'Key takeaways', body: 'Coach the missing field, not only the person. Keep security, legal, payment, and customer-compensation decisions with the authorized owner.' },
+      { heading: 'FAQs', body: 'Is fewer escalation always better? No; a correct stop is safer than an unsafe resolution. Should speed be the first metric? No; completeness and policy adherence come first.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-document-review-provenance-checklist', title: 'Document Review Provenance for Offshore Administration',
+    excerpt: 'A practical checklist for showing which source was reviewed, what changed, and who accepted the result.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Hiring Controls', stats: ['NIST recommends minimum necessary access', 'PSA reported 50.79 million people in the 2024 labor force'],
+    sections: [
+      { heading: 'Headline finding', body: 'A reviewed document is trustworthy when its source, version, reviewer, decision, and unresolved questions are visible. A polished file without provenance is difficult to correct or audit.' },
+      { heading: 'Evidence and method', body: 'NIST access guidance supports limiting document access to the role and task. PSA labor-force figures provide national context only. The test is traceability from source artifact to accepted output.' },
+      { heading: 'Review checklist', body: 'Record source location, retrieval date, version, scope checked, changes made, unresolved conflict, reviewer, approval status, and retention location. Use redacted examples for training.' },
+      { heading: 'Key takeaways', body: 'Sample accepted and returned documents. Link to authoritative records rather than duplicating sensitive material, and require an owner for every unresolved discrepancy.' },
+      { heading: 'FAQs', body: 'Can a filename prove version? Usually not; use repository or system metadata. Should the operator approve high-risk changes? Keep approval with the authorized client owner.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-shift-handoff-completeness-test', title: 'Shift Handoff Completeness Tests for Philippines Support',
+    excerpt: 'A measurable handoff test for ownership, next action, evidence, customer promise, and safe stopping points.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Workflow Design', stats: ['NIST recommends named accounts and MFA', 'World Bank research highlights digital-access constraints'],
+    sections: [
+      { heading: 'Headline finding', body: 'A handoff passes when the incoming operator can identify the current state, next permitted action, evidence, deadline, and escalation owner without asking the outgoing operator to reconstruct the case.' },
+      { heading: 'Evidence and method', body: 'NIST identity guidance supports named access and MFA. World Bank research supports planning for continuity constraints. We define completeness fields and test them on routine, blocked, and escalated cases.' },
+      { heading: 'Completeness test', body: 'Check owner, status, source link, work completed, customer promise, open risk, next action, due time, and approval boundary. A missing field should return the handoff or trigger a named escalation.' },
+      { heading: 'Key takeaways', body: 'Review both successful and reopened cases. Keep credentials out of handoffs, and place final decisions in the approved system of record.' },
+      { heading: 'FAQs', body: 'Is a chat message enough? Not when it is the only case record. Should every handoff be long? No; it should contain the fields needed for safe continuation.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-admin-access-offboarding-checklist', title: 'Administrative Access Offboarding for Philippines-Based Teams',
+    excerpt: 'A same-day checklist for revoking access, transferring work, and retaining evidence when an assignment changes.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Hiring Controls', stats: ['NIST recommends reviewing privileges as responsibilities change', 'PSA 2024 labor-force participation was 64.4%'],
+    sections: [
+      { heading: 'Headline finding', body: 'Offboarding is complete only when access is revoked, active work is reassigned, devices and tokens are accounted for, and the record shows who checked each step. Removing one login is not the whole control.' },
+      { heading: 'Evidence and method', body: 'NIST access-control guidance supports periodic privilege review and least privilege. PSA labor context does not predict individual risk. We convert the principle into a system-by-system checklist and evidence requirement.' },
+      { heading: 'Offboarding sequence', body: 'Confirm trigger and time, disable identity provider access, revoke application sessions and MFA factors, collect company assets, transfer queues, preserve required records, and obtain independent confirmation.' },
+      { heading: 'Key takeaways', body: 'Use named accounts so revocation is attributable. Treat urgent termination as an expedited control with a later completeness review, not as permission to skip evidence.' },
+      { heading: 'FAQs', body: 'Can a manager rely on the provider to revoke everything? The owners should agree responsibilities and verify the result. Should all records be deleted? Follow the approved retention rule.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-research-brief-evidence-register', title: 'Evidence Registers for Philippines Staffing Research Briefs',
+    excerpt: 'A source-traceability model for separating observed facts, interpretation limits, and operating recommendations.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Workflow Design', stats: ['NIST recommends MFA for sensitive systems', 'World Bank research links digital adoption with operating context'],
+    sections: [
+      { heading: 'Headline finding', body: 'A research brief is reviewable when each material claim has an authoritative source, retrieval date, exact finding, interpretation limit, and approved use. Evidence registers prevent plausible wording from outrunning the source.' },
+      { heading: 'Evidence and method', body: 'NIST provides access-control context and the World Bank provides digital-economy context. We treat both as source material, not as proof of provider performance. The workflow is evaluated by claim-to-source traceability.' },
+      { heading: 'Register fields', body: 'Capture claim ID, source title and URL, date checked, relevant passage or table, paraphrase, limitation, reviewer, draft location, and correction owner. Mark claims unresolved rather than filling gaps with estimates.' },
+      { heading: 'Key takeaways', body: 'Keep national statistics clearly labeled as context. Do not turn them into individual hiring or productivity predictions, and retain the reviewer decision beside the claim.' },
+      { heading: 'FAQs', body: 'Can one source support every claim? Usually not; match source authority to the claim. Can a citation replace interpretation limits? No; readers need to know what the evidence does not establish.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-customer-support-approval-matrix', title: 'Customer Support Approval Matrices for Offshore Queues',
+    excerpt: 'How to separate routine assistance from refunds, account changes, commitments, and other client-owned decisions.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Hiring Controls', stats: ['NIST supports least privilege by assigned task', 'PSA December 2024 unemployment rate was 3.1%'],
+    sections: [
+      { heading: 'Headline finding', body: 'An approval matrix makes authority visible before a difficult contact arrives. It should distinguish preparation, recommendation, execution, escalation, and independent review for each action.' },
+      { heading: 'Evidence and method', body: 'NIST least-privilege guidance supports limiting actions to assigned responsibilities. PSA unemployment data is contextual and does not measure support quality. We test the matrix against representative customer actions.' },
+      { heading: 'Matrix design', body: 'List action, frontline permission, evidence required, approval owner, fallback route, notification, and audit record. Put refunds, payment details, account recovery, legal language, and unusual promises behind explicit client controls.' },
+      { heading: 'Key takeaways', body: 'Train with realistic pressure cases and score whether the agent paused correctly. Review overrides separately from routine work because averages can hide authority failures.' },
+      { heading: 'FAQs', body: 'Does a script grant approval? No; wording and authority are separate. Can a team lead approve every exception? Only when the client has assigned that authority in writing.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-operations-weekly-review-agenda', title: 'Weekly Review Agendas for Philippines-Based Operations',
+    excerpt: 'A compact evidence-led agenda for checking throughput, defects, exceptions, access, and workflow changes.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Scope Benchmarks', stats: ['NIST recommends periodic privilege review', 'PSA 2024 employment rate was 96.2%'],
+    sections: [
+      { heading: 'Headline finding', body: 'A weekly review is valuable when it turns sampled work into owned decisions. Reporting activity alone can miss returned work, stale access, repeated exceptions, and unclear instructions.' },
+      { heading: 'Evidence and method', body: 'NIST supports periodic access review. PSA employment context is not a target for output or quality. We recommend a recurring agenda tied to queue evidence, defect categories, and approved changes.' },
+      { heading: 'Review agenda', body: 'Start with accepted and returned samples, aging items, material exceptions, access changes, customer-impact events, procedure questions, and next-week experiments. Record owner, decision, due date, and evidence link.' },
+      { heading: 'Key takeaways', body: 'Keep the agenda short enough to run consistently. Treat repeated clarification requests as documentation work, and do not use the meeting to make undocumented policy decisions.' },
+      { heading: 'FAQs', body: 'Should every metric be reviewed weekly? Only metrics tied to current risk and decisions. Can a provider own the meeting? Yes, while the client retains policy and approval authority.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-outsourcing-workflow-change-control', title: 'Workflow Change Control for Philippines Outsourcing Teams',
+    excerpt: 'A change-control routine for updating instructions, permissions, examples, and reviewer ownership without breaking the handoff.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Workflow Design', stats: ['NIST recommends reviewing privileges assigned to roles', 'World Bank research identifies connectivity as a continuity factor'],
+    sections: [
+      { heading: 'Headline finding', body: 'A workflow change is safe when its reason, affected steps, permissions, examples, owner, rollout date, and rollback path are explicit. Editing a procedure without updating the role and review controls creates drift.' },
+      { heading: 'Evidence and method', body: 'NIST access guidance supports revisiting privileges as responsibilities change. World Bank research supports continuity planning. We frame change control as a traceability test across instructions, systems, and samples.' },
+      { heading: 'Change sequence', body: 'Log the request, assess customer and access impact, draft the change, obtain the authorized approval, update the procedure and examples, brief operators, test a sample, and record the effective version.' },
+      { heading: 'Key takeaways', body: 'Version the source of truth and archive superseded instructions. Keep emergency changes narrow and require a retrospective review so urgency does not become permanent ambiguity.' },
+      { heading: 'FAQs', body: 'Can an operator change a checklist to fix a defect? They can propose it; the named owner approves the controlled version. Is a message announcing the change enough? No; the authoritative document must change.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-customer-data-minimization-workflow', title: 'Customer Data Minimization in Philippines Support Workflows',
+    excerpt: 'A practical data-minimization routine for limiting what support operators see, copy, retain, and escalate.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Hiring Controls', stats: ['NIST recommends minimum necessary access', 'World Bank digital-economy research provides Philippines operating context'],
+    sections: [
+      { heading: 'Headline finding', body: 'Data minimization works when the workflow names the fields needed for the action, masks everything else, and gives sensitive cases a separate route. A broad screen is not automatically a better support tool.' },
+      { heading: 'Evidence and method', body: 'NIST access guidance supports limiting permissions and information to assigned tasks. World Bank research is context for digital operations, not a performance claim. We test the rule against common support actions and exception paths.' },
+      { heading: 'Minimization routine', body: 'List required fields by action, mask unused values, restrict exports and downloads, set retention rules, and record when a protected field is accessed. Keep full identity documents, payment details, and secrets out of ordinary notes.' },
+      { heading: 'Key takeaways', body: 'Review false blocks alongside unnecessary exposure. Give agents a clear escalation when the normal workflow lacks enough information, rather than asking them to collect everything.' },
+      { heading: 'FAQs', body: 'Does minimization mean agents cannot solve problems? No; it means the workflow supplies the minimum information needed for each permitted action. Should screenshots be unrestricted evidence? No; redact them and use the approved record.' }
+    ], sources: commonSources
+  },
+  {
+    slug: 'philippines-remote-work-sample-review-protocol', title: 'Work-Sample Review Protocols for Philippines-Based Roles',
+    excerpt: 'A fair, evidence-led protocol for checking role fit with representative work before widening production access.', published: '2026-08-10', thumbnail: '/research/research-default.svg', cluster: 'Scope Benchmarks', stats: ['NIST recommends access matched to assigned tasks', 'PSA 2024 labor-force participation rate was 64.4%'],
+    sections: [
+      { heading: 'Headline finding', body: 'A work sample is useful when it mirrors the real task, provides the same instructions and source material, and uses a rubric that separates accuracy, evidence handling, judgment boundaries, and communication.' },
+      { heading: 'Evidence and method', body: 'NIST least-privilege guidance informs the rule that samples should use limited or synthetic access. PSA labor-force statistics provide national context only and cannot predict an individual result. The protocol measures the sample itself.' },
+      { heading: 'Review protocol', body: 'Define the task, inputs, timebox, allowed tools, prohibited actions, rubric, reviewer, feedback record, and repeat rule. Use representative examples and redact customer data. Do not grade hidden expectations that were not in the brief.' },
+      { heading: 'Key takeaways', body: 'Use the sample to improve the role definition as well as assess readiness. A failed sample should identify the missing instruction or skill evidence, not become a reason to widen access.' },
+      { heading: 'FAQs', body: 'Should one sample decide hiring? Usually no; use a small set of representative tasks and the agreed process. Can a sample use live customer records? Prefer synthetic or redacted records and scoped permissions.' }
+    ], sources: commonSources
+  }
+];
+export const researchPosts: readonly ResearchPost[] = [...priorResearchPosts, ...previousResearchBatch, ...aug9ResearchBatch, ...researchBatch];
 export const postsPerPage = 20;
