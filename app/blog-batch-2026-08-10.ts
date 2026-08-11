@@ -26,12 +26,16 @@ const topics = [
   ['offshore-role-transition-checklist', 'Offshore Role Transition Checklist: Transfer Work Safely'],
 ] as const;
 
+const batchBlogPublishedDates: Record<string, string> = {
+  'offshore-operations-workflow-mapping': '2026-08-10',
+};
+
 export const batchBlogPosts = topics.map(([slug, title]) => ({
   slug,
   title,
   excerpt: `${title} helps leaders define repeatable work, review quality, and protect customer context across a Philippines-based support workflow.`,
   minutes: 10,
-  published: '2026-08-10',
+  published: slug === 'offshore-operations-workflow-mapping' ? batchBlogPublishedDates[slug] : '2026-08-10',
   image: thumbnail,
   citations: ['https://www.nist.gov/privacy-framework'],
 }));

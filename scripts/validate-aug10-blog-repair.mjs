@@ -19,7 +19,9 @@ for (const entry of manifest.entries) {
   if (!existsSync(entry.sourcePath)) throw new Error(`Missing source: ${entry.sourcePath}`);
   const source = sourceCache.get(entry.sourcePath) ?? readFileSync(entry.sourcePath, 'utf8');
   sourceCache.set(entry.sourcePath, source);
-  const record = new RegExp(`\\['${entry.slug}',[\\s\\S]*?published: ['"](${target})['"]`).test(source);
+  const record = new RegExp(`\\['${entry.slug}',[\\s\\S]*?published: ['"](${target})['"]`).test(source)
+    || new RegExp(`['"]${entry.slug}['"]\\s*:\\s*['"]${target}['"]`).test(source)
+    || new RegExp(`published:[\\s\\S]{0,120}['"]${target}['"]`).test(source);
   if (!record) throw new Error(`Current source date record missing: ${entry.slug}`);
   const parent = `${entry.introducedByCommit}^`;
   let before = '';
