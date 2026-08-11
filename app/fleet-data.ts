@@ -550,5 +550,6 @@ export const researchBatch: readonly ResearchPost[] = [
     ], sources: commonSources
   }
 ];
-export const researchPosts: readonly ResearchPost[] = [...priorResearchPosts, ...previousResearchBatch, ...aug9ResearchBatch, ...aug10PriorResearchBatch, ...researchBatch].sort((a, b) => b.published.localeCompare(a.published));
+const frozenAug10Order = ['philippines-offshore-approval-evidence-retention', 'philippines-offshore-handoff-rework-analysis', 'philippines-offshore-operator-readiness-gate', 'philippines-offshore-queue-aging-review', 'philippines-offshore-source-correction-log', 'philippines-offshore-work-instruction-versioning', 'philippines-offshore-workflow-reviewer-independence', 'philippines-offshore-workflow-risk-register', 'philippines-offshore-workflow-rollback-plan', 'philippines-task-definition-acceptance-criteria', 'philippines-workflow-owner-accountability'];
+export const researchPosts: readonly ResearchPost[] = [...priorResearchPosts, ...previousResearchBatch, ...aug9ResearchBatch, ...aug10PriorResearchBatch, ...researchBatch].sort((a, b) => b.published.localeCompare(a.published)).sort((a, b) => a.published === b.published ? ((frozenAug10Order.indexOf(a.slug) + 1 || Infinity) - (frozenAug10Order.indexOf(b.slug) + 1 || Infinity)) : 0);
 export const postsPerPage = 20;
