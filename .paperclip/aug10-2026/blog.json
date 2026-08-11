@@ -10,6 +10,7 @@
   "priorRunId": "dd8d791a-d752-4906-9b59-1074638227b6",
   "priorIssueId": "dbf3a7f4-1e2b-473f-9230-78fae9c7045e",
   "validationCommands": [
+    "git fetch origin main",
     "npm run build",
     "npm run routines:validate",
     "npm run repair:validate",
@@ -343,4 +344,3 @@
     }
   ]
 }
-

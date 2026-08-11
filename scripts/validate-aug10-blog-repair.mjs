@@ -36,6 +36,10 @@ for (const entry of manifest.entries) {
 }
 const sitemapSource = readFileSync('app/sitemap.xml/route.ts', 'utf8');
 if (!sitemapSource.includes('allBlogPosts')) throw new Error('Sitemap is not sourced from the complete Blog catalog');
+const builtSitemap = readFileSync('.next/server/app/sitemap.xml.body', 'utf8');
+for (const entry of manifest.entries) {
+  if (!builtSitemap.includes(`https://offshoreadvantages.com${entry.route}`)) throw new Error(`Sitemap route missing: ${entry.slug}`);
+}
 const dataSource = readFileSync('app/data.ts', 'utf8');
 if (!dataSource.includes('allBlogPosts = [...batchBlogPosts, ...run2BlogPosts, ...todayBlogPosts, ...blogPosts]')) throw new Error('Blog index is not newest-first');
 console.log(`PASS: ${manifest.entries.length} accepted Blog entries, Git provenance, built dates, canonicals, sitemap eligibility, and newest-first index`);
