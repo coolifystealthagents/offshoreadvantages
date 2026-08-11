@@ -66,7 +66,8 @@ export const todayBlogDetails = Object.fromEntries(todayBlogPosts.map((post) => 
   sources: [{ name: 'NIST Privacy Framework', url: 'https://www.nist.gov/privacy-framework', note: 'Use privacy risk management to organize safeguards.' }, { name: 'International Labour Organization guidance', url: 'https://www.ilo.org/global/topics/non-standard-employment/WCMS_534825/lang--en/index.htm', note: 'Document expectations and accountable work arrangements.' }],
 }])) as Record<string, any>;
 
-export const allBlogPosts = [...blogPosts, ...todayBlogPosts, ...batchBlogPosts, ...run2BlogPosts] as const;
+// Keep the routed Blog catalog newest-first; the August 10 batch precedes older entries.
+export const allBlogPosts = [...batchBlogPosts, ...run2BlogPosts, ...todayBlogPosts, ...blogPosts] as const;
 
 export const blogDetails = {
   'offshore-advantages-provider-questions': {

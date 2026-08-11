@@ -1,0 +1,346 @@
+{
+  "schemaVersion": 1,
+  "contract": "sites3-aug10-public-date-v6",
+  "targetDate": "2026-08-10",
+  "family": "blog",
+  "domain": "offshoreadvantages.com",
+  "repository": "coolifystealthagents/offshoreadvantages",
+  "branch": "main",
+  "minimum": 22,
+  "priorRunId": "dd8d791a-d752-4906-9b59-1074638227b6",
+  "priorIssueId": "dbf3a7f4-1e2b-473f-9230-78fae9c7045e",
+  "validationCommands": [
+    "npm run build",
+    "npm run routines:validate",
+    "npm run repair:validate",
+    "git diff --check"
+  ],
+  "cleanBuildPassed": true,
+  "existingCompliancePassed": true,
+  "indexNewestFirstPassed": true,
+  "entries": [
+    {
+      "slug": "offshore-operations-workflow-mapping",
+      "route": "/blog/offshore-operations-workflow-mapping",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "philippines-back-office-service-levels",
+      "route": "/blog/philippines-back-office-service-levels",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "offshore-admin-inbox-triage",
+      "route": "/blog/offshore-admin-inbox-triage",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "philippines-customer-support-knowledge-base",
+      "route": "/blog/philippines-customer-support-knowledge-base",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "offshore-outsourcing-manager-scorecard",
+      "route": "/blog/offshore-outsourcing-manager-scorecard",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "remote-team-documentation-standards",
+      "route": "/blog/remote-team-documentation-standards",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "philippines-operations-shift-handoff",
+      "route": "/blog/philippines-operations-shift-handoff",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "offshore-outsourcing-approval-workflow",
+      "route": "/blog/offshore-outsourcing-approval-workflow",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "outsourced-customer-support-escalation-matrix",
+      "route": "/blog/outsourced-customer-support-escalation-matrix",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "philippines-virtual-assistant-task-design",
+      "route": "/blog/philippines-virtual-assistant-task-design",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "offshore-qa-calibration-meeting",
+      "route": "/blog/offshore-qa-calibration-meeting",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "remote-team-capacity-planning",
+      "route": "/blog/remote-team-capacity-planning",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "philippines-outsourcing-access-review",
+      "route": "/blog/philippines-outsourcing-access-review",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "offshore-reporting-dashboard-requirements",
+      "route": "/blog/offshore-reporting-dashboard-requirements",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "outsourcing-process-exception-log",
+      "route": "/blog/outsourcing-process-exception-log",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "philippines-team-training-plan",
+      "route": "/blog/philippines-team-training-plan",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "offshore-customer-onboarding-support",
+      "route": "/blog/offshore-customer-onboarding-support",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "remote-team-meeting-agenda",
+      "route": "/blog/remote-team-meeting-agenda",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "philippines-admin-quality-review",
+      "route": "/blog/philippines-admin-quality-review",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "offshore-outsourcing-continuity-plan",
+      "route": "/blog/offshore-outsourcing-continuity-plan",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "outsourced-operations-kpi-framework",
+      "route": "/blog/outsourced-operations-kpi-framework",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "philippines-support-team-feedback-loop",
+      "route": "/blog/philippines-support-team-feedback-loop",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    },
+    {
+      "slug": "offshore-role-transition-checklist",
+      "route": "/blog/offshore-role-transition-checklist",
+      "sourcePath": "app/blog-batch-2026-08-10.ts",
+      "provenance": "original-aug10-batch",
+      "introducedByCommit": "a936c238b3158582956cb2857f35694df38b137b",
+      "sourceDateField": "published",
+      "sourceDate": "2026-08-10",
+      "renderedDateFields": [
+        "datePublished",
+        "time[datetime]"
+      ],
+      "renderedDate": "2026-08-10"
+    }
+  ]
+}
+

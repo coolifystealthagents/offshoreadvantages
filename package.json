@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p 3000",
     "lint": "next lint",
-    "routines:validate": "node scripts/validate-content-routines.mjs"
+    "routines:validate": "node scripts/validate-content-routines.mjs",
+    "repair:validate": "node scripts/validate-aug10-blog-repair.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^15.1.6",
