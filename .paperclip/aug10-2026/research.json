@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "contract": "sites3-aug10-public-date-v6",
+  "targetDate": "2026-08-10",
+  "family": "research",
+  "domain": "offshoreadvantages.com",
+  "repository": "coolifystealthagents/offshoreadvantages",
+  "branch": "main",
+  "minimum": 10,
+  "priorRunId": "162be1d5-65cc-4496-9f17-7463c5d6d910",
+  "priorIssueId": "c8437f23-224f-49ec-be0f-433a4c2f14a7",
+  "validationCommands": ["node scripts/validate-content-routines.mjs", "node scripts/validate-research-batch.mjs", "CI=1 NEXT_TELEMETRY_DISABLED=1 npx next build --no-lint", "node scripts/validate-aug10-research-repair.mjs"],
+  "cleanBuildPassed": true,
+  "existingCompliancePassed": true,
+  "indexNewestFirstPassed": true,
+  "entries": [
+    {"slug":"philippines-workflow-owner-accountability","route":"/research/philippines-workflow-owner-accountability","sourcePath":"app/fleet-data.ts","provenance":"original-aug10-batch","introducedByCommit":"8501c380c67610c9b792a6912ed351308366b3fa","sourceDateField":"published","sourceDate":"2026-08-10","renderedDateFields":["datePublished","time[datetime]"],"renderedDate":"2026-08-10"},
+    {"slug":"philippines-task-definition-acceptance-criteria","route":"/research/philippines-task-definition-acceptance-criteria","sourcePath":"app/fleet-data.ts","provenance":"original-aug10-batch","introducedByCommit":"8501c380c67610c9b792a6912ed351308366b3fa","sourceDateField":"published","sourceDate":"2026-08-10","renderedDateFields":["datePublished","time[datetime]"],"renderedDate":"2026-08-10"},
+    {"slug":"philippines-offshore-queue-aging-review","route":"/research/philippines-offshore-queue-aging-review","sourcePath":"app/fleet-data.ts","provenance":"original-aug10-batch","introducedByCommit":"8501c380c67610c9b792a6912ed351308366b3fa","sourceDateField":"published","sourceDate":"2026-08-10","renderedDateFields":["datePublished","time[datetime]"],"renderedDate":"2026-08-10"},
+    {"slug":"philippines-offshore-workflow-reviewer-independence","route":"/research/philippines-offshore-workflow-reviewer-independence","sourcePath":"app/fleet-data.ts","provenance":"original-aug10-batch","introducedByCommit":"8501c380c67610c9b792a6912ed351308366b3fa","sourceDateField":"published","sourceDate":"2026-08-10","renderedDateFields":["datePublished","time[datetime]"],"renderedDate":"2026-08-10"},
+    {"slug":"philippines-offshore-workflow-rollback-plan","route":"/research/philippines-offshore-workflow-rollback-plan","sourcePath":"app/fleet-data.ts","provenance":"original-aug10-batch","introducedByCommit":"8501c380c67610c9b792a6912ed351308366b3fa","sourceDateField":"published","sourceDate":"2026-08-10","renderedDateFields":["datePublished","time[datetime]"],"renderedDate":"2026-08-10"},
+    {"slug":"philippines-offshore-source-correction-log","route":"/research/philippines-offshore-source-correction-log","sourcePath":"app/fleet-data.ts","provenance":"original-aug10-batch","introducedByCommit":"8501c380c67610c9b792a6912ed351308366b3fa","sourceDateField":"published","sourceDate":"2026-08-10","renderedDateFields":["datePublished","time[datetime]"],"renderedDate":"2026-08-10"},
+    {"slug":"philippines-offshore-work-instruction-versioning","route":"/research/philippines-offshore-work-instruction-versioning","sourcePath":"app/fleet-data.ts","provenance":"original-aug10-batch","introducedByCommit":"8501c380c67610c9b792a6912ed351308366b3fa","sourceDateField":"published","sourceDate":"2026-08-10","renderedDateFields":["datePublished","time[datetime]"],"renderedDate":"2026-08-10"},
+    {"slug":"philippines-offshore-workflow-risk-register","route":"/research/philippines-offshore-workflow-risk-register","sourcePath":"app/fleet-data.ts","provenance":"original-aug10-batch","introducedByCommit":"8501c380c67610c9b792a6912ed351308366b3fa","sourceDateField":"published","sourceDate":"2026-08-10","renderedDateFields":["datePublished","time[datetime]"],"renderedDate":"2026-08-10"},
+    {"slug":"philippines-offshore-handoff-rework-analysis","route":"/research/philippines-offshore-handoff-rework-analysis","sourcePath":"app/fleet-data.ts","provenance":"original-aug10-batch","introducedByCommit":"8501c380c67610c9b792a6912ed351308366b3fa","sourceDateField":"published","sourceDate":"2026-08-10","renderedDateFields":["datePublished","time[datetime]"],"renderedDate":"2026-08-10"},
+    {"slug":"philippines-offshore-approval-evidence-retention","route":"/research/philippines-offshore-approval-evidence-retention","sourcePath":"app/fleet-data.ts","provenance":"original-aug10-batch","introducedByCommit":"8501c380c67610c9b792a6912ed351308366b3fa","sourceDateField":"published","sourceDate":"2026-08-10","renderedDateFields":["datePublished","time[datetime]"],"renderedDate":"2026-08-10"},
+    {"slug":"philippines-offshore-operator-readiness-gate","route":"/research/philippines-offshore-operator-readiness-gate","sourcePath":"app/fleet-data.ts","provenance":"original-aug10-batch","introducedByCommit":"8501c380c67610c9b792a6912ed351308366b3fa","sourceDateField":"published","sourceDate":"2026-08-10","renderedDateFields":["datePublished","time[datetime]"],"renderedDate":"2026-08-10"}
+  ]
+}

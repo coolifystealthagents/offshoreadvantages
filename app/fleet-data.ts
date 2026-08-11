@@ -550,5 +550,5 @@ export const researchBatch: readonly ResearchPost[] = [
     ], sources: commonSources
   }
 ];
-export const researchPosts: readonly ResearchPost[] = [...priorResearchPosts, ...previousResearchBatch, ...aug9ResearchBatch, ...aug10PriorResearchBatch, ...researchBatch];
+export const researchPosts: readonly ResearchPost[] = [...priorResearchPosts, ...previousResearchBatch, ...aug9ResearchBatch, ...aug10PriorResearchBatch, ...researchBatch].sort((a, b) => b.published.localeCompare(a.published));
 export const postsPerPage = 20;
