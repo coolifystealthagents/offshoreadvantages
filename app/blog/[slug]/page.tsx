@@ -4,6 +4,7 @@ import { Header, Footer, JsonLd } from '../../components';
 import { allBlogPosts, blogDetails, site, todayBlogDetails } from '../../data';
 import { batchBlogDetails } from '../../blog-batch-2026-08-10';
 import { run2BlogDetails } from '../../blog-batch-2026-08-10-run2';
+import { august11BlogDetails } from '../../blog-batch-2026-08-11';
 
 const siteUrl = 'https://offshoreadvantages.com';
 
@@ -29,7 +30,7 @@ type BlogDetail = {
   sources?: readonly { name: string; url: string; note?: string }[];
 };
 
-const detailsBySlug = { ...blogDetails, ...todayBlogDetails, ...batchBlogDetails, ...run2BlogDetails } as Record<string, BlogDetail>;
+const detailsBySlug = { ...blogDetails, ...todayBlogDetails, ...batchBlogDetails, ...run2BlogDetails, ...august11BlogDetails } as Record<string, BlogDetail>;
 
 export function generateStaticParams() { return allBlogPosts.map((post) => ({ slug: post.slug })); }
 
