@@ -27,7 +27,29 @@ const topics = [
 ] as const;
 
 const batchBlogPublishedDates: Record<string, string> = {
+  'offshore-admin-inbox-triage': '2026-08-10',
+  'offshore-customer-onboarding-support': '2026-08-10',
   'offshore-operations-workflow-mapping': '2026-08-10',
+  'offshore-outsourcing-approval-workflow': '2026-08-10',
+  'offshore-outsourcing-continuity-plan': '2026-08-10',
+  'offshore-outsourcing-manager-scorecard': '2026-08-10',
+  'offshore-qa-calibration-meeting': '2026-08-10',
+  'offshore-reporting-dashboard-requirements': '2026-08-10',
+  'offshore-role-transition-checklist': '2026-08-10',
+  'outsourced-customer-support-escalation-matrix': '2026-08-10',
+  'outsourced-operations-kpi-framework': '2026-08-10',
+  'outsourcing-process-exception-log': '2026-08-10',
+  'philippines-admin-quality-review': '2026-08-10',
+  'philippines-back-office-service-levels': '2026-08-10',
+  'philippines-customer-support-knowledge-base': '2026-08-10',
+  'philippines-operations-shift-handoff': '2026-08-10',
+  'philippines-outsourcing-access-review': '2026-08-10',
+  'philippines-support-team-feedback-loop': '2026-08-10',
+  'philippines-team-training-plan': '2026-08-10',
+  'philippines-virtual-assistant-task-design': '2026-08-10',
+  'remote-team-capacity-planning': '2026-08-10',
+  'remote-team-documentation-standards': '2026-08-10',
+  'remote-team-meeting-agenda': '2026-08-10',
 };
 
 export const batchBlogPosts = topics.map(([slug, title]) => ({
@@ -35,7 +57,7 @@ export const batchBlogPosts = topics.map(([slug, title]) => ({
   title,
   excerpt: `${title} helps leaders define repeatable work, review quality, and protect customer context across a Philippines-based support workflow.`,
   minutes: 10,
-  published: slug === 'offshore-operations-workflow-mapping' ? batchBlogPublishedDates[slug] : '2026-08-10',
+  published: batchBlogPublishedDates[slug],
   image: thumbnail,
   citations: ['https://www.nist.gov/privacy-framework'],
 }));
