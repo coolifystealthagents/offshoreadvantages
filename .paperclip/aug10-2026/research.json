@@ -9,7 +9,7 @@
   "minimum": 10,
   "priorRunId": "162be1d5-65cc-4496-9f17-7463c5d6d910",
   "priorIssueId": "c8437f23-224f-49ec-be0f-433a4c2f14a7",
-  "validationCommands": ["node scripts/validate-content-routines.mjs", "node scripts/validate-research-batch.mjs", "CI=1 NEXT_TELEMETRY_DISABLED=1 npx next build --no-lint", "node scripts/validate-aug10-research-repair.mjs"],
+  "validationCommands": ["git fetch origin main", "node scripts/validate-content-routines.mjs", "node scripts/validate-research-batch.mjs", "CI=1 NEXT_TELEMETRY_DISABLED=1 npx next build --no-lint", "node scripts/validate-aug10-research-repair.mjs", "git diff --check", "per-slug provenance audit: git show 8501c38^:app/fleet-data.ts and git show 8501c38:app/fleet-data.ts"],
   "cleanBuildPassed": true,
   "existingCompliancePassed": true,
   "indexNewestFirstPassed": true,
