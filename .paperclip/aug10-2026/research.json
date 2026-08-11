@@ -9,7 +9,7 @@
   "minimum": 10,
   "priorRunId": "162be1d5-65cc-4496-9f17-7463c5d6d910",
   "priorIssueId": "c8437f23-224f-49ec-be0f-433a4c2f14a7",
-  "validationCommands": ["git fetch origin main", "node scripts/validate-content-routines.mjs", "node scripts/validate-research-batch.mjs", "CI=1 NEXT_TELEMETRY_DISABLED=1 npx next build --no-lint", "node scripts/validate-aug10-research-repair.mjs", "git diff --check", "per-slug provenance audit: git show 8501c38^:app/fleet-data.ts and git show 8501c38:app/fleet-data.ts"],
+  "validationCommands": ["git fetch origin main", "node scripts/validate-content-routines.mjs", "node scripts/validate-research-batch.mjs", "CI=1 NEXT_TELEMETRY_DISABLED=1 npx next build --no-lint", "node scripts/validate-aug10-research-repair.mjs", "git diff --check", "for s in philippines-workflow-owner-accountability philippines-task-definition-acceptance-criteria philippines-offshore-queue-aging-review philippines-offshore-workflow-reviewer-independence philippines-offshore-workflow-rollback-plan philippines-offshore-source-correction-log philippines-offshore-work-instruction-versioning philippines-offshore-workflow-risk-register philippines-offshore-handoff-rework-analysis philippines-offshore-approval-evidence-retention philippines-offshore-operator-readiness-gate; do git show 8501c380^:app/fleet-data.ts | rg -q \"slug: '$s'\" && echo PRESENT_BEFORE || echo ABSENT_BEFORE; git show 8501c380:app/fleet-data.ts | rg -q \"slug: '$s'\" && echo PRESENT_AT_BATCH || echo MISSING_AT_BATCH; done"],
   "cleanBuildPassed": true,
   "existingCompliancePassed": true,
   "indexNewestFirstPassed": true,
