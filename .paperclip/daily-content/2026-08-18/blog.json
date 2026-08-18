@@ -1,0 +1,29 @@
+{
+  "campaignDate": "2026-08-18",
+  "family": "blog",
+  "repository": "coolifystealthagents/offshoreadvantages",
+  "entries": [
+    {"route":"/blog/philippines-operations-support-intake-completeness","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/offshore-customer-support-macro-governance","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/philippines-admin-support-purchase-order-checks","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/offshore-reporting-qa-late-data-treatment","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/philippines-customer-support-reopened-case-analysis","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/offshore-operations-support-exception-taxonomy","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/philippines-admin-support-renewal-calendar-control","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/offshore-customer-support-channel-routing","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/philippines-reporting-qa-reconciliation-ownership","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/offshore-admin-support-shared-inbox-delegation","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/philippines-operations-support-capacity-signals","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/offshore-customer-support-knowledge-gap-routing","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/philippines-admin-support-file-naming-retrieval","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/offshore-reporting-qa-denominator-control","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/philippines-customer-support-callback-promises","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/offshore-operations-support-vendor-evidence","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/philippines-admin-support-approval-packet-audit","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/offshore-customer-support-escalation-context","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/philippines-reporting-qa-source-change-log","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/offshore-admin-support-calendar-dependency-map","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/philippines-operations-support-work-in-progress-limits","sourcePaths":["app/blog-batch-2026-08-18.ts"]},
+    {"route":"/blog/offshore-customer-support-sensitive-data-redaction","sourcePaths":["app/blog-batch-2026-08-18.ts"]}
+  ]
+}
