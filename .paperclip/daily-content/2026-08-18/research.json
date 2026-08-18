@@ -1,0 +1,16 @@
+{
+  "campaignDate": "2026-08-18",
+  "family": "research",
+  "entries": [
+    {"route":"/research/philippines-offshore-ticket-triage-consistency","sourcePaths":["app/research-batch-2026-08-18.ts"]},
+    {"route":"/research/philippines-offshore-knowledge-base-findability","sourcePaths":["app/research-batch-2026-08-18.ts"]},
+    {"route":"/research/philippines-offshore-data-entry-exception-rate","sourcePaths":["app/research-batch-2026-08-18.ts"]},
+    {"route":"/research/philippines-offshore-customer-record-redaction","sourcePaths":["app/research-batch-2026-08-18.ts"]},
+    {"route":"/research/philippines-offshore-publishing-source-traceability","sourcePaths":["app/research-batch-2026-08-18.ts"]},
+    {"route":"/research/philippines-offshore-schedule-change-handoff","sourcePaths":["app/research-batch-2026-08-18.ts"]},
+    {"route":"/research/philippines-offshore-qa-sample-drift","sourcePaths":["app/research-batch-2026-08-18.ts"]},
+    {"route":"/research/philippines-offshore-approval-queue-congestion","sourcePaths":["app/research-batch-2026-08-18.ts"]},
+    {"route":"/research/philippines-offshore-credential-sharing-risk","sourcePaths":["app/research-batch-2026-08-18.ts"]},
+    {"route":"/research/philippines-offshore-translation-review-boundary","sourcePaths":["app/research-batch-2026-08-18.ts"]}
+  ]
+}
