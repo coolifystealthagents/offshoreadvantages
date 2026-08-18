@@ -40,6 +40,61 @@ const commonSources = [
   { name: 'NIST Small Business Cybersecurity Draft', url: 'https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.50.ipd.pdf' }
 ];
 
+// Claim-relevant sources for the Aug 17 Research records. These are deliberately
+// article-specific so a source list documents the evidence used by that question.
+const august17ResearchSources: Record<string, readonly { name: string; url: string }[]> = {
+  'philippines-offshore-call-quality-calibration': [
+    { name: 'NIST SP 800-53 Rev. 5: Assessment, Monitoring, and Audit', url: 'https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final' },
+    { name: 'NIST AI Risk Management Framework: Measure Function', url: 'https://www.nist.gov/itl/ai-risk-management-framework' },
+    { name: 'ILO: Working from Home, From Invisibility to Decent Work', url: 'https://www.ilo.org/publications/working-home-invisibility-decent-work' }
+  ],
+  'philippines-offshore-shift-coverage-variance': [
+    { name: 'Philippine Statistics Authority: Labor Force Survey', url: 'https://psa.gov.ph/statistics/labor-force-survey' },
+    { name: 'World Bank: Philippines Digital Economy Report', url: 'https://documents1.worldbank.org/curated/en/796871601650398190/pdf/Philippines-Digital-Economy-Report-2020-A-Better-Normal-Under-COVID-19-Digitalizing-the-Philippine-Economy-Now.pdf' },
+    { name: 'NIST SP 800-61 Rev. 2: Computer Security Incident Handling Guide', url: 'https://csrc.nist.gov/pubs/sp/800/61/r2/final' }
+  ],
+  'philippines-offshore-rework-cause-analysis': [
+    { name: 'NIST SP 800-171 Rev. 3: Least Privilege and Auditability', url: 'https://csrc.nist.gov/pubs/sp/800/171/r3/final' },
+    { name: 'NIST Engineering Statistics Handbook: Process Monitoring', url: 'https://www.itl.nist.gov/div898/handbook/pmc/pmc.htm' },
+    { name: 'NIST/SEMATECH e-Handbook: Cause-and-Effect Analysis', url: 'https://www.itl.nist.gov/div898/handbook/pri/pri.htm' }
+  ],
+  'philippines-offshore-customer-language-escalation': [
+    { name: 'ILO: Homeworking in the Philippines', url: 'https://researchrepository.ilo.org/esploro/outputs/995219318102676' },
+    { name: 'U.S. Department of Justice: Effective Communication', url: 'https://www.ada.gov/resources/effective-communication/' },
+    { name: 'NIST Privacy Framework', url: 'https://www.nist.gov/privacy-framework' }
+  ],
+  'philippines-offshore-access-removal-timing': [
+    { name: 'NIST SP 800-63B: Authentication and Lifecycle Management', url: 'https://pages.nist.gov/800-63-4/sp800-63b.html' },
+    { name: 'NIST SP 800-171 Rev. 3: Access Control', url: 'https://csrc.nist.gov/pubs/sp/800/171/r3/final' },
+    { name: 'CIS Controls v8: Account Management', url: 'https://www.cisecurity.org/controls/account-management' }
+  ],
+  'philippines-offshore-work-sample-validity': [
+    { name: 'U.S. Department of Labor: Uniform Guidelines on Employee Selection Procedures', url: 'https://www.dol.gov/agencies/ofccp/sex-discrimination/selection-procedures' },
+    { name: 'U.S. EEOC: Employment Tests and Selection Procedures', url: 'https://www.eeoc.gov/laws/guidance/employment-tests-and-selection-procedures' },
+    { name: 'NIST/SEMATECH e-Handbook: Measurement Process', url: 'https://www.itl.nist.gov/div898/handbook/mpc/mpc.htm' }
+  ],
+  'philippines-offshore-owner-wait-time-analysis': [
+    { name: 'NIST SP 800-53 Rev. 5: Audit and Accountability', url: 'https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final' },
+    { name: 'NIST Engineering Statistics Handbook: Exploratory Data Analysis', url: 'https://www.itl.nist.gov/div898/handbook/eda/eda.htm' },
+    { name: 'Philippine Statistics Authority: Labor Force Survey', url: 'https://psa.gov.ph/statistics/labor-force-survey' }
+  ],
+  'philippines-offshore-source-version-control': [
+    { name: 'NIST SP 800-53 Rev. 5: Configuration Management', url: 'https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final' },
+    { name: 'NIST SP 800-171 Rev. 3: Configuration Management', url: 'https://csrc.nist.gov/pubs/sp/800/171/r3/final' },
+    { name: 'NIST Cybersecurity Framework 2.0', url: 'https://www.nist.gov/cyberframework' }
+  ],
+  'philippines-offshore-backup-channel-safety': [
+    { name: 'NIST SP 800-61 Rev. 2: Incident Response', url: 'https://csrc.nist.gov/pubs/sp/800/61/r2/final' },
+    { name: 'NIST SP 800-57 Part 1 Rev. 5: Key Management', url: 'https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final' },
+    { name: 'World Bank: Philippines Digital Economy Report', url: 'https://documents1.worldbank.org/curated/en/796871601650398190/pdf/Philippines-Digital-Economy-Report-2020-A-Better-Normal-Under-COVID-19-Digitalizing-the-Philippine-Economy-Now.pdf' }
+  ],
+  'philippines-offshore-approval-boundary-testing': [
+    { name: 'NIST SP 800-171 Rev. 3: Least Privilege', url: 'https://csrc.nist.gov/pubs/sp/800/171/r3/final' },
+    { name: 'NIST SP 800-53 Rev. 5: Separation of Duties', url: 'https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final' },
+    { name: 'NIST Privacy Framework', url: 'https://www.nist.gov/privacy-framework' }
+  ]
+};
+
 // Reviewed, source-backed original research. Research is kept separate from Blog data.
 const previousResearchBatch: readonly ResearchPost[] = [
   {
@@ -730,7 +785,7 @@ const august14ResearchBatch: readonly ResearchPost[] = [
   { slug: 'offshore-hr-record-completeness-review', title: 'HR Record Completeness Review for Offshore Administration', excerpt: 'A privacy-aware method for checking personnel-file completeness while preserving authorization, retention, and employment decisions.', published: '2026-08-14', thumbnail: '/research/research-default.svg', cluster: 'Hiring Controls', stats: ['Completeness is distinct from employment approval', 'Personnel review should minimize copied sensitive information'], sections: replacementResearchBody('HR record completeness review', 'which administrative fields explain a returned personnel record and which issues require the HR owner rather than a data-entry correction.', 'privacy-minimization guidance, named-account controls, approved record requirements, and a period-based cohort of complete, returned, and escalated personnel records.', 'permit scoped completeness checks and traceable routing while reserving employment interpretation, disputed status, sensitive disclosures, and policy exceptions for the HR owner.', 'a narrow administrative sample cannot establish compliance with every employment rule, collective arrangement, or jurisdiction-specific requirement.'), sources: commonSources }
 ];
 // New, family-scoped August 17 Research batch. Each record directly owns the campaign date.
-const august17ResearchBatch: readonly ResearchPost[] = [
+const august17ResearchBatchBase: readonly ResearchPost[] = [
   { slug: 'philippines-offshore-call-quality-calibration', title: 'Call Quality Calibration for Philippines-Based Support', excerpt: 'A research question about whether reviewers score the same support call the same way, and what that means for a distributed quality program.', published: '2026-08-17', thumbnail: '/research/research-default.svg', cluster: 'Scope Benchmarks', stats: ['Agreement should be measured by case type, not one blended score', 'A calibration sample cannot prove every future call will be scored consistently'], sections: [
     { heading: 'Research question', body: 'Do client and Philippines-based reviewers apply the same quality rule to comparable support calls? The useful unit is a redacted call or transcript paired with the rubric version, case type, reviewer decision, and reason for any disagreement. A high average score can hide a rule that different reviewers interpret differently, especially when the queue mixes routine requests with policy exceptions.' },
     { heading: 'Evidence scope and method', body: 'Use a stated review period and stratify the sample by channel, case type, outcome, and escalation status. Have two reviewers score a common subset independently, then record agreement by rubric dimension. Compare accuracy, required identity checks, explanation of the next step, case notes, and escalation separately. The public evidence base includes NIST guidance on attributable access and the ILO discussion of homeworking, but those sources provide control context, not a prediction of call performance.' },
@@ -812,6 +867,10 @@ const august17ResearchBatch: readonly ResearchPost[] = [
     { heading: 'FAQs', body: 'Is escalation a failure? No. When authority is missing, a well-documented escalation is the controlled result. Should every exception be solved in the brief? No. Recurring exceptions need rules; rare ones need a named owner.' }
   ], sources: commonSources },
 ];
+const august17ResearchBatch: readonly ResearchPost[] = august17ResearchBatchBase.map((post) => ({
+  ...post,
+  sources: august17ResearchSources[post.slug] ?? post.sources
+}));
 
 const frozenAug10Order = ['philippines-offshore-approval-evidence-retention', 'philippines-offshore-handoff-rework-analysis', 'philippines-offshore-operator-readiness-gate', 'philippines-offshore-queue-aging-review', 'philippines-offshore-source-correction-log', 'philippines-offshore-work-instruction-versioning', 'philippines-offshore-workflow-reviewer-independence', 'philippines-offshore-workflow-risk-register', 'philippines-offshore-workflow-rollback-plan', 'philippines-task-definition-acceptance-criteria', 'philippines-workflow-owner-accountability'];
 export const researchPosts: readonly ResearchPost[] = [...august17ResearchBatch, ...august14ResearchBatch, ...priorResearchPosts, ...previousResearchBatch, ...aug9ResearchBatch, ...aug10PriorResearchBatch, ...researchBatch, ...aug11ResearchBatch, ...replacementResearchBatch].sort((a, b) => b.published.localeCompare(a.published)).sort((a, b) => a.published === b.published ? (a.published === '2026-08-17' ? august17ResearchBatch.findIndex(p => p.slug === a.slug) - august17ResearchBatch.findIndex(p => p.slug === b.slug) : a.published === '2026-08-14' ? august14ResearchBatch.findIndex(p => p.slug === a.slug) - august14ResearchBatch.findIndex(p => p.slug === b.slug) : a.published === '2026-08-10' ? ((frozenAug10Order.indexOf(a.slug) + 1 || Infinity) - (frozenAug10Order.indexOf(b.slug) + 1 || Infinity)) : 0) : 0);
