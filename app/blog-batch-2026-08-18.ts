@@ -1,9 +1,9 @@
 const image = '/philippines-team.jpg';
 
-type BlogPost = { slug:string; title:string; excerpt:string; minutes:number; published:string; image:string; citations:string[] };
+type BlogPost = { slug:string; title:string; excerpt:string; minutes:number; published:string; image:string; citations:string[]; body?: string };
 type BlogDetail = { keyTakeaways: readonly string[]; sections: readonly { title:string; body:string }[]; internalLinks?: readonly {label:string;href:string;note:string}[]; sources?: readonly {name:string;url:string;note?:string}[] };
 
-export const august18BlogPosts: readonly BlogPost[] = [
+export let august18BlogPosts: readonly BlogPost[] = [
   {
     "slug": "philippines-operations-support-intake-completeness",
     "title": "Philippines Operations Support Intake: Test Completeness Before Work Starts",
@@ -514,3 +514,11 @@ export const august18BlogDetails: Record<string, BlogDetail> = {
     sources: [{name:'NIST Privacy Framework',url:'https://www.nist.gov/privacy-framework',note:'Reference for organizing privacy risk and safeguards.'}]
   },
 };
+
+// Keep the publication record self-contained: the loader and source gate can inspect
+// the article body directly, while the detail map remains the native rendering schema.
+august18BlogPosts = august18BlogPosts.map((post) => {
+  const detail = august18BlogDetails[post.slug];
+  const body = detail?.sections.map((section) => `${section.title}\n${section.body}`).join('\n\n') ?? '';
+  return { ...post, body };
+});
