@@ -1,0 +1,18 @@
+{
+  "campaignDate": "2026-08-19",
+  "family": "blog",
+  "entries": [
+    {"route":"/blog/philippines-operations-support-daily-close-reconciliation","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
+    {"route":"/blog/offshore-customer-support-knowledge-base-change-control","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
+    {"route":"/blog/philippines-admin-support-calendar-conflict-resolution","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
+    {"route":"/blog/offshore-reporting-qa-source-reconciliation","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
+    {"route":"/blog/philippines-customer-support-reopened-case-review","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
+    {"route":"/blog/offshore-operations-support-exception-aging","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
+    {"route":"/blog/philippines-admin-support-inbox-triage","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
+    {"route":"/blog/offshore-customer-support-shift-coverage-map","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
+    {"route":"/blog/philippines-reporting-qa-late-data-policy","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
+    {"route":"/blog/offshore-admin-support-renewal-tracker-controls","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
+    {"route":"/blog/philippines-operations-support-vendor-escalation","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
+    {"route":"/blog/offshore-customer-support-quality-calibration","sourcePaths":["app/blog-batch-2026-08-19.ts"]}
+  ]
+}

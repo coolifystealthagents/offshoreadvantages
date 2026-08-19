@@ -9,6 +9,7 @@ import { august13BlogDetails } from '../../blog-batch-2026-08-13';
 import { august14BlogDetails } from '../../blog-batch-2026-08-14';
 import { august17BlogDetails } from '../../blog-batch-2026-08-17';
 import { august18BlogDetails } from '../../blog-batch-2026-08-18';
+import { august19BlogDetails } from '../../blog-batch-2026-08-19';
 
 const siteUrl = 'https://offshoreadvantages.com';
 const readerDate = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
@@ -36,7 +37,7 @@ type BlogDetail = {
   sources?: readonly { name: string; url: string; note?: string }[];
 };
 
-const detailsBySlug = { ...blogDetails, ...todayBlogDetails, ...batchBlogDetails, ...run2BlogDetails, ...august11BlogDetails, ...august13BlogDetails, ...august14BlogDetails, ...august17BlogDetails, ...august18BlogDetails } as Record<string, BlogDetail>;
+const detailsBySlug = { ...blogDetails, ...todayBlogDetails, ...batchBlogDetails, ...run2BlogDetails, ...august11BlogDetails, ...august13BlogDetails, ...august14BlogDetails, ...august17BlogDetails, ...august18BlogDetails, ...august19BlogDetails } as Record<string, BlogDetail>;
 
 export function generateStaticParams() { return allBlogPosts.map((post) => ({ slug: post.slug })); }
 
