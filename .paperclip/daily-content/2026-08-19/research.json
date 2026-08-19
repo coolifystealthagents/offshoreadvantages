@@ -1,0 +1,11 @@
+{
+  "campaignDate": "2026-08-19",
+  "family": "research",
+  "entries": [
+    {"route":"/research/philippines-offshore-research-brief-evidence-chain","sourcePaths":["app/research-batch-2026-08-19.ts"]},
+    {"route":"/research/philippines-offshore-research-queue-sampling","sourcePaths":["app/research-batch-2026-08-19.ts"]},
+    {"route":"/research/philippines-offshore-research-handoff-loss","sourcePaths":["app/research-batch-2026-08-19.ts"]},
+    {"route":"/research/philippines-offshore-research-access-review","sourcePaths":["app/research-batch-2026-08-19.ts"]},
+    {"route":"/research/philippines-offshore-research-approval-latency","sourcePaths":["app/research-batch-2026-08-19.ts"]}
+  ]
+}
