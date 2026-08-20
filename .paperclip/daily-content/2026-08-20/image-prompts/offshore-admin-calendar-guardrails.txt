@@ -1,0 +1,4 @@
+Campaign date: 2026-08-20
+Route: /blog/offshore-admin-calendar-guardrails
+Requested prompt: Distinct editorial hero illustration for an OffshoreAdvantages.com article about offshore admin calendar guardrails; clean professional operations scene, navy teal coral palette, no text, no logos, landscape.
+Generator result: Gemini unavailable in this environment (HTTP 403); repository-safe route-specific SVG fallback created at public/aug20-heroes/offshore-admin-calendar-guardrails.svg.
