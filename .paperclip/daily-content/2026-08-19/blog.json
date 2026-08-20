@@ -1,18 +1,53 @@
 {
-  "campaignDate": "2026-08-19",
-  "family": "blog",
-  "entries": [
-    {"route":"/blog/philippines-operations-support-daily-close-reconciliation","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
-    {"route":"/blog/offshore-customer-support-knowledge-base-change-control","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
-    {"route":"/blog/philippines-admin-support-calendar-conflict-resolution","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
-    {"route":"/blog/offshore-reporting-qa-source-reconciliation","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
-    {"route":"/blog/philippines-customer-support-reopened-case-review","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
-    {"route":"/blog/offshore-operations-support-exception-aging","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
-    {"route":"/blog/philippines-admin-support-inbox-triage","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
-    {"route":"/blog/offshore-customer-support-shift-coverage-map","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
-    {"route":"/blog/philippines-reporting-qa-late-data-policy","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
-    {"route":"/blog/offshore-admin-support-renewal-tracker-controls","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
-    {"route":"/blog/philippines-operations-support-vendor-escalation","sourcePaths":["app/blog-batch-2026-08-19.ts"]},
-    {"route":"/blog/offshore-customer-support-quality-calibration","sourcePaths":["app/blog-batch-2026-08-19.ts"]}
+  "date": "2026-08-19",
+  "articles": [
+    {
+      "route": "/blog/offshore-operations-intake-source-register",
+      "source": "content/blog/offshore-operations-intake-source-register.md"
+    },
+    {
+      "route": "/blog/offshore-operations-approval-evidence-matrix",
+      "source": "content/blog/offshore-operations-approval-evidence-matrix.md"
+    },
+    {
+      "route": "/blog/offshore-operations-exception-queue-triage",
+      "source": "content/blog/offshore-operations-exception-queue-triage.md"
+    },
+    {
+      "route": "/blog/offshore-operations-quality-review-cadence",
+      "source": "content/blog/offshore-operations-quality-review-cadence.md"
+    },
+    {
+      "route": "/blog/offshore-operations-handoff-acceptance-log",
+      "source": "content/blog/offshore-operations-handoff-acceptance-log.md"
+    },
+    {
+      "route": "/blog/offshore-operations-access-recertification-review",
+      "source": "content/blog/offshore-operations-access-recertification-review.md"
+    },
+    {
+      "route": "/blog/offshore-operations-weekly-decision-brief",
+      "source": "content/blog/offshore-operations-weekly-decision-brief.md"
+    },
+    {
+      "route": "/blog/offshore-operations-source-of-truth-map",
+      "source": "content/blog/offshore-operations-source-of-truth-map.md"
+    },
+    {
+      "route": "/blog/offshore-operations-change-control-record",
+      "source": "content/blog/offshore-operations-change-control-record.md"
+    },
+    {
+      "route": "/blog/offshore-operations-work-queue-ownership",
+      "source": "content/blog/offshore-operations-work-queue-ownership.md"
+    },
+    {
+      "route": "/blog/offshore-operations-escalation-path-design",
+      "source": "content/blog/offshore-operations-escalation-path-design.md"
+    },
+    {
+      "route": "/blog/offshore-operations-launch-readiness-review",
+      "source": "content/blog/offshore-operations-launch-readiness-review.md"
+    }
   ]
 }

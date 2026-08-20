@@ -1,11 +1,25 @@
 {
-  "campaignDate": "2026-08-19",
-  "family": "research",
-  "entries": [
-    {"route":"/research/philippines-offshore-research-brief-evidence-chain","sourcePaths":["app/research-batch-2026-08-19.ts"]},
-    {"route":"/research/philippines-offshore-research-queue-sampling","sourcePaths":["app/research-batch-2026-08-19.ts"]},
-    {"route":"/research/philippines-offshore-research-handoff-loss","sourcePaths":["app/research-batch-2026-08-19.ts"]},
-    {"route":"/research/philippines-offshore-research-access-review","sourcePaths":["app/research-batch-2026-08-19.ts"]},
-    {"route":"/research/philippines-offshore-research-approval-latency","sourcePaths":["app/research-batch-2026-08-19.ts"]}
+  "date": "2026-08-19",
+  "articles": [
+    {
+      "route": "/research/offshore-operations-source-quality-evidence-research",
+      "source": "content/research/offshore-operations-source-quality-evidence-research.md"
+    },
+    {
+      "route": "/research/offshore-operations-exception-aging-patterns-research",
+      "source": "content/research/offshore-operations-exception-aging-patterns-research.md"
+    },
+    {
+      "route": "/research/offshore-operations-review-consistency-research",
+      "source": "content/research/offshore-operations-review-consistency-research.md"
+    },
+    {
+      "route": "/research/offshore-operations-access-governance-research",
+      "source": "content/research/offshore-operations-access-governance-research.md"
+    },
+    {
+      "route": "/research/offshore-operations-handoff-reliability-research",
+      "source": "content/research/offshore-operations-handoff-reliability-research.md"
+    }
   ]
 }
