@@ -1,0 +1,10 @@
+{
+  "date": "2026-08-20",
+  "articles": [
+    {"route":"/research/offshore-operations-queue-state-reconstruction","sourcePaths":["app/research-batch-2026-08-20.ts"],"heroPath":"public/aug20-research-heroes/offshore-operations-queue-state-reconstruction.png","promptReceipt":"gemini-2.5-flash-image; wide editorial operations-board illustration; no text, logo, or watermark"},
+    {"route":"/research/offshore-operations-source-freshness-review","sourcePaths":["app/research-batch-2026-08-20.ts"],"heroPath":"public/aug20-research-heroes/offshore-operations-source-freshness-review.png","promptReceipt":"gemini-2.5-flash-image; wide editorial layered-policy-source illustration; no text, logo, or watermark"},
+    {"route":"/research/offshore-operations-access-observability","sourcePaths":["app/research-batch-2026-08-20.ts"],"heroPath":"public/aug20-research-heroes/offshore-operations-access-observability.png","promptReceipt":"gemini-2.5-flash-image; wide editorial constrained-access audit-trail illustration; no text, logo, or watermark"},
+    {"route":"/research/offshore-operations-exception-taxonomy","sourcePaths":["app/research-batch-2026-08-20.ts"],"heroPath":"public/aug20-research-heroes/offshore-operations-exception-taxonomy.png","promptReceipt":"gemini-2.5-flash-image; wide editorial branching-exception-path illustration; no text, logo, or watermark"},
+    {"route":"/research/offshore-operations-approval-dependency-measurement","sourcePaths":["app/research-batch-2026-08-20.ts"],"heroPath":"public/aug20-research-heroes/offshore-operations-approval-dependency-measurement.png","promptReceipt":"gemini-2.5-flash-image; wide editorial approval-decision-gate illustration; no text, logo, or watermark"}
+  ]
+}
