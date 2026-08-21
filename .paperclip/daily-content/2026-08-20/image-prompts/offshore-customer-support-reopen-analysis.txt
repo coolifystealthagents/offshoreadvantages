@@ -1,4 +1,0 @@
-Campaign date: 2026-08-20
-Route: /blog/offshore-customer-support-reopen-analysis
-Requested prompt: Distinct editorial hero illustration for an OffshoreAdvantages.com article about offshore customer support reopen analysis; clean professional operations scene, navy teal coral palette, no text, no logos, landscape.
-Generator result: Gemini unavailable in this environment (HTTP 403); repository-safe route-specific SVG fallback created at public/aug20-heroes/offshore-customer-support-reopen-analysis.svg.

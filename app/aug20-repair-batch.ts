@@ -1,0 +1,13 @@
+import { post as p0 } from './blog-repair-2026-08-20/philippines-capacity-planning-review';
+import { post as p1 } from './blog-repair-2026-08-20/offshore-operations-knowledge-transfer-playbook';
+import { post as p2 } from './blog-repair-2026-08-20/philippines-inbox-triage-ownership';
+import { post as p3 } from './blog-repair-2026-08-20/offshore-support-coaching-evidence';
+import { post as p4 } from './blog-repair-2026-08-20/offshore-operations-cutover-readiness';
+import { post as p5 } from './blog-repair-2026-08-20/philippines-reporting-reconciliation-controls';
+import { post as p6 } from './blog-repair-2026-08-20/offshore-vendor-follow-up-evidence';
+import { post as p7 } from './blog-repair-2026-08-20/philippines-role-access-recertification';
+import { post as p8 } from './blog-repair-2026-08-20/offshore-admin-calendar-decision-log';
+import { post as p9 } from './blog-repair-2026-08-20/offshore-support-reopen-root-causes';
+import { post as p10 } from './blog-repair-2026-08-20/philippines-exception-aging-escalation';
+import { post as p11 } from './blog-repair-2026-08-20/offshore-operations-change-release';
+export const august20RepairBlogPosts = [p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11] as const;

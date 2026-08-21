@@ -10,7 +10,7 @@ import { august14BlogDetails } from '../../blog-batch-2026-08-14';
 import { august17BlogDetails } from '../../blog-batch-2026-08-17';
 import { august18BlogDetails } from '../../blog-batch-2026-08-18';
 import { august19BlogDetails } from '../../blog-batch-2026-08-19';
-import { august20BlogPosts } from '../../blog-batch-2026-08-20';
+import { august20RepairBlogPosts } from '../../aug20-repair-batch';
 import { renderAugust20Article } from '../../aug20-content';
 
 const siteUrl = 'https://offshoreadvantages.com';
@@ -96,7 +96,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
   const { slug } = await params;
   const post = allBlogPosts.find((item) => item.slug === slug);
   if (!post) notFound();
-  if (august20BlogPosts.some((item) => item.slug === slug)) return renderAugust20Article(slug);
+  if (august20RepairBlogPosts.some((item) => item.slug === slug)) return renderAugust20Article(slug);
   const detail = detailsBySlug[slug];
   const url = `${siteUrl}/blog/${post.slug}`;
   const image = 'image' in post ? post.image : site.heroImage;

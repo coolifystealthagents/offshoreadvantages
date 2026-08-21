@@ -1,14 +1,50 @@
 {
-  "philippines-offshore-capacity-planning": {"family":"blog","hero":"/aug20-heroes/philippines-offshore-capacity-planning.svg"},
-  "offshore-operations-knowledge-transfer": {"family":"blog","hero":"/aug20-heroes/offshore-operations-knowledge-transfer.svg"},
-  "philippines-offshore-inbox-triage": {"family":"blog","hero":"/aug20-heroes/philippines-offshore-inbox-triage.svg"},
-  "offshore-customer-support-coaching-loop": {"family":"blog","hero":"/aug20-heroes/offshore-customer-support-coaching-loop.svg"},
-  "offshore-operations-cutover-checklist": {"family":"blog","hero":"/aug20-heroes/offshore-operations-cutover-checklist.svg"},
-  "philippines-offshore-reporting-reconciliation": {"family":"blog","hero":"/aug20-heroes/philippines-offshore-reporting-reconciliation.svg"},
-  "offshore-vendor-follow-up-controls": {"family":"blog","hero":"/aug20-heroes/offshore-vendor-follow-up-controls.svg"},
-  "philippines-offshore-access-review": {"family":"blog","hero":"/aug20-heroes/philippines-offshore-access-review.svg"},
-  "offshore-admin-calendar-guardrails": {"family":"blog","hero":"/aug20-heroes/offshore-admin-calendar-guardrails.svg"},
-  "offshore-customer-support-reopen-analysis": {"family":"blog","hero":"/aug20-heroes/offshore-customer-support-reopen-analysis.svg"},
-  "philippines-offshore-exception-aging": {"family":"blog","hero":"/aug20-heroes/philippines-offshore-exception-aging.svg"},
-  "offshore-operations-change-brief": {"family":"blog","hero":"/aug20-heroes/offshore-operations-change-brief.svg"}
+  "philippines-capacity-planning-review": {
+    "family": "blog",
+    "hero": "/aug20-repair-heroes/philippines-capacity-planning-review.svg"
+  },
+  "offshore-operations-knowledge-transfer-playbook": {
+    "family": "blog",
+    "hero": "/aug20-repair-heroes/offshore-operations-knowledge-transfer-playbook.svg"
+  },
+  "philippines-inbox-triage-ownership": {
+    "family": "blog",
+    "hero": "/aug20-repair-heroes/philippines-inbox-triage-ownership.svg"
+  },
+  "offshore-support-coaching-evidence": {
+    "family": "blog",
+    "hero": "/aug20-repair-heroes/offshore-support-coaching-evidence.svg"
+  },
+  "offshore-operations-cutover-readiness": {
+    "family": "blog",
+    "hero": "/aug20-repair-heroes/offshore-operations-cutover-readiness.svg"
+  },
+  "philippines-reporting-reconciliation-controls": {
+    "family": "blog",
+    "hero": "/aug20-repair-heroes/philippines-reporting-reconciliation-controls.svg"
+  },
+  "offshore-vendor-follow-up-evidence": {
+    "family": "blog",
+    "hero": "/aug20-repair-heroes/offshore-vendor-follow-up-evidence.svg"
+  },
+  "philippines-role-access-recertification": {
+    "family": "blog",
+    "hero": "/aug20-repair-heroes/philippines-role-access-recertification.svg"
+  },
+  "offshore-admin-calendar-decision-log": {
+    "family": "blog",
+    "hero": "/aug20-repair-heroes/offshore-admin-calendar-decision-log.svg"
+  },
+  "offshore-support-reopen-root-causes": {
+    "family": "blog",
+    "hero": "/aug20-repair-heroes/offshore-support-reopen-root-causes.svg"
+  },
+  "philippines-exception-aging-escalation": {
+    "family": "blog",
+    "hero": "/aug20-repair-heroes/philippines-exception-aging-escalation.svg"
+  },
+  "offshore-operations-change-release": {
+    "family": "blog",
+    "hero": "/aug20-repair-heroes/offshore-operations-change-release.svg"
+  }
 }
