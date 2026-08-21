@@ -12,6 +12,8 @@ import { august18BlogDetails } from '../../blog-batch-2026-08-18';
 import { august19BlogDetails } from '../../blog-batch-2026-08-19';
 import { august20RepairBlogPosts } from '../../aug20-repair-batch';
 import { renderAugust20Article } from '../../aug20-content';
+import { august21BlogDetails, august21BlogPosts } from '../../blog-batch-2026-08-21';
+import { renderAugust21Article } from '../../aug21-content';
 
 const siteUrl = 'https://offshoreadvantages.com';
 const readerDate = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
@@ -39,7 +41,7 @@ type BlogDetail = {
   sources?: readonly { name: string; url: string; note?: string }[];
 };
 
-const detailsBySlug = { ...blogDetails, ...todayBlogDetails, ...batchBlogDetails, ...run2BlogDetails, ...august11BlogDetails, ...august13BlogDetails, ...august14BlogDetails, ...august17BlogDetails, ...august18BlogDetails, ...august19BlogDetails } as Record<string, BlogDetail>;
+const detailsBySlug = { ...blogDetails, ...todayBlogDetails, ...batchBlogDetails, ...run2BlogDetails, ...august11BlogDetails, ...august13BlogDetails, ...august14BlogDetails, ...august17BlogDetails, ...august18BlogDetails, ...august19BlogDetails, ...august21BlogDetails } as Record<string, BlogDetail>;
 
 export function generateStaticParams() { return allBlogPosts.map((post) => ({ slug: post.slug })); }
 
@@ -97,6 +99,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
   const post = allBlogPosts.find((item) => item.slug === slug);
   if (!post) notFound();
   if (august20RepairBlogPosts.some((item) => item.slug === slug)) return renderAugust20Article(slug);
+  if (august21BlogPosts.some((item) => item.slug === slug)) return renderAugust21Article(slug);
   const detail = detailsBySlug[slug];
   const url = `${siteUrl}/blog/${post.slug}`;
   const image = 'image' in post ? post.image : site.heroImage;

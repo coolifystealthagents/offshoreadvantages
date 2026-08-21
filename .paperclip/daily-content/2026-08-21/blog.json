@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "contract": "fleet-authoring-contract-v6",
+  "campaignDate": "2026-08-21",
+  "family": "blog",
+  "domain": "offshoreadvantages.com",
+  "repository": "coolifystealthagents/offshoreadvantages",
+  "branch": "main",
+  "entries": [
+    {"slug":"offshore-operations-intake-quality-gates","route":"/blog/offshore-operations-intake-quality-gates","sourcePath":"app/blog-batch-2026-08-21.ts","imagePath":"public/aug21-blog-heroes/offshore-operations-intake-quality-gates.png","promptReceipt":".paperclip/daily-content/2026-08-21/prompt-receipts.json"},
+    {"slug":"philippines-offshore-schedule-overlap-design","route":"/blog/philippines-offshore-schedule-overlap-design","sourcePath":"app/blog-batch-2026-08-21.ts","imagePath":"public/aug21-blog-heroes/philippines-offshore-schedule-overlap-design.png","promptReceipt":".paperclip/daily-content/2026-08-21/prompt-receipts.json"},
+    {"slug":"offshore-support-escalation-severity-ladder","route":"/blog/offshore-support-escalation-severity-ladder","sourcePath":"app/blog-batch-2026-08-21.ts","imagePath":"public/aug21-blog-heroes/offshore-support-escalation-severity-ladder.png","promptReceipt":".paperclip/daily-content/2026-08-21/prompt-receipts.json"},
+    {"slug":"philippines-offshore-training-work-sample","route":"/blog/philippines-offshore-training-work-sample","sourcePath":"app/blog-batch-2026-08-21.ts","imagePath":"public/aug21-blog-heroes/philippines-offshore-training-work-sample.png","promptReceipt":".paperclip/daily-content/2026-08-21/prompt-receipts.json"},
+    {"slug":"offshore-operations-backlog-aging-review","route":"/blog/offshore-operations-backlog-aging-review","sourcePath":"app/blog-batch-2026-08-21.ts","imagePath":"public/aug21-blog-heroes/offshore-operations-backlog-aging-review.png","promptReceipt":".paperclip/daily-content/2026-08-21/prompt-receipts.json"},
+    {"slug":"philippines-customer-support-tone-guide","route":"/blog/philippines-customer-support-tone-guide","sourcePath":"app/blog-batch-2026-08-21.ts","imagePath":"public/aug21-blog-heroes/philippines-customer-support-tone-guide.png","promptReceipt":".paperclip/daily-content/2026-08-21/prompt-receipts.json"},
+    {"slug":"offshore-admin-document-retention-map","route":"/blog/offshore-admin-document-retention-map","sourcePath":"app/blog-batch-2026-08-21.ts","imagePath":"public/aug21-blog-heroes/offshore-admin-document-retention-map.png","promptReceipt":".paperclip/daily-content/2026-08-21/prompt-receipts.json"},
+    {"slug":"philippines-offshore-process-drift-detection","route":"/blog/philippines-offshore-process-drift-detection","sourcePath":"app/blog-batch-2026-08-21.ts","imagePath":"public/aug21-blog-heroes/philippines-offshore-process-drift-detection.png","promptReceipt":".paperclip/daily-content/2026-08-21/prompt-receipts.json"},
+    {"slug":"offshore-operations-queue-capacity-signal","route":"/blog/offshore-operations-queue-capacity-signal","sourcePath":"app/blog-batch-2026-08-21.ts","imagePath":"public/aug21-blog-heroes/offshore-operations-queue-capacity-signal.png","promptReceipt":".paperclip/daily-content/2026-08-21/prompt-receipts.json"},
+    {"slug":"philippines-offshore-manager-review-sampling","route":"/blog/philippines-offshore-manager-review-sampling","sourcePath":"app/blog-batch-2026-08-21.ts","imagePath":"public/aug21-blog-heroes/philippines-offshore-manager-review-sampling.png","promptReceipt":".paperclip/daily-content/2026-08-21/prompt-receipts.json"},
+    {"slug":"offshore-support-knowledge-base-ownership","route":"/blog/offshore-support-knowledge-base-ownership","sourcePath":"app/blog-batch-2026-08-21.ts","imagePath":"public/aug21-blog-heroes/offshore-support-knowledge-base-ownership.png","promptReceipt":".paperclip/daily-content/2026-08-21/prompt-receipts.json"},
+    {"slug":"philippines-offshore-incident-handoff-drill","route":"/blog/philippines-offshore-incident-handoff-drill","sourcePath":"app/blog-batch-2026-08-21.ts","imagePath":"public/aug21-blog-heroes/philippines-offshore-incident-handoff-drill.png","promptReceipt":".paperclip/daily-content/2026-08-21/prompt-receipts.json"}
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "campaignDate":"2026-08-21",
+  "generator":"Gemini-generated hero requirement fulfilled through the approved image generation tool",
+  "receipts":[
+    {"route":"/blog/offshore-operations-intake-quality-gates","prompt":"Editorial business illustration of an offshore operations team reviewing an intake board with quality gates; wide 3:2; no readable text or watermark."},
+    {"route":"/blog/philippines-offshore-schedule-overlap-design","prompt":"Editorial business illustration of distributed operations teams coordinating overlap time across calendars and clocks; wide 3:2; no readable text or watermark."},
+    {"route":"/blog/offshore-support-escalation-severity-ladder","prompt":"Editorial business illustration of a customer support escalation ladder with priority markers and manager review; wide 3:2; no readable text or watermark."},
+    {"route":"/blog/philippines-offshore-training-work-sample","prompt":"Editorial business illustration of a Filipino operations specialist completing a work sample beside a reviewer; wide 3:2; no readable text or watermark."},
+    {"route":"/blog/offshore-operations-backlog-aging-review","prompt":"Editorial business illustration of an operations manager studying an aging backlog with stacked folders and timeline markers; wide 3:2; no readable text or watermark."},
+    {"route":"/blog/philippines-customer-support-tone-guide","prompt":"Editorial business illustration of a customer support coaching session with abstract speech bubbles and tone cards; wide 3:2; no readable text or watermark."},
+    {"route":"/blog/offshore-admin-document-retention-map","prompt":"Editorial business illustration of an administrative records map connecting folders, retention clocks, and secure archive boxes; wide 3:2; no readable text or watermark."},
+    {"route":"/blog/philippines-offshore-process-drift-detection","prompt":"Editorial business illustration of a process map with a diverging path inspected by an operations reviewer; wide 3:2; no readable text or watermark."},
+    {"route":"/blog/offshore-operations-queue-capacity-signal","prompt":"Editorial business illustration of an offshore queue dashboard represented by abstract workload lanes and signals; wide 3:2; no readable text or watermark."},
+    {"route":"/blog/philippines-offshore-manager-review-sampling","prompt":"Editorial business illustration of a manager sampling completed offshore work cards from an organized queue; wide 3:2; no readable text or watermark."},
+    {"route":"/blog/offshore-support-knowledge-base-ownership","prompt":"Editorial business illustration of a support knowledge base with connected cards, owner marker, and review calendar; wide 3:2; no readable text or watermark."},
+    {"route":"/blog/philippines-offshore-incident-handoff-drill","prompt":"Editorial business illustration of a calm incident handoff drill with a clock, secure folder, and baton between teams; wide 3:2; no readable text or watermark."}
+  ]
+}
