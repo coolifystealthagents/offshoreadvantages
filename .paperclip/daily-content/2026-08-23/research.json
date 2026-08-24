@@ -1,0 +1,11 @@
+{
+  "campaignDate": "2026-08-23",
+  "family": "research",
+  "entries": [
+    {"route":"/research/philippines-offshore-work-queue-signal-integrity","sourcePaths":["app/research-batch-2026-08-23.ts"],"imagePath":"/research/research-default.svg"},
+    {"route":"/research/philippines-offshore-manager-review-sampling-bias","sourcePaths":["app/research-batch-2026-08-23.ts"],"imagePath":"/research/research-default.svg"},
+    {"route":"/research/offshore-support-escalation-reversal-analysis","sourcePaths":["app/research-batch-2026-08-23.ts"],"imagePath":"/research/research-default.svg"},
+    {"route":"/research/philippines-offshore-training-transfer-evidence","sourcePaths":["app/research-batch-2026-08-23.ts"],"imagePath":"/research/research-default.svg"},
+    {"route":"/research/offshore-operations-approval-latency-decomposition","sourcePaths":["app/research-batch-2026-08-23.ts"],"imagePath":"/research/research-default.svg"}
+  ]
+}
