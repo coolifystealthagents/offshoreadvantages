@@ -1,0 +1,19 @@
+{
+  "campaignDate": "2026-08-23",
+  "family": "blog",
+  "imageStatus": "Gemini unavailable; text-complete fallback; existing route imagery preserved",
+  "entries": [
+    {"route":"/blog/offshore-operations-daily-startup-control","sourcePaths":["app/blog-batch-2026-08-23.ts"]},
+    {"route":"/blog/philippines-offshore-customer-support-tone-calibration","sourcePaths":["app/blog-batch-2026-08-23.ts"]},
+    {"route":"/blog/offshore-admin-support-document-intake-map","sourcePaths":["app/blog-batch-2026-08-23.ts"]},
+    {"route":"/blog/offshore-reporting-late-data-cutoff-calendar","sourcePaths":["app/blog-batch-2026-08-23.ts"]},
+    {"route":"/blog/philippines-customer-support-reopen-prevention","sourcePaths":["app/blog-batch-2026-08-23.ts"]},
+    {"route":"/blog/offshore-operations-vendor-evidence-chase","sourcePaths":["app/blog-batch-2026-08-23.ts"]},
+    {"route":"/blog/philippines-admin-support-calendar-coverage","sourcePaths":["app/blog-batch-2026-08-23.ts"]},
+    {"route":"/blog/offshore-customer-support-knowledge-article-review","sourcePaths":["app/blog-batch-2026-08-23.ts"]},
+    {"route":"/blog/philippines-reporting-metric-definition-cards","sourcePaths":["app/blog-batch-2026-08-23.ts"]},
+    {"route":"/blog/offshore-operations-access-recertification","sourcePaths":["app/blog-batch-2026-08-23.ts"]},
+    {"route":"/blog/philippines-admin-support-approval-packet-quality","sourcePaths":["app/blog-batch-2026-08-23.ts"]},
+    {"route":"/blog/offshore-customer-support-identity-check-boundary","sourcePaths":["app/blog-batch-2026-08-23.ts"]}
+  ]
+}

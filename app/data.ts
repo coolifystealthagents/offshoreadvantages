@@ -8,6 +8,7 @@ import { august18BlogPosts } from './blog-batch-2026-08-18';
 import { august19BlogPosts } from './blog-batch-2026-08-19';
 import { august20RepairBlogPosts } from './aug20-repair-batch';
 import { august21BlogPosts } from './blog-batch-2026-08-21';
+import { august23BlogPosts } from './blog-batch-2026-08-23';
 
 export const site = {
   domain: 'OffshoreAdvantages.com',
@@ -75,7 +76,7 @@ export const todayBlogDetails = Object.fromEntries(todayBlogPosts.map((post) => 
 }])) as Record<string, any>;
 
 // Keep the routed Blog catalog newest-first; the August 10 batch precedes older entries.
-export const allBlogPosts = [...august21BlogPosts, ...august20RepairBlogPosts, ...august19BlogPosts, ...august18BlogPosts, ...august17BlogPosts, ...august14BlogPosts, ...august13BlogPosts, ...august11BlogPosts, ...batchBlogPosts, ...run2BlogPosts, ...todayBlogPosts, ...blogPosts] as const;
+export const allBlogPosts = [...august23BlogPosts, ...august21BlogPosts, ...august20RepairBlogPosts, ...august19BlogPosts, ...august18BlogPosts, ...august17BlogPosts, ...august14BlogPosts, ...august13BlogPosts, ...august11BlogPosts, ...batchBlogPosts, ...run2BlogPosts, ...todayBlogPosts, ...blogPosts] as const;
 
 export const blogDetails = {
   'offshore-advantages-provider-questions': {

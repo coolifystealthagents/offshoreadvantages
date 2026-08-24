@@ -14,6 +14,7 @@ import { august20RepairBlogPosts } from '../../aug20-repair-batch';
 import { renderAugust20Article } from '../../aug20-content';
 import { august21BlogDetails, august21BlogPosts } from '../../blog-batch-2026-08-21';
 import { renderAugust21Article } from '../../aug21-content';
+import { august23BlogDetails } from '../../blog-batch-2026-08-23';
 
 const siteUrl = 'https://offshoreadvantages.com';
 const readerDate = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
@@ -41,7 +42,7 @@ type BlogDetail = {
   sources?: readonly { name: string; url: string; note?: string }[];
 };
 
-const detailsBySlug = { ...blogDetails, ...todayBlogDetails, ...batchBlogDetails, ...run2BlogDetails, ...august11BlogDetails, ...august13BlogDetails, ...august14BlogDetails, ...august17BlogDetails, ...august18BlogDetails, ...august19BlogDetails, ...august21BlogDetails } as Record<string, BlogDetail>;
+const detailsBySlug = { ...blogDetails, ...todayBlogDetails, ...batchBlogDetails, ...run2BlogDetails, ...august11BlogDetails, ...august13BlogDetails, ...august14BlogDetails, ...august17BlogDetails, ...august18BlogDetails, ...august19BlogDetails, ...august21BlogDetails, ...august23BlogDetails } as Record<string, BlogDetail>;
 
 export function generateStaticParams() { return allBlogPosts.map((post) => ({ slug: post.slug })); }
 
