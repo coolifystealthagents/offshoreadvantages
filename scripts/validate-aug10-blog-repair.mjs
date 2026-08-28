@@ -43,5 +43,11 @@ for (const entry of manifest.entries) {
   if (!builtSitemap.includes(`https://offshoreadvantages.com${entry.route}`)) throw new Error(`Sitemap route missing: ${entry.slug}`);
 }
 const dataSource = readFileSync('app/data.ts', 'utf8');
-if (!dataSource.includes('allBlogPosts = [...batchBlogPosts, ...run2BlogPosts, ...todayBlogPosts, ...blogPosts]')) throw new Error('Blog index is not newest-first');
+const catalog = dataSource.match(/export const allBlogPosts\s*=\s*\[([\s\S]*?)\]\s*as const/);
+if (!catalog) throw new Error('Complete Blog catalog declaration is missing');
+const catalogItems = [...catalog[1].matchAll(/\.\.\.([A-Za-z0-9_]+)/g)].map((match) => match[1]);
+const requiredCatalogItems = ['august23BlogPosts', 'august21BlogPosts', 'august20RepairBlogPosts', 'august19BlogPosts', 'august18BlogPosts', 'august17BlogPosts', 'august14BlogPosts', 'august13BlogPosts', 'august11BlogPosts', 'batchBlogPosts', 'run2BlogPosts', 'todayBlogPosts', 'blogPosts'];
+if (JSON.stringify(catalogItems) !== JSON.stringify(requiredCatalogItems)) {
+  throw new Error('Blog catalog is not in the declared newest-first batch order');
+}
 console.log(`PASS: ${manifest.entries.length} accepted Blog entries, Git provenance, built dates, canonicals, sitemap eligibility, and newest-first index`);
