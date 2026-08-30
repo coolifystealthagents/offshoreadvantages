@@ -5,7 +5,7 @@ import { august21ResearchBatch } from './research-batch-2026-08-21';
 import { august23ResearchBatch } from './research-batch-2026-08-23';
 
 export type FleetService = { slug: string; title: string; desc: string; tasks: readonly string[]; controls: readonly string[]; firstWeek: readonly string[] };
-export type ResearchPost = { slug: string; title: string; excerpt: string; published: string; thumbnail: string; cluster: string; stats: readonly string[]; sections: readonly { heading: string; body: string }[]; sources: readonly { name: string; url: string }[]; serviceHandoff?: { href: string; label: string; body: string } };
+export type ResearchPost = { slug: string; title: string; excerpt: string; published: string; modified?: string; thumbnail: string; cluster: string; stats: readonly string[]; sections: readonly { heading: string; body: string }[]; sources: readonly { name: string; url: string }[]; serviceHandoff?: { href: string; label: string; body: string } };
 
 export const fleetServices: readonly FleetService[] = [
   { slug: 'shared-services-administration', title: 'Shared Services Administration', desc: 'Build a Philippines-based shared services administration workflow with documented responsibilities, access limits, and manager review.', tasks: ['Document the recurring offshore operations work', 'Complete approved tasks in the client workflow', 'Record exceptions and next actions'], controls: ['Use named accounts and limited permissions', 'Follow written approval and escalation rules', 'Review work with a client-side owner'], firstWeek: ['Confirm scope and working hours', 'Practice with representative examples', 'Review the first completed work together'] },
