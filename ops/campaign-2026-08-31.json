@@ -1,0 +1,13 @@
+{
+  "campaign": "2026-08-31",
+  "publicationDate": "2026-08-31",
+  "baselineRoutines": {
+    "blog": "e7861bc5-de47-4a3f-bc0c-e02757e31f69",
+    "research": "5ddf66a4-da6c-41cb-88bf-8dc7ec4db08e"
+  },
+  "counts": { "blog": 12, "research": 5 },
+  "image": "/philippines-team.jpg",
+  "source": "app/campaign-2026-08-31.ts",
+  "humanizer": "blader/humanizer 2.9.1",
+  "terminal": "publicly verified Coolify deployment"
+}

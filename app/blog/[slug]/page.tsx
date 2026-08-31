@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Header, Footer, JsonLd } from '../../components';
-import { allBlogPosts, blogDetails, site, todayBlogDetails } from '../../data';
+import { allBlogPosts, blogDetails, campaignBlogDetails, site, todayBlogDetails } from '../../data';
 import { batchBlogDetails } from '../../blog-batch-2026-08-10';
 import { run2BlogDetails } from '../../blog-batch-2026-08-10-run2';
 import { august11BlogDetails } from '../../blog-batch-2026-08-11';
@@ -42,7 +42,7 @@ type BlogDetail = {
   sources?: readonly { name: string; url: string; note?: string }[];
 };
 
-const detailsBySlug = { ...blogDetails, ...todayBlogDetails, ...batchBlogDetails, ...run2BlogDetails, ...august11BlogDetails, ...august13BlogDetails, ...august14BlogDetails, ...august17BlogDetails, ...august18BlogDetails, ...august19BlogDetails, ...august21BlogDetails, ...august23BlogDetails } as Record<string, BlogDetail>;
+const detailsBySlug = { ...blogDetails, ...todayBlogDetails, ...batchBlogDetails, ...run2BlogDetails, ...august11BlogDetails, ...august13BlogDetails, ...august14BlogDetails, ...august17BlogDetails, ...august18BlogDetails, ...august19BlogDetails, ...august21BlogDetails, ...august23BlogDetails, ...campaignBlogDetails } as Record<string, BlogDetail>;
 
 export function generateStaticParams() { return allBlogPosts.map((post) => ({ slug: post.slug })); }
 
@@ -111,3 +111,4 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
 }
 
 function ArticleBanner({banner}:{banner:{label:string;title:string;body:string;href:string;linkText:string}}){return <aside className="article-banner" aria-label={banner.label}><p className="eyebrow light">{banner.label}</p><h2>{banner.title}</h2><p>{banner.body}</p><a className="btn primary" href={banner.href}>{banner.linkText}</a></aside>}
+
