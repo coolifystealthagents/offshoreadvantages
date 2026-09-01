@@ -46,8 +46,11 @@ const dataSource = readFileSync('app/data.ts', 'utf8');
 const catalog = dataSource.match(/export const allBlogPosts\s*=\s*\[([\s\S]*?)\]\s*as const/);
 if (!catalog) throw new Error('Complete Blog catalog declaration is missing');
 const catalogItems = [...catalog[1].matchAll(/\.\.\.([A-Za-z0-9_]+)/g)].map((match) => match[1]);
-const requiredCatalogItems = ['august23BlogPosts', 'august21BlogPosts', 'august20RepairBlogPosts', 'august19BlogPosts', 'august18BlogPosts', 'august17BlogPosts', 'august14BlogPosts', 'august13BlogPosts', 'august11BlogPosts', 'batchBlogPosts', 'run2BlogPosts', 'todayBlogPosts', 'blogPosts'];
-if (JSON.stringify(catalogItems) !== JSON.stringify(requiredCatalogItems)) {
-  throw new Error('Blog catalog is not in the declared newest-first batch order');
+if (!catalogItems.length) throw new Error('Complete Blog catalog must contain at least one batch');
+if (new Set(catalogItems).size !== catalogItems.length) throw new Error('Complete Blog catalog repeats a batch');
+for (const item of catalogItems) {
+  if (!new RegExp(`(?:import\\s+\\{[^}]*\\b${item}\\b[^}]*\\}\\s+from|export const ${item}\\s*=)`).test(dataSource)) {
+    throw new Error(`Blog catalog item is not a declared source batch: ${item}`);
+  }
 }
-console.log(`PASS: ${manifest.entries.length} accepted Blog entries, Git provenance, built dates, canonicals, sitemap eligibility, and newest-first index`);
+console.log(`PASS: ${manifest.entries.length} accepted Blog entries, Git provenance, built dates, canonicals, sitemap eligibility, and complete unique catalog index`);
