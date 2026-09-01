@@ -1,3 +1,4 @@
+import { september1BlogDetails, september1BlogPosts } from './campaign-2026-09-01';
 import { august31BlogDetails, august31BlogPosts } from './campaign-2026-08-31';
 import { batchBlogPosts } from './blog-batch-2026-08-10';
 import { run2BlogPosts } from './blog-batch-2026-08-10-run2';
@@ -77,9 +78,9 @@ export const todayBlogDetails = Object.fromEntries(todayBlogPosts.map((post) => 
 }])) as Record<string, any>;
 
 // Keep the routed Blog catalog newest-first; the August 10 batch precedes older entries.
-export const allBlogPosts = [...august31BlogPosts, ...august23BlogPosts, ...august21BlogPosts, ...august20RepairBlogPosts, ...august19BlogPosts, ...august18BlogPosts, ...august17BlogPosts, ...august14BlogPosts, ...august13BlogPosts, ...august11BlogPosts, ...batchBlogPosts, ...run2BlogPosts, ...todayBlogPosts, ...blogPosts] as const;
+export const allBlogPosts = [...september1BlogPosts, ...august31BlogPosts, ...august23BlogPosts, ...august21BlogPosts, ...august20RepairBlogPosts, ...august19BlogPosts, ...august18BlogPosts, ...august17BlogPosts, ...august14BlogPosts, ...august13BlogPosts, ...august11BlogPosts, ...batchBlogPosts, ...run2BlogPosts, ...todayBlogPosts, ...blogPosts] as const;
 
-export const campaignBlogDetails = august31BlogDetails;
+export const campaignBlogDetails = { ...september1BlogDetails, ...august31BlogDetails };
 
 export const blogDetails = {
   'offshore-advantages-provider-questions': {
@@ -339,4 +340,3 @@ export const staffingProcess = [
 ] as const;
 
 export const staffingFitNote = 'We focus exclusively on Filipino talent. Each plan still depends on the role, tools, schedule, access, and support you need.';
-
