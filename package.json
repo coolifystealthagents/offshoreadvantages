@@ -5,7 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p 3000",
-    "lint": "next lint",
+    "lint": "tsc --noEmit",
     "routines:validate": "node scripts/validate-content-routines.mjs",
     "repair:validate": "node scripts/validate-aug10-blog-repair.mjs"
   },
