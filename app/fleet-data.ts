@@ -1,4 +1,6 @@
-import { september1ResearchPosts } from './campaign-2026-09-01';
+import { september2ResearchPosts } from './campaign-2026-09-02';
+import { september1ResearchPosts as september1ResearchPostsOnly } from './campaign-2026-09-01';
+const september1ResearchPosts = [...september2ResearchPosts, ...september1ResearchPostsOnly];
 import { august31ResearchPosts } from './campaign-2026-08-31';
 import { august18ResearchBatch } from './research-batch-2026-08-18';
 import { august19ResearchBatch } from './research-batch-2026-08-19';
