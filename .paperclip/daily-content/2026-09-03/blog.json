@@ -1,0 +1,19 @@
+{
+  "campaignDate": "2026-09-03",
+  "family": "blog",
+  "imageStatus": "Gemini unavailable in the repository execution environment; existing site imagery retained under fallback",
+  "entries": [
+    {"route":"/blog/offshore-shared-inbox-duplicate-reply-control","sourcePaths":["app/campaign-2026-09-03.ts"]},
+    {"route":"/blog/philippines-revenue-operations-crm-stage-audit","sourcePaths":["app/campaign-2026-09-03.ts"]},
+    {"route":"/blog/offshore-finance-support-cash-application-exceptions","sourcePaths":["app/campaign-2026-09-03.ts"]},
+    {"route":"/blog/philippines-executive-assistant-briefing-pack","sourcePaths":["app/campaign-2026-09-03.ts"]},
+    {"route":"/blog/offshore-customer-support-translation-review-boundary","sourcePaths":["app/campaign-2026-09-03.ts"]},
+    {"route":"/blog/philippines-procurement-renewal-calendar-control","sourcePaths":["app/campaign-2026-09-03.ts"]},
+    {"route":"/blog/offshore-data-entry-source-lineage-check","sourcePaths":["app/campaign-2026-09-03.ts"]},
+    {"route":"/blog/philippines-order-management-backorder-handoff","sourcePaths":["app/campaign-2026-09-03.ts"]},
+    {"route":"/blog/offshore-hr-administration-leave-record-precheck","sourcePaths":["app/campaign-2026-09-03.ts"]},
+    {"route":"/blog/philippines-content-operations-approval-routing","sourcePaths":["app/campaign-2026-09-03.ts"]},
+    {"route":"/blog/offshore-quality-assurance-defect-severity-calibration","sourcePaths":["app/campaign-2026-09-03.ts"]},
+    {"route":"/blog/philippines-project-coordination-dependency-register","sourcePaths":["app/campaign-2026-09-03.ts"]}
+  ]
+}
