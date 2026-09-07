@@ -1,3 +1,4 @@
+import { september7BlogDetails, september7BlogPosts } from './campaign-2026-09-07';
 import { september4BlogDetails, september4BlogPosts } from './campaign-2026-09-04';
 import { september3BlogDetails, september3BlogPosts } from './campaign-2026-09-03';
 import { september2BlogDetails, september2BlogPosts } from './campaign-2026-09-02';
@@ -81,9 +82,9 @@ export const todayBlogDetails = Object.fromEntries(todayBlogPosts.map((post) => 
 }])) as Record<string, any>;
 
 // Keep the routed Blog catalog newest-first; the August 10 batch precedes older entries.
-export const allBlogPosts = [...september4BlogPosts, ...september3BlogPosts, ...september2BlogPosts, ...september1BlogPosts, ...august31BlogPosts, ...august23BlogPosts, ...august21BlogPosts, ...august20RepairBlogPosts, ...august19BlogPosts, ...august18BlogPosts, ...august17BlogPosts, ...august14BlogPosts, ...august13BlogPosts, ...august11BlogPosts, ...batchBlogPosts, ...run2BlogPosts, ...todayBlogPosts, ...blogPosts] as const;
+export const allBlogPosts = [...september7BlogPosts, ...september4BlogPosts, ...september3BlogPosts, ...september2BlogPosts, ...september1BlogPosts, ...august31BlogPosts, ...august23BlogPosts, ...august21BlogPosts, ...august20RepairBlogPosts, ...august19BlogPosts, ...august18BlogPosts, ...august17BlogPosts, ...august14BlogPosts, ...august13BlogPosts, ...august11BlogPosts, ...batchBlogPosts, ...run2BlogPosts, ...todayBlogPosts, ...blogPosts] as const;
 
-export const campaignBlogDetails = { ...september4BlogDetails, ...september3BlogDetails, ...september2BlogDetails, ...september1BlogDetails, ...august31BlogDetails };
+export const campaignBlogDetails = { ...september7BlogDetails, ...september4BlogDetails, ...september3BlogDetails, ...september2BlogDetails, ...september1BlogDetails, ...august31BlogDetails };
 
 export const blogDetails = {
   'offshore-advantages-provider-questions': {
