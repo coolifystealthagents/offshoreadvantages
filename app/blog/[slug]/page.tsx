@@ -50,7 +50,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = allBlogPosts.find((item) => item.slug === slug);
   if (!post) return {};
-  return { title: post.title, description: post.excerpt, alternates: { canonical: `/blog/${slug}` }, openGraph: { title: post.title, description: post.excerpt, url: `${siteUrl}/blog/${slug}`, type: 'article' } };
+  const image = 'image' in post ? post.image : site.heroImage;
+  return { title: post.title, description: post.excerpt, alternates: { canonical: `/blog/${slug}` }, openGraph: { title: post.title, description: post.excerpt, url: `${siteUrl}/blog/${slug}`, type: 'article', images: [{ url: image }] } };
 }
 
 function sectionParagraphs(body: string) {
@@ -111,4 +112,3 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
 }
 
 function ArticleBanner({banner}:{banner:{label:string;title:string;body:string;href:string;linkText:string}}){return <aside className="article-banner" aria-label={banner.label}><p className="eyebrow light">{banner.label}</p><h2>{banner.title}</h2><p>{banner.body}</p><a className="btn primary" href={banner.href}>{banner.linkText}</a></aside>}
-
