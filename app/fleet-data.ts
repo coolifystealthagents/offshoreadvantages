@@ -1,9 +1,10 @@
+import { september9ResearchPosts } from './campaign-2026-09-09';
 import { september8ResearchPosts } from './campaign-2026-09-08';
 import { september7ResearchPosts } from './campaign-2026-09-07';
 import { september4ResearchPosts } from './campaign-2026-09-04';
 import { september2ResearchPosts } from './campaign-2026-09-02';
 import { september1ResearchPosts as september1ResearchPostsOnly } from './campaign-2026-09-01';
-const september1ResearchPosts = [...september7ResearchPosts, ...september2ResearchPosts, ...september1ResearchPostsOnly];
+const september1ResearchPosts = [...september9ResearchPosts, ...september7ResearchPosts, ...september2ResearchPosts, ...september1ResearchPostsOnly];
 import { august31ResearchPosts } from './campaign-2026-08-31';
 import { august18ResearchBatch } from './research-batch-2026-08-18';
 import { august19ResearchBatch } from './research-batch-2026-08-19';
