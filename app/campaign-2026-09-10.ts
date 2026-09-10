@@ -59,4 +59,12 @@ export const september10ResearchPosts = studies.map(([slug, title, question, uni
     { heading: 'Limitations', body: 'The study may miss work handled outside the selected systems. Later edits can erase the original state, timestamps may reflect system processing rather than human action, and the sample may contain too few rare exceptions. Reviewer knowledge can affect coding. The findings do not estimate provider quality, worker productivity, legal compliance, or results for other clients or future periods.' },
     { heading: 'References and evidence use', body: 'The references below are primary government publications. NIST materials supply control and risk-management concepts. Philippine law and regulator materials supply privacy-accountability context. Neither source set supplies the study result. The result must come from the defined client cohort, and the client should obtain qualified legal advice for legal conclusions.' },
   ], sources: researchSources,
+  ...(slug === 'philippines-offshore-policy-exception-aging-analysis' ? {
+    modified: september10CampaignDate,
+    serviceHandoff: {
+      href: '/services/project-coordination-support',
+      label: 'Set up a policy-exception follow-up lane',
+      body: 'Project Coordination Support can keep the exception record, owner queue, and next review clear while it waits. Your client keeps policy interpretation, risk acceptance, and the final decision.'
+    }
+  } : {}),
 }));

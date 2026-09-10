@@ -8,7 +8,8 @@
     "lint": "tsc --noEmit",
     "routines:validate": "node scripts/validate-content-routines.mjs",
     "repair:validate": "node scripts/validate-aug10-blog-repair.mjs",
-    "handoff:validate": "node scripts/validate-approval-latency-handoff.mjs --source-only"
+    "handoff:validate": "node scripts/validate-approval-latency-handoff.mjs --source-only",
+    "policy-exception-handoff:validate": "node scripts/validate-policy-exception-handoff.mjs --source-only"
   },
   "dependencies": {
     "@next/third-parties": "^15.1.6",
