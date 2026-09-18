@@ -1,0 +1,20 @@
+{
+  "routine": "Daily Research Publishing",
+  "requiredCount": 5,
+  "verifiedCount": 0,
+  "repository": "coolifystealthagents/offshoreadvantages",
+  "productionBranch": "main",
+  "contentCommitSha": "37aa7a327a6c102dac4e1b8675e1a85c4e968c66",
+  "publicationTimezone": "UTC",
+  "sourceCheckedDate": "2026-09-18",
+  "build": "PASS: Next.js production build; 579 static pages",
+  "validation": "PASS: exactly 5 new unique slugs; 1,368-1,377 substantive words; 10 sources each; canonical, datePublished, sitemap, internal service links, and static routes",
+  "deployment": {"resourceUuid":"e13etteoktwowvpgfh3f2h1i","status":"pending"},
+  "articles": [
+    {"family":"Research","topic":"vendor-master duplicate detection","slug":"philippines-offshore-vendor-master-duplicate-detection-study","sourcesChecked":"2026-09-18","contentHash":"sha256:cbe71047c19090350280ff1a200bc74fa40267ffdfd91d0a1476a4e7ec28343c","wordCount":1375,"actualPublicationDate":null,"commitSha":"37aa7a327a6c102dac4e1b8675e1a85c4e968c66","liveUrl":"https://offshoreadvantages.com/research/philippines-offshore-vendor-master-duplicate-detection-study","verificationTime":null,"verified":false},
+    {"family":"Research","topic":"CRM lead-routing integrity","slug":"philippines-offshore-crm-lead-routing-integrity-research","sourcesChecked":"2026-09-18","contentHash":"sha256:7d1134e10e074fb7805b4fd8e32626271d3b9437e3c9b3ab0ea91c9d9aa10666","wordCount":1368,"actualPublicationDate":null,"commitSha":"37aa7a327a6c102dac4e1b8675e1a85c4e968c66","liveUrl":"https://offshoreadvantages.com/research/philippines-offshore-crm-lead-routing-integrity-research","verificationTime":null,"verified":false},
+    {"family":"Research","topic":"month-end close evidence completeness","slug":"offshore-month-end-close-evidence-completeness-study","sourcesChecked":"2026-09-18","contentHash":"sha256:76de5d3748adc5c6eb0b6d481f83c35f606e19a33b0bc9c20ee41f503f7d6a92","wordCount":1369,"actualPublicationDate":null,"commitSha":"37aa7a327a6c102dac4e1b8675e1a85c4e968c66","liveUrl":"https://offshoreadvantages.com/research/offshore-month-end-close-evidence-completeness-study","verificationTime":null,"verified":false},
+    {"family":"Research","topic":"technical-support incident escalation thresholds","slug":"philippines-technical-support-incident-escalation-threshold-study","sourcesChecked":"2026-09-18","contentHash":"sha256:78eb22a4af908299ad0963175ffe2ed9819a46477754a03459a18a7ecd5dc203","wordCount":1377,"actualPublicationDate":null,"commitSha":"37aa7a327a6c102dac4e1b8675e1a85c4e968c66","liveUrl":"https://offshoreadvantages.com/research/philippines-technical-support-incident-escalation-threshold-study","verificationTime":null,"verified":false},
+    {"family":"Research","topic":"knowledge-change adoption","slug":"offshore-knowledge-change-adoption-research","sourcesChecked":"2026-09-18","contentHash":"sha256:d7b36182faac9d986e6c066445eccfd716c494ad0eb709cc2dc7093048223063","wordCount":1368,"actualPublicationDate":null,"commitSha":"37aa7a327a6c102dac4e1b8675e1a85c4e968c66","liveUrl":"https://offshoreadvantages.com/research/offshore-knowledge-change-adoption-research","verificationTime":null,"verified":false}
+  ]
+}
