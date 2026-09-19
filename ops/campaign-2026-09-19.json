@@ -1,0 +1,34 @@
+{
+  "routine": "Daily Blog Publishing",
+  "requiredCount": 12,
+  "verifiedCount": 0,
+  "repository": "coolifystealthagents/offshoreadvantages",
+  "productionBranch": "main",
+  "contentCommitSha": "700f791b3f47f7c638612263892582ab45fe0b76",
+  "publicationTimezone": "UTC",
+  "build": "PASS: Next.js production build, 591 static pages",
+  "validation": "PASS: 12 historically unique slugs; 12 canonical/date/schema routes; 1,690-1,726 rendered words; humanizer pattern scan",
+  "deployment": {
+    "resourceUuid": "e13etteoktwowvpgfh3f2h1i",
+    "status": "blocked",
+    "attempts": ["z5accvj2fruumk13yehb2vzj", "gafa40kkcpbcg8hkii1nztt6"],
+    "unexpectedCommitSha": "f831a977d3ff2b380f756c56c316d73b74db88e8",
+    "expectedCommitSha": "700f791b3f47f7c638612263892582ab45fe0b76",
+    "blocker": "Coolify accepted the production application UUID but created both bounded deployment attempts from the previous production SHA. All 12 new public routes remain 404.",
+    "recoveryAction": "Coolify owner must refresh the application's Git reference to origin/main, deploy the current remote SHA, and resume live URL, sitemap, canonical, asset, and structured-data verification."
+  },
+  "articles": [
+    { "family":"Blog", "slug":"philippines-customer-support-cancellation-request-intake", "actualPublicationDate":null, "verified":false },
+    { "family":"Blog", "slug":"offshore-operations-vendor-certificate-expiry-tracker", "actualPublicationDate":null, "verified":false },
+    { "family":"Blog", "slug":"philippines-order-address-change-verification-workflow", "actualPublicationDate":null, "verified":false },
+    { "family":"Blog", "slug":"offshore-admin-contract-signature-status-register", "actualPublicationDate":null, "verified":false },
+    { "family":"Blog", "slug":"philippines-customer-support-backorder-update-queue", "actualPublicationDate":null, "verified":false },
+    { "family":"Blog", "slug":"offshore-operations-client-data-import-readiness-check", "actualPublicationDate":null, "verified":false },
+    { "family":"Blog", "slug":"philippines-accounts-receivable-remittance-matching-review", "actualPublicationDate":null, "verified":false },
+    { "family":"Blog", "slug":"offshore-admin-recruitment-interview-scheduling-control", "actualPublicationDate":null, "verified":false },
+    { "family":"Blog", "slug":"philippines-customer-support-loyalty-points-discrepancy-intake", "actualPublicationDate":null, "verified":false },
+    { "family":"Blog", "slug":"offshore-operations-maintenance-window-customer-notice-check", "actualPublicationDate":null, "verified":false },
+    { "family":"Blog", "slug":"philippines-reporting-manual-adjustment-evidence-log", "actualPublicationDate":null, "verified":false },
+    { "family":"Blog", "slug":"offshore-admin-customer-onboarding-document-chase", "actualPublicationDate":null, "verified":false }
+  ]
+}
