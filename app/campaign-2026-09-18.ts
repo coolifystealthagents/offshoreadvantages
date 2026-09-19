@@ -7,7 +7,7 @@ const sources = [
   { name: 'National Privacy Commission: Data Privacy Accountability and Compliance Framework', url: 'https://privacy.gov.ph/wp-content/uploads/2023/05/NPC-Circular-No.-2023-06-DPA-Compliance-and-Accountability-Framework.pdf', note: 'Official accountability guidance for organizations processing personal data.' },
 ] as const;
 
-type Topic = {
+export type BlogCampaignTopic = {
   slug: string;
   title: string;
   excerpt: string;
@@ -20,7 +20,7 @@ type Topic = {
   service: 'operations-support' | 'customer-support' | 'admin-support' | 'reporting-and-qa';
 };
 
-const topics: readonly Topic[] = [
+const topics: readonly BlogCampaignTopic[] = [
   { slug:'philippines-customer-support-chargeback-evidence-packet', title:'Philippines customer support chargeback evidence packets: organize the facts without arguing the case', excerpt:'A practical workflow for assembling order, delivery, and customer-contact records while the client retains dispute strategy and submission authority.', queue:'new payment disputes that require a response by a stated deadline', evidence:'the processor notice, order record, payment reference, delivery proof, refund history, and customer conversation', checks:'match the account, amount, currency, transaction date, disputed reason, response deadline, and permitted evidence types', boundary:'The client decides the legal or commercial position, selects the evidence to submit, writes representations, and sends the response through the payment processor.', awkward:'a dispute that names one transaction while the customer conversation refers to a second order and a partial refund', finish:'the client-approved packet is attached to the correct processor case, the submission status is visible, and every excluded item has a reason' ,service:'customer-support'},
   { slug:'offshore-operations-subscription-renewal-notice-audit', title:'Offshore subscription renewal notice audit: prove the right message reached the right account', excerpt:'A record-by-record check of renewal notices, delivery results, account terms, and unresolved exceptions before a subscription renews.', queue:'upcoming subscription renewals with a required customer notice', evidence:'the current contract or plan record, renewal date, approved notice version, recipient, send event, and delivery result', checks:'confirm the account identifier, plan, renewal timing, recipient authority, template version, channel, and bounce or suppression state', boundary:'The client owns pricing, contract interpretation, cancellation decisions, notice requirements, and any promise that changes the customer agreement.', awkward:'a notice marked sent to an address that bounced after the account administrator left the customer organization', finish:'the approved recipient has a traceable delivery result or the case is open with a named client owner before the renewal deadline',service:'operations-support'},
   { slug:'philippines-ecommerce-return-reason-quality-review', title:'Philippines ecommerce return-reason QA: keep the code tied to what the customer said', excerpt:'A quality review for return classifications that preserves the customer record and avoids convenient guesses.', queue:'completed or pending returns whose reason codes feed product, refund, and warehouse reporting', evidence:'the customer request, order line, item received status, agent note, selected reason code, and current taxonomy', checks:'compare the customer wording with the code definition, distinguish one item from the whole order, and record ambiguity instead of inferring intent', boundary:'The client decides refund eligibility, suspected abuse, product defects, policy exceptions, and changes to the return taxonomy.', awkward:'a customer who lists poor fit and visible damage in the same message while returning two different items', finish:'each order line has a supported code or an explicit unresolved state, and downstream refund and inventory records agree with the authorized decision',service:'reporting-and-qa'},
@@ -35,7 +35,7 @@ const topics: readonly Topic[] = [
   { slug:'offshore-admin-customer-reference-request-coordination', title:'Offshore customer reference requests: coordinate the introduction without spending goodwill', excerpt:'A careful workflow for matching, approving, scheduling, and closing customer-reference requests.', queue:'sales or partnership requests to speak with an existing customer about their experience', evidence:'the requesting account, opportunity context, requested topic, target timing, proposed reference customer, consent record, relationship owner, contact history, and participation limits', checks:'confirm the request is complete, review recent reference load, verify current consent, check conflicts or sensitive account status, and route the proposed match to the relationship owner', boundary:'The client decides which customer to approach, what may be disclosed, whether an incentive is appropriate, and whether the commercial context makes the request suitable.', awkward:'a high-value prospect requesting an urgent call with a customer who previously agreed in principle but has already taken several reference calls this quarter', finish:'both sides have an approved purpose and schedule, participation limits are recorded, follow-up is complete, and the reference history reflects the actual outcome',service:'admin-support'},
 ] as const;
 
-function detail(topic: Topic) {
+export function buildBlogCampaignDetail(topic: BlogCampaignTopic) {
   const serviceHref = {
     'operations-support': 'project-coordination-support',
     'customer-support': 'customer-experience-support',
@@ -87,4 +87,4 @@ export const september18BlogPosts = topics.map((topic) => ({
   citations: sources.map((source) => source.url),
 }));
 
-export const september18BlogDetails = Object.fromEntries(topics.map((topic) => [topic.slug, detail(topic)])) as Record<string, ReturnType<typeof detail>>;
+export const september18BlogDetails = Object.fromEntries(topics.map((topic) => [topic.slug, buildBlogCampaignDetail(topic)])) as Record<string, ReturnType<typeof buildBlogCampaignDetail>>;
