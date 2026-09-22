@@ -22,7 +22,6 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = researchPosts.find((p) => p.slug === slug);
   if (!post) return {};
-  const modified = post.modified ?? post.published;
   return {
     title: post.title,
     alternates: { canonical: `/research/${post.slug}` },
@@ -31,7 +30,7 @@ export async function generateMetadata({
       url: `https://${site.domain}/research/${post.slug}`,
       title: post.title,
       description: post.excerpt,
-      modifiedTime: modified,
+      ...(post.modified ? { modifiedTime: post.modified } : {}),
       images: [{ url: post.thumbnail }],
     },
   };
@@ -46,14 +45,13 @@ export default async function ResearchArticle({
     (p) => p.slug === slug,
   );
   if (!post) notFound();
-  const modified = post.modified ?? post.published;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
     description: post.excerpt,
     datePublished: post.published,
-    dateModified: modified,
+    ...(post.modified ? { dateModified: post.modified } : {}),
     mainEntityOfPage: `https://${site.domain}/research/${post.slug}`,
   };
   return (

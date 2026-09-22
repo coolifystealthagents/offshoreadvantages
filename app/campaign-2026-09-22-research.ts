@@ -1,7 +1,7 @@
 import type { ResearchPost } from './fleet-data';
 import { buildResearchSections, type ResearchStudyTopic } from './campaign-2026-09-18-research';
 
-export const september22ResearchDate = '2026-09-22';
+export const september22ResearchDate = '2026-09-23';
 const sources = [
   {name:'NIST: Cybersecurity Framework 2.0',url:'https://www.nist.gov/cyberframework'},
   {name:'NIST: SP 800-53 Rev. 5 Security and Privacy Controls',url:'https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final'},
