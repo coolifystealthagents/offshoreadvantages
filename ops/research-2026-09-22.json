@@ -1,0 +1,28 @@
+{
+  "routine": "Daily Research Publishing",
+  "requiredCount": 5,
+  "verifiedCount": 0,
+  "repository": "coolifystealthagents/offshoreadvantages",
+  "productionBranch": "main",
+  "contentCommitSha": "edb86b1deba723b8c05a8bbbfab0da8e9bdffbb4",
+  "remoteSha": "edb86b1deba723b8c05a8bbbfab0da8e9bdffbb4",
+  "publicationTimezone": "UTC",
+  "sourceCheckedDate": "2026-09-22",
+  "build": "PASS: TypeScript and Next.js production build; 609 static pages",
+  "validation": "PASS: exactly 5 new unique slugs; 1,613-1,635 rendered words; 10 sources each; canonical, datePublished, sitemap, internal service links, and static routes",
+  "deployment": {
+    "resourceUuid": "e13etteoktwowvpgfh3f2h1i",
+    "status": "blocked",
+    "attempts": ["Authenticated POST /api/v1/deploy: HTTP 429", "Authenticated POST /api/v1/deploy after bounded wait: HTTP 429"],
+    "evidence": "Content SHA is present on remote main, but the configured Coolify deployment queue rejected both authenticated attempts as full.",
+    "blocker": "Coolify deployment capacity is unavailable; no deploy job could be created after two consecutive authenticated attempts.",
+    "recoveryAction": "Coolify platform owner clears or allows the queue to drain, deploys remote main SHA edb86b1deba723b8c05a8bbbfab0da8e9bdffbb4, then resumes all five live URL, title, unique-content, canonical, asset, schema, date, and sitemap checks."
+  },
+  "articles": [
+    {"family":"Research","topic":"accounts-payable invoice-approval segregation","slug":"offshore-accounts-payable-invoice-approval-segregation-study","sourcesChecked":"2026-09-22","contentHash":"sha256:700b4ab1c8ff55df631221f169c280abd9e0ea89ab3317644fdb2b70639a7ec6","wordCount":1621,"actualPublicationDate":null,"commitSha":"edb86b1deba723b8c05a8bbbfab0da8e9bdffbb4","liveUrl":"https://offshoreadvantages.com/research/offshore-accounts-payable-invoice-approval-segregation-study","verificationTime":null,"verified":false},
+    {"family":"Research","topic":"customer-support refund authority","slug":"philippines-customer-support-refund-authority-boundary-study","sourcesChecked":"2026-09-22","contentHash":"sha256:c4b181613caa8254b4dbeeda2df463d969595fdd3dad57e9d2154e0c6d246e93","wordCount":1613,"actualPublicationDate":null,"commitSha":"edb86b1deba723b8c05a8bbbfab0da8e9bdffbb4","liveUrl":"https://offshoreadvantages.com/research/philippines-customer-support-refund-authority-boundary-study","verificationTime":null,"verified":false},
+    {"family":"Research","topic":"data-retention disposition evidence","slug":"offshore-data-retention-disposition-evidence-research","sourcesChecked":"2026-09-22","contentHash":"sha256:4924ba614df89df429b7b5eb897b5ea1281516e92fffa8e494989db8941f77c6","wordCount":1631,"actualPublicationDate":null,"commitSha":"edb86b1deba723b8c05a8bbbfab0da8e9bdffbb4","liveUrl":"https://offshoreadvantages.com/research/offshore-data-retention-disposition-evidence-research","verificationTime":null,"verified":false},
+    {"family":"Research","topic":"marketing consent and suppression integrity","slug":"offshore-marketing-consent-suppression-integrity-study","sourcesChecked":"2026-09-22","contentHash":"sha256:ce7a22c71af668ac49e13aa2a35fd4a8fe4427a18b4ef8d2f13f64dbe935dbf9","wordCount":1630,"actualPublicationDate":null,"commitSha":"edb86b1deba723b8c05a8bbbfab0da8e9bdffbb4","liveUrl":"https://offshoreadvantages.com/research/offshore-marketing-consent-suppression-integrity-study","verificationTime":null,"verified":false},
+    {"family":"Research","topic":"project dependency aging and escalation","slug":"philippines-project-dependency-aging-escalation-research","sourcesChecked":"2026-09-22","contentHash":"sha256:5f81b434ceeeabc6990426d6577abfdd78e780b574993a8917aa924ad089435e","wordCount":1635,"actualPublicationDate":null,"commitSha":"edb86b1deba723b8c05a8bbbfab0da8e9bdffbb4","liveUrl":"https://offshoreadvantages.com/research/philippines-project-dependency-aging-escalation-research","verificationTime":null,"verified":false}
+  ]
+}
