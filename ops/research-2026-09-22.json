@@ -13,8 +13,8 @@
   "deployment": {
     "resourceUuid": "e13etteoktwowvpgfh3f2h1i",
     "status": "blocked",
-    "attempts": ["Authenticated POST /api/v1/deploy: HTTP 429", "Authenticated POST /api/v1/deploy after bounded wait: HTTP 429", "Resumed handoff authenticated POST /api/v1/deploy: HTTP 429"],
-    "evidence": "Content and evidence are present on remote main. The configured Coolify deployment queue rejected the resumed authenticated attempt as full, and bounded public checks returned HTTP 404 for all five routes while the sitemap remained HTTP 200.",
+    "attempts": ["Initial authenticated POST /api/v1/deploy: HTTP 429", "Initial retry after bounded wait: HTTP 429", "Resumed handoff authenticated POST /api/v1/deploy: HTTP 429", "Assignment-recovery authenticated POST /api/v1/deploy: HTTP 429", "Assignment-recovery retry after bounded wait: HTTP 429"],
+    "evidence": "Content and evidence are present on remote main. The configured Coolify deployment queue rejected both assignment-recovery attempts as full, and bounded public checks returned HTTP 404 for all five routes.",
     "blocker": "Coolify deployment capacity is unavailable; no deploy job could be created after two consecutive authenticated attempts.",
     "recoveryAction": "Coolify platform owner clears or allows the queue to drain, deploys remote main SHA edb86b1deba723b8c05a8bbbfab0da8e9bdffbb4, then resumes all five live URL, title, unique-content, canonical, asset, schema, date, and sitemap checks."
   },
