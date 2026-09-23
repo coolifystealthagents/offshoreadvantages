@@ -1,6 +1,6 @@
 import { buildBlogCampaignDetail, type BlogCampaignTopic } from './campaign-2026-09-18';
 
-export const september22CampaignDate = '2026-09-22' as const;
+export const september23CampaignDate = '2026-09-23' as const;
 const image = '/philippines-team.jpg';
 const citations = ['https://www.nist.gov/cyberframework', 'https://lawphil.net/statutes/repacts/ra2012/ra_10173_2012.html', 'https://privacy.gov.ph/wp-content/uploads/2023/05/NPC-Circular-No.-2023-06-DPA-Compliance-and-Accountability-Framework.pdf'] as const;
 
@@ -19,5 +19,5 @@ const topics: readonly BlogCampaignTopic[] = [
   { slug:'offshore-reporting-customer-master-duplicate-review', title:'Offshore customer-master duplicate reviews: compare the records before merging history', excerpt:'A QA workflow for likely duplicate customers, identifiers, contacts, legal entities, transactions, consent, and merge authority.', queue:'customer records flagged as possible duplicates by a person, matching rule, import, or downstream reporting discrepancy', evidence:'the candidate record identifiers, names, legal entities, approved contact fields, addresses, account relationships, transaction history, consent or preference records, source systems, creation events, and prior merge actions', checks:'compare stable identifiers before names, distinguish people from organizations, inspect shared contact details carefully, preserve source ownership, identify conflicting preferences, review linked transactions, and record uncertainty', boundary:'The client data owner approves merges, survivorship rules, identity conclusions, consent treatment, account ownership, deletions, and correction of financial or contractual history.', awkward:'two records share an email and postal address but represent separate family members with different purchases, marketing preferences, and support histories', finish:'approved records are merged or linked according to the client rule with reconciled downstream history, while uncertain candidates remain separate and reviewable', service:'reporting-and-qa' },
 ] as const;
 
-export const september22BlogPosts = topics.map((topic) => ({ slug:topic.slug, title:topic.title, excerpt:topic.excerpt, minutes:10, published:september22CampaignDate, image, citations:[...citations] }));
-export const september22BlogDetails = Object.fromEntries(topics.map((topic) => [topic.slug, buildBlogCampaignDetail(topic)])) as Record<string, ReturnType<typeof buildBlogCampaignDetail>>;
+export const september23BlogPosts = topics.map((topic) => ({ slug:topic.slug, title:topic.title, excerpt:topic.excerpt, minutes:10, published:september23CampaignDate, image, citations:[...citations] }));
+export const september23BlogDetails = Object.fromEntries(topics.map((topic) => [topic.slug, buildBlogCampaignDetail(topic)])) as Record<string, ReturnType<typeof buildBlogCampaignDetail>>;

@@ -5,17 +5,16 @@
   "repository": "coolifystealthagents/offshoreadvantages",
   "productionBranch": "main",
   "contentCommitSha": "caaf38a00bfc0f8c581c9b981e3298a728c2f7b6",
-  "remoteSha": "695b13eed7ac1776e286d45a7d0f1023d4bbe5be",
+  "remoteSha": "5d7c53ef79e672e46c6e1ae1758f7c2e6854f30d",
   "publicationTimezone": "UTC",
   "build": "PASS: TypeScript and Next.js production build, 604 static pages",
   "validation": "PASS: 12 historically unique slugs; 12 canonical/date/schema routes; 1,732-1,773 rendered words; internal service and contact paths; authoritative citations",
   "deployment": {
     "resourceUuid": "e13etteoktwowvpgfh3f2h1i",
-    "status": "blocked",
-    "attempts": ["Authenticated POST /api/v1/deploy: HTTP 429", "Authenticated POST /api/v1/deploy after bounded wait: HTTP 429"],
-    "evidence": "Coolify application e13etteoktwowvpgfh3f2h1i is healthy and configured for coolifystealthagents/offshoreadvantages.git main, but the global deployment queue is full. Public transition check remains HTTP 404.",
-    "blocker": "Coolify deployment capacity is unavailable; no deploy job could be created after two consecutive authenticated attempts.",
-    "recoveryAction": "Coolify platform owner clears or allows the existing queue to drain, then reruns deployment of remote main SHA 695b13eed7ac1776e286d45a7d0f1023d4bbe5be and resumes all 12 live URL, canonical, asset, schema, date, and sitemap checks."
+    "status": "date-correction-pending",
+    "attempts": [],
+    "evidence": "The original batch became reachable with stale 2026-09-22 metadata. The source and ledger were corrected before any article was counted.",
+    "recoveryAction": "Deploy corrected 2026-09-23 metadata and verify all 12 live URLs."
   },
   "articles": [
     { "family":"Blog", "topic":"Account email change verification", "slug":"philippines-customer-support-account-email-change-intake", "sources":["https://www.nist.gov/cyberframework","https://lawphil.net/statutes/repacts/ra2012/ra_10173_2012.html","https://privacy.gov.ph/wp-content/uploads/2023/05/NPC-Circular-No.-2023-06-DPA-Compliance-and-Accountability-Framework.pdf"], "contentHash":"cab1f2271fece1fd2f4d897b774449731587563139a3c320749dd4327b358ee7", "actualPublicationDate":null, "commitSha":"caaf38a00bfc0f8c581c9b981e3298a728c2f7b6", "liveUrl":"https://offshoreadvantages.com/blog/philippines-customer-support-account-email-change-intake", "verified":false, "verificationTime":null },
