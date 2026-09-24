@@ -1,3 +1,4 @@
+import { september24BlogDetails, september24BlogPosts } from './campaign-2026-09-24';
 import { september23Run2BlogDetails, september23Run2BlogPosts } from './campaign-2026-09-23-run2';
 import { september23BlogDetails, september23BlogPosts } from './campaign-2026-09-23';
 import { september19BlogDetails, september19BlogPosts } from './campaign-2026-09-19';
@@ -89,9 +90,9 @@ export const todayBlogDetails = Object.fromEntries(todayBlogPosts.map((post) => 
 }])) as Record<string, any>;
 
 // Keep the routed Blog catalog newest-first; the August 10 batch precedes older entries.
-export const allBlogPosts = [...september23Run2BlogPosts, ...september23BlogPosts, ...september19BlogPosts, ...september18BlogPosts, ...september10BlogPosts, ...september9BlogPosts, ...september8BlogPosts, ...september7BlogPosts, ...september4BlogPosts, ...september3BlogPosts, ...september2BlogPosts, ...september1BlogPosts, ...august31BlogPosts, ...august23BlogPosts, ...august21BlogPosts, ...august20RepairBlogPosts, ...august19BlogPosts, ...august18BlogPosts, ...august17BlogPosts, ...august14BlogPosts, ...august13BlogPosts, ...august11BlogPosts, ...batchBlogPosts, ...run2BlogPosts, ...todayBlogPosts, ...blogPosts] as const;
+export const allBlogPosts = [...september24BlogPosts, ...september23Run2BlogPosts, ...september23BlogPosts, ...september19BlogPosts, ...september18BlogPosts, ...september10BlogPosts, ...september9BlogPosts, ...september8BlogPosts, ...september7BlogPosts, ...september4BlogPosts, ...september3BlogPosts, ...september2BlogPosts, ...september1BlogPosts, ...august31BlogPosts, ...august23BlogPosts, ...august21BlogPosts, ...august20RepairBlogPosts, ...august19BlogPosts, ...august18BlogPosts, ...august17BlogPosts, ...august14BlogPosts, ...august13BlogPosts, ...august11BlogPosts, ...batchBlogPosts, ...run2BlogPosts, ...todayBlogPosts, ...blogPosts] as const;
 
-export const campaignBlogDetails = { ...september23Run2BlogDetails, ...september23BlogDetails, ...september19BlogDetails, ...september18BlogDetails, ...september10BlogDetails, ...september9BlogDetails, ...september8BlogDetails, ...september7BlogDetails, ...september4BlogDetails, ...september3BlogDetails, ...september2BlogDetails, ...september1BlogDetails, ...august31BlogDetails };
+export const campaignBlogDetails = { ...september24BlogDetails, ...september23Run2BlogDetails, ...september23BlogDetails, ...september19BlogDetails, ...september18BlogDetails, ...september10BlogDetails, ...september9BlogDetails, ...september8BlogDetails, ...september7BlogDetails, ...september4BlogDetails, ...september3BlogDetails, ...september2BlogDetails, ...september1BlogDetails, ...august31BlogDetails };
 
 export const blogDetails = {
   'offshore-advantages-provider-questions': {
