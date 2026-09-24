@@ -1,0 +1,33 @@
+{
+  "routine": "Daily Blog Publishing",
+  "requiredCount": 12,
+  "verifiedCount": 0,
+  "repository": "coolifystealthagents/offshoreadvantages",
+  "productionBranch": "main",
+  "contentCommitSha": "70a53ed21b2c308f4491cb93a2d99af29e272ff9",
+  "remoteSha": "70a53ed21b2c308f4491cb93a2d99af29e272ff9",
+  "publicationTimezone": "UTC",
+  "build": "PASS: TypeScript and clean Next.js production build, 634 static pages",
+  "validation": "PASS: 12 historically unique slugs; 12 canonical/date/schema routes; more than 900 substantive words per source-rendered article; internal links; authoritative sources; Humanizer 2.9.1 gate",
+  "deployment": {
+    "resourceUuid": "e13etteoktwowvpgfh3f2h1i",
+    "status": "blocked",
+    "evidence": "GitHub main accepted the exact content commit. The configured Coolify API returned HTTP 302 to login, and 17 bounded public transition checks through 2026-09-24T15:16:03Z returned HTTP 404 for a new route.",
+    "blocker": "Coolify owner must restore authenticated API access and update the application branch from the injected stale value master to main, deploy 70a53ed21b2c308f4491cb93a2d99af29e272ff9, then resume live verification."
+  },
+  "sources": ["https://www.nist.gov/cyberframework", "https://lawphil.net/statutes/repacts/ra2012/ra_10173_2012.html", "https://privacy.gov.ph/wp-content/uploads/2023/05/NPC-Circular-No.-2023-06-DPA-Compliance-and-Accountability-Framework.pdf"],
+  "articles": [
+    {"family":"Blog","topic":"Refund destination verification","slug":"philippines-customer-support-refund-destination-verification","contentHash":"e6c80f66cfd051f26761575478912b74b6bd3cf7170a0275c5d67aae575f614f","actualPublicationDate":null,"commitSha":"70a53ed21b2c308f4491cb93a2d99af29e272ff9","liveUrl":"https://offshoreadvantages.com/blog/philippines-customer-support-refund-destination-verification","verified":false,"verificationTime":null},
+    {"family":"Blog","topic":"Vendor insurance expiry tracking","slug":"offshore-operations-vendor-insurance-expiry-tracker","contentHash":"44d72025014538363874780597333a32b7ca2a98858502d11773fef6369a27d2","actualPublicationDate":null,"commitSha":"70a53ed21b2c308f4491cb93a2d99af29e272ff9","liveUrl":"https://offshoreadvantages.com/blog/offshore-operations-vendor-insurance-expiry-tracker","verified":false,"verificationTime":null},
+    {"family":"Blog","topic":"Shared mailbox retention review","slug":"philippines-admin-shared-mailbox-retention-review","contentHash":"1c5b1813f9c09e8ce8f261048fc1f5b547746acffc48be53fc58441ef217e944","actualPublicationDate":null,"commitSha":"70a53ed21b2c308f4491cb93a2d99af29e272ff9","liveUrl":"https://offshoreadvantages.com/blog/philippines-admin-shared-mailbox-retention-review","verified":false,"verificationTime":null},
+    {"family":"Blog","topic":"Time-zone cutoff reconciliation","slug":"offshore-reporting-time-zone-cutoff-reconciliation","contentHash":"270f3c2c59064f5117d586a2fbdfe26ec4d139329cb2401a4bd381f9a51e8262","actualPublicationDate":null,"commitSha":"70a53ed21b2c308f4491cb93a2d99af29e272ff9","liveUrl":"https://offshoreadvantages.com/blog/offshore-reporting-time-zone-cutoff-reconciliation","verified":false,"verificationTime":null},
+    {"family":"Blog","topic":"Subscription seat-removal intake","slug":"philippines-customer-support-subscription-seat-removal-intake","contentHash":"b519e059678d4377904f0193f00cec9f674a96a5e178cb66a04557a7ddd89188","actualPublicationDate":null,"commitSha":"70a53ed21b2c308f4491cb93a2d99af29e272ff9","liveUrl":"https://offshoreadvantages.com/blog/philippines-customer-support-subscription-seat-removal-intake","verified":false,"verificationTime":null},
+    {"family":"Blog","topic":"Webhook failure replay control","slug":"offshore-operations-webhook-failure-replay-control","contentHash":"a77c2a66d2547a2fcb7e75829d3fc8ad02d2c69467c4c68a8daf86f44bb7547c","actualPublicationDate":null,"commitSha":"70a53ed21b2c308f4491cb93a2d99af29e272ff9","liveUrl":"https://offshoreadvantages.com/blog/offshore-operations-webhook-failure-replay-control","verified":false,"verificationTime":null},
+    {"family":"Blog","topic":"Candidate interview record audit","slug":"philippines-admin-candidate-interview-record-audit","contentHash":"19fc0a432ad0c5aa44b7aed5e3ad6705fbe3ec3a1eee4273589efc64dcbc713c","actualPublicationDate":null,"commitSha":"70a53ed21b2c308f4491cb93a2d99af29e272ff9","liveUrl":"https://offshoreadvantages.com/blog/philippines-admin-candidate-interview-record-audit","verified":false,"verificationTime":null},
+    {"family":"Blog","topic":"Product-return cohort validation","slug":"offshore-reporting-product-return-cohort-validation","contentHash":"70616ac5b09cb8cdba1a3ef6cd3015ebc701a02439a614b209e5da1924987d93","actualPublicationDate":null,"commitSha":"70a53ed21b2c308f4491cb93a2d99af29e272ff9","liveUrl":"https://offshoreadvantages.com/blog/offshore-reporting-product-return-cohort-validation","verified":false,"verificationTime":null},
+    {"family":"Blog","topic":"Loyalty points adjustment review","slug":"philippines-customer-support-loyalty-points-adjustment-review","contentHash":"f2788abd21d7457bfa20be3dd4fd0f9bb9d74262f2ede22105877e5dd9811841","actualPublicationDate":null,"commitSha":"70a53ed21b2c308f4491cb93a2d99af29e272ff9","liveUrl":"https://offshoreadvantages.com/blog/philippines-customer-support-loyalty-points-adjustment-review","verified":false,"verificationTime":null},
+    {"family":"Blog","topic":"Customer data sync exception queue","slug":"offshore-operations-customer-data-sync-exception-queue","contentHash":"872675324d1c7f3ae8dcf49bd2ceb9784dd15ad97096041dc7edeac90e77b0b7","actualPublicationDate":null,"commitSha":"70a53ed21b2c308f4491cb93a2d99af29e272ff9","liveUrl":"https://offshoreadvantages.com/blog/offshore-operations-customer-data-sync-exception-queue","verified":false,"verificationTime":null},
+    {"family":"Blog","topic":"Policy acknowledgment gap review","slug":"philippines-admin-policy-acknowledgment-gap-review","contentHash":"a0a7ad05623e5fb67451c3ec9bb481f289a4c6559a7237f3c5c1bf5652e24c08","actualPublicationDate":null,"commitSha":"70a53ed21b2c308f4491cb93a2d99af29e272ff9","liveUrl":"https://offshoreadvantages.com/blog/philippines-admin-policy-acknowledgment-gap-review","verified":false,"verificationTime":null},
+    {"family":"Blog","topic":"Support backlog aging rebuild","slug":"offshore-reporting-support-backlog-aging-rebuild","contentHash":"ca7e6cb471aece579767e538f695f9a9cf7f2d45148a8cc4f27c9d5dbf5e3840","actualPublicationDate":null,"commitSha":"70a53ed21b2c308f4491cb93a2d99af29e272ff9","liveUrl":"https://offshoreadvantages.com/blog/offshore-reporting-support-backlog-aging-rebuild","verified":false,"verificationTime":null}
+  ]
+}
