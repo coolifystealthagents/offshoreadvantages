@@ -1,0 +1,28 @@
+{
+  "routine": "Daily Research Publishing",
+  "requiredCount": 5,
+  "verifiedCount": 0,
+  "repository": "coolifystealthagents/offshoreadvantages",
+  "productionBranch": "main",
+  "contentCommitSha": "2a96223ad41feff0a3d37c9ffbddb1f52edb3b3c",
+  "remoteContentSha": "2a96223ad41feff0a3d37c9ffbddb1f52edb3b3c",
+  "publicationTimezone": "UTC",
+  "sourceCheckedDate": "2026-09-24",
+  "build": "PASS: TypeScript and Next.js production build; 627 static pages; all five new routes generated",
+  "validation": "PASS: exactly 5 genuinely new unique slugs; 1,485-1,526 substantive words; 10 named sources each; unique title and H1, canonical, September 24 datePublished, no dateModified, shared asset, sitemap, Research index, internal service link, source section, and static routes",
+  "deployment": {
+    "resourceUuid": "e13etteoktwowvpgfh3f2h1i",
+    "status": "blocked",
+    "deployedCommitSha": null,
+    "evidence": "Production main accepted the exact content commit. The configured Coolify API credential returned HTTP 401 Unauthenticated, and three bounded public transition checks continued to return HTTP 404 for every new route while the existing Research index and sitemap returned HTTP 200.",
+    "unblockOwner": "OffshoreAdvantages.com infrastructure owner",
+    "recoveryAction": "Restore the dedicated Coolify3 API credential or deploy production main at content commit 2a96223ad41feff0a3d37c9ffbddb1f52edb3b3c, then live-verify all five routes and update this ledger with each actual publication date, deployed commit, and verification time."
+  },
+  "articles": [
+    {"family":"Research","topic":"unapplied cash resolution evidence","slug":"offshore-unapplied-cash-resolution-evidence-study","sourcesChecked":"2026-09-24","contentHash":"sha256:34c2f1f417b6212411b622b82243ab63bdf2d81ba2587cba6e4148eda2dcc6c8","wordCount":1493,"actualPublicationDate":null,"commitSha":"2a96223ad41feff0a3d37c9ffbddb1f52edb3b3c","liveUrl":"https://offshoreadvantages.com/research/offshore-unapplied-cash-resolution-evidence-study","verificationTime":null,"verified":false},
+    {"family":"Research","topic":"customer complaint reason-code consistency","slug":"philippines-customer-complaint-reason-code-consistency-research","sourcesChecked":"2026-09-24","contentHash":"sha256:a32de7b305ee32f5053f578e527f1840712dcaba03d0f2774f086e1d77fad732","wordCount":1485,"actualPublicationDate":null,"commitSha":"2a96223ad41feff0a3d37c9ffbddb1f52edb3b3c","liveUrl":"https://offshoreadvantages.com/research/philippines-customer-complaint-reason-code-consistency-research","verificationTime":null,"verified":false},
+    {"family":"Research","topic":"CRM lifecycle-stage provenance","slug":"offshore-crm-lifecycle-stage-provenance-study","sourcesChecked":"2026-09-24","contentHash":"sha256:3af1681b44d77abf0551fd16a27ec80461bbf51cbf110a6380399a29f92dff82","wordCount":1502,"actualPublicationDate":null,"commitSha":"2a96223ad41feff0a3d37c9ffbddb1f52edb3b3c","liveUrl":"https://offshoreadvantages.com/research/offshore-crm-lifecycle-stage-provenance-study","verificationTime":null,"verified":false},
+    {"family":"Research","topic":"purchase-requisition evidence completeness","slug":"philippines-purchase-requisition-evidence-completeness-study","sourcesChecked":"2026-09-24","contentHash":"sha256:f691a9cf8930fe4c1a75371e3e5a95cc53fac46b0bada2043754505f0b3ddd27","wordCount":1504,"actualPublicationDate":null,"commitSha":"2a96223ad41feff0a3d37c9ffbddb1f52edb3b3c","liveUrl":"https://offshoreadvantages.com/research/philippines-purchase-requisition-evidence-completeness-study","verificationTime":null,"verified":false},
+    {"family":"Research","topic":"data-subject request identity and routing evidence","slug":"offshore-data-subject-request-identity-routing-research","sourcesChecked":"2026-09-24","contentHash":"sha256:e414dcbba7620465f193c5e6aeeb353d7762139dbbac395e94ec899ab993617c","wordCount":1526,"actualPublicationDate":null,"commitSha":"2a96223ad41feff0a3d37c9ffbddb1f52edb3b3c","liveUrl":"https://offshoreadvantages.com/research/offshore-data-subject-request-identity-routing-research","verificationTime":null,"verified":false}
+  ]
+}
