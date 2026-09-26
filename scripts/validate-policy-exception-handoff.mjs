@@ -19,10 +19,14 @@ for (const expected of [
   'post.serviceHandoff ? (',
   '<a href={post.serviceHandoff.href}>',
   '{post.serviceHandoff.label}',
-  'modifiedTime: modified',
-  'dateModified: modified',
 ]) {
   if (!renderer.includes(expected)) throw new Error(`Missing reusable renderer contract: ${expected}`);
+}
+for (const [label, pattern] of [
+  ['Open Graph modified-date contract', /post\.modified\s*\?\s*\{\s*modifiedTime:\s*post\.modified\s*\}\s*:\s*\{\}/],
+  ['Article modified-date contract', /post\.modified\s*\?\s*\{\s*dateModified:\s*post\.modified\s*\}\s*:\s*\{\}/],
+]) {
+  if (!pattern.test(renderer)) throw new Error(`Missing reusable renderer ${label}.`);
 }
 
 const built = path.join('.next/server/app/research', `${slug}.html`);
