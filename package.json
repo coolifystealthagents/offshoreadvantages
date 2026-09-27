@@ -9,7 +9,8 @@
     "routines:validate": "node scripts/validate-content-routines.mjs",
     "repair:validate": "node scripts/validate-aug10-blog-repair.mjs",
     "handoff:validate": "node scripts/validate-approval-latency-handoff.mjs --source-only",
-    "policy-exception-handoff:validate": "node scripts/validate-policy-exception-handoff.mjs --source-only"
+    "policy-exception-handoff:validate": "node scripts/validate-policy-exception-handoff.mjs --source-only",
+    "escalation-reversal-handoff:validate": "node scripts/validate-escalation-reversal-handoff.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^15.1.6",
