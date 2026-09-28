@@ -1,0 +1,26 @@
+{
+  "cycle": "September28",
+  "family": "Research",
+  "taskId": "83f78b82-af8c-4b5f-9343-58963575a85d",
+  "runId": "251aed29-e208-4ba2-b668-0840a48c0c10",
+  "repository": "coolifystealthagents/offshoreadvantages",
+  "productionBranch": "main",
+  "baselineSha": "1c30afdc7063f5ec2f820b8363a0a59f44ce4061",
+  "localBranch": "routine/offaa-80-2026-09-28-research",
+  "timezone": "UTC",
+  "provisionalPublicationDate": "2026-09-28",
+  "publicationDateRule": "Blog integrator must reconcile to the actual first-publication date before the sole combined push; user owns final public verification.",
+  "requiredCount": 5,
+  "draftedCount": 5,
+  "liveVerifiedCount": 0,
+  "maximumPairwiseFiveWordShingleJaccard": 0.2833078101071976,
+  "articles": [
+    {"slug":"philippines-crm-duplicate-account-merge-readiness-study","topic":"CRM duplicate-account merge readiness","bodyWords":1306,"contentSha256":"d9cb2142e6a580de7ee58c0cf3cf3397654dab26b2a18cef8b170dc0c223cd85","liveUrl":null,"verificationTime":null},
+    {"slug":"offshore-accounts-payable-approval-chain-integrity-research","topic":"Accounts-payable approval-chain integrity","bodyWords":1267,"contentSha256":"379a99f5cef3bf49ae9b17cc3d34e73f55164c2e7fde678766a81d23df7bca5c","liveUrl":null,"verificationTime":null},
+    {"slug":"philippines-customer-refund-escalation-packet-study","topic":"Customer refund escalation packets","bodyWords":1254,"contentSha256":"492323968d6c866513e691f2ffcd3a11bc803a233d6dc26ac08c90378db745d2","liveUrl":null,"verificationTime":null},
+    {"slug":"offshore-vendor-sla-breach-evidence-readiness-research","topic":"Vendor SLA breach evidence readiness","bodyWords":1221,"contentSha256":"cf87258cef14d7c457654ddc18242a32e996808bd37e0baff95ec508c171be09","liveUrl":null,"verificationTime":null},
+    {"slug":"philippines-employee-offboarding-evidence-continuity-study","topic":"Employee offboarding evidence continuity","bodyWords":1248,"contentSha256":"0eb3932b1f2ea74e43827227dc7c63fa588138b124813053ebc18cfaa3eaa286","liveUrl":null,"verificationTime":null}
+  ],
+  "validation": {"researchValidator":"PASS","cleanProductionBuild":"PASS","generatedRoutes":5},
+  "deployment": {"submitted":false,"owner":"BROWSER OPERATOR","status":"not requested by Research"}
+}
