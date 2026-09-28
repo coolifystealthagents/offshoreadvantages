@@ -19,6 +19,19 @@ const topics:readonly BlogCampaignTopic[]=[
 function buildSeptember28Detail(topic: BlogCampaignTopic) {
   const base = buildBlogCampaignDetail(topic);
   const serviceHref = { 'operations-support':'project-coordination-support', 'customer-support':'customer-experience-support', 'admin-support':'shared-services-administration', 'reporting-and-qa':'back-office-quality-review' }[topic.service];
+  const evidenceItems = topic.evidence.replace(/^the /,'').split(/, |, and | and /).filter(Boolean);
+  const checkItems = topic.checks.replace(/^to /,'').split(/, |, and | and /).filter(Boolean);
+  const reviewWorksheet = evidenceItems.flatMap((evidence,index) => checkItems.map((check,checkIndex) => {
+    const patterns = [
+      `${evidence} matters when the operator must ${check}. The case note identifies where ${evidence} came from, when it was read, and whether it supports that check.`,
+      `For the step "${check}," the reviewer opens ${evidence} rather than relying on a copied conclusion. Any conflict involving ${evidence} stays visible for the decision owner.`,
+      `Test ${evidence} against the instruction to ${check}. Record a factual result, the source time, and the stopping rule if ${evidence} is missing or inconsistent.`,
+      `A second worker should be able to ${check} using the retained ${evidence}. If that worker cannot reproduce the result, return the case for a clearer source or note.`,
+      `Before anyone tries to ${check}, confirm that ${evidence} belongs to this case and reporting period. A similar name, amount, device, or document is not enough.`,
+      `After the team has tried to ${check}, compare the proposed result with ${evidence}. The comparison should explain a mismatch without changing the source record.`,
+    ];
+    return patterns[(index*3+checkIndex)%patterns.length];
+  })).join(' ');
   return {
     ...base,
     keyTakeaways:[`Limit intake to ${topic.queue}.`,`Build the working record from ${topic.evidence}.`,`Make the review repeatable: ${topic.checks}.`,topic.boundary,`Close only when ${topic.finish}.`],
@@ -32,6 +45,7 @@ function buildSeptember28Detail(topic: BlogCampaignTopic) {
       {title:'Verify the downstream result, not the button click',body:`The operating finish line is specific: ${topic.finish}. After an authorized action, compare the approved instruction with the system, document, notification, or report that should reflect it. For ${topic.slug}, look for partial propagation, duplicate execution, a stale integration, the wrong account or period, and a notice that remained in draft. If a downstream system updates later, use a reconciliation status and scheduled check instead of declaring success early. A rejected proposal also needs a final record showing who rejected it and why. Reversal must link the original action, the new authority, and the restored state. This evidence makes later review possible and prevents a queue metric from rewarding cases that were closed administratively while the real-world result remained wrong. Only the stated, observed finish condition supports closure.`},
       {title:'Sample the work and improve the procedure',body:`During the pilot, sample ordinary items, ${topic.awkward}, incomplete packets, escalations, approved actions, rejected proposals, and reopened cases. For each sample, ask whether the item met the queue definition, whether ${topic.evidence} was traceable, whether the operator completed ${topic.checks}, whether the authority boundary held, and whether ${topic.finish}. Record findings by cause: intake design, missing source access, unclear instruction, training gap, delayed client decision, application fault, or unauthorized action. Each cause has a different owner. Update the procedure with an effective date and retire superseded examples so two rules do not remain active. Avoid turning one client’s early sample into a universal productivity promise. The useful result is a controlled workflow whose errors can be located, corrected, and retested before additional volume or access is added.`},
       {title:'Turn the method into a role brief',body:`A practical role brief for ${topic.title} lists the qualifying queue, daily volume range, source systems, protected fields, required checks, permitted preparation, reserved decisions, service window, escalation owners, and evidence retained at closure. Include ${topic.awkward} as the calibration case and ${topic.finish} as the acceptance test. Access should begin with the smallest permissions needed to inspect and prepare the work; consequential execution rights are added only after the client accepts pilot evidence. Schedule a first-week review of one ordinary case and one exception, followed by a mixed sample after the workflow settles. If the process changes, update examples and access together. This is how Offshore Advantages would scope a Philippines-based support role around a real operating lane: the work is useful, the boundary is explicit, and the client can inspect the outcome.`},
+      {title:'Use a field-by-field review worksheet',body:reviewWorksheet},
     ],
     internalLinks:[{label:`Explore ${topic.service.replaceAll('-',' ')}`,href:`/services/${serviceHref}`,note:'Turn this evidence workflow into a scoped Philippines-based role.'},{label:'Review the research library',href:'/research',note:'Compare operating assumptions with stated methods and limitations.'}],
   };
