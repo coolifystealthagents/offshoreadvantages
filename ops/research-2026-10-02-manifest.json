@@ -1,0 +1,27 @@
+{
+  "cycleLabel": "2026-10-02",
+  "family": "Research",
+  "taskId": "58fedd9f-c4b9-46b7-853e-e915629544aa",
+  "pairedBlogIssue": "OFFAA-83",
+  "repository": "coolifystealthagents/offshoreadvantages",
+  "productionBranch": "main",
+  "baselineSha": "b455504bec673dce599b3441936bd043b220146d",
+  "localBranch": "routine/offaa-82-2026-10-02-research",
+  "worktree": "/paperclip/instances/default/projects/727fabaf-f3b2-430e-97dd-5b1cc42bde73/c343965a-29d9-4fbc-a529-1a77fdb4dcb2/offaa-82-research-20261002",
+  "timezone": "UTC",
+  "provisionalPublicationDate": "2026-10-02",
+  "publicationDateRule": "Blog integrator must reconcile to actual first-publication date immediately before the sole combined push.",
+  "requiredCount": 5,
+  "draftedCount": 5,
+  "liveVerifiedCount": 0,
+  "maximumPairwiseFiveWordShingleJaccard": 0.45867542419266555,
+  "articles": [
+    {"slug":"offshore-access-recertification-evidence-quality-study","topic":"Access recertification evidence quality","bodyWords":1370,"contentSha256":"7da8fd4804824e8a90b3b0775ed93651cecc7ac5ca15b1261eb816e4030857ca"},
+    {"slug":"philippines-processor-inventory-contract-alignment-research","topic":"Processor inventory and contract alignment","bodyWords":1359,"contentSha256":"17523d9b7071bd98fd35456bfa19e9d3d90641f6bd12821e29a5e7e7c62634db"},
+    {"slug":"offshore-customer-complaint-taxonomy-reliability-study","topic":"Customer complaint taxonomy reliability","bodyWords":1335,"contentSha256":"274826c4ab341228485c7c996bb2120b4785e641e2196bb4f525859ad253133a"},
+    {"slug":"philippines-sales-commission-exception-traceability-research","topic":"Sales commission exception traceability","bodyWords":1317,"contentSha256":"e3008af38d50d990510dba2f8a05b1db16817e37f92a62a7a8fdfa6f68e17d03"},
+    {"slug":"offshore-business-continuity-contact-tree-test-research","topic":"Business continuity contact-tree testing","bodyWords":1312,"contentSha256":"c5c9aab3b34a6d74cbe6a45ddf31b1b60d364da7c292e837a9674eb40cbc7c2e"}
+  ],
+  "validation": {"researchValidator":"PASS","typecheck":"PASS","cleanProductionBuild":"PASS","generatedPages":679,"generatedResearchRoutes":5},
+  "deployment": {"submitted":false,"owner":"Browser Operator","status":"not requested by Research"}
+}
