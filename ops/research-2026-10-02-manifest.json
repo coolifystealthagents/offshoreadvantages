@@ -22,6 +22,6 @@
     {"slug":"philippines-sales-commission-exception-traceability-research","topic":"Sales commission exception traceability","bodyWords":1286,"contentSha256":"a06e8f80776d513e9f8fc47230356ea6c12da8690d92e61e94d2baab1fedb90e"},
     {"slug":"offshore-business-continuity-contact-tree-test-research","topic":"Business continuity contact-tree testing","bodyWords":1285,"contentSha256":"f8b98b05cb96e25ec082eb65531e26569007581d5a9a15eae0c1e33655064c1a"}
   ],
-  "validation": {"researchValidator":"PASS","typecheck":"PASS","cleanProductionBuild":"PASS","generatedPages":679,"generatedResearchRoutes":5},
+  "validation": {"researchValidator":"PASS","typecheck":"PASS","cleanProductionBuild":"PASS","generatedPages":692,"generatedResearchRoutes":5,"qualitativeOriginalityRepair":"PASS"},
   "deployment": {"submitted":false,"owner":"Browser Operator","status":"not requested by Research"}
 }

@@ -9,7 +9,7 @@
   "worktree": "/paperclip/instances/default/projects/727fabaf-f3b2-430e-97dd-5b1cc42bde73/c343965a-29d9-4fbc-a529-1a77fdb4dcb2/offaa-83-blog-20261002",
   "siteTimezone": "UTC",
   "publicationDate": "2026-10-02",
-  "state": "combined-release-validation",
+  "state": "combined-release-validated-awaiting-push",
   "pairedResearchIssue": "OFFAA-82",
   "researchHandoff": {
     "sourceCommitSha": "9f39801ed41fceb0d0f42613a828f70e434d7301",
@@ -40,7 +40,7 @@
     "sharedArgumentsChecked": true,
     "researchCombined": true,
     "typecheckPassed": true,
-    "cleanBuildPassed": false,
+    "cleanBuildPassed": true,
     "pushed": false,
     "deployed": false,
     "liveVerified": false
