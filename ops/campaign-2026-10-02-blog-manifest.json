@@ -1,0 +1,43 @@
+{
+  "cycleLabel": "2026-10-02",
+  "family": "blog",
+  "requiredCount": 12,
+  "baselineSha": "b455504bec673dce599b3441936bd043b220146d",
+  "repository": "coolifystealthagents/offshoreadvantages",
+  "productionBranch": "main",
+  "draftBranch": "routine/offaa-83-2026-10-02-blog",
+  "worktree": "/paperclip/instances/default/projects/727fabaf-f3b2-430e-97dd-5b1cc42bde73/c343965a-29d9-4fbc-a529-1a77fdb4dcb2/offaa-83-blog-20261002",
+  "siteTimezone": "UTC",
+  "publicationDate": null,
+  "state": "topic-inventory-staged-awaiting-drafts-and-research-handoff",
+  "pairedResearchIssue": "OFFAA-82",
+  "researchHandoff": null,
+  "topics": [
+    {"slug":"offshore-chargeback-evidence-packet-review","pillar":"reporting-and-qa","topic":"Chargeback evidence packet review","primarySource":"https://www.consumerfinance.gov/rules-policy/regulations/1026/13/"},
+    {"slug":"philippines-crm-duplicate-record-merge-review","pillar":"operations-support","topic":"CRM duplicate-record merge review","primarySource":"https://www.nist.gov/privacy-framework"},
+    {"slug":"offshore-vendor-bank-detail-change-verification","pillar":"admin-support","topic":"Vendor bank-detail change verification","primarySource":"https://www.cisa.gov/secure-our-world/recognize-and-report-phishing"},
+    {"slug":"philippines-return-merchandise-disposition-workflow","pillar":"operations-support","topic":"Return merchandise disposition workflow","primarySource":"https://www.ftc.gov/business-guidance/resources/complying-made-usa-standard"},
+    {"slug":"offshore-subscription-pause-resume-support-workflow","pillar":"customer-support","topic":"Subscription pause and resume support workflow","primarySource":"https://www.ftc.gov/business-guidance/resources/negative-option-rule"},
+    {"slug":"philippines-payroll-input-cutoff-control","pillar":"admin-support","topic":"Payroll input cutoff and exception control","primarySource":"https://www.dol.gov/agencies/whd/fact-sheets/21-flsa-recordkeeping"},
+    {"slug":"offshore-localization-feedback-triage-register","pillar":"operations-support","topic":"Localization feedback triage register","primarySource":"https://www.w3.org/International/questions/qa-i18n"},
+    {"slug":"philippines-duplicate-invoice-exception-queue","pillar":"reporting-and-qa","topic":"Duplicate invoice exception queue","primarySource":"https://www.gao.gov/products/gao-24-107107"},
+    {"slug":"offshore-knowledge-article-expiry-review","pillar":"customer-support","topic":"Knowledge article expiry review","primarySource":"https://www.nist.gov/cyberframework"},
+    {"slug":"philippines-incident-customer-notification-draft-handoff","pillar":"customer-support","topic":"Incident customer-notification draft handoff","primarySource":"https://www.nist.gov/privacy-framework"},
+    {"slug":"offshore-sales-territory-exception-review","pillar":"reporting-and-qa","topic":"Sales territory exception review","primarySource":"https://www.ftc.gov/business-guidance/advertising-marketing"},
+    {"slug":"philippines-returns-refund-reconciliation","pillar":"reporting-and-qa","topic":"Returns and refund reconciliation","primarySource":"https://www.ftc.gov/business-guidance/resources/selling-internet-prompt-delivery-rules"}
+  ],
+  "gates": {
+    "topicUniquenessChecked": false,
+    "draftsComplete": false,
+    "bodyWordCountsChecked": false,
+    "fiveWordShingleOverlapChecked": false,
+    "repeatedParagraphsChecked": false,
+    "sharedArgumentsChecked": false,
+    "researchCombined": false,
+    "typecheckPassed": false,
+    "cleanBuildPassed": false,
+    "pushed": false,
+    "deployed": false,
+    "liveVerified": false
+  }
+}
