@@ -1,4 +1,4 @@
-// October 2 inventory. These drafts deliberately omit `published` until the first-publication date is known.
+// October 2 combined release; UTC is the site's configured publication timezone.
 const image = '/philippines-team.jpg';
 
 type Section = { title: string; body: string };
@@ -181,5 +181,5 @@ const articles: Article[] = [
     ],internalLinks:[{label:'Explore customer experience support',href:'/services/customer-experience-support',note:'Create a governed support-content review lane.'},{label:'Read the knowledge-base search-gap audit',href:'/blog/offshore-knowledge-base-search-gap-audit',note:'Use search behavior to find missing guidance.'}],banners:contact('Plan a knowledge-expiry review'),sources:[{name:'NIST Cybersecurity Framework 2.0',url:'https://www.nist.gov/cyberframework',note:'Governance, protection, and change-management context.'},{name:'NIST Privacy Framework',url:'https://www.nist.gov/privacy-framework',note:'Privacy risk-management context for published procedures.'}]},
 ];
 
-export const october2BlogPosts = articles.map(({ slug, title, excerpt, minutes, image, citations }) => ({ slug, title, excerpt, minutes, image, citations }));
+export const october2BlogPosts = articles.map(({ slug, title, excerpt, minutes, image, citations }) => ({ slug, title, excerpt, minutes, image, citations, published: '2026-10-02' }));
 export const october2BlogDetails = Object.fromEntries(articles.map(({ slug, keyTakeaways, sections, internalLinks, banners, sources }) => [slug, { keyTakeaways, sections, internalLinks, banners, sources }])) as Record<string, Omit<Article, 'slug' | 'title' | 'excerpt' | 'minutes' | 'image' | 'citations'>>;

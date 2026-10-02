@@ -8,10 +8,15 @@
   "draftBranch": "routine/offaa-83-2026-10-02-blog",
   "worktree": "/paperclip/instances/default/projects/727fabaf-f3b2-430e-97dd-5b1cc42bde73/c343965a-29d9-4fbc-a529-1a77fdb4dcb2/offaa-83-blog-20261002",
   "siteTimezone": "UTC",
-  "publicationDate": null,
-  "state": "blog-drafts-complete-validation-pending-publication-date",
+  "publicationDate": "2026-10-02",
+  "state": "combined-release-validation",
   "pairedResearchIssue": "OFFAA-82",
-  "researchHandoff": null,
+  "researchHandoff": {
+    "sourceCommitSha": "9f39801ed41fceb0d0f42613a828f70e434d7301",
+    "combinedCommitSha": "c2af9fb",
+    "count": 5,
+    "validator": "PASS"
+  },
   "topics": [
     {"slug":"offshore-chargeback-evidence-packet-review","pillar":"reporting-and-qa","topic":"Chargeback evidence packet review","primarySource":"https://www.consumerfinance.gov/rules-policy/regulations/1026/13/"},
     {"slug":"philippines-crm-duplicate-record-merge-review","pillar":"operations-support","topic":"CRM duplicate-record merge review","primarySource":"https://www.nist.gov/privacy-framework"},
@@ -33,7 +38,7 @@
     "fiveWordShingleOverlapChecked": true,
     "repeatedParagraphsChecked": true,
     "sharedArgumentsChecked": true,
-    "researchCombined": false,
+    "researchCombined": true,
     "typecheckPassed": true,
     "cleanBuildPassed": false,
     "pushed": false,

@@ -14,13 +14,13 @@
   "requiredCount": 5,
   "draftedCount": 5,
   "liveVerifiedCount": 0,
-  "maximumPairwiseFiveWordShingleJaccard": 0.45867542419266555,
+  "maximumPairwiseFiveWordShingleJaccard": 0.0003745318352059925,
   "articles": [
-    {"slug":"offshore-access-recertification-evidence-quality-study","topic":"Access recertification evidence quality","bodyWords":1370,"contentSha256":"7da8fd4804824e8a90b3b0775ed93651cecc7ac5ca15b1261eb816e4030857ca"},
-    {"slug":"philippines-processor-inventory-contract-alignment-research","topic":"Processor inventory and contract alignment","bodyWords":1359,"contentSha256":"17523d9b7071bd98fd35456bfa19e9d3d90641f6bd12821e29a5e7e7c62634db"},
-    {"slug":"offshore-customer-complaint-taxonomy-reliability-study","topic":"Customer complaint taxonomy reliability","bodyWords":1335,"contentSha256":"274826c4ab341228485c7c996bb2120b4785e641e2196bb4f525859ad253133a"},
-    {"slug":"philippines-sales-commission-exception-traceability-research","topic":"Sales commission exception traceability","bodyWords":1317,"contentSha256":"e3008af38d50d990510dba2f8a05b1db16817e37f92a62a7a8fdfa6f68e17d03"},
-    {"slug":"offshore-business-continuity-contact-tree-test-research","topic":"Business continuity contact-tree testing","bodyWords":1312,"contentSha256":"c5c9aab3b34a6d74cbe6a45ddf31b1b60d364da7c292e837a9674eb40cbc7c2e"}
+    {"slug":"offshore-access-recertification-evidence-quality-study","topic":"Access recertification evidence quality","bodyWords":1354,"contentSha256":"9637b12b768006cf5231ceafe49fccc33d62edab97519e48391ea92b6ea8dda9"},
+    {"slug":"philippines-processor-inventory-contract-alignment-research","topic":"Processor inventory and contract alignment","bodyWords":1351,"contentSha256":"f6d0b56403d9822812161a4da3f879e19aa0cfb88b702568ab960d7c2d9781e9"},
+    {"slug":"offshore-customer-complaint-taxonomy-reliability-study","topic":"Customer complaint taxonomy reliability","bodyWords":1315,"contentSha256":"cf01966d054d8b45e5e8bf8bc502222e723d1c749338ad389d6d05376b21ed68"},
+    {"slug":"philippines-sales-commission-exception-traceability-research","topic":"Sales commission exception traceability","bodyWords":1286,"contentSha256":"a06e8f80776d513e9f8fc47230356ea6c12da8690d92e61e94d2baab1fedb90e"},
+    {"slug":"offshore-business-continuity-contact-tree-test-research","topic":"Business continuity contact-tree testing","bodyWords":1285,"contentSha256":"f8b98b05cb96e25ec082eb65531e26569007581d5a9a15eae0c1e33655064c1a"}
   ],
   "validation": {"researchValidator":"PASS","typecheck":"PASS","cleanProductionBuild":"PASS","generatedPages":679,"generatedResearchRoutes":5},
   "deployment": {"submitted":false,"owner":"Browser Operator","status":"not requested by Research"}

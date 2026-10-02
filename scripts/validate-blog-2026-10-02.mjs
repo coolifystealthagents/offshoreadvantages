@@ -13,7 +13,6 @@ if (new Set(records.map((record) => record.slug)).size !== records.length) fail(
 if (expected.some((slug) => !records.some((record) => record.slug === slug))) fail('manifest and source slugs differ');
 const paragraphs = [];
 for (const record of records) {
-  if (/published\s*:|datePublished/.test(record.text)) fail(`${record.slug}: publication date leaked`);
   if (!/image\s*[:,]/.test(record.text)) fail(`${record.slug}: image missing`);
   if (!/href:\s*'\/contact-us'/.test(record.text) && !/banners:\s*contact\(/.test(record.text)) fail(`${record.slug}: contact CTA missing`);
   const bodies = [...record.text.matchAll(/body:\s*`([\s\S]*?)`/g)].map((match) => match[1]);
@@ -24,6 +23,7 @@ for (const record of records) {
   paragraphs.push(...bodies.map((body) => ({ slug: record.slug, value: normalize(body) })).filter((item) => item.value));
   console.log(`PASS words ${record.slug}: ${count}`);
 }
+if (!source.includes("published: '2026-10-02'")) fail('October 2 UTC publication date missing');
 const seen = new Map();
 for (const paragraph of paragraphs) {
   if (seen.has(paragraph.value)) fail(`repeated normalized paragraph: ${paragraph.slug} and ${seen.get(paragraph.value)}`);
