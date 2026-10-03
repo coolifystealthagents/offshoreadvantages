@@ -45,6 +45,11 @@ export default async function ResearchArticle({
     (p) => p.slug === slug,
   );
   if (!post) notFound();
+  const organization = {
+    "@type": "Organization",
+    name: site.brand,
+    url: `https://${site.domain.toLowerCase()}`,
+  };
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -53,6 +58,8 @@ export default async function ResearchArticle({
     datePublished: post.published,
     ...(post.modified ? { dateModified: post.modified } : {}),
     mainEntityOfPage: `https://${site.domain}/research/${post.slug}`,
+    author: organization,
+    publisher: organization,
   };
   return (
     <>
