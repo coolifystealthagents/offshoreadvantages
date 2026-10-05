@@ -4,7 +4,7 @@
   "repository": "coolifystealthagents/offshoreadvantages",
   "productionBranch": "main",
   "baselineSha": "58feb359741dc52288ba68e1799fcf6b5763cfab",
-  "publicationDate": null,
+  "publicationDate": "2026-10-05",
   "publicationDateRule": "Set per article only after first successful public verification in the configured site timezone.",
   "blog": [
     {
@@ -82,9 +82,15 @@
   ],
   "researchHandoff": {
     "issue": "OFFAA-84",
-    "status": "awaiting-local-commit",
-    "commitSha": null,
-    "worktree": null,
-    "inventory": []
+    "status": "integrated-local-handoff",
+    "commitSha": "f82806de30a383b6b26072fc7c4e4c61ab72f512",
+    "worktree": "/paperclip/instances/default/projects/727fabaf-f3b2-430e-97dd-5b1cc42bde73/c343965a-29d9-4fbc-a529-1a77fdb4dcb2/offaa-84-research-20261005",
+    "inventory": [
+      "supplier-scorecard-evidence-reliability-research",
+      "customer-commitment-register-accuracy-research",
+      "financial-close-checklist-dependency-integrity-research",
+      "campaign-utm-attribution-change-evidence-research",
+      "policy-exception-expiry-renewal-controls-research"
+    ]
   }
 }

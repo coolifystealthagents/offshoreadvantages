@@ -3,7 +3,7 @@ import crypto from 'node:crypto';
 import vm from 'node:vm';
 import ts from 'typescript';
 
-const sourcePath = 'app/campaign-2026-10-05-blog-draft.ts';
+const sourcePath = 'app/campaign-2026-10-05.ts';
 const ledgerPath = 'ops/cycle-2026-10-05-topic-ledger.json';
 const source = fs.readFileSync(sourcePath, 'utf8');
 const ledger = JSON.parse(fs.readFileSync(ledgerPath, 'utf8'));
@@ -21,7 +21,7 @@ if (articles.length !== 12) fail(`expected 12 Blog drafts, found ${articles.leng
 if (new Set(articles.map(({ slug }) => slug)).size !== 12) fail('duplicate Blog slug');
 const ledgerSlugs = ledger.blog.map(({ slug }) => slug);
 if (ledgerSlugs.some((slug) => !articles.some((article) => article.slug === slug))) fail('draft and topic ledger slugs differ');
-if (/published\s*:|publicationDate\s*:\s*['"]/.test(source)) fail('draft source must not set a publication date');
+if (!source.includes("october5BlogDate = '2026-10-05'")) fail('UTC publication date missing');
 if (source.includes('—') || source.includes('–')) fail('humanizer punctuation check failed');
 
 const paragraphOwners = new Map();
@@ -67,4 +67,4 @@ for (let left = 0; left < articles.length; left++) {
 console.log('PASS exact Blog draft count: 12');
 console.log('PASS exact and near repeated substantive paragraphs/sentences: none');
 console.log(`PASS maximum pairwise five-word-shingle Jaccard: ${maximum.score.toFixed(4)} (${maximum.pair})`);
-console.log('PASS publication date intentionally unset pending first public verification');
+console.log('PASS publication date: 2026-10-05 UTC; must be rechecked immediately before push');
