@@ -11,7 +11,7 @@
   "timezone": "UTC",
   "publicationDateRule": "The Blog integrator must replace the provisional date with each route's actual first-publication date in UTC before the sole combined push.",
   "requiredCount": 5,
-  "draftedCount": 3,
+  "draftedCount": 5,
   "liveVerifiedCount": 0,
   "topicInventory": [
     {
@@ -74,8 +74,18 @@
       "publicationDate": "provisional; OFFAA-85 must reconcile to actual first-publication date in UTC"
     }
   ],
+  "validation": {
+    "contentValidator": "PASS: 5 articles; lengths 1438, 1505, 1393, 1221, 1229",
+    "maximumFiveWordShingleJaccard": 0.002018842530282638,
+    "repeatedParagraphs": 0,
+    "priorSlugCollisions": 0,
+    "dependencyAudit": "PASS: npm ci --include=dev; 0 vulnerabilities",
+    "typecheck": "PASS",
+    "productionBuild": "PASS: 697 static pages",
+    "renderedRouteCount": 5
+  },
   "handoff": {
-    "ready": false,
-    "reason": "Five independent 1200-word articles, originality audits, validation, and local commit remain required. Research must not push or deploy."
+    "ready": true,
+    "reason": "Five independent articles are catalog-integrated and locally validated. OFFAA-85 must reconcile actual publication date and run combined 17-route pre-push gates. Research must not push or deploy."
   }
 }

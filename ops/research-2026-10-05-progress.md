@@ -14,8 +14,5 @@
 
 ## Remaining
 
-- Draft the remaining two independent Research articles and verify at least 1,200 substantive body words for every study.
-- Integrate them into the Research catalog with provisional UTC date handling for Blog reconciliation.
-- Add a cycle-specific validator and complete body length, content hash, repeated paragraph/sentence, shared-argument, historical-topic collision, and five-word-shingle audits.
-- Run locked dependency audit/install checks, typecheck, relevant tests, and a clean production build.
-- Commit only routine-owned files locally and hand the full commit SHA, worktree, and inventory to OFFAA-85. Research must not push or deploy.
+- OFFAA-85 must reconcile provisional dates to the actual first-publication date in UTC, integrate the local Research commit with its 12 Blog articles, and run the combined 17-route pre-push gates.
+- After browser-operator exact-SHA deployment evidence, the existing company agent must complete all 17 public checks. Research must not push or deploy.
