@@ -8,10 +8,11 @@
 - Primary sources were checked on 2026-10-05; the durable topic/source inventory is in `ops/research-2026-10-05-manifest.json`.
 - The configured Gemini credential returned `API_KEY_INVALID`. No credentials or host security settings were changed. Per contract, direct drafting is the recovery path.
 - No production push or deployment was attempted.
+- Drafted the first independent study, `supplier-scorecard-evidence-reliability-research`, in the cycle-specific TypeScript source. It is intentionally not catalog-integrated until the complete five-article batch and validator are ready.
 
 ## Remaining
 
-- Draft five independent Research articles with at least 1,200 substantive body words each.
+- Draft the remaining four independent Research articles and verify at least 1,200 substantive body words for every study.
 - Integrate them into the Research catalog with provisional UTC date handling for Blog reconciliation.
 - Add a cycle-specific validator and complete body length, content hash, repeated paragraph/sentence, shared-argument, historical-topic collision, and five-word-shingle audits.
 - Run locked dependency audit/install checks, typecheck, relevant tests, and a clean production build.

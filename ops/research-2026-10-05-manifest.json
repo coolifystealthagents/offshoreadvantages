@@ -11,7 +11,7 @@
   "timezone": "UTC",
   "publicationDateRule": "The Blog integrator must replace the provisional date with each route's actual first-publication date in UTC before the sole combined push.",
   "requiredCount": 5,
-  "draftedCount": 0,
+  "draftedCount": 1,
   "liveVerifiedCount": 0,
   "topicInventory": [
     {
@@ -54,6 +54,14 @@
     "geminiStatus": "INVALID_ARGUMENT: configured API key invalid",
     "fallback": "Direct drafting required; credentials were not changed and must not be reported as restored."
   },
+  "draftProgress": [
+    {
+      "slug": "supplier-scorecard-evidence-reliability-research",
+      "sourcePath": "app/campaign-2026-10-05-research.ts",
+      "status": "drafted-not-yet-catalog-integrated",
+      "publicationDate": "provisional; OFFAA-85 must reconcile to actual first-publication date in UTC"
+    }
+  ],
   "handoff": {
     "ready": false,
     "reason": "Five independent 1200-word articles, originality audits, validation, and local commit remain required. Research must not push or deploy."
