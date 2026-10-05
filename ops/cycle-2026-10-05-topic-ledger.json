@@ -1,0 +1,90 @@
+{
+  "cycleLabel": "2026-10-05",
+  "siteTimezone": "UTC",
+  "repository": "coolifystealthagents/offshoreadvantages",
+  "productionBranch": "main",
+  "baselineSha": "58feb359741dc52288ba68e1799fcf6b5763cfab",
+  "publicationDate": null,
+  "publicationDateRule": "Set per article only after first successful public verification in the configured site timezone.",
+  "blog": [
+    {
+      "slug": "philippines-customer-support-refund-authority-matrix",
+      "topic": "Designing refund authority by amount, reason, evidence, and escalation path",
+      "pillar": "customer-support",
+      "readerOutcome": "A manager can define a refund decision matrix without giving offshore agents uncontrolled payment authority."
+    },
+    {
+      "slug": "offshore-customer-support-quality-calibration-session",
+      "topic": "Running evidence-based support quality calibration across client and offshore reviewers",
+      "pillar": "customer-support",
+      "readerOutcome": "A support leader can run a calibration session that resolves scoring disagreements and changes guidance."
+    },
+    {
+      "slug": "philippines-ecommerce-chargeback-evidence-packet",
+      "topic": "Building a complete ecommerce chargeback evidence packet before the issuer deadline",
+      "pillar": "back-office-quality-review",
+      "readerOutcome": "An ecommerce operator can assign evidence preparation while retaining the dispute decision."
+    },
+    {
+      "slug": "offshore-vendor-master-change-callback-control",
+      "topic": "Verifying supplier bank-detail changes through an independently governed callback",
+      "pillar": "back-office-quality-review",
+      "readerOutcome": "A finance leader can separate change preparation, callback verification, approval, and release."
+    },
+    {
+      "slug": "philippines-crm-lead-ownership-transfer-workflow",
+      "topic": "Transferring CRM lead ownership without losing tasks, permissions, attribution, or customer context",
+      "pillar": "admin-support",
+      "readerOutcome": "A revenue-operations manager can specify a reversible ownership-transfer checklist."
+    },
+    {
+      "slug": "offshore-contract-obligation-calendar-setup",
+      "topic": "Turning signed contract obligations into an owned calendar with evidence and escalation",
+      "pillar": "admin-support",
+      "readerOutcome": "An operations manager can delegate obligation tracking without delegating legal interpretation."
+    },
+    {
+      "slug": "philippines-month-end-close-handoff-board",
+      "topic": "Designing a month-end close handoff board for dependencies across time zones",
+      "pillar": "reporting-and-qa",
+      "readerOutcome": "A finance team can expose blockers, evidence, review rights, and cutoff risk in one close view."
+    },
+    {
+      "slug": "offshore-kpi-definition-change-control",
+      "topic": "Changing a KPI definition while preserving comparable history and report consumers",
+      "pillar": "reporting-and-qa",
+      "readerOutcome": "A reporting owner can introduce a definition change without silently rewriting history."
+    },
+    {
+      "slug": "philippines-order-cancellation-warehouse-cutoff",
+      "topic": "Coordinating customer order cancellation with warehouse and carrier cutoffs",
+      "pillar": "operations-support",
+      "readerOutcome": "An ecommerce team can define when support may cancel, when fulfillment must intervene, and what the customer is told."
+    },
+    {
+      "slug": "offshore-inventory-reorder-exception-review",
+      "topic": "Reviewing reorder recommendations when forecasts, minimums, and current stock disagree",
+      "pillar": "operations-support",
+      "readerOutcome": "An inventory owner can delegate exception analysis while keeping purchase authority."
+    },
+    {
+      "slug": "philippines-executive-inbox-delegation-rules",
+      "topic": "Defining executive inbox delegation rules for confidentiality, commitments, and urgent escalation",
+      "pillar": "executive-assistant",
+      "readerOutcome": "An executive can establish message classes, reply authority, privacy boundaries, and backup coverage."
+    },
+    {
+      "slug": "offshore-meeting-decision-to-action-register",
+      "topic": "Converting meeting decisions into owned actions with acceptance and closure evidence",
+      "pillar": "executive-assistant",
+      "readerOutcome": "A leadership team can prevent decisions from disappearing between minutes and execution."
+    }
+  ],
+  "researchHandoff": {
+    "issue": "OFFAA-84",
+    "status": "awaiting-local-commit",
+    "commitSha": null,
+    "worktree": null,
+    "inventory": []
+  }
+}
