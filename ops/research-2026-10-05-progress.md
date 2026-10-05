@@ -10,10 +10,11 @@
 - No production push or deployment was attempted.
 - Drafted the first independent study, `supplier-scorecard-evidence-reliability-research`, in the cycle-specific TypeScript source. It is intentionally not catalog-integrated until the complete five-article batch and validator are ready.
 - Drafted the second independent study, `customer-commitment-register-accuracy-research`, with a distinct customer-facing evidence model, challenge cases, and reader outcome. The local audit measured 1,505 substantive words and SHA-256 `9dadcdcf2ffa6a34597a692a0855bcefc3743154afe10eeaf59e89aa6598938b`.
+- Drafted the third independent study, `financial-close-checklist-dependency-integrity-research`, around an evidence dependency graph rather than a generic checklist. The local audit measured 1,393 substantive words and SHA-256 `081c19f8f29b019eb7c2a91fdb315f7b736bae5bb837cebab33688253ac987dd`.
 
 ## Remaining
 
-- Draft the remaining three independent Research articles and verify at least 1,200 substantive body words for every study.
+- Draft the remaining two independent Research articles and verify at least 1,200 substantive body words for every study.
 - Integrate them into the Research catalog with provisional UTC date handling for Blog reconciliation.
 - Add a cycle-specific validator and complete body length, content hash, repeated paragraph/sentence, shared-argument, historical-topic collision, and five-word-shingle audits.
 - Run locked dependency audit/install checks, typecheck, relevant tests, and a clean production build.
