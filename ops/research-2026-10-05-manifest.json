@@ -1,0 +1,61 @@
+{
+  "cycleLabel": "2026-10-05",
+  "family": "Research",
+  "issue": "OFFAA-84",
+  "pairedBlogIssue": "OFFAA-85",
+  "repository": "coolifystealthagents/offshoreadvantages",
+  "productionBranch": "main",
+  "baselineSha": "58feb359741dc52288ba68e1799fcf6b5763cfab",
+  "localBranch": "routine/offaa-84-2026-10-05-research",
+  "worktree": "/paperclip/instances/default/projects/727fabaf-f3b2-430e-97dd-5b1cc42bde73/c343965a-29d9-4fbc-a529-1a77fdb4dcb2/offaa-84-research-20261005",
+  "timezone": "UTC",
+  "publicationDateRule": "The Blog integrator must replace the provisional date with each route's actual first-publication date in UTC before the sole combined push.",
+  "requiredCount": 5,
+  "draftedCount": 0,
+  "liveVerifiedCount": 0,
+  "topicInventory": [
+    {
+      "topic": "Supplier performance scorecard evidence reliability",
+      "pillar": "Procurement Administration",
+      "service": "/services/procurement-administration",
+      "sources": ["https://www.gao.gov/greenbook", "https://csrc.nist.gov/pubs/sp/800/161/r1/final"]
+    },
+    {
+      "topic": "Customer commitment register accuracy",
+      "pillar": "Customer Experience Support",
+      "service": "/services/customer-experience-support",
+      "sources": ["https://consumer.ftc.gov/articles/solving-problems-business-returns-refunds-and-other-resolutions", "https://consumer.ftc.gov/articles/warranties"]
+    },
+    {
+      "topic": "Financial close checklist dependency integrity",
+      "pillar": "Finance Operations Support",
+      "service": "/services/finance-operations-support",
+      "sources": ["https://www.gao.gov/greenbook", "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final"]
+    },
+    {
+      "topic": "Campaign UTM governance and attribution-change evidence",
+      "pillar": "Marketing Operations Support",
+      "service": "/services/marketing-operations-support",
+      "sources": ["https://support.google.com/analytics/answer/10917952", "https://support.google.com/analytics/answer/11242870"]
+    },
+    {
+      "topic": "Policy exception expiry and renewal controls",
+      "pillar": "Shared Services Administration",
+      "service": "/services/shared-services-administration",
+      "sources": ["https://www.gao.gov/greenbook", "https://www.nist.gov/cyberframework"]
+    }
+  ],
+  "sourceCheck": {
+    "checkedAt": "2026-10-05T18:38:00Z",
+    "result": "Primary-source topic set checked; GAO 2025 Green Book is effective for federal FY2026 and is used only as a control-design reference, not as a claim of private-company applicability."
+  },
+  "generation": {
+    "geminiAttempted": true,
+    "geminiStatus": "INVALID_ARGUMENT: configured API key invalid",
+    "fallback": "Direct drafting required; credentials were not changed and must not be reported as restored."
+  },
+  "handoff": {
+    "ready": false,
+    "reason": "Five independent 1200-word articles, originality audits, validation, and local commit remain required. Research must not push or deploy."
+  }
+}
