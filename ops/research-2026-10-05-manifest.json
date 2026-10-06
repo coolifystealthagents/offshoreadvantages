@@ -9,6 +9,7 @@
   "localBranch": "routine/offaa-84-2026-10-05-research",
   "worktree": "/paperclip/instances/default/projects/727fabaf-f3b2-430e-97dd-5b1cc42bde73/c343965a-29d9-4fbc-a529-1a77fdb4dcb2/offaa-84-research-20261005",
   "timezone": "UTC",
+  "publicationDate": "2026-10-06",
   "publicationDateRule": "The Blog integrator must replace the provisional date with each route's actual first-publication date in UTC before the sole combined push.",
   "requiredCount": 5,
   "draftedCount": 5,
@@ -58,20 +59,32 @@
     {
       "slug": "supplier-scorecard-evidence-reliability-research",
       "sourcePath": "app/campaign-2026-10-05-research.ts",
-      "status": "drafted-not-yet-catalog-integrated",
-      "publicationDate": "provisional; OFFAA-85 must reconcile to actual first-publication date in UTC"
+      "status": "catalog-integrated-and-pre-push-validated",
+      "publicationDate": "2026-10-06"
     },
     {
       "slug": "customer-commitment-register-accuracy-research",
       "sourcePath": "app/campaign-2026-10-05-research.ts",
-      "status": "drafted-not-yet-catalog-integrated",
-      "publicationDate": "provisional; OFFAA-85 must reconcile to actual first-publication date in UTC"
+      "status": "catalog-integrated-and-pre-push-validated",
+      "publicationDate": "2026-10-06"
     },
     {
       "slug": "financial-close-checklist-dependency-integrity-research",
       "sourcePath": "app/campaign-2026-10-05-research.ts",
-      "status": "drafted-not-yet-catalog-integrated",
-      "publicationDate": "provisional; OFFAA-85 must reconcile to actual first-publication date in UTC"
+      "status": "catalog-integrated-and-pre-push-validated",
+      "publicationDate": "2026-10-06"
+    },
+    {
+      "slug": "campaign-utm-attribution-change-evidence-research",
+      "sourcePath": "app/campaign-2026-10-05-research.ts",
+      "status": "catalog-integrated-and-pre-push-validated",
+      "publicationDate": "2026-10-06"
+    },
+    {
+      "slug": "policy-exception-expiry-renewal-controls-research",
+      "sourcePath": "app/campaign-2026-10-05-research.ts",
+      "status": "catalog-integrated-and-pre-push-validated",
+      "publicationDate": "2026-10-06"
     }
   ],
   "validation": {
@@ -86,6 +99,6 @@
   },
   "handoff": {
     "ready": true,
-    "reason": "Five independent articles are catalog-integrated and locally validated. OFFAA-85 must reconcile actual publication date and run combined 17-route pre-push gates. Research must not push or deploy."
+    "reason": "Five independent articles are catalog-integrated, dated 2026-10-06 UTC, and included in OFFAA-85's combined 17-route pre-push gates. Research did not push or deploy."
   }
 }

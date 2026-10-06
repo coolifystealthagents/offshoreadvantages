@@ -1,6 +1,6 @@
 # October 5 corrective validation
 
-Production remains frozen at `9a4bdbc3b8b8e0e88d7b2d424b14d6c91d1809bb`. This report describes a local correction only. The configured site timezone is UTC. The `2026-10-05` publication date passed local rendering checks but must be reconciled to the actual first-publication date immediately before any authorized push.
+The configured site timezone is UTC. All 17 routes were still unpublished when the reviewed corrective push was authorized on October 6, so their source, visible, schema, index, sitemap, ledger, and manifest publication date was reconciled to `2026-10-06` immediately before the push.
 
 ## Inventory and originality
 
@@ -65,4 +65,3 @@ All 26 distinct authoritative destinations returned HTTP 200 after redirects. Th
 - Clean production build: pass, 710 static pages generated.
 - Blog, Research, and combined validators: pass.
 - Diff whitespace validation: pass.
-

@@ -2,7 +2,7 @@ import type { ResearchPost } from './fleet-data';
 
 // Provisional only. OFFAA-85 must reconcile this to the actual first-publication
 // date in UTC immediately before the sole combined production push.
-export const october5ResearchDate = '2026-10-05';
+export const october5ResearchDate = '2026-10-06';
 
 export const october5ResearchPosts: readonly ResearchPost[] = [
   {

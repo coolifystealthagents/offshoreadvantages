@@ -542,7 +542,7 @@ october5BlogDrafts.splice(0, october5BlogDrafts.length, ...october5BlogDrafts.fi
 
 // UTC is the configured site timezone. Reconcile this immediately before the
 // sole production push if the release window crosses midnight.
-export const october5BlogDate = '2026-10-05';
+export const october5BlogDate = '2026-10-06';
 export const october5BlogPosts = october5BlogDrafts.map(({ slug, title, excerpt, minutes, image, citations }) => ({
   slug, title, excerpt, minutes, image, citations, published: october5BlogDate,
 }));

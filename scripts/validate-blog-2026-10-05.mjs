@@ -21,7 +21,7 @@ if (articles.length !== 12) fail(`expected 12 Blog drafts, found ${articles.leng
 if (new Set(articles.map(({ slug }) => slug)).size !== 12) fail('duplicate Blog slug');
 const ledgerSlugs = ledger.blog.map(({ slug }) => slug);
 if (ledgerSlugs.some((slug) => !articles.some((article) => article.slug === slug))) fail('draft and topic ledger slugs differ');
-if (!source.includes("october5BlogDate = '2026-10-05'")) fail('UTC publication date missing');
+if (!source.includes("october5BlogDate = '2026-10-06'")) fail('UTC publication date missing');
 if (source.includes('—') || source.includes('–')) fail('humanizer punctuation check failed');
 
 const paragraphOwners = new Map();
@@ -67,4 +67,4 @@ for (let left = 0; left < articles.length; left++) {
 console.log('PASS exact Blog draft count: 12');
 console.log('PASS exact and near repeated substantive paragraphs/sentences: none');
 console.log(`PASS maximum pairwise five-word-shingle Jaccard: ${maximum.score.toFixed(4)} (${maximum.pair})`);
-console.log('PASS publication date: 2026-10-05 UTC; must be rechecked immediately before push');
+console.log('PASS publication date: 2026-10-06 UTC; reconciled immediately before push');

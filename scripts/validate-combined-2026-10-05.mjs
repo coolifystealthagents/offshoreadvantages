@@ -3,7 +3,7 @@ import crypto from 'node:crypto';
 import vm from 'node:vm';
 import ts from 'typescript';
 
-const date = '2026-10-05';
+const date = '2026-10-06';
 const domain = 'https://offshoreadvantages.com';
 const fail = (message) => { throw new Error(message); };
 const words = (value) => value.toLowerCase().match(/[a-z0-9]+(?:['’-][a-z0-9]+)*/g) ?? [];
