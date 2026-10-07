@@ -51,6 +51,7 @@ export const services = [
 ] as const;
 
 export const blogPosts = [
+  { slug: 'offshore-advantages-provider-questions', title: 'Offshore Advantages provider questions', excerpt: 'A practical discovery-call checklist for evaluating a Philippines staffing provider, defining approval lines, and protecting system access.', minutes: 11 },
   { slug: 'philippines-customer-support-data-security-checklist', title: 'Philippines customer support data security checklist', excerpt: 'A practical access, shift handoff, and offboarding plan for Filipino customer support teams.', minutes: 12 },
   { slug: 'philippines-customer-support-accessibility-quality-checklist', title: 'Philippines customer support accessibility quality checklist', excerpt: 'A practical scorecard for reviewing how Filipino support agents handle customers with access needs.', minutes: 12 },
   { slug: 'philippines-customer-support-identity-verification-checklist', title: 'Philippines customer support identity verification checklist', excerpt: 'A practical identity, account recovery, and impersonation plan for Filipino customer support teams.', minutes: 13 },
@@ -93,8 +94,9 @@ export const todayBlogDetails = Object.fromEntries(todayBlogPosts.map((post) => 
   sources: [{ name: 'NIST Privacy Framework', url: 'https://www.nist.gov/privacy-framework', note: 'Use privacy risk management to organize safeguards.' }, { name: 'International Labour Organization guidance', url: 'https://www.ilo.org/global/topics/non-standard-employment/WCMS_534825/lang--en/index.htm', note: 'Document expectations and accountable work arrangements.' }],
 }])) as Record<string, any>;
 
-// Keep the routed Blog catalog newest-first; the August 10 batch precedes older entries.
-export const allBlogPosts = [...october5BlogPosts, ...october2BlogPosts, ...september28BlogPosts, ...september25BlogPosts, ...september24BlogPosts, ...september23Run2BlogPosts, ...september23BlogPosts, ...september19BlogPosts, ...september18BlogPosts, ...september10BlogPosts, ...september9BlogPosts, ...september8BlogPosts, ...september7BlogPosts, ...september4BlogPosts, ...september3BlogPosts, ...september2BlogPosts, ...september1BlogPosts, ...august31BlogPosts, ...august23BlogPosts, ...august21BlogPosts, ...august20RepairBlogPosts, ...august19BlogPosts, ...august18BlogPosts, ...august17BlogPosts, ...august14BlogPosts, ...august13BlogPosts, ...august11BlogPosts, ...batchBlogPosts, ...run2BlogPosts, ...todayBlogPosts, ...blogPosts] as const;
+// Keep the public blog catalog focused on the fully authored October library.
+// Older generated URLs redirect to /blog instead of remaining as repetitive thin pages.
+export const allBlogPosts = [...october5BlogPosts, ...october2BlogPosts, ...blogPosts] as const;
 
 export const campaignBlogDetails = { ...october5BlogDetails, ...october2BlogDetails, ...september28BlogDetails, ...september25BlogDetails, ...september24BlogDetails, ...september23Run2BlogDetails, ...september23BlogDetails, ...september19BlogDetails, ...september18BlogDetails, ...september10BlogDetails, ...september9BlogDetails, ...september8BlogDetails, ...september7BlogDetails, ...september4BlogDetails, ...september3BlogDetails, ...september2BlogDetails, ...september1BlogDetails, ...august31BlogDetails };
 
@@ -167,14 +169,14 @@ export const blogDetails = {
     quoteBox: 'Please confirm the Filipino support agent, approved device, role permissions, assigned queues, and manager. Open one named account, test the escalation path with a sample case, and send the access record before live customer work begins.',
     internalLinks: [
       { label: 'Customer support service plan', href: '/services/customer-experience-support', note: 'match access to the queue, hours, and escalation rules.' },
-      { label: 'Philippines staffing role guide', href: '/blog', note: 'turn recurring support work into one clear role.' },
-      { label: 'Provider questions', href: '/blog', note: 'ask who recruits, employs, reviews, and supports the agent.' },
-      { label: 'First-week checklist', href: '/blog', note: 'prepare sample work, tools, feedback, and handoffs.' },
+      { label: 'Accessibility quality checklist', href: '/blog/philippines-customer-support-accessibility-quality-checklist', note: 'test channels, handoffs, and quality review for accessible support.' },
+      { label: 'Identity verification checklist', href: '/blog/philippines-customer-support-identity-verification-checklist', note: 'define safe identity checks and escalation ownership.' },
+      { label: 'Browse the blog library', href: '/blog', note: 'explore more Philippines staffing operating guides.' },
     ],
     banners: [
       { label: 'Role planning', title: 'Map the queue before opening access.', body: 'List the systems, customer data, shift hours, and approval points a Filipino support agent will handle.', href: '/contact-us', linkText: 'Plan the role' },
-      { label: 'Manager check', title: 'Test one case before the live queue.', body: 'Use a redacted example to test access, tone, escalation, logging, and shift handoff.', href: '/blog', linkText: 'Use the first-week checklist' },
-      { label: 'Provider review', title: 'Ask who owns each control.', body: 'Bring the access table to the provider call and name the person responsible for every answer.', href: '/blog', linkText: 'Open the question list' },
+      { label: 'Manager check', title: 'Test one case before the live queue.', body: 'Use a redacted example to test access, tone, escalation, logging, and shift handoff.', href: '/blog', linkText: 'Browse the blog library' },
+      { label: 'Provider review', title: 'Ask who owns each control.', body: 'Bring the access table to the provider call and name the person responsible for every answer.', href: '/blog', linkText: 'Browse the blog library' },
     ],
     faqs: [
       { question: 'Does Philippines-only staffing mean the data stays in the Philippines?', answer: 'No. Agent location and data location are different. Check the systems, backups, administrators, subprocessors, and storage regions before making a data residency claim.' },
@@ -229,13 +231,13 @@ export const blogDetails = {
     quoteBox: 'Thanks for telling me what is not working. I can continue here, send a plain-language written recap, or move the case to our approved alternate channel. Which option works best for you?',
     internalLinks: [
       { label: 'Customer support service plan', href: '/services/customer-experience-support', note: 'define the channels, cases, schedule, and escalation rules.' },
-      { label: 'Philippines staffing role guide', href: '/blog', note: 'turn the queue into one clear Filipino support role.' },
-      { label: 'First-week checklist', href: '/blog', note: 'test tools, sample cases, feedback, and handoffs before launch.' },
+      { label: 'Browse the blog library', href: '/blog', note: 'turn the queue into one clear Filipino support role.' },
+      { label: 'Browse the blog library', href: '/blog', note: 'test tools, sample cases, feedback, and handoffs before launch.' },
       { label: 'Customer support security checklist', href: '/blog/philippines-customer-support-data-security-checklist', note: 'keep named accounts and privacy controls in every accessible path.' },
     ],
     banners: [
       { label: 'Role planning', title: 'Put access needs into the role brief.', body: 'List the support channels, common barriers, approved alternatives, and manager decisions a Filipino agent will handle.', href: '/contact-us', linkText: 'Plan the role' },
-      { label: 'Quality review', title: 'Test the path with a real sample case.', body: 'Use the scorecard to review channel fit, understanding, privacy, continuity, accuracy, and barrier reporting.', href: '/blog', linkText: 'Open the first-week checklist' },
+      { label: 'Quality review', title: 'Test the path with a real sample case.', body: 'Use the scorecard to review channel fit, understanding, privacy, continuity, accuracy, and barrier reporting.', href: '/blog', linkText: 'Browse the blog library' },
       { label: 'Queue design', title: 'Fix the channel, not the customer.', body: 'When an interface or document blocks the case, give the client owner a clear defect note and a named next step.', href: '/services/customer-experience-support', linkText: 'Review customer support' },
     ],
     faqs: [

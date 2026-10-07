@@ -12,5 +12,28 @@ const csp = [
   "form-action 'self'",
   "frame-ancestors 'self'",
 ].join('; ');
-const nextConfig = { async headers() { return [{ source: '/(.*)', headers: [{ key: 'Content-Security-Policy', value: csp }] }]; } };
+const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/services/operations-support',
+        destination: '/services/shared-services-administration',
+        permanent: true,
+      },
+      {
+        source: '/services/customer-support',
+        destination: '/services/customer-experience-support',
+        permanent: true,
+      },
+      {
+        source: '/contact',
+        destination: '/contact-us',
+        permanent: true,
+      },
+    ];
+  },
+  async headers() {
+    return [{ source: '/(.*)', headers: [{ key: 'Content-Security-Policy', value: csp }] }];
+  },
+};
 export default nextConfig;

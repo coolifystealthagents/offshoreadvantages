@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { Header, Footer, JsonLd } from "../../components";
 import {
   allBlogPosts,
@@ -8,6 +8,7 @@ import {
   site,
   todayBlogDetails,
 } from "../../data";
+import { retiredBlogSlugs } from "../../retired-slugs";
 import { batchBlogDetails } from "../../blog-batch-2026-08-10";
 import { run2BlogDetails } from "../../blog-batch-2026-08-10-run2";
 import { august11BlogDetails } from "../../blog-batch-2026-08-11";
@@ -24,6 +25,7 @@ import {
 } from "../../blog-batch-2026-08-21";
 import { renderAugust21Article } from "../../aug21-content";
 import { august23BlogDetails } from "../../blog-batch-2026-08-23";
+import { resolveEditorialImage } from "../../editorial-images";
 
 const siteUrl = "https://offshoreadvantages.com";
 const readerDate = new Intl.DateTimeFormat("en-US", {
@@ -97,7 +99,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = allBlogPosts.find((item) => item.slug === slug);
   if (!post) return {};
-  const image = "image" in post ? post.image : site.heroImage;
+  const editorialImage = resolveEditorialImage({
+    slug,
+    title: post.title,
+    image: "image" in post ? post.image : site.heroImage,
+  });
   return {
     title: post.title,
     description: post.excerpt,
@@ -107,7 +113,7 @@ export async function generateMetadata({
       description: post.excerpt,
       url: `${siteUrl}/blog/${slug}`,
       type: "article",
-      images: [{ url: image }],
+      images: [{ url: editorialImage.src }],
     },
   };
 }
@@ -570,6 +576,7 @@ export default async function Post({
 }) {
   const { slug } = await params;
   const post = allBlogPosts.find((item) => item.slug === slug);
+  if (retiredBlogSlugs.has(slug)) permanentRedirect("/blog");
   if (!post) notFound();
   if (august20RepairBlogPosts.some((item) => item.slug === slug))
     return renderAugust20Article(slug);
@@ -577,7 +584,11 @@ export default async function Post({
     return renderAugust21Article(slug);
   const detail = detailsBySlug[slug];
   const url = `${siteUrl}/blog/${post.slug}`;
-  const image = "image" in post ? post.image : site.heroImage;
+  const editorialImage = resolveEditorialImage({
+    slug: post.slug,
+    title: post.title,
+    image: "image" in post ? post.image : site.heroImage,
+  });
   const published = "published" in post ? post.published : undefined;
   const schema = {
     "@context": "https://schema.org",
@@ -645,7 +656,7 @@ export default async function Post({
             <p className="eyebrow">{site.brand} guide</p>
             <h1>{post.title}</h1>
             <p className="lead">{post.excerpt}</p>
-            <img className="article-hero-image" src={image} alt="" />
+            <img className="article-hero-image" src={editorialImage.src} alt={editorialImage.alt} />
             {published ? (
               <time dateTime={published}>
                 Published {formatReaderDate(published)}
@@ -832,29 +843,12 @@ export default async function Post({
               </section>
             )}
           </div>
-          <aside
-            className="article-rotation-banner article-rotation-banner-top"
-            data-article-banner="true"
-          >
-            <p className="eyebrow">Role planning checkpoint</p>
-            <h2>Turn this guide into a clear role brief</h2>
+          <aside className="article-rotation-banner article-rotation-banner-bottom">
+            <p className="eyebrow">Apply this guide</p>
+            <h2>Plan support for {post.title}</h2>
             <p>
-              Share the work queue, tools, review owner, and approval limits
-              before adding outside support.
-            </p>
-            <a className="btn" href="/contact-us">
-              Contact Us
-            </a>
-          </aside>
-          <aside
-            className="article-rotation-banner article-rotation-banner-bottom"
-            data-article-banner="true"
-          >
-            <p className="eyebrow">Ready to scope the role?</p>
-            <h2>Build the first support lane before hiring</h2>
-            <p>
-              We can help turn the article into a practical staffing brief with
-              tasks, access rules, and review checkpoints.
+              Bring examples from “{post.title}” to define the tasks, access
+              rules, review owner, and approval limits before candidate matching.
             </p>
             <a className="btn" href="/contact-us">
               Contact Us

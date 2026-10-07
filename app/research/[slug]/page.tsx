@@ -1,8 +1,10 @@
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
 import { Header, Footer } from "../../components";
 import { researchPosts, ResearchPost } from "../../fleet-data";
 import { site } from "../../data";
+import { resolveEditorialImage } from "../../editorial-images";
+import { retiredResearchSlugs } from "../../retired-slugs";
 const readerDate = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   month: "long",
@@ -22,8 +24,14 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = researchPosts.find((p) => p.slug === slug);
   if (!post) return {};
+  const editorialImage = resolveEditorialImage({
+    slug: post.slug,
+    title: post.title,
+    image: post.thumbnail,
+  });
   return {
     title: post.title,
+    description: post.excerpt,
     alternates: { canonical: `/research/${post.slug}` },
     openGraph: {
       type: "article",
@@ -31,7 +39,7 @@ export async function generateMetadata({
       title: post.title,
       description: post.excerpt,
       ...(post.modified ? { modifiedTime: post.modified } : {}),
-      images: [{ url: post.thumbnail }],
+      images: [{ url: editorialImage.src }],
     },
   };
 }
@@ -44,7 +52,13 @@ export default async function ResearchArticle({
   const post: ResearchPost | undefined = researchPosts.find(
     (p) => p.slug === slug,
   );
+  if (retiredResearchSlugs.has(slug)) permanentRedirect("/research");
   if (!post) notFound();
+  const editorialImage = resolveEditorialImage({
+    slug: post.slug,
+    title: post.title,
+    image: post.thumbnail,
+  });
   const organization = {
     "@type": "Organization",
     name: site.brand,
@@ -76,7 +90,7 @@ export default async function ResearchArticle({
             </p>
             <h1>{post.title}</h1>
             <p className="lead">{post.excerpt}</p>
-            <img className="article-hero-image" src={post.thumbnail} alt="" />
+            <img className="article-hero-image" src={editorialImage.src} alt={editorialImage.alt} />
             <p>
               <time dateTime={post.published}>
                 {formatReaderDate(post.published)}

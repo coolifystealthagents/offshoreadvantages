@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Header, Footer } from '../components';
-import { TestimonialsRail } from '../booking-components';
 
 export const metadata: Metadata = {
   title: 'Thank You - Book A Meeting',
@@ -17,9 +16,8 @@ export default function ThankYouPage() {
           <div className="sa-booking-left">
             <p className="sa-booking-kicker">You’re one step away.</p>
             <h1>Step 2 - Book A Meeting</h1>
-            <p className="sa-booking-lead">No commitment. No risk. Just expert guidance.</p>
-            <img className="sa-booking-image" src="/thank-you-hero.png" alt="Stealth Agents team ready to help" width="619" height="402" />
-            <TestimonialsRail />
+            <p className="sa-booking-lead">Choose a time if you want to continue the role-planning conversation.</p>
+            <img className="sa-booking-image" src="/thank-you-hero.png" alt="Staffing team in a planning meeting" width="619" height="402" />
           </div>
           <section className="sa-booking-calendar" aria-labelledby="booking-calendar-title">
             <h2 id="booking-calendar-title">Pick a Time That Works for You</h2>

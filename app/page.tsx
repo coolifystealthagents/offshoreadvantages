@@ -1,6 +1,18 @@
 import { Header, Footer, JsonLd } from './components';
 import { services, stats, staffingProcess, site } from './data';
 
+export const metadata = {
+  title: { absolute: 'Virtual Assistant Planning for Professional Services | Offshore Advantages' },
+  description: 'Plan a Philippines-based virtual assistant role for a professional-services team with clear work, handoffs, access, and review.',
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'Virtual Assistant Planning for Professional Services | Offshore Advantages',
+    description: 'Plan a Philippines-based virtual assistant role with clear work, handoffs, access, and review.',
+    url: 'https://offshoreadvantages.com/',
+    type: 'website',
+  },
+};
+
 const advantageIcons = [
   '/icons/getillustrations/blueprint-business-icons-svg/partnership.svg',
   '/icons/getillustrations/blueprint-business-icons-svg/role-target.svg',
@@ -24,9 +36,9 @@ export default function Home() {
       <section className="hero">
         <div className="container hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow light">A clearer case for Filipino talent</p>
-            <h1>The Philippines advantage starts with the right work.</h1>
-            <p className="hero-lead">Map the role, handoff, access, and review plan before you hire. We connect qualified inquiries with staffing teams that recruit and hire exclusively in the Philippines.</p>
+            <p className="eyebrow light">Virtual assistant planning for professional-services teams</p>
+            <h1>Build a Philippines VA role your team can review.</h1>
+            <p className="hero-lead">Turn recurring administration, customer support, and operations work into a reviewable role with named systems, approval boundaries, and first-week evidence. Qualified inquiries may be routed to Philippines-focused staffing providers.</p>
             <div className="actions">
               <a className="btn primary" href="/contact-us">Map my Philippines role</a>
               <a className="text-link" href="#advantage">See the decision board <span aria-hidden="true">↓</span></a>
@@ -76,7 +88,7 @@ export default function Home() {
       </section>
 
       <section className="container closing-panel">
-        <div><p className="eyebrow light">Philippines only</p><h2>Know what you want the role to own?</h2><p>Send the tasks, tools, schedule, and review needs. We will route qualified inquiries to a team that recruits and hires Filipino talent.</p></div>
+        <div><p className="eyebrow light">Philippines-focused planning</p><h2>Know what you want the role to own?</h2><p>Send the tasks, tools, schedule, and review needs. We may route the inquiry to a provider that works with Filipino talent.</p></div>
         <a className="btn coral" href="/contact-us">Map my Philippines role</a>
       </section>
     </main>
