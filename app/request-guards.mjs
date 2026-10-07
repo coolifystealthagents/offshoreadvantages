@@ -1,10 +1,26 @@
 export class PayloadTooLargeError extends Error {
-  constructor() {
-    super('Payload too large');
-    this.name = 'PayloadTooLargeError';
+  constructor() { super('Payload too large'); this.name = 'PayloadTooLargeError'; }
+}
+const PUBLIC_ORIGINS = new Set([
+  'https://offshoreadvantages.com',
+  'https://www.offshoreadvantages.com',
+]);
+export function isAllowedOrigin(origin, runtimeOrigin) {
+  if (!origin) return false;
+  try {
+    const normalized = new URL(origin).origin;
+    if (PUBLIC_ORIGINS.has(normalized)) return true;
+    const runtime = new URL(runtimeOrigin);
+    return ['localhost', '127.0.0.1', '::1'].includes(runtime.hostname) && normalized === runtime.origin;
+  } catch {
+    return false;
   }
 }
-
+export function combineCountryCode(countryCode, localPhone) {
+  const code = String(countryCode || '').trim();
+  const phone = String(localPhone || '').trim();
+  return code && !phone.startsWith(code) ? `${code} ${phone}`.trim() : phone;
+}
 export async function readBoundedText(request, maxBytes) {
   const declared = request.headers.get('content-length');
   if (declared !== null) {
@@ -20,44 +36,24 @@ export async function readBoundedText(request, maxBytes) {
       const { done, value } = await reader.read();
       if (done) break;
       total += value.byteLength;
-      if (total > maxBytes) {
-        await reader.cancel();
-        throw new PayloadTooLargeError();
-      }
+      if (total > maxBytes) { await reader.cancel(); throw new PayloadTooLargeError(); }
       chunks.push(value);
     }
-  } finally {
-    reader.releaseLock();
-  }
+  } finally { reader.releaseLock(); }
   const bytes = new Uint8Array(total);
   let offset = 0;
-  for (const chunk of chunks) {
-    bytes.set(chunk, offset);
-    offset += chunk.byteLength;
-  }
+  for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.byteLength; }
   return new TextDecoder('utf-8', { fatal: true }).decode(bytes);
 }
-
 export class BoundedWindowLimiter {
-  #entries = new Map();
-  #windowMs;
-  #maxKeys;
-
-  constructor({ windowMs, maxKeys }) {
-    this.#windowMs = windowMs;
-    this.#maxKeys = maxKeys;
-  }
-
-  get size() {
-    return this.#entries.size;
-  }
-
+  #entries = new Map(); #windowMs; #maxKeys;
+  constructor({ windowMs, maxKeys }) { this.#windowMs = windowMs; this.#maxKeys = maxKeys; }
+  get size() { return this.#entries.size; }
   get storedHits() {
     let count = 0;
     for (const timestamps of this.#entries.values()) count += timestamps.length;
     return count;
   }
-
   hit(key, maxHits, now = Date.now()) {
     const cutoff = now - this.#windowMs;
     let existing = this.#entries.get(key);
@@ -77,8 +73,7 @@ export class BoundedWindowLimiter {
       return true;
     }
     recent.push(now);
-    this.#entries.delete(key);
-    this.#entries.set(key, recent);
+    this.#entries.delete(key); this.#entries.set(key, recent);
     return false;
   }
 }

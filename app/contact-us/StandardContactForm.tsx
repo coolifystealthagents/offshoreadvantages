@@ -38,10 +38,11 @@ export default function StandardContactForm({ endpoint = "/api/submit-lead", enc
     if (String(data.get("website_url") || "").trim()) return;
     const firstName = String(data.get("firstName") || "").trim();
     const lastName = String(data.get("lastName") || "").trim();
-    const phone = `${String(data.get("countryCode") || countryCode)} ${String(data.get("phone") || "").trim()}`.trim();
+    const selectedCountryCode = String(data.get("countryCode") || countryCode).trim();
+    const phone = String(data.get("phone") || "").trim();
     const payload: Record<string, string> = {
       firstName, lastName, name: `${firstName} ${lastName}`.trim(), fullName: `${firstName} ${lastName}`.trim(),
-      email: String(data.get("email") || ""), businessEmail: String(data.get("email") || ""), phone,
+      email: String(data.get("email") || ""), businessEmail: String(data.get("email") || ""), countryCode: selectedCountryCode, phone,
       companyName: String(data.get("companyName") || ""), company: String(data.get("companyName") || ""),
       website: String(data.get("website") || ""), companySize: String(data.get("companySize") || ""),
       positions: String(data.get("positions") || ""), positionsToFill: String(data.get("positions") || ""),
@@ -90,7 +91,7 @@ export default function StandardContactForm({ endpoint = "/api/submit-lead", enc
           <label>How Many Positions to Fill *<select name="positions" required defaultValue=""><option value="" disabled>Select...</option>{positions.map((x) => <option key={x}>{x}</option>)}</select></label>
         </div>
         <label>How Did You Hear About Us? *<select name="referral" required value={referral} onChange={(e) => setReferral(e.target.value)}><option value="" disabled>Select...</option>{referrals.map((x) => <option key={x}>{x}</option>)}</select></label>
-        {referral === "Other" ? <label>Please Specify *<input name="referralSpecify" required /></label> : null}
+        <label>Please Specify if Other<input name="referralSpecify" required={referral === "Other"} /></label>
         <label>Message *<textarea name="message" rows={4} required /></label>
         <p className="sa-status" aria-live="polite">{submitting ? "Submitting your request…" : ""}</p>
         {error ? <p className="sa-error" role="alert">{error}</p> : null}

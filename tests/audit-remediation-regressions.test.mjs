@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import test from 'node:test';
 import { findEditorialRecord, imageResponseOptions, resolveEditorialImagePolicy } from '../app/editorial-image-policy.mjs';
-import { BoundedWindowLimiter, readBoundedText } from '../app/request-guards.mjs';
+import { BoundedWindowLimiter, combineCountryCode, isAllowedOrigin, readBoundedText } from '../app/request-guards.mjs';
 const root = process.cwd();
 const read = (relative) => fs.readFileSync(path.join(root, relative), 'utf8');
 
@@ -313,9 +313,32 @@ test('public POST routes stream-limit bodies and use bounded global throttles', 
     assert.match(source, /readBoundedText/);
     assert.match(source, /new BoundedWindowLimiter/);
     assert.match(source, /mediaType !==/);
-    assert.match(source, /PUBLIC_ORIGINS/);
+    assert.match(source, /PUBLIC_ORIGINS|isAllowedOrigin/);
     assert.doesNotMatch(source, /cf-connecting-ip|x-real-ip|x-forwarded-for/);
   }
+});
+
+test('public POST origin validation accepts canonical HTTPS origins behind a reverse proxy', () => {
+  assert.equal(isAllowedOrigin('https://offshoreadvantages.com', 'http://127.0.0.1:3000'), true);
+  assert.equal(isAllowedOrigin('https://www.offshoreadvantages.com', 'http://offshoreadvantages:3000'), true);
+  assert.equal(isAllowedOrigin('https://example.com', 'http://127.0.0.1:3000'), false);
+  assert.equal(isAllowedOrigin(null, 'http://127.0.0.1:3000'), false);
+});
+
+test('contact form preserves country code and local number with and without JavaScript', () => {
+  const form = read('app/contact-us/StandardContactForm.tsx');
+  const route = read('app/api/contact/route.ts');
+  assert.match(form, /name="countryCode"/);
+  assert.match(form, /name="phone"/);
+  assert.doesNotMatch(form, /name="phoneLocal"/);
+  assert.match(form, /countryCode: selectedCountryCode, phone/);
+  assert.match(route, /text\(form, 'countryCode'/);
+  assert.match(route, /combineCountryCode\(countryCode, localPhone\)/);
+  assert.equal(combineCountryCode('+1', '555 123 4567'), '+1 555 123 4567');
+  assert.equal(combineCountryCode('+1', '+1 555 123 4567'), '+1 555 123 4567');
+  assert.equal(combineCountryCode('', '+44 20 1234 5678'), '+44 20 1234 5678');
+  assert.match(form, /Please Specify if Other/);
+  assert.match(form, /required=\{referral === "Other"\}/);
 });
 
 test('editorial image route canonicalizes query variants and negatively caches unknown slugs', () => {
@@ -362,14 +385,4 @@ test('managed contact form requires authoritative API acknowledgement before ana
   assert.match(route, /accept[^\n]+application\/json[\s\S]*?NextResponse\.json\(\{ ok: true \}/);
   assert.match(route, /text\(form, 'referral'/);
   assert.match(route, /text\(form, 'referralSpecify'/);
-});
-
-test('phone controls preserve country code and number without client JavaScript', () => {
-  const form = read('app/contact-us/StandardContactForm.tsx');
-  const route = read('app/api/contact/route.ts');
-  assert.match(form, /name="countryCode"/);
-  assert.match(form, /name="phone"/);
-  assert.doesNotMatch(form, /name="phoneLocal"/);
-  assert.match(route, /text\(form, 'countryCode'/);
-  assert.match(route, /countryCode && !localPhone\.startsWith\(countryCode\)/);
 });
