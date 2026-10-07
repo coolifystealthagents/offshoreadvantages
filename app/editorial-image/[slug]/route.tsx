@@ -29,6 +29,8 @@ export async function GET(
     return Response.redirect(new URL(requestUrl.pathname, requestUrl.origin), 308);
   }
   const { slug } = await params;
+  const canonicalPath = `/editorial-image/${encodeURIComponent(slug)}`;
+  if (requestUrl.pathname !== canonicalPath) return Response.redirect(new URL(canonicalPath, requestUrl.origin), 308);
   const record = findEditorialRecord(slug, [...allBlogPosts, ...researchPosts]);
   if (!record) return new Response(null, { status: 404, headers: { 'Cache-Control': 'public, max-age=300, s-maxage=300' } });
 

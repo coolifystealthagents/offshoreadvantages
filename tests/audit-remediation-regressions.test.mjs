@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import test from 'node:test';
 import { findEditorialRecord, imageResponseOptions, resolveEditorialImagePolicy } from '../app/editorial-image-policy.mjs';
+import { BoundedWindowLimiter, readBoundedText } from '../app/request-guards.mjs';
 const root = process.cwd();
 const read = (relative) => fs.readFileSync(path.join(root, relative), 'utf8');
 
@@ -196,11 +197,11 @@ test('route titles and Open Graph metadata do not inherit homepage identity', ()
   }
 });
 
-test('maintained static cornerstone is not also retired', () => {
-  const retired = read('app/retired-slugs.ts');
+test('unsupported provider ranking is retired from discovery and permanently consolidated', () => {
   const sitemap = read('app/sitemap.xml/route.ts');
-  assert.ok(sitemap.includes('/blog/top-50-offshore-outsourcing-companies'));
-  assert.ok(!retired.includes('"top-50-offshore-outsourcing-companies"'));
+  const config = read('next.config.mjs');
+  assert.ok(!sitemap.includes('/blog/top-50-offshore-outsourcing-companies'));
+  assert.match(config, /source:\s*['"]\/blog\/top-50-offshore-outsourcing-companies['"][\s\S]*?destination:\s*['"]\/blog['"][\s\S]*?permanent:\s*true/);
 });
 
 test('generic library links use labels that describe browsing a library', () => {
@@ -280,8 +281,29 @@ test('contact API preserves user referral attribution and only redirects after a
   assert.match(route, /text\(form, 'referral'/);
   assert.match(route, /text\(form, 'referralSpecify'/);
   assert.match(route, /result\?\.ok !== true/);
-  const redirect = route.indexOf("NextResponse.redirect(new URL('/thank-you?lead=accepted'");
-  assert.ok(redirect > route.indexOf('result?.ok !== true'));
+  assert.ok(route.lastIndexOf('return accepted(request)') > route.indexOf('result?.ok !== true'));
+  assert.match(route, /landing_page:\s*['"]['"]/);
+  assert.match(route, /page_journey:\s*\[\]/);
+});
+
+test('public POST routes stream-limit bodies and use bounded global throttles', async () => {
+  const oversized = new Request('https://example.test/api/contact', {
+    method: 'POST',
+    body: new ReadableStream({ start(controller) { controller.enqueue(new TextEncoder().encode('1234')); controller.enqueue(new TextEncoder().encode('5678')); controller.close(); } }),
+    duplex: 'half',
+  });
+  await assert.rejects(readBoundedText(oversized, 7), /too large/i);
+  const limiter = new BoundedWindowLimiter({ windowMs: 1000, maxKeys: 2 });
+  assert.equal(limiter.hit('a', 1, 0), false);
+  assert.equal(limiter.hit('a', 1, 1), true);
+  assert.equal(limiter.hit('b', 1, 1), false);
+  assert.equal(limiter.hit('c', 1, 1), true);
+  assert.equal(limiter.size, 2);
+  for (const file of ['app/api/contact/route.ts', 'app/ingest/track/route.ts']) {
+    const source = read(file);
+    assert.match(source, /readBoundedText/);
+    assert.match(source, /new BoundedWindowLimiter/);
+  }
 });
 
 test('editorial image route canonicalizes query variants and negatively caches unknown slugs', () => {

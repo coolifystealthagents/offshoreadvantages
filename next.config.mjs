@@ -30,6 +30,16 @@ const nextConfig = {
         destination: '/contact-us',
         permanent: true,
       },
+      {
+        source: '/cancellation',
+        destination: '/cancellation-policy',
+        permanent: true,
+      },
+      {
+        source: '/blog/top-50-offshore-outsourcing-companies',
+        destination: '/blog',
+        permanent: true,
+      },
     ];
   },
   async headers() {

@@ -231,8 +231,8 @@ export const blogDetails = {
     quoteBox: 'Thanks for telling me what is not working. I can continue here, send a plain-language written recap, or move the case to our approved alternate channel. Which option works best for you?',
     internalLinks: [
       { label: 'Customer support service plan', href: '/services/customer-experience-support', note: 'define the channels, cases, schedule, and escalation rules.' },
-      { label: 'Browse the blog library', href: '/blog', note: 'turn the queue into one clear Filipino support role.' },
-      { label: 'Browse the blog library', href: '/blog', note: 'test tools, sample cases, feedback, and handoffs before launch.' },
+      { label: 'Identity verification checklist', href: '/blog/philippines-customer-support-identity-verification-checklist', note: 'test a controlled accessible path for identity checks and recovery.' },
+      { label: 'Browse the blog library', href: '/blog', note: 'explore more Philippines staffing operating guides.' },
       { label: 'Customer support security checklist', href: '/blog/philippines-customer-support-data-security-checklist', note: 'keep named accounts and privacy controls in every accessible path.' },
     ],
     banners: [

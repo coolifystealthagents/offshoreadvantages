@@ -8,7 +8,7 @@ export function GET() {
     '',
     '/services',
     '/blog',
-    '/blog/top-50-offshore-outsourcing-companies',
+
     '/research',
     '/contact-us',
     '/privacy',

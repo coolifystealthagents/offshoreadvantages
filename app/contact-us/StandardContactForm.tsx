@@ -52,11 +52,13 @@ export default function StandardContactForm({ endpoint = "/api/submit-lead", enc
     setSubmitting(true);
     setError("");
     try {
-      const request = encoding === "form"
-        ? { method: "POST", body: new URLSearchParams(payload) }
-        : { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) };
+      const request: RequestInit = encoding === "form"
+        ? { method: "POST", headers: { Accept: "application/json" }, body: new URLSearchParams(payload) }
+        : { method: "POST", headers: { Accept: "application/json", "Content-Type": "application/json" }, body: JSON.stringify(payload) };
       const response = await fetch(endpoint, request);
       if (!response.ok) throw new Error("Lead endpoint rejected the request");
+      const result = await response.json().catch(() => null) as { ok?: boolean } | null;
+      if (result?.ok !== true) throw new Error("Lead endpoint did not acknowledge the request");
       for (let i = 0; i < 20 && !(window as TrackerWindow).acrTracker?.trackLead; i += 1) {
         await new Promise((resolve) => window.setTimeout(resolve, 100));
       }
@@ -77,7 +79,7 @@ export default function StandardContactForm({ endpoint = "/api/submit-lead", enc
           <label>First Name *<input name="firstName" required autoComplete="given-name" /></label>
           <label>Last Name *<input name="lastName" required autoComplete="family-name" /></label>
         </div>
-        <label>Business Email *<input name="email" type="email" required autoComplete="email" /><small>Not Accepting Personal Email</small></label>
+        <label>Business Email *<input name="email" type="email" required autoComplete="email" /></label>
         <fieldset className="sa-phone-field"><legend>Phone Number *</legend><span className="sa-phone"><select aria-label="Country code" value={countryCode} onChange={(e) => setCountryCode(e.target.value)}>{countryCodes.map(([flag, code], i) => <option value={code} key={`${code}-${i}`}>{flag} {code}</option>)}</select><input aria-label="Phone number" name="phoneLocal" type="tel" required autoComplete="tel-national" placeholder="Phone number" /></span></fieldset>
         <div className="sa-grid">
           <label>Company Name *<input name="companyName" required autoComplete="organization" /></label>

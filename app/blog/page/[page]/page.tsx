@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { notFound, permanentRedirect } from 'next/navigation';
-import { FeaturedComparison } from '../../FeaturedComparison';
 import { Header, Footer } from '../../../components';
 import { allBlogPosts, site } from '../../../data';
 import { postsPerPage } from '../../../fleet-data';
@@ -86,7 +85,6 @@ export default async function BlogPage({
             ))}
           </nav>
         </section>
-        {n === 2 && <FeaturedComparison />}
       </main>
       <Footer />
     </>
