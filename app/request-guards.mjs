@@ -1,6 +1,21 @@
 export class PayloadTooLargeError extends Error {
   constructor() { super('Payload too large'); this.name = 'PayloadTooLargeError'; }
 }
+const PUBLIC_ORIGINS = new Set([
+  'https://offshoreadvantages.com',
+  'https://www.offshoreadvantages.com',
+]);
+export function isAllowedOrigin(origin, runtimeOrigin) {
+  if (!origin) return false;
+  try {
+    const normalized = new URL(origin).origin;
+    if (PUBLIC_ORIGINS.has(normalized)) return true;
+    const runtime = new URL(runtimeOrigin);
+    return ['localhost', '127.0.0.1', '::1'].includes(runtime.hostname) && normalized === runtime.origin;
+  } catch {
+    return false;
+  }
+}
 export async function readBoundedText(request, maxBytes) {
   const declared = request.headers.get('content-length');
   if (declared !== null) {

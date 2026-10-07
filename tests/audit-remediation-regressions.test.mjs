@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import test from 'node:test';
 import { findEditorialRecord, imageResponseOptions, resolveEditorialImagePolicy } from '../app/editorial-image-policy.mjs';
-import { BoundedWindowLimiter, readBoundedText } from '../app/request-guards.mjs';
+import { BoundedWindowLimiter, isAllowedOrigin, readBoundedText } from '../app/request-guards.mjs';
 const root = process.cwd();
 const read = (relative) => fs.readFileSync(path.join(root, relative), 'utf8');
 
@@ -305,6 +305,16 @@ test('public POST routes stream-limit bodies and use bounded global throttles', 
     const source = read(file);
     assert.match(source, /readBoundedText/);
     assert.match(source, /new BoundedWindowLimiter/);
+  }
+});
+
+test('public POST origin validation accepts canonical HTTPS origins behind a reverse proxy', () => {
+  assert.equal(isAllowedOrigin('https://offshoreadvantages.com', 'http://127.0.0.1:3000'), true);
+  assert.equal(isAllowedOrigin('https://www.offshoreadvantages.com', 'http://offshoreadvantages:3000'), true);
+  assert.equal(isAllowedOrigin('https://example.com', 'http://127.0.0.1:3000'), false);
+  assert.equal(isAllowedOrigin(null, 'http://127.0.0.1:3000'), false);
+  for (const file of ['app/api/contact/route.ts', 'app/ingest/track/route.ts']) {
+    assert.match(read(file), /isAllowedOrigin\([^\n]+, request\.nextUrl\.origin\)/);
   }
 });
 
