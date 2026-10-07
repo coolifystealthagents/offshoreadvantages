@@ -3,6 +3,8 @@ import { allBlogPosts } from '../../data';
 import { researchPosts } from '../../fleet-data';
 import { findEditorialRecord, imageResponseOptions } from '../../editorial-image-policy.mjs';
 
+const PUBLIC_ORIGIN = 'https://offshoreadvantages.com';
+
 const hash = (value: string) => {
   let result = 2166136261;
   for (const character of value) {
@@ -26,11 +28,11 @@ export async function GET(
 ) {
   const requestUrl = new URL(request.url);
   if (requestUrl.search) {
-    return Response.redirect(new URL(requestUrl.pathname, requestUrl.origin), 308);
+    return Response.redirect(new URL(requestUrl.pathname, PUBLIC_ORIGIN), 308);
   }
   const { slug } = await params;
   const canonicalPath = `/editorial-image/${encodeURIComponent(slug)}`;
-  if (requestUrl.pathname !== canonicalPath) return Response.redirect(new URL(canonicalPath, requestUrl.origin), 308);
+  if (requestUrl.pathname !== canonicalPath) return Response.redirect(new URL(canonicalPath, PUBLIC_ORIGIN), 308);
   const record = findEditorialRecord(slug, [...allBlogPosts, ...researchPosts]);
   if (!record) return new Response(null, { status: 404, headers: { 'Cache-Control': 'public, max-age=300, s-maxage=300' } });
 
