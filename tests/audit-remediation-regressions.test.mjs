@@ -321,7 +321,17 @@ test('public POST origin validation accepts canonical HTTPS origins behind a rev
 test('editorial image route canonicalizes query variants and negatively caches unknown slugs', () => {
   const route = read('app/editorial-image/[slug]/route.tsx');
   assert.match(route, /requestUrl\.search[\s\S]*?Response\.redirect[\s\S]*?308/);
+  assert.match(route, /PUBLIC_ORIGIN\s*=\s*'https:\/\/offshoreadvantages\.com'/);
+  assert.doesNotMatch(route, /Response\.redirect\(new URL\([^)]*,\s*requestUrl\.origin\)/);
   assert.match(route, /status:\s*404[\s\S]*?s-maxage=300/);
+});
+
+test('legal contact links remain crawlable without Cloudflare email-protection pseudo-routes', () => {
+  for (const path of ['app/privacy/page.tsx', 'app/terms/page.tsx', 'app/cancellation-policy/page.tsx']) {
+    const source = read(path);
+    assert.match(source, /href="\/contact-us"/);
+    assert.doesNotMatch(source, /mailto:|\{email\}/);
+  }
 });
 
 test('customer-support related links have unique destinations and labels', () => {
