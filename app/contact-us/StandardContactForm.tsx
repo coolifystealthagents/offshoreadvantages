@@ -38,7 +38,7 @@ export default function StandardContactForm({ endpoint = "/api/submit-lead", enc
     if (String(data.get("website_url") || "").trim()) return;
     const firstName = String(data.get("firstName") || "").trim();
     const lastName = String(data.get("lastName") || "").trim();
-    const phone = `${countryCode} ${String(data.get("phoneLocal") || "").trim()}`.trim();
+    const phone = `${String(data.get("countryCode") || countryCode)} ${String(data.get("phone") || "").trim()}`.trim();
     const payload: Record<string, string> = {
       firstName, lastName, name: `${firstName} ${lastName}`.trim(), fullName: `${firstName} ${lastName}`.trim(),
       email: String(data.get("email") || ""), businessEmail: String(data.get("email") || ""), phone,
@@ -80,7 +80,7 @@ export default function StandardContactForm({ endpoint = "/api/submit-lead", enc
           <label>Last Name *<input name="lastName" required autoComplete="family-name" /></label>
         </div>
         <label>Business Email *<input name="email" type="email" required autoComplete="email" /></label>
-        <fieldset className="sa-phone-field"><legend>Phone Number *</legend><span className="sa-phone"><select aria-label="Country code" value={countryCode} onChange={(e) => setCountryCode(e.target.value)}>{countryCodes.map(([flag, code], i) => <option value={code} key={`${code}-${i}`}>{flag} {code}</option>)}</select><input aria-label="Phone number" name="phoneLocal" type="tel" required autoComplete="tel-national" placeholder="Phone number" /></span></fieldset>
+        <fieldset className="sa-phone-field"><legend>Phone Number *</legend><span className="sa-phone"><select aria-label="Country code" name="countryCode" value={countryCode} onChange={(e) => setCountryCode(e.target.value)}>{countryCodes.map(([flag, code], i) => <option value={code} key={`${code}-${i}`}>{flag} {code}</option>)}</select><input aria-label="Phone number" name="phone" type="tel" required autoComplete="tel-national" placeholder="Phone number" /></span></fieldset>
         <div className="sa-grid">
           <label>Company Name *<input name="companyName" required autoComplete="organization" /></label>
           <label>Website / URL<input name="website" placeholder="example.com" autoComplete="url" /></label>

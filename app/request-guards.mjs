@@ -1,21 +1,10 @@
 export class PayloadTooLargeError extends Error {
-  constructor() { super('Payload too large'); this.name = 'PayloadTooLargeError'; }
-}
-const PUBLIC_ORIGINS = new Set([
-  'https://offshoreadvantages.com',
-  'https://www.offshoreadvantages.com',
-]);
-export function isAllowedOrigin(origin, runtimeOrigin) {
-  if (!origin) return false;
-  try {
-    const normalized = new URL(origin).origin;
-    if (PUBLIC_ORIGINS.has(normalized)) return true;
-    const runtime = new URL(runtimeOrigin);
-    return ['localhost', '127.0.0.1', '::1'].includes(runtime.hostname) && normalized === runtime.origin;
-  } catch {
-    return false;
+  constructor() {
+    super('Payload too large');
+    this.name = 'PayloadTooLargeError';
   }
 }
+
 export async function readBoundedText(request, maxBytes) {
   const declared = request.headers.get('content-length');
   if (declared !== null) {
@@ -31,39 +20,65 @@ export async function readBoundedText(request, maxBytes) {
       const { done, value } = await reader.read();
       if (done) break;
       total += value.byteLength;
-      if (total > maxBytes) { await reader.cancel(); throw new PayloadTooLargeError(); }
+      if (total > maxBytes) {
+        await reader.cancel();
+        throw new PayloadTooLargeError();
+      }
       chunks.push(value);
     }
-  } finally { reader.releaseLock(); }
+  } finally {
+    reader.releaseLock();
+  }
   const bytes = new Uint8Array(total);
   let offset = 0;
-  for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.byteLength; }
+  for (const chunk of chunks) {
+    bytes.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
   return new TextDecoder('utf-8', { fatal: true }).decode(bytes);
 }
+
 export class BoundedWindowLimiter {
-  #entries = new Map(); #windowMs; #maxKeys;
-  constructor({ windowMs, maxKeys }) { this.#windowMs = windowMs; this.#maxKeys = maxKeys; }
-  get size() { return this.#entries.size; }
+  #entries = new Map();
+  #windowMs;
+  #maxKeys;
+
+  constructor({ windowMs, maxKeys }) {
+    this.#windowMs = windowMs;
+    this.#maxKeys = maxKeys;
+  }
+
+  get size() {
+    return this.#entries.size;
+  }
+
+  get storedHits() {
+    let count = 0;
+    for (const timestamps of this.#entries.values()) count += timestamps.length;
+    return count;
+  }
+
   hit(key, maxHits, now = Date.now()) {
     const cutoff = now - this.#windowMs;
-    for (const [storedKey, timestamps] of this.#entries) {
-      const active = timestamps.filter((timestamp) => timestamp > cutoff);
-      if (active.length) this.#entries.set(storedKey, active);
-      else this.#entries.delete(storedKey);
-    }
     let existing = this.#entries.get(key);
     if (!existing && this.#entries.size >= this.#maxKeys) {
-      const oldestKey = this.#entries.keys().next().value;
-      if (oldestKey !== undefined) this.#entries.delete(oldestKey);
+      for (const [storedKey, timestamps] of this.#entries) {
+        const active = timestamps.filter((timestamp) => timestamp > cutoff);
+        if (active.length) this.#entries.set(storedKey, active);
+        else this.#entries.delete(storedKey);
+      }
+      if (this.#entries.size >= this.#maxKeys) return true;
       existing = this.#entries.get(key);
     }
-    const recent = existing || [];
+    const recent = (existing || []).filter((timestamp) => timestamp > cutoff);
     if (recent.length >= maxHits) {
-      this.#entries.delete(key); this.#entries.set(key, recent);
+      this.#entries.delete(key);
+      this.#entries.set(key, recent.slice(-maxHits));
       return true;
     }
     recent.push(now);
-    this.#entries.delete(key); this.#entries.set(key, recent);
+    this.#entries.delete(key);
+    this.#entries.set(key, recent);
     return false;
   }
 }

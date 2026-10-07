@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import test from 'node:test';
 import { findEditorialRecord, imageResponseOptions, resolveEditorialImagePolicy } from '../app/editorial-image-policy.mjs';
-import { BoundedWindowLimiter, isAllowedOrigin, readBoundedText } from '../app/request-guards.mjs';
+import { BoundedWindowLimiter, readBoundedText } from '../app/request-guards.mjs';
 const root = process.cwd();
 const read = (relative) => fs.readFileSync(path.join(root, relative), 'utf8');
 
@@ -282,8 +282,9 @@ test('contact API preserves user referral attribution and only redirects after a
   assert.match(route, /text\(form, 'referralSpecify'/);
   assert.match(route, /result\?\.ok !== true/);
   assert.ok(route.lastIndexOf('return accepted(request)') > route.indexOf('result?.ok !== true'));
-  assert.match(route, /landing_page:\s*['"]['"]/);
-  assert.match(route, /page_journey:\s*\[\]/);
+  assert.match(route, /source_page:\s*pageUrl/);
+  assert.match(route, /landing_page:\s*pageUrl/);
+  assert.match(route, /page_journey:\s*\['Contact form'\]/);
 });
 
 test('public POST routes stream-limit bodies without forgeable global lockouts', async () => {
@@ -293,36 +294,29 @@ test('public POST routes stream-limit bodies without forgeable global lockouts',
     duplex: 'half',
   });
   await assert.rejects(readBoundedText(oversized, 7), /too large/i);
+  const acceptable = new Request('https://example.test/api/contact', { method: 'POST', body: 'abc' });
+  assert.equal(await readBoundedText(acceptable, 3), 'abc');
   const limiter = new BoundedWindowLimiter({ windowMs: 1000, maxKeys: 2 });
   assert.equal(limiter.hit('a', 1, 0), false);
   assert.equal(limiter.hit('a', 1, 1), true);
+  for (let attempt = 0; attempt < 10_000; attempt += 1) assert.equal(limiter.hit('a', 1, 2), true);
+  assert.equal(limiter.storedHits, 1);
   assert.equal(limiter.hit('b', 1, 1), false);
-  assert.equal(limiter.hit('c', 1, 1), false);
+  assert.equal(limiter.hit('c', 1, 1), true);
   assert.equal(limiter.size, 2);
+  assert.equal(limiter.storedHits, 2);
   assert.equal(limiter.hit('c', 1, 2000), false);
   assert.equal(limiter.size, 1);
-  const capped = new BoundedWindowLimiter({ windowMs: 1000, maxKeys: 1 });
-  assert.equal(capped.hit('all', 2, 0), false);
-  assert.equal(capped.hit('all', 2, 1), false);
-  for (let index = 0; index < 1000; index += 1) assert.equal(capped.hit('all', 2, 2), true);
-  assert.equal(capped.hit('new', 2, 3), false);
-  assert.equal(capped.size, 1);
+  assert.equal(limiter.storedHits, 1);
   for (const file of ['app/api/contact/route.ts', 'app/ingest/track/route.ts']) {
     const source = read(file);
     assert.match(source, /readBoundedText/);
+    assert.match(source, /mediaType !==/);
+    assert.match(source, /PUBLIC_ORIGINS/);
+    assert.doesNotMatch(source, /cf-connecting-ip|x-real-ip|x-forwarded-for/);
     assert.doesNotMatch(source, /\.hit\('all'/);
   }
   assert.match(read('app/api/contact/route.ts'), /emailLimiter\.hit\(email, 3\)/);
-});
-
-test('public POST origin validation accepts canonical HTTPS origins behind a reverse proxy', () => {
-  assert.equal(isAllowedOrigin('https://offshoreadvantages.com', 'http://127.0.0.1:3000'), true);
-  assert.equal(isAllowedOrigin('https://www.offshoreadvantages.com', 'http://offshoreadvantages:3000'), true);
-  assert.equal(isAllowedOrigin('https://example.com', 'http://127.0.0.1:3000'), false);
-  assert.equal(isAllowedOrigin(null, 'http://127.0.0.1:3000'), false);
-  for (const file of ['app/api/contact/route.ts', 'app/ingest/track/route.ts']) {
-    assert.match(read(file), /isAllowedOrigin\([^\n]+, request\.nextUrl\.origin\)/);
-  }
 });
 
 test('editorial image route canonicalizes query variants and negatively caches unknown slugs', () => {
@@ -333,7 +327,7 @@ test('editorial image route canonicalizes query variants and negatively caches u
   assert.match(route, /status:\s*404[\s\S]*?s-maxage=300/);
 });
 
-test('legal contact links remain crawlable without Cloudflare email-protection pseudo-routes', () => {
+test('legal contact links remain crawlable without email-protection pseudo-routes', () => {
   for (const path of ['app/privacy/page.tsx', 'app/terms/page.tsx', 'app/cancellation-policy/page.tsx']) {
     const source = read(path);
     assert.match(source, /href="\/contact-us"/);
@@ -341,10 +335,42 @@ test('legal contact links remain crawlable without Cloudflare email-protection p
   }
 });
 
+test('service schema does not claim the information site is the staffing provider', () => {
+  const route = read('app/services/[slug]/page.tsx');
+  assert.match(route, /'@type': 'Service'/);
+  assert.doesNotMatch(route, /provider:\s*\{/);
+  assert.doesNotMatch(route, /organizationId/);
+});
+
 test('customer-support related links have unique destinations and labels', () => {
   const data = read('app/data.ts');
-  const start = data.indexOf("'philippines-customer-support-data-security-checklist'");
-  const links = data.slice(data.indexOf('internalLinks:', start), data.indexOf('banners:', start));
-  const rows = [...links.matchAll(/label:\s*'([^']+)'[\s\S]*?href:\s*'([^']+)'/g)].map((match) => `${match[1]}|${match[2]}`);
-  assert.equal(new Set(rows).size, rows.length);
+  for (const slug of ['philippines-customer-support-data-security-checklist', 'philippines-customer-support-accessibility-quality-checklist']) {
+    const start = data.indexOf(`'${slug}'`);
+    const links = data.slice(data.indexOf('internalLinks:', start), data.indexOf('banners:', start));
+    const rows = [...links.matchAll(/label:\s*'([^']+)'[\s\S]*?href:\s*'([^']+)'/g)].map((match) => `${match[1]}|${match[2]}`);
+    assert.equal(new Set(rows).size, rows.length, slug);
+  }
+});
+
+test('managed contact form requires authoritative API acknowledgement before analytics or navigation', () => {
+  const form = read('app/contact-us/StandardContactForm.tsx');
+  const route = read('app/api/contact/route.ts');
+  assert.match(form, /Accept: "application\/json"/);
+  assert.match(form, /result\?\.ok !== true/);
+  assert.match(form, /aria-busy=\{submitting\}/);
+  assert.match(form, /aria-live="polite"/);
+  assert.match(route, /result\?\.ok !== true/);
+  assert.match(route, /accept[^\n]+application\/json[\s\S]*?NextResponse\.json\(\{ ok: true \}/);
+  assert.match(route, /text\(form, 'referral'/);
+  assert.match(route, /text\(form, 'referralSpecify'/);
+});
+
+test('phone controls preserve country code and number without client JavaScript', () => {
+  const form = read('app/contact-us/StandardContactForm.tsx');
+  const route = read('app/api/contact/route.ts');
+  assert.match(form, /name="countryCode"/);
+  assert.match(form, /name="phone"/);
+  assert.doesNotMatch(form, /name="phoneLocal"/);
+  assert.match(route, /text\(form, 'countryCode'/);
+  assert.match(route, /countryCode && !localPhone\.startsWith\(countryCode\)/);
 });
