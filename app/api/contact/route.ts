@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { sendLeadFallbackToMattermost } from '../../lib/lead-fallback-mattermost';
-import { BoundedWindowLimiter, PayloadTooLargeError, readBoundedText } from '../../request-guards.mjs';
+import { BoundedWindowLimiter, isAllowedOrigin, PayloadTooLargeError, readBoundedText } from '../../request-guards.mjs';
 
 const MAX_BODY_BYTES = 64_000;
 const MAX_FIELD_LENGTH = 4_000;
@@ -19,7 +19,7 @@ function accepted(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   const contentType = request.headers.get('content-type') || '';
-  if (request.headers.get('origin') !== request.nextUrl.origin || !contentType.toLowerCase().startsWith('application/x-www-form-urlencoded')) return errorPage(400);
+  if (!isAllowedOrigin(request.headers.get('origin'), request.nextUrl.origin) || !contentType.toLowerCase().startsWith('application/x-www-form-urlencoded')) return errorPage(400);
   if (globalLimiter.hit('all', 120)) return errorPage(429);
   let form: URLSearchParams;
   try { form = new URLSearchParams(await readBoundedText(request, MAX_BODY_BYTES)); }
