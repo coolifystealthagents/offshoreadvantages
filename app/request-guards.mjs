@@ -30,9 +30,18 @@ export class BoundedWindowLimiter {
   constructor({ windowMs, maxKeys }) { this.#windowMs = windowMs; this.#maxKeys = maxKeys; }
   get size() { return this.#entries.size; }
   hit(key, maxHits, now = Date.now()) {
-    const existing = this.#entries.get(key);
-    if (!existing && this.#entries.size >= this.#maxKeys) return true;
-    const recent = (existing || []).filter((timestamp) => timestamp > now - this.#windowMs);
+    const cutoff = now - this.#windowMs;
+    let existing = this.#entries.get(key);
+    if (!existing && this.#entries.size >= this.#maxKeys) {
+      for (const [storedKey, timestamps] of this.#entries) {
+        const active = timestamps.filter((timestamp) => timestamp > cutoff);
+        if (active.length) this.#entries.set(storedKey, active);
+        else this.#entries.delete(storedKey);
+      }
+      if (this.#entries.size >= this.#maxKeys) return true;
+      existing = this.#entries.get(key);
+    }
+    const recent = (existing || []).filter((timestamp) => timestamp > cutoff);
     recent.push(now);
     this.#entries.delete(key); this.#entries.set(key, recent);
     return recent.length > maxHits;

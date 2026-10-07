@@ -299,6 +299,8 @@ test('public POST routes stream-limit bodies and use bounded global throttles', 
   assert.equal(limiter.hit('b', 1, 1), false);
   assert.equal(limiter.hit('c', 1, 1), true);
   assert.equal(limiter.size, 2);
+  assert.equal(limiter.hit('c', 1, 2000), false);
+  assert.equal(limiter.size, 1);
   for (const file of ['app/api/contact/route.ts', 'app/ingest/track/route.ts']) {
     const source = read(file);
     assert.match(source, /readBoundedText/);
