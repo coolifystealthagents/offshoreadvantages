@@ -287,7 +287,7 @@ test('contact API preserves user referral attribution and only redirects after a
   assert.match(route, /page_journey:\s*\['Contact form'\]/);
 });
 
-test('public POST routes stream-limit bodies and use bounded global throttles', async () => {
+test('public POST routes stream-limit bodies without forgeable global lockouts', async () => {
   const oversized = new Request('https://example.test/api/contact', {
     method: 'POST',
     body: new ReadableStream({ start(controller) { controller.enqueue(new TextEncoder().encode('1234')); controller.enqueue(new TextEncoder().encode('5678')); controller.close(); } }),
@@ -302,20 +302,25 @@ test('public POST routes stream-limit bodies and use bounded global throttles', 
   for (let attempt = 0; attempt < 10_000; attempt += 1) assert.equal(limiter.hit('a', 1, 2), true);
   assert.equal(limiter.storedHits, 1);
   assert.equal(limiter.hit('b', 1, 1), false);
-  assert.equal(limiter.hit('c', 1, 1), true);
+  assert.equal(limiter.hit('c', 1, 1), false);
   assert.equal(limiter.size, 2);
   assert.equal(limiter.storedHits, 2);
   assert.equal(limiter.hit('c', 1, 2000), false);
   assert.equal(limiter.size, 1);
   assert.equal(limiter.storedHits, 1);
+  const productionCapacity = new BoundedWindowLimiter({ windowMs: 15 * 60_000, maxKeys: 1_024 });
+  for (let index = 0; index < 1_024; index += 1) assert.equal(productionCapacity.hit(`forged-${index}@example.test`, 3, 1_000_000), false);
+  assert.equal(productionCapacity.hit('legitimate@example.test', 3, 1_000_001), false);
+  assert.equal(productionCapacity.size, 1_024);
   for (const file of ['app/api/contact/route.ts', 'app/ingest/track/route.ts']) {
     const source = read(file);
     assert.match(source, /readBoundedText/);
-    assert.match(source, /new BoundedWindowLimiter/);
     assert.match(source, /mediaType !==/);
     assert.match(source, /PUBLIC_ORIGINS|isAllowedOrigin/);
     assert.doesNotMatch(source, /cf-connecting-ip|x-real-ip|x-forwarded-for/);
+    assert.doesNotMatch(source, /\.hit\('all'/);
   }
+  assert.match(read('app/api/contact/route.ts'), /emailLimiter\.hit\(email, 3\)/);
 });
 
 test('public POST origin validation accepts canonical HTTPS origins behind a reverse proxy', () => {
