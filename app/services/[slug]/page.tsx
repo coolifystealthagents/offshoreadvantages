@@ -47,7 +47,6 @@ export default async function Service({
   if (!service) notFound();
 
   const url = `${base}/services/${service.slug}`;
-  const organizationId = `${base}/#organization`;
 
   return (
     <>
@@ -67,12 +66,6 @@ export default async function Service({
                 areaServed: {
                   '@type': 'Country',
                   name: 'Philippines',
-                },
-                provider: {
-                  '@type': 'Organization',
-                  '@id': organizationId,
-                  name: site.brand,
-                  url: base,
                 },
               },
               {

@@ -334,6 +334,13 @@ test('legal contact links remain crawlable without email-protection pseudo-route
   }
 });
 
+test('service schema does not claim the information site is the staffing provider', () => {
+  const route = read('app/services/[slug]/page.tsx');
+  assert.match(route, /'@type': 'Service'/);
+  assert.doesNotMatch(route, /provider:\s*\{/);
+  assert.doesNotMatch(route, /organizationId/);
+});
+
 test('customer-support related links have unique destinations and labels', () => {
   const data = read('app/data.ts');
   for (const slug of ['philippines-customer-support-data-security-checklist', 'philippines-customer-support-accessibility-quality-checklist']) {
