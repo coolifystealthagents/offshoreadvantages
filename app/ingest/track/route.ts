@@ -1,11 +1,10 @@
 import { type NextRequest } from 'next/server';
-import { BoundedWindowLimiter, PayloadTooLargeError, readBoundedText } from '../../request-guards.mjs';
+import { PayloadTooLargeError, readBoundedText } from '../../request-guards.mjs';
 
 const TRACKING_API = 'https://acrtracking.stealthagents.us/api/track';
 const SITE_ID = 'offshore-advantages';
 const MAX_BODY_BYTES = 256_000;
 const PUBLIC_ORIGINS = new Set(['https://offshoreadvantages.com', 'https://www.offshoreadvantages.com']);
-const limiter = new BoundedWindowLimiter({ windowMs: 60_000, maxKeys: 1 });
 export const runtime = 'nodejs';
 
 function isAllowedOrigin(request: NextRequest) {
@@ -26,7 +25,6 @@ export async function POST(request: NextRequest) {
   const mediaType = contentType.split(';', 1)[0].trim().toLowerCase();
   if (!isAllowedOrigin(request)) return errorResponse(403);
   if (mediaType !== 'application/json') return errorResponse(415);
-  if (limiter.hit('all', 600)) return errorResponse(429);
   try {
     const payload = JSON.parse(await readBoundedText(request, MAX_BODY_BYTES));
     if (!payload || typeof payload !== 'object' || Array.isArray(payload)) return errorResponse(422);
