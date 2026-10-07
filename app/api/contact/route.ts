@@ -5,7 +5,6 @@ import { BoundedWindowLimiter, isAllowedOrigin, PayloadTooLargeError, readBounde
 const MAX_BODY_BYTES = 64_000;
 const MAX_FIELD_LENGTH = 4_000;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const globalLimiter = new BoundedWindowLimiter({ windowMs: 60_000, maxKeys: 1 });
 const emailLimiter = new BoundedWindowLimiter({ windowMs: 15 * 60_000, maxKeys: 1_024 });
 const text = (form: URLSearchParams, key: string, max = MAX_FIELD_LENGTH) => (form.get(key) || '').trim().slice(0, max);
 
@@ -20,7 +19,6 @@ function accepted(request: NextRequest) {
 export async function POST(request: NextRequest) {
   const contentType = request.headers.get('content-type') || '';
   if (!isAllowedOrigin(request.headers.get('origin'), request.nextUrl.origin) || !contentType.toLowerCase().startsWith('application/x-www-form-urlencoded')) return errorPage(400);
-  if (globalLimiter.hit('all', 10_000)) return errorPage(429);
   let form: URLSearchParams;
   try { form = new URLSearchParams(await readBoundedText(request, MAX_BODY_BYTES)); }
   catch (error) { return errorPage(error instanceof PayloadTooLargeError ? 413 : 400); }

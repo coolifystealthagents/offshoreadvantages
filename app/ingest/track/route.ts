@@ -1,10 +1,9 @@
 import { type NextRequest } from 'next/server';
-import { BoundedWindowLimiter, isAllowedOrigin, PayloadTooLargeError, readBoundedText } from '../../request-guards.mjs';
+import { isAllowedOrigin, PayloadTooLargeError, readBoundedText } from '../../request-guards.mjs';
 
 const TRACKING_API = 'https://acrtracking.stealthagents.us/api/track';
 const SITE_ID = 'offshore-advantages';
 const MAX_BODY_BYTES = 256_000;
-const limiter = new BoundedWindowLimiter({ windowMs: 60_000, maxKeys: 1 });
 export const runtime = 'nodejs';
 
 export async function POST(request: NextRequest) {
@@ -12,7 +11,6 @@ export async function POST(request: NextRequest) {
   const contentType = request.headers.get('content-type') || '';
   if (!isAllowedOrigin(origin, request.nextUrl.origin)) return Response.json({ status: 'error' }, { status: 403 });
   if (!contentType.toLowerCase().startsWith('application/json')) return Response.json({ status: 'error' }, { status: 415 });
-  if (limiter.hit('all', 50_000)) return Response.json({ status: 'error' }, { status: 429 });
   try {
     const payload = JSON.parse(await readBoundedText(request, MAX_BODY_BYTES));
     if (!payload || typeof payload !== 'object' || Array.isArray(payload)) return Response.json({ status: 'error' }, { status: 422 });

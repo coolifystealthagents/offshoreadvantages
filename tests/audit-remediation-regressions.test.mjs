@@ -286,7 +286,7 @@ test('contact API preserves user referral attribution and only redirects after a
   assert.match(route, /page_journey:\s*\[\]/);
 });
 
-test('public POST routes stream-limit bodies and use bounded global throttles', async () => {
+test('public POST routes stream-limit bodies without forgeable global lockouts', async () => {
   const oversized = new Request('https://example.test/api/contact', {
     method: 'POST',
     body: new ReadableStream({ start(controller) { controller.enqueue(new TextEncoder().encode('1234')); controller.enqueue(new TextEncoder().encode('5678')); controller.close(); } }),
@@ -310,10 +310,9 @@ test('public POST routes stream-limit bodies and use bounded global throttles', 
   for (const file of ['app/api/contact/route.ts', 'app/ingest/track/route.ts']) {
     const source = read(file);
     assert.match(source, /readBoundedText/);
-    assert.match(source, /new BoundedWindowLimiter/);
+    assert.doesNotMatch(source, /\.hit\('all'/);
   }
-  assert.match(read('app/api/contact/route.ts'), /globalLimiter\.hit\('all', 10_000\)/);
-  assert.match(read('app/ingest/track/route.ts'), /limiter\.hit\('all', 50_000\)/);
+  assert.match(read('app/api/contact/route.ts'), /emailLimiter\.hit\(email, 3\)/);
 });
 
 test('public POST origin validation accepts canonical HTTPS origins behind a reverse proxy', () => {
