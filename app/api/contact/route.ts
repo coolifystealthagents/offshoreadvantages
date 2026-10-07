@@ -20,7 +20,7 @@ function accepted(request: NextRequest) {
 export async function POST(request: NextRequest) {
   const contentType = request.headers.get('content-type') || '';
   if (!isAllowedOrigin(request.headers.get('origin'), request.nextUrl.origin) || !contentType.toLowerCase().startsWith('application/x-www-form-urlencoded')) return errorPage(400);
-  if (globalLimiter.hit('all', 120)) return errorPage(429);
+  if (globalLimiter.hit('all', 10_000)) return errorPage(429);
   let form: URLSearchParams;
   try { form = new URLSearchParams(await readBoundedText(request, MAX_BODY_BYTES)); }
   catch (error) { return errorPage(error instanceof PayloadTooLargeError ? 413 : 400); }

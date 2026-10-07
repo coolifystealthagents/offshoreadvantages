@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
   const contentType = request.headers.get('content-type') || '';
   if (!isAllowedOrigin(origin, request.nextUrl.origin)) return Response.json({ status: 'error' }, { status: 403 });
   if (!contentType.toLowerCase().startsWith('application/json')) return Response.json({ status: 'error' }, { status: 415 });
-  if (limiter.hit('all', 600)) return Response.json({ status: 'error' }, { status: 429 });
+  if (limiter.hit('all', 50_000)) return Response.json({ status: 'error' }, { status: 429 });
   try {
     const payload = JSON.parse(await readBoundedText(request, MAX_BODY_BYTES));
     if (!payload || typeof payload !== 'object' || Array.isArray(payload)) return Response.json({ status: 'error' }, { status: 422 });

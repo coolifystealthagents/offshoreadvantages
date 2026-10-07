@@ -297,15 +297,23 @@ test('public POST routes stream-limit bodies and use bounded global throttles', 
   assert.equal(limiter.hit('a', 1, 0), false);
   assert.equal(limiter.hit('a', 1, 1), true);
   assert.equal(limiter.hit('b', 1, 1), false);
-  assert.equal(limiter.hit('c', 1, 1), true);
+  assert.equal(limiter.hit('c', 1, 1), false);
   assert.equal(limiter.size, 2);
   assert.equal(limiter.hit('c', 1, 2000), false);
   assert.equal(limiter.size, 1);
+  const capped = new BoundedWindowLimiter({ windowMs: 1000, maxKeys: 1 });
+  assert.equal(capped.hit('all', 2, 0), false);
+  assert.equal(capped.hit('all', 2, 1), false);
+  for (let index = 0; index < 1000; index += 1) assert.equal(capped.hit('all', 2, 2), true);
+  assert.equal(capped.hit('new', 2, 3), false);
+  assert.equal(capped.size, 1);
   for (const file of ['app/api/contact/route.ts', 'app/ingest/track/route.ts']) {
     const source = read(file);
     assert.match(source, /readBoundedText/);
     assert.match(source, /new BoundedWindowLimiter/);
   }
+  assert.match(read('app/api/contact/route.ts'), /globalLimiter\.hit\('all', 10_000\)/);
+  assert.match(read('app/ingest/track/route.ts'), /limiter\.hit\('all', 50_000\)/);
 });
 
 test('public POST origin validation accepts canonical HTTPS origins behind a reverse proxy', () => {
