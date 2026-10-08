@@ -2,11 +2,11 @@ import { Header, Footer, JsonLd } from './components';
 import { services, stats, staffingProcess, site } from './data';
 
 export const metadata = {
-  title: { absolute: 'Virtual Assistant Planning for Professional Services | Offshore Advantages' },
+  title: { absolute: 'Philippines Virtual Assistant Planning | Offshore Advantages' },
   description: 'Plan a Philippines-based virtual assistant role for a professional-services team with clear work, handoffs, access, and review.',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Virtual Assistant Planning for Professional Services | Offshore Advantages',
+    title: 'Philippines Virtual Assistant Planning | Offshore Advantages',
     description: 'Plan a Philippines-based virtual assistant role with clear work, handoffs, access, and review.',
     url: 'https://offshoreadvantages.com/',
     type: 'website',

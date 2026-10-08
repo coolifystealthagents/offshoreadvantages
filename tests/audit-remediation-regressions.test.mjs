@@ -190,7 +190,7 @@ test('route titles and Open Graph metadata do not inherit homepage identity', ()
   const home = read('app/page.tsx');
   assert.doesNotMatch(layout, /openGraph\s*:/);
   assert.match(home, /openGraph\s*:/);
-  assert.match(home, /title:\s*\{\s*absolute:\s*['"]Virtual Assistant Planning for Professional Services \| Offshore Advantages['"]\s*\}/);
+  assert.match(home, /title:\s*\{\s*absolute:\s*['"]Philippines Virtual Assistant Planning \| Offshore Advantages['"]\s*\}/);
   for (const file of ['app/page.tsx', 'app/blog/page.tsx', 'app/services/page.tsx', 'app/research/page.tsx']) {
     const metadata = read(file).slice(0, read(file).indexOf('export default'));
     assert.doesNotMatch(metadata, /title\s*:\s*`[^`]*\$\{site\.brand\}/, file);
