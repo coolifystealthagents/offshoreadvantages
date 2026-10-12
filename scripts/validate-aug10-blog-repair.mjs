@@ -9,6 +9,8 @@ if (manifest.family !== 'blog' || manifest.domain !== 'offshoreadvantages.com' |
 if (manifest.entries.length < manifest.minimum || manifest.entries.length < 22) throw new Error('Accepted count is below minimum');
 const slugs = new Set();
 const sourceCache = new Map();
+const retiredSlugsSource = readFileSync('app/retired-slugs.ts', 'utf8');
+const builtSitemap = readFileSync('.next/server/app/sitemap.xml.body', 'utf8');
 for (const entry of manifest.entries) {
   if (slugs.has(entry.slug)) throw new Error(`Duplicate slug: ${entry.slug}`);
   slugs.add(entry.slug);
@@ -30,27 +32,22 @@ for (const entry of manifest.entries) {
   }
   const after = execFileSync('git', ['show', `${entry.introducedByCommit}:${entry.sourcePath}`], { encoding: 'utf8' });
   if (before.includes(entry.slug) || !after.includes(entry.slug)) throw new Error(`Git introduction proof failed: ${entry.slug}`);
+  if (!new RegExp(`['"]${entry.slug}['"]`).test(retiredSlugsSource)) throw new Error(`Retired route is not declared: ${entry.slug}`);
   const htmlPath = `${process.cwd()}/.next/server/app${entry.route}.html`;
-  if (!existsSync(htmlPath)) throw new Error(`Built route missing: ${entry.route}`);
-  const html = readFileSync(htmlPath, 'utf8');
-  if (!html.includes('datePublished') || !html.includes('2026-08-10') || !html.includes('dateTime="2026-08-10"') || !html.includes('Published')) throw new Error(`Rendered date missing: ${entry.slug}`);
-  if (!html.includes(`rel="canonical"`) || !html.includes(`https://offshoreadvantages.com${entry.route}`)) throw new Error(`Canonical missing: ${entry.slug}`);
+  if (existsSync(htmlPath)) throw new Error(`Retired route was unexpectedly generated: ${entry.route}`);
+  if (builtSitemap.includes(`https://offshoreadvantages.com${entry.route}`)) throw new Error(`Retired route remains in sitemap: ${entry.slug}`);
 }
 const sitemapSource = readFileSync('app/sitemap.xml/route.ts', 'utf8');
-if (!sitemapSource.includes('allBlogPosts')) throw new Error('Sitemap is not sourced from the complete Blog catalog');
-const builtSitemap = readFileSync('.next/server/app/sitemap.xml.body', 'utf8');
-for (const entry of manifest.entries) {
-  if (!builtSitemap.includes(`https://offshoreadvantages.com${entry.route}`)) throw new Error(`Sitemap route missing: ${entry.slug}`);
-}
+if (!sitemapSource.includes('allBlogPosts')) throw new Error('Sitemap is not sourced from the active Blog catalog');
 const dataSource = readFileSync('app/data.ts', 'utf8');
 const catalog = dataSource.match(/export const allBlogPosts\s*=\s*\[([\s\S]*?)\]\s*as const/);
-if (!catalog) throw new Error('Complete Blog catalog declaration is missing');
+if (!catalog) throw new Error('Active Blog catalog declaration is missing');
 const catalogItems = [...catalog[1].matchAll(/\.\.\.([A-Za-z0-9_]+)/g)].map((match) => match[1]);
-if (!catalogItems.length) throw new Error('Complete Blog catalog must contain at least one batch');
-if (new Set(catalogItems).size !== catalogItems.length) throw new Error('Complete Blog catalog repeats a batch');
+if (!catalogItems.length) throw new Error('Active Blog catalog must contain at least one batch');
+if (new Set(catalogItems).size !== catalogItems.length) throw new Error('Active Blog catalog repeats a batch');
 for (const item of catalogItems) {
   if (!new RegExp(`(?:import\\s+\\{[^}]*\\b${item}\\b[^}]*\\}\\s+from|export const ${item}\\s*=)`).test(dataSource)) {
     throw new Error(`Blog catalog item is not a declared source batch: ${item}`);
   }
 }
-console.log(`PASS: ${manifest.entries.length} accepted Blog entries, Git provenance, built dates, canonicals, sitemap eligibility, and complete unique catalog index`);
+console.log(`PASS: ${manifest.entries.length} retired August 10 Blog entries retain source and Git provenance, are declared retired, and are absent from generated routes and sitemap`);
