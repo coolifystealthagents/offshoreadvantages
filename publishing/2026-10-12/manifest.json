@@ -1,0 +1,28 @@
+{
+  "domain": "offshoreadvantages.com",
+  "date": "2026-10-12",
+  "visibleDate": "October 12, 2026",
+  "counts": { "Blog": 12, "Research": 5, "total": 17 },
+  "registryPaths": ["app/data.ts", "app/fleet-data.ts"],
+  "routePaths": ["app/blog/[slug]/page.tsx", "app/research/[slug]/page.tsx"],
+  "sitemapPath": "app/sitemap.xml/route.ts",
+  "articles": [
+    { "section": "Blog", "slug": "offshore-benefits-enrollment-change-intake", "title": "Offshore Benefits Enrollment Change Intake" },
+    { "section": "Blog", "slug": "philippines-sales-proposal-version-control", "title": "Philippines Sales Proposal Version Control" },
+    { "section": "Blog", "slug": "offshore-customer-credit-memo-request-packet", "title": "Offshore Customer Credit Memo Request Packet" },
+    { "section": "Blog", "slug": "philippines-field-service-parts-request-coordination", "title": "Philippines Field Service Parts Request Coordination" },
+    { "section": "Blog", "slug": "offshore-legal-hold-notice-acknowledgement-tracker", "title": "Offshore Legal Hold Notice Acknowledgement Tracker" },
+    { "section": "Blog", "slug": "philippines-webinar-registration-reconciliation", "title": "Philippines Webinar Registration Reconciliation" },
+    { "section": "Blog", "slug": "offshore-executive-expense-preapproval-log", "title": "Offshore Executive Expense Preapproval Log" },
+    { "section": "Blog", "slug": "philippines-subscription-usage-report-preparation", "title": "Philippines Subscription Usage Report Preparation" },
+    { "section": "Blog", "slug": "offshore-recruiting-reference-check-coordination", "title": "Offshore Recruiting Reference Check Coordination" },
+    { "section": "Blog", "slug": "philippines-facilities-badge-return-tracker", "title": "Philippines Facilities Badge Return Tracker" },
+    { "section": "Blog", "slug": "offshore-content-embargo-release-check", "title": "Offshore Content Embargo Release Check" },
+    { "section": "Blog", "slug": "philippines-grant-reporting-document-chase", "title": "Philippines Grant Reporting Document Chase" },
+    { "section": "Research", "slug": "offshore-supervisor-span-of-control-research", "title": "Offshore Supervisor Span of Control Research" },
+    { "section": "Research", "slug": "offshore-evidence-retrieval-time-study", "title": "Offshore Evidence Retrieval Time Study" },
+    { "section": "Research", "slug": "philippines-calendar-coverage-forecast-research", "title": "Philippines Calendar Coverage Forecast Research" },
+    { "section": "Research", "slug": "offshore-role-expansion-control-study", "title": "Offshore Role Expansion Control Study" },
+    { "section": "Research", "slug": "philippines-approval-packet-reading-time-research", "title": "Philippines Approval Packet Reading Time Research" }
+  ]
+}
