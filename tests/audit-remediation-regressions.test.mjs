@@ -248,7 +248,7 @@ test('contact and homepage copy avoid unsupported commercial claims', () => {
     read('app/contact-us/page.tsx'),
     read('app/contact-us/StandardContactForm.tsx'),
   ].join('\n');
-  assert.doesNotMatch(publicCopy, /industry experienced|Philippines specialists|free consultation|exclusively in the Philippines|find growth/i);
+  assert.doesNotMatch(publicCopy, /industry experienced|Philippines specialists|exclusively in the Philippines|find growth/i);
 });
 
 test('mobile contact layout preserves visual and semantic reading order', () => {

@@ -8,6 +8,7 @@ type TrackerWindow = Window & { acrTracker?: { trackLead?: (payload: Record<stri
 const companySizes = ["1-5", "5-10", "11-50", "51-250", "251-1k", "1k+"];
 const positions = ["Just 1 Position", "2-5 Positions", "6-10 Positions", "11-50 Positions", "51-100 Positions", "101-500 Positions", "501-1,000 Positions", "Over 1,000 Positions"];
 const referrals = ["Google", "Email", "LinkedIn", "Reddit", "X / Twitter", "Referral", "ChatGPT / AI", "Outbound Outreach", "Other"];
+const personalEmailDomains = new Set(["gmail.com", "googlemail.com", "yahoo.com", "hotmail.com", "outlook.com", "live.com", "icloud.com", "aol.com", "proton.me", "protonmail.com"]);
 const countryCodes = [
   ["🇺🇸", "+1"], ["🇨🇦", "+1"], ["🇮🇩", "+62"], ["🇵🇭", "+63"], ["🇬🇧", "+44"],
   ["🇦🇺", "+61"], ["🇳🇿", "+64"], ["🇸🇬", "+65"], ["🇮🇳", "+91"], ["🇦🇪", "+971"],
@@ -38,11 +39,16 @@ export default function StandardContactForm({ endpoint = "/api/submit-lead", enc
     if (String(data.get("website_url") || "").trim()) return;
     const firstName = String(data.get("firstName") || "").trim();
     const lastName = String(data.get("lastName") || "").trim();
+    const email = String(data.get("email") || "").trim().toLowerCase();
+    if (personalEmailDomains.has(email.split("@").pop() || "")) {
+      setError("Please use your business email address.");
+      return;
+    }
     const selectedCountryCode = String(data.get("countryCode") || countryCode).trim();
     const phone = String(data.get("phone") || "").trim();
     const payload: Record<string, string> = {
       firstName, lastName, name: `${firstName} ${lastName}`.trim(), fullName: `${firstName} ${lastName}`.trim(),
-      email: String(data.get("email") || ""), businessEmail: String(data.get("email") || ""), countryCode: selectedCountryCode, phone,
+      email, businessEmail: email, countryCode: selectedCountryCode, phone,
       companyName: String(data.get("companyName") || ""), company: String(data.get("companyName") || ""),
       website: String(data.get("website") || ""), companySize: String(data.get("companySize") || ""),
       positions: String(data.get("positions") || ""), positionsToFill: String(data.get("positions") || ""),
@@ -73,14 +79,14 @@ export default function StandardContactForm({ endpoint = "/api/submit-lead", enc
 
   return (
     <div className="sa-form-card">
-      <h2>Describe the Virtual Assistant Role You Want to Plan</h2>
+      <h2>Tell us about the support role you need</h2>
       <form onSubmit={submit} id="contactPageForm" method="post" action={endpoint} data-acr-managed="true" aria-busy={submitting}>
         <input className="sa-hp" name="website_url" tabIndex={-1} autoComplete="off" aria-hidden="true" />
         <div className="sa-grid">
           <label>First Name *<input name="firstName" required autoComplete="given-name" /></label>
           <label>Last Name *<input name="lastName" required autoComplete="family-name" /></label>
         </div>
-        <label>Business Email *<input name="email" type="email" required autoComplete="email" /></label>
+        <label>Business Email *<input name="email" type="email" required autoComplete="email" /><small>Please use a business email. Personal email addresses are not accepted.</small></label>
         <fieldset className="sa-phone-field"><legend>Phone Number *</legend><span className="sa-phone"><select aria-label="Country code" name="countryCode" value={countryCode} onChange={(e) => setCountryCode(e.target.value)}>{countryCodes.map(([flag, code], i) => <option value={code} key={`${code}-${i}`}>{flag} {code}</option>)}</select><input aria-label="Phone number" name="phone" type="tel" required autoComplete="tel-national" placeholder="Phone number" /></span></fieldset>
         <div className="sa-grid">
           <label>Company Name *<input name="companyName" required autoComplete="organization" /></label>
@@ -95,7 +101,7 @@ export default function StandardContactForm({ endpoint = "/api/submit-lead", enc
         <label>Message *<textarea name="message" rows={4} required /></label>
         <p className="sa-status" aria-live="polite">{submitting ? "Submitting your request…" : ""}</p>
         {error ? <p className="sa-error" role="alert">{error}</p> : null}
-        <button type="submit" disabled={submitting}>{submitting ? "Submitting..." : "Submit Role-Planning Inquiry"}</button>
+        <button type="submit" disabled={submitting}>{submitting ? "Submitting..." : "Book a Free Consultation"}</button>
       </form>
       <style jsx>{`
         .sa-form-card{width:100%;max-width:876px;margin:0 auto;background:#fff;border:1px solid #e3e8ef;border-radius:22px;padding:34px 48px 48px;box-shadow:0 18px 48px rgba(15,34,58,.16);color:#34415a;text-align:left}

@@ -5,6 +5,7 @@ import { BoundedWindowLimiter, combineCountryCode, isAllowedOrigin, PayloadTooLa
 const MAX_BODY_BYTES = 64_000;
 const MAX_FIELD_LENGTH = 4_000;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const personalEmailDomains = new Set(['gmail.com', 'googlemail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'live.com', 'icloud.com', 'aol.com', 'proton.me', 'protonmail.com']);
 const globalLimiter = new BoundedWindowLimiter({ windowMs: 60_000, maxKeys: 1 });
 const emailLimiter = new BoundedWindowLimiter({ windowMs: 15 * 60_000, maxKeys: 1_024 });
 const text = (form: URLSearchParams, key: string, max = MAX_FIELD_LENGTH) => (form.get(key) || '').trim().slice(0, max);
@@ -43,7 +44,7 @@ export async function POST(request: NextRequest) {
   const referral = text(form, 'referral', 300) || text(form, 'howTheyHeard', 300);
   const referralSpecify = text(form, 'referralSpecify', 300);
   const userMessage = text(form, 'message');
-  if (!first || !last || !EMAIL_RE.test(email) || !phone || !business || !companySize || !positions || !referral || !userMessage) return errorPage(request, 422);
+  if (!first || !last || !EMAIL_RE.test(email) || personalEmailDomains.has(email.split('@').pop() || '') || !phone || !business || !companySize || !positions || !referral || !userMessage) return errorPage(request, 422);
   if (referral === 'Other' && !referralSpecify) return errorPage(request, 422);
   if (emailLimiter.hit(email, 3)) return errorPage(request, 429);
 

@@ -1,57 +1,45 @@
-import type { Metadata } from "next";
-import { Header, Footer } from "../components";
-import StandardContactForm from "./StandardContactForm";
-import "./image-fix.css";
+import type { Metadata } from 'next';
+import { Footer, Header } from '../components';
+import StandardContactForm from './StandardContactForm';
+import './contact.css';
 
-export const metadata: Metadata = {
-  title: "Contact Us | Plan an Offshore Team",
-  description: "Submit an inquiry to map a controlled Philippines staffing role, handoff, and review plan.",
-  alternates: { canonical: "/contact-us" },
-  openGraph: {
-    title: "Contact Us | Plan an Offshore Team | Offshore Advantages",
-    description: "Submit an inquiry to map a controlled Philippines staffing role, handoff, and review plan.",
-    url: "https://offshoreadvantages.com/contact-us",
-    type: "website",
-  },
-  robots: { index: true, follow: true },
-};
-
-const advantages = [
-  ["Role design", "Define the outcome, recurring tasks, tools, and decision boundaries before recruiting."],
-  ["Philippines talent", "Share your role details with a provider suited to your schedule, systems, and working style."],
-  ["Controlled handoffs", "Launch with clear examples, access rules, escalation paths, and named reviewers."],
-  ["Scalable support", "Add dependable capacity without losing visibility into quality or ownership."],
+const canonical = 'https://offshoreadvantages.com/contact-us';
+export const metadata: Metadata = { title: 'Contact Offshore Advantages | Plan Your Team', description: 'Book a staffing consultation to define a Philippines-based support role, ownership boundaries, candidate fit, and a controlled launch.', alternates: { canonical: canonical }, openGraph: { title: 'Contact Offshore Advantages | Plan Your Team', description: 'Define a Philippines-based support role, ownership boundaries, candidate fit, and a controlled launch.', url: canonical, type: 'website' }, robots: { index: true, follow: true } };
+const steps = [
+  ['Workflow discovery', 'Map the recurring work, current owners, systems, deadlines, and exceptions that consume internal capacity.'],
+  ['Role design', 'Define responsibilities, working hours, access limits, review points, escalation rules, and measurable outputs.'],
+  ['Candidate matching', 'Review Philippines-based candidates against the skills, tools, communication needs, and schedule in the role brief.'],
+  ['Controlled launch', 'Start with representative work, review the first outputs closely, and expand scope only after the handoff is reliable.'],
 ];
-
-export default function ContactUsPage() {
-  return <>
-    <Header />
-    <main className="trusted-contact">
-      <section className="tc-hero">
-        <div className="container tc-hero-grid">
-          <div className="tc-copy">
-            <p className="tc-kicker">Build the role before you hire</p>
-            <h1>Put the Philippines advantage to work.</h1>
-            <p className="tc-lead">Tell us what needs to move, who approves it, and what success looks like. Use those details to shape a practical offshore staffing brief for a provider conversation.</p>
-            <div className="tc-proof-row"><span>Role-first planning</span><span>Philippines-focused inquiry</span><span>No commitment to submit</span></div>
-            <a className="tc-text-link" href="#what-you-get">See what your plan includes →</a>
-          </div>
-          <StandardContactForm endpoint="/api/contact" encoding="form" />
-        </div>
-      </section>
-      <section className="tc-strip" aria-label="Role-planning inputs"><div className="container tc-strip-grid"><strong>A clearer first step</strong><span>✓ Role scope</span><span>✓ Talent fit</span><span>✓ Handoff controls</span><span>✓ Next-step plan</span></div></section>
-      <section className="tc-section" id="what-you-get">
-        <div className="container"><div className="tc-section-head"><div><p className="tc-kicker">What to bring</p><h2>Four inputs turn an idea into a hireable role.</h2></div><p>Bring the work as it exists today. We’ll help identify the repeatable responsibilities, necessary experience, coverage window, and review rhythm.</p></div>
-          <div className="tc-card-grid">{advantages.map(([title, body], i) => <article key={title}><span>0{i + 1}</span><h3>{title}</h3><p>{body}</p></article>)}</div>
-          <div className="tc-inline-cta"><strong>Already have the role mapped?</strong><a href="#contactPageForm">Submit the role details</a></div>
-        </div>
-      </section>
-
-      <section className="tc-section"><div className="container tc-check-grid"><div><p className="tc-kicker">Built into the conversation</p><h2>A practical capability checklist.</h2><p>We focus on the operating details that make an offshore relationship durable—not just a job title.</p></div><ul><li>Recurring task inventory and ownership</li><li>Required tools, permissions, and data boundaries</li><li>Working hours and time-zone overlap</li><li>Examples, quality standards, and review cadence</li><li>Escalation triggers and decision rights</li><li>Ramp plan and measurable first-month outcomes</li></ul></div></section>
-      <section className="tc-why"><div className="container tc-why-grid"><img src="/philippines-team.jpg" width="1200" height="800" alt="Philippines professionals collaborating on an offshore staffing plan" /><div><p className="tc-kicker">Why plan first</p><h2>Offshore support should feel accountable, not distant.</h2><p>A clear staffing brief gives the provider, your team, and a future hire shared boundaries, useful overlap, and a visible finish line.</p><a href="#contactPageForm">Start my role plan →</a></div></div></section>
-      <section className="tc-about"><div className="container tc-about-grid"><div><p className="tc-kicker">How inquiries are handled</p><h2>From role brief to staffing conversation</h2><p>Qualified inquiries may be routed to the staffing team for a practical discussion of role scope, candidate fit, onboarding, and review ownership.</p></div><a href="https://stealthagents.com" rel="noopener noreferrer">Learn about the staffing team</a></div></section>
-      <section className="container tc-final"><div><p className="tc-kicker">Ready when you are</p><h2>Turn recurring work into a reviewable role.</h2><p>Share the tasks, systems, schedule, and approval needs for a Philippines-based support role.</p></div><a href="#contactPageForm">Submit role details</a></section>
-    </main>
-    <Footer />
-  </>;
-}
+const prep = [
+  ['Recurring work', 'Bring the repeatable tasks and queues you want to move away from senior staff.'],
+  ['Current ownership', 'Name who performs, reviews, approves, decides, and handles exceptions today.'],
+  ['Systems and access', 'List the tools, records, permissions, and data boundaries the role will encounter.'],
+  ['Service standard', 'Share coverage hours, deadlines, expected outputs, quality checks, and escalation timing.'],
+];
+const paths = [
+  ['/services/shared-services-administration', 'Shared services administration', 'Coordinate recurring back-office workflows with documented ownership and review.'],
+  ['/services/customer-experience-support', 'Customer experience support', 'Plan inbox, chat, or ticket coverage with approved answers and escalation paths.'],
+  ['/services/finance-operations-support', 'Finance operations support', 'Prepare routine finance work while authorized personnel retain approval and release authority.'],
+  ['/services/revenue-operations-support', 'Revenue operations support', 'Keep CRM records, follow-up queues, and reporting inputs organized for accountable owners.'],
+  ['/services/technical-support-desk', 'Technical support desk', 'Triage documented issues and route security, engineering, and access decisions correctly.'],
+];
+const faqs = [
+  ['What roles can be planned for a Philippines-based team?', 'Common starting points include administration, customer experience, finance operations, revenue operations, data management, marketing operations, project coordination, and technical support. The right scope depends on the actual workflow and decision boundaries.'],
+  ['Do we need a complete job description before the call?', 'No. Bring the recurring work, systems, schedule, current owner, expected output, and common exceptions. Those details are more useful than a generic title.'],
+  ['How are candidates matched?', 'Matching begins with the approved role brief, including experience, tools, communication needs, hours, access limits, and review model. Candidate fit should be evaluated against that real operating context.'],
+  ['Can offshore staff make legal, financial, or executive decisions?', 'No. Delegated staff can prepare and coordinate approved work, but licensed, regulated, legal, financial, compliance, security, and executive decisions remain with qualified or authorized personnel.'],
+  ['How should access be handled?', 'Use named accounts, least-privilege permissions, multi-factor authentication, approved systems, and documented offboarding. Expand access only when the role requires it and the client owner approves it.'],
+  ['What happens after candidate selection?', 'Begin with representative work, a named reviewer, clear escalation triggers, and frequent feedback. Increase volume or permissions only after the workflow performs reliably.'],
+];
+export default function ContactUsPage(){const schema={'@context':'https://schema.org','@graph':[{'@type':'ContactPage',name:'Contact Offshore Advantages',url:canonical,description:metadata.description},{'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:'https://offshoreadvantages.com'},{'@type':'ListItem',position:2,name:'Contact Us',item:canonical}]},{'@type':'FAQPage',mainEntity:faqs.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))}]};return <><Header/><main className="contact-page"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}}/>
+  <section className="contact-hero"><div className="container"><p className="contact-eyebrow">Contact Us</p><h1>Get In Touch</h1><p>Turn recurring operational work into a clearly owned Philippines-based support role.</p><a className="contact-hero-button" href="#contactPageForm">Plan your support role</a></div></section>
+  <section className="contact-section contact-intro"><div className="container contact-intro-grid"><div className="contact-intro-copy"><p className="contact-eyebrow">Staffing consultation</p><h2>Define the role before you add capacity.</h2><p>Tell us which work needs to move, how it is handled today, and which decisions your team must retain. We will use that context to shape a practical staffing brief and candidate conversation.</p><h3>What to Expect</h3><ul><li>A focused review of recurring work, systems, schedule, volume, and handoffs</li><li>Clear outputs, access limits, quality checks, and escalation ownership</li><li>Candidate matching grounded in the approved role rather than a generic title</li><li>A controlled launch plan with a named client reviewer</li></ul><p className="contact-email">Prefer email? <a href="mailto:hello@offshoreadvantages.com">hello@offshoreadvantages.com</a></p></div><StandardContactForm endpoint="/api/contact" encoding="form"/></div></section>
+  <section className="contact-section contact-cred"><div className="container contact-split"><img src="/philippines-team.jpg" width="1200" height="800" alt="Philippines-based professionals collaborating on a documented support plan"/><div><p className="contact-eyebrow">Powered by Stealth Agents</p><h2>Offshore staffing expertise. Stealth Agents support.</h2><p>Stealth Agents provides dedicated virtual assistant staffing with recruiting and ongoing support organized around each client’s approved role, systems, schedule, and review model.</p><p><strong>Offshore Advantages is a subsidiary of Stealth Agents.</strong></p><a className="contact-button" href="#contactPageForm">Book a consultation</a></div></div></section>
+  <section className="contact-section contact-booking"><div className="container contact-booking-grid"><div><p className="contact-eyebrow">Direct scheduling</p><h2>Or Skip the Wait: Book a Call Now</h2><p>Choose a time to discuss the workflow, coverage, access, candidate profile, and review model your team needs.</p></div><iframe title="Book an Offshore Advantages staffing consultation" src="https://go.oncehub.com/StealthAgentsTeam?brdr=1pxd8d8d8&amp;dt=&amp;em=1&amp;Si=1" loading="lazy" referrerPolicy="strict-origin-when-cross-origin"/></div></section>
+  <section className="contact-section"><div className="container"><div className="contact-heading"><p className="contact-eyebrow">After you reach out</p><h2>A clear path from workflow to controlled launch.</h2></div><div className="contact-card-grid">{steps.map(([t,b],i)=><article key={t}><span>0{i+1}</span><h3>{t}</h3><p>{b}</p></article>)}</div></div></section>
+  <section className="contact-section contact-soft"><div className="container"><div className="contact-heading"><p className="contact-eyebrow">Prepare for a useful call</p><h2>Bring the details that make candidate fit measurable.</h2></div><div className="contact-card-grid">{prep.map(([t,b])=><article key={t}><h3>{t}</h3><p>{b}</p></article>)}</div></div></section>
+  <section className="contact-section contact-boundaries"><div className="container contact-split"><div><p className="contact-eyebrow">Responsibility and boundaries</p><h2>Delegate execution, keep accountable authority.</h2><p>Support staff can perform documented administrative, coordination, research, service, data, and preparation work inside approved systems and escalation rules.</p></div><div className="contact-boundary-card"><h3>Your qualified or authorized team retains</h3><ul><li>Legal advice, regulated judgment, filings, and compliance decisions</li><li>Clinical decisions, diagnoses, treatment, and patient-care authority</li><li>Financial approvals, payment release, tax positions, and final sign-off</li><li>Security exceptions, credential changes, and privileged access decisions</li><li>Employment policy, contracting, strategy, and executive authority</li></ul></div></div></section>
+  <section className="contact-section"><div className="container"><div className="contact-heading"><p className="contact-eyebrow">Common starting points</p><h2>Start with work that is recurring, documented, and reviewable.</h2></div><div className="contact-path-grid">{paths.map(([href,t,b])=><a href={href} key={href}><h3>{t}</h3><p>{b}</p><span>Explore this service →</span></a>)}</div><a className="contact-services-link" href="/services">View the full services collection →</a></div></section>
+  <section className="contact-section contact-faq"><div className="container"><div className="contact-heading"><p className="contact-eyebrow">Frequently asked questions</p><h2>Questions about planning an offshore support role.</h2></div><div className="contact-faq-list">{faqs.map(([q,a])=><details key={q}><summary>{q}</summary><p>{a}</p></details>)}</div></div></section>
+</main><Footer/></>}
