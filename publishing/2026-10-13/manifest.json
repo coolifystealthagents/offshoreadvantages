@@ -1,0 +1,165 @@
+{
+  "site": "OffshoreAdvantages.com",
+  "canonicalDomain": "https://offshoreadvantages.com",
+  "repository": "coolifystealthagents/offshoreadvantages",
+  "branch": "main",
+  "baseSha": "383d7c45ac498f38a6fe0b90494fc8ed4ca51da1",
+  "publicationDate": "2026-10-13",
+  "blogCount": 12,
+  "researchCount": 5,
+  "entries": [
+    {
+      "type": "Blog",
+      "title": "Reconcile Multi-Entity Vendor Master Requests",
+      "slug": "multi-entity-vendor-master-request-reconciliation",
+      "route": "/blog/multi-entity-vendor-master-request-reconciliation",
+      "sourcePath": "app/campaign-2026-10-13.ts",
+      "thumbnail": "/october-13-2026/multi-entity-vendor-master-request-reconciliation.svg",
+      "words": 1466
+    },
+    {
+      "type": "Blog",
+      "title": "Verify Offshore Queue Ownership Transfers",
+      "slug": "offshore-queue-ownership-transfer-verification",
+      "route": "/blog/offshore-queue-ownership-transfer-verification",
+      "sourcePath": "app/campaign-2026-10-13.ts",
+      "thumbnail": "/october-13-2026/offshore-queue-ownership-transfer-verification.svg",
+      "words": 1418
+    },
+    {
+      "type": "Blog",
+      "title": "Control Shared Mailbox Delegate Changes",
+      "slug": "shared-mailbox-delegate-change-control",
+      "route": "/blog/shared-mailbox-delegate-change-control",
+      "sourcePath": "app/campaign-2026-10-13.ts",
+      "thumbnail": "/october-13-2026/shared-mailbox-delegate-change-control.svg",
+      "words": 1430
+    },
+    {
+      "type": "Blog",
+      "title": "Route Client Holiday Coverage Exceptions",
+      "slug": "client-holiday-coverage-exception-routing",
+      "route": "/blog/client-holiday-coverage-exception-routing",
+      "sourcePath": "app/campaign-2026-10-13.ts",
+      "thumbnail": "/october-13-2026/client-holiday-coverage-exception-routing.svg",
+      "words": 1442
+    },
+    {
+      "type": "Blog",
+      "title": "Document Source System Field Deprecations",
+      "slug": "source-system-field-deprecation-record",
+      "route": "/blog/source-system-field-deprecation-record",
+      "sourcePath": "app/campaign-2026-10-13.ts",
+      "thumbnail": "/october-13-2026/source-system-field-deprecation-record.svg",
+      "words": 1429
+    },
+    {
+      "type": "Blog",
+      "title": "Verify Translation Review Handoffs",
+      "slug": "translation-review-handoff-verification",
+      "route": "/blog/translation-review-handoff-verification",
+      "sourcePath": "app/campaign-2026-10-13.ts",
+      "thumbnail": "/october-13-2026/translation-review-handoff-verification.svg",
+      "words": 1428
+    },
+    {
+      "type": "Blog",
+      "title": "Reconcile Procurement Catalog Exceptions",
+      "slug": "procurement-catalog-exception-reconciliation",
+      "route": "/blog/procurement-catalog-exception-reconciliation",
+      "sourcePath": "app/campaign-2026-10-13.ts",
+      "thumbnail": "/october-13-2026/procurement-catalog-exception-reconciliation.svg",
+      "words": 1403
+    },
+    {
+      "type": "Blog",
+      "title": "Control Temporary Reporting Access",
+      "slug": "temporary-reporting-access-control",
+      "route": "/blog/temporary-reporting-access-control",
+      "sourcePath": "app/campaign-2026-10-13.ts",
+      "thumbnail": "/october-13-2026/temporary-reporting-access-control.svg",
+      "words": 1428
+    },
+    {
+      "type": "Blog",
+      "title": "Track Customer Escalation Acknowledgements",
+      "slug": "customer-escalation-acknowledgement-tracking",
+      "route": "/blog/customer-escalation-acknowledgement-tracking",
+      "sourcePath": "app/campaign-2026-10-13.ts",
+      "thumbnail": "/october-13-2026/customer-escalation-acknowledgement-tracking.svg",
+      "words": 1415
+    },
+    {
+      "type": "Blog",
+      "title": "Verify Data Retention Disposal Receipts",
+      "slug": "data-retention-disposal-receipt-verification",
+      "route": "/blog/data-retention-disposal-receipt-verification",
+      "sourcePath": "app/campaign-2026-10-13.ts",
+      "thumbnail": "/october-13-2026/data-retention-disposal-receipt-verification.svg",
+      "words": 1441
+    },
+    {
+      "type": "Blog",
+      "title": "Route Cross-Border Meeting Record Requests",
+      "slug": "cross-border-meeting-record-request-routing",
+      "route": "/blog/cross-border-meeting-record-request-routing",
+      "sourcePath": "app/campaign-2026-10-13.ts",
+      "thumbnail": "/october-13-2026/cross-border-meeting-record-request-routing.svg",
+      "words": 1454
+    },
+    {
+      "type": "Blog",
+      "title": "Close Orphaned Automation Failures",
+      "slug": "orphaned-automation-failure-closure",
+      "route": "/blog/orphaned-automation-failure-closure",
+      "sourcePath": "app/campaign-2026-10-13.ts",
+      "thumbnail": "/october-13-2026/orphaned-automation-failure-closure.svg",
+      "words": 1440
+    },
+    {
+      "type": "Research",
+      "title": "Study Queue Ownership Transfer Latency",
+      "slug": "research-queue-ownership-transfer-latency",
+      "route": "/research/research-queue-ownership-transfer-latency",
+      "sourcePath": "app/campaign-2026-10-13.ts",
+      "thumbnail": "/october-13-2026/research-queue-ownership-transfer-latency.svg",
+      "words": 1564
+    },
+    {
+      "type": "Research",
+      "title": "Measure Cross-System Field Drift",
+      "slug": "research-cross-system-field-drift",
+      "route": "/research/research-cross-system-field-drift",
+      "sourcePath": "app/campaign-2026-10-13.ts",
+      "thumbnail": "/october-13-2026/research-cross-system-field-drift.svg",
+      "words": 1533
+    },
+    {
+      "type": "Research",
+      "title": "Analyze Holiday Coverage Forecast Error",
+      "slug": "research-holiday-coverage-forecast-error",
+      "route": "/research/research-holiday-coverage-forecast-error",
+      "sourcePath": "app/campaign-2026-10-13.ts",
+      "thumbnail": "/october-13-2026/research-holiday-coverage-forecast-error.svg",
+      "words": 1549
+    },
+    {
+      "type": "Research",
+      "title": "Measure Reviewer Agreement on Translation Exceptions",
+      "slug": "research-translation-exception-reviewer-agreement",
+      "route": "/research/research-translation-exception-reviewer-agreement",
+      "sourcePath": "app/campaign-2026-10-13.ts",
+      "thumbnail": "/october-13-2026/research-translation-exception-reviewer-agreement.svg",
+      "words": 1565
+    },
+    {
+      "type": "Research",
+      "title": "Review Disposal Evidence Completeness",
+      "slug": "research-disposal-evidence-completeness",
+      "route": "/research/research-disposal-evidence-completeness",
+      "sourcePath": "app/campaign-2026-10-13.ts",
+      "thumbnail": "/october-13-2026/research-disposal-evidence-completeness.svg",
+      "words": 1533
+    }
+  ]
+}
