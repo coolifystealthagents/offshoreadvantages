@@ -237,6 +237,7 @@ type ResearchSpec = {
   slug: string;
   title: string;
   excerpt: string;
+  modified?: string;
   question: string;
   population: string;
   unit: string;
@@ -247,6 +248,7 @@ type ResearchSpec = {
   decision: string;
   pilot: string;
   sources: readonly { name: string; url: string }[];
+  serviceHandoff?: { href: string; label: string; body: string };
 };
 
 const commonResearchSources = [
@@ -283,6 +285,7 @@ const researchSpecs: ResearchSpec[] = [
     slug: 'offshore-evidence-retrieval-time-study',
     title: 'Offshore Evidence Retrieval Time Study',
     excerpt: 'A traceable study of how quickly an authorized reviewer can retrieve the source evidence behind completed offshore work.',
+    modified: '2026-10-16',
     question: 'Can a reviewer who did not perform the task retrieve and understand the decisive evidence within the organization’s required review window?',
     population: 'Build a frozen population of completed, returned, corrected, reopened, and disputed items from several workflows. Include low-frequency exceptions and older records; a study limited to fresh routine work will overstate retrievability.',
     unit: 'The unit is one evidence request tied to a stable work-item identifier. Record request time, requester role, expected artifacts, systems searched, access needed, first relevant evidence, complete packet time, missing artifact, and final usability judgment.',
@@ -297,6 +300,11 @@ const researchSpecs: ResearchSpec[] = [
       { name: 'CISA Logging Made Easy', url: 'https://www.cisa.gov/resources-tools/services/logging-made-easy' },
       { name: 'Federal Trade Commission data security guidance', url: 'https://www.ftc.gov/business-guidance/privacy-security/data-security' },
     ],
+    serviceHandoff: {
+      href: '/services/back-office-quality-review',
+      label: 'Explore Back-Office Quality Review',
+      body: 'Use Back-Office Quality Review to define the evidence list, access boundaries, review sample, and escalation path. The client still decides retention, access, correction, and any release of the record.',
+    },
   },
   {
     slug: 'philippines-calendar-coverage-forecast-research',
@@ -375,6 +383,7 @@ export const october12ResearchPosts = researchSpecs.map((s) => ({
   title: s.title,
   excerpt: s.excerpt,
   published,
+  ...(s.modified ? { modified: s.modified } : {}),
   thumbnail: `/october-12-2026/${s.slug}.svg`,
   cluster: 'Workflow Design',
   stats: [
@@ -384,7 +393,7 @@ export const october12ResearchPosts = researchSpecs.map((s) => ({
   ],
   sections: researchSections(s),
   sources: s.sources,
-  serviceHandoff: {
+  serviceHandoff: s.serviceHandoff ?? {
     href: '/contact-us',
     label: 'Turn the study into a bounded pilot',
     body: 'Bring the population definition, source systems, permissions, decision owners, sample plan, acceptance rule, and rollback condition to the role-design review.',
