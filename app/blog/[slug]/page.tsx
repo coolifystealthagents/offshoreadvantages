@@ -38,6 +38,10 @@ const readerDate = new Intl.DateTimeFormat("en-US", {
 const formatReaderDate = (value: string) =>
   readerDate.format(new Date(`${value}T00:00:00Z`));
 const headingId = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+const canonicalServiceHref = (href: string) =>
+  href === "/services/operations-support"
+    ? "/services/shared-services-administration"
+    : href;
 
 type BlogDetail = {
   keyTakeaways: readonly string[];
@@ -808,7 +812,7 @@ export default async function Post({
                     <ul className="resource-links">
                       {detail.internalLinks.map((link) => (
                         <li key={link.href}>
-                          <a href={link.href}>{link.label}</a>: {link.note}
+                          <a href={canonicalServiceHref(link.href)}>{link.label}</a>: {link.note}
                         </li>
                       ))}
                     </ul>

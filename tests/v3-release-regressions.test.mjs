@@ -84,6 +84,13 @@ test('V3 mobile articles wrap long headings and source URLs without hiding reduc
   assert.doesNotMatch(css, /review-card:nth-child\(n\+4\)\s*\{\s*display:\s*none/);
 });
 
+test('V3 blog role links emit canonical service URLs', () => {
+  const source = read('app/blog/[slug]/page.tsx');
+  assert.match(source, /canonicalServiceHref/);
+  assert.match(source, /shared-services-administration/);
+  assert.match(source, /href=\{canonicalServiceHref\(link\.href\)\}/);
+});
+
 test('V3 uses one subsidiary logo plus official parent assets', () => {
   const layout = read('app/layout.tsx');
   assert.match(layout, /icons:/);
