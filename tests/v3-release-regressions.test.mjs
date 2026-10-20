@@ -68,8 +68,11 @@ test('V3 blog and research articles have generated sticky useful sidebars and an
 
 test('V3 canonical redirects and security headers are configured', () => {
   const source = read('next.config.mjs');
+  const middleware = read('middleware.ts');
   assert.match(source, /has:\s*\[\{\s*type:\s*['"]host['"]/s);
   assert.match(source, /destination:\s*['"]https:\/\/offshoreadvantages\.com\/:path\*['"]/);
+  assert.match(middleware, /x-forwarded-proto/);
+  assert.match(middleware, /cf-visitor/);
   for (const header of ['Strict-Transport-Security','X-Content-Type-Options','Referrer-Policy','Permissions-Policy','Content-Security-Policy']) {
     assert.match(source, new RegExp(header));
   }
