@@ -26,6 +26,7 @@ import {
 import { renderAugust21Article } from "../../aug21-content";
 import { august23BlogDetails } from "../../blog-batch-2026-08-23";
 import { resolveEditorialImage } from "../../editorial-images";
+import { ArticleSidebar } from "../../ArticleSidebar";
 
 const siteUrl = "https://offshoreadvantages.com";
 const readerDate = new Intl.DateTimeFormat("en-US", {
@@ -36,6 +37,7 @@ const readerDate = new Intl.DateTimeFormat("en-US", {
 });
 const formatReaderDate = (value: string) =>
   readerDate.format(new Date(`${value}T00:00:00Z`));
+const headingId = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
 type BlogDetail = {
   keyTakeaways: readonly string[];
@@ -646,12 +648,30 @@ export default async function Post({
     "Question to ask",
     "Good answer",
   ];
+  const tocItems = detail ? [
+    { id: "key-takeaways", label: "Key takeaways" },
+    ...detail.sections.map(section => ({ id: headingId(section.title), label: section.title })),
+    ...(detail.comparisonRows?.length ? [{ id: "comparison-table", label: detail.tableTitle ?? "Provider call scorecard" }] : []),
+    ...(detail.relatedArticles?.length ? [{ id: "related-articles", label: "Related articles" }] : []),
+    ...(detail.threatChart ? [{ id: "threat-chart-title", label: "Global breach signals" }] : []),
+    ...(detail.handoffGraphic ? [{ id: "handoff-title", label: "Access handoff path" }] : []),
+    ...(detail.accessibilityChart ? [{ id: "accessibility-chart-title", label: "Disability planning signals" }] : []),
+    ...(detail.accessiblePathGraphic ? [{ id: "accessible-path-title", label: "Accessible support path" }] : []),
+    ...(detail.identityFraudChart ? [{ id: "identity-fraud-chart-title", label: "Fraud loss signals" }] : []),
+    ...(detail.verificationPathGraphic ? [{ id: "verification-path-title", label: "Verification path" }] : []),
+    ...(detail.expertQuote ? [{ id: "expert-view", label: "Expert view" }] : []),
+    ...(detail.quoteBox ? [{ id: "handoff-note", label: "Copy-ready handoff note" }] : []),
+    ...(detail.internalLinks?.length ? [{ id: "role-links", label: "Plan the role" }] : []),
+    ...(detail.faqs?.length ? [{ id: "common-questions", label: "Common questions" }] : []),
+    ...(detail.sources?.length ? [{ id: "sources", label: "Sources" }] : []),
+  ] : [{ id: "defined-workflow", label: "Start with a defined workflow" }];
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         <article className="section">
-          <div className="container article-shell">
+          <div className="container article-layout">
+          <div className="article-shell">
             <JsonLd data={schema} />
             <p className="eyebrow">{site.brand} guide</p>
             <h1>{post.title}</h1>
@@ -664,7 +684,7 @@ export default async function Post({
             ) : null}
             {detail ? (
               <>
-                <section className="card">
+                <section className="card" id="key-takeaways">
                   <h2>Key takeaways</h2>
                   <ul>
                     {detail.keyTakeaways.map((item) => (
@@ -674,7 +694,7 @@ export default async function Post({
                 </section>
                 {detail.sections.map((section, index) => (
                   <div key={section.title}>
-                    <section className="card">
+                    <section className="card" id={headingId(section.title)}>
                       <h2>{section.title}</h2>
                       {sectionParagraphs(section.body).map((paragraph) => (
                         <p key={paragraph}>{paragraph}</p>
@@ -702,7 +722,7 @@ export default async function Post({
                   </div>
                 ))}
                 {detail.comparisonRows?.length ? (
-                  <section className="card table-card">
+                  <section className="card table-card" id="comparison-table">
                     <h2>{detail.tableTitle ?? "Provider call scorecard"}</h2>
                     <div
                       className="table-scroll"
@@ -739,7 +759,7 @@ export default async function Post({
                   </section>
                 ) : null}
                 {detail.relatedArticles?.length ? (
-                  <section className="card">
+                  <section className="card" id="related-articles">
                     <h2>Related articles</h2>
                     <ul className="resource-links">
                       {detail.relatedArticles.slice(0, 3).map((slug) => (
@@ -763,7 +783,7 @@ export default async function Post({
                   <VerificationPathGraphic />
                 ) : null}
                 {detail.expertQuote ? (
-                  <section className="card expert-quote">
+                  <section className="card expert-quote" id="expert-view">
                     <h2>Expert view</h2>
                     <blockquote>"{detail.expertQuote.quote}"</blockquote>
                     <p>
@@ -777,13 +797,13 @@ export default async function Post({
                   </section>
                 ) : null}
                 {detail.quoteBox ? (
-                  <section className="card">
+                  <section className="card" id="handoff-note">
                     <h2>Copy-ready handoff note</h2>
                     <blockquote>{detail.quoteBox}</blockquote>
                   </section>
                 ) : null}
                 {detail.internalLinks?.length ? (
-                  <section className="card">
+                  <section className="card" id="role-links">
                     <h2>Plan the role around the work</h2>
                     <ul className="resource-links">
                       {detail.internalLinks.map((link) => (
@@ -795,7 +815,7 @@ export default async function Post({
                   </section>
                 ) : null}
                 {detail.faqs?.length ? (
-                  <section className="card">
+                  <section className="card" id="common-questions">
                     <h2>Common questions</h2>
                     {detail.faqs.map((faq) => (
                       <div key={faq.question}>
@@ -809,7 +829,7 @@ export default async function Post({
                   <ArticleBanner banner={detail.banners[2]} />
                 ) : null}
                 {detail.sources?.length ? (
-                  <section className="card sources-card">
+                  <section className="card sources-card" id="sources">
                     <h2>Sources</h2>
                     <ol>
                       {detail.sources.map((source) => (
@@ -823,7 +843,7 @@ export default async function Post({
                 ) : null}
               </>
             ) : (
-              <section className="card">
+              <section className="card" id="defined-workflow">
                 <h2>Start with a defined workflow</h2>
                 <p>
                   For Philippines-based staffing, document the work, tools,
@@ -842,6 +862,8 @@ export default async function Post({
                 </p>
               </section>
             )}
+          </div>
+          <ArticleSidebar items={tocItems} published={published ? formatReaderDate(published) : undefined} readingLabel={`${post.minutes} minutes`} sourceCount={detail?.sources?.length} kind="Guide" related={allBlogPosts.filter(item => item.slug !== post.slug).slice(0,3).map(item => ({href:`/blog/${item.slug}`,label:item.title}))}/>
           </div>
           <aside className="article-rotation-banner article-rotation-banner-bottom">
             <p className="eyebrow">Apply this guide</p>

@@ -5,125 +5,47 @@ import { fleetServices } from '../../fleet-data';
 import { site } from '../../data';
 
 const base = `https://${site.domain.toLowerCase()}`;
+const serviceImages = [
+  '/aug19-heroes/offshore-operations-work-queue-ownership.webp',
+  '/aug21-blog-heroes/philippines-customer-support-tone-guide.png',
+  '/aug19-heroes/offshore-operations-approval-evidence-matrix.webp',
+  '/aug19-heroes/offshore-operations-source-of-truth-map.webp',
+  '/aug19-heroes/offshore-operations-intake-source-register.webp',
+  '/aug19-heroes/offshore-operations-source-quality-evidence-research.webp',
+  '/aug19-heroes/offshore-operations-change-control-record.webp',
+  '/aug21-blog-heroes/offshore-support-escalation-severity-ladder.png',
+  '/aug19-heroes/offshore-operations-handoff-acceptance-log.webp',
+  '/aug19-heroes/offshore-operations-quality-review-cadence.webp',
+];
+const contexts: Record<string, { audience:string; problem:string; inputs:string; outputs:string; boundary:string; example:string; related:string[] }> = {
+  'shared-services-administration': { audience:'Teams with recurring inbox, calendar, document, vendor, and coordination work spread across several owners.', problem:'Administrative work becomes invisible when it lives in private messages, memory, and unowned follow-ups.', inputs:'Approved inboxes, task queues, templates, calendars, source documents, due rules, and an escalation owner.', outputs:'Updated records, prepared documents, routed requests, status notes, and a visible exception queue.', boundary:'Client leaders retain policy decisions, unusual commitments, financial approval, and access administration.', example:'Begin with one shared queue and two representative task types, then review accepted and returned work each week.', related:['project-coordination-support','procurement-administration','data-management-support'] },
+  'customer-experience-support': { audience:'Customer teams that need reliable inbox, chat, ticket, or phone coverage with a defined tone and escalation path.', problem:'Fast replies can still create rework when identity checks, authority, case notes, and promises are inconsistent.', inputs:'Approved knowledge, channel access, identity rules, response examples, service limits, and escalation contacts.', outputs:'Resolved routine contacts, complete case notes, accurate handoffs, and clearly routed exceptions.', boundary:'Refund exceptions, legal interpretation, account recovery overrides, and unusual customer promises stay with the client.', example:'Launch with a narrow queue of common cases and score accuracy, tone, privacy, next action, and handoff completeness.', related:['technical-support-desk','back-office-quality-review','shared-services-administration'] },
+  'finance-operations-support': { audience:'Finance teams with repeatable document collection, coding preparation, reconciliation support, and exception follow-up.', problem:'Broad access and unclear approval lines make routine finance administration difficult to review safely.', inputs:'Source documents, chart-of-account guidance, approval matrix, system roles, close calendar, and exception policy.', outputs:'Prepared entries, matched records, reconciliation evidence, exception lists, and reviewer-ready workpapers.', boundary:'Payment release, bank-detail changes, final posting approval, tax judgment, and policy exceptions remain authorized client decisions.', example:'Start with one controlled document flow using redacted samples before opening limited production access.', related:['procurement-administration','data-management-support','back-office-quality-review'] },
+  'revenue-operations-support': { audience:'Sales and revenue teams that need disciplined CRM updates, enrichment, routing, and pipeline administration.', problem:'Untraceable record changes and loose field rules weaken forecasts and create duplicate or stale data.', inputs:'Field definitions, source hierarchy, editable-object limits, duplicate rules, assignment logic, and approval thresholds.', outputs:'Source-linked record updates, clean routing, enrichment notes, exception queues, and change evidence.', boundary:'Pricing, deal approval, lifecycle policy, customer commitments, and forecast judgment remain with revenue leaders.', example:'Choose one record family and audit a weekly sample for source quality, field accuracy, and reversals.', related:['data-management-support','marketing-operations-support','back-office-quality-review'] },
+  'procurement-administration': { audience:'Procurement teams that need complete request intake, vendor follow-up, document checks, and approval routing.', problem:'Missing source records and unclear authority can turn administrative follow-up into an uncontrolled purchasing channel.', inputs:'Request forms, vendor records, policy thresholds, required documents, approved scripts, and named approvers.', outputs:'Complete request packets, verified administrative fields, status updates, exception records, and approval-ready queues.', boundary:'Supplier selection, commercial terms, commitments, bank-detail approval, and final purchase authorization stay with the client.', example:'Pilot one purchase-request category and review incomplete, returned, and accepted packets together.', related:['finance-operations-support','shared-services-administration','data-management-support'] },
+  'data-management-support': { audience:'Operations teams with recurring entry, cleanup, classification, migration, or record-maintenance work.', problem:'Data volume hides defects when a change has no source, rule, reviewer, or exception state.', inputs:'Authoritative sources, field rules, validation lists, duplicate policy, access limits, and acceptance samples.', outputs:'Traceable record changes, validation reports, exception lists, duplicate dispositions, and sampled quality evidence.', boundary:'Schema policy, destructive changes, sensitive exports, ambiguous merges, and access expansion require client approval.', example:'Start with a representative batch and compare every sampled field with its source before increasing volume.', related:['revenue-operations-support','back-office-quality-review','shared-services-administration'] },
+  'marketing-operations-support': { audience:'Marketing teams that need research, asset coordination, campaign administration, content preparation, and publishing handoffs.', problem:'Claims, approvals, versions, and publishing rights drift when the brief does not travel with the work.', inputs:'Approved briefs, audience, claim set, source list, brand rules, asset library, calendar, and reviewer.', outputs:'Prepared drafts, source registers, campaign records, publication checklists, and versioned handoffs.', boundary:'Positioning, unsupported claims, spend, legal review, and final publication stay with authorized client owners.', example:'Pilot one content or campaign workflow with a source field, approval state, and rollback owner.', related:['revenue-operations-support','project-coordination-support','back-office-quality-review'] },
+  'technical-support-desk': { audience:'Product and IT teams that need first-line issue intake, repeatable diagnostics, evidence capture, and safe escalation.', problem:'Tickets reopen when diagnostics lack environment, timestamp, reproduction steps, impact, or a precise decision request.', inputs:'Runbooks, supported environments, diagnostic permissions, severity rules, safe-stop conditions, and escalation contacts.', outputs:'Complete tickets, reproducible evidence, approved routine resolutions, status notices, and correctly routed escalations.', boundary:'Production administration, security-sensitive changes, architecture decisions, and unsupported fixes remain with authorized specialists.', example:'Test three representative issues and require the next owner to continue without asking the agent to reconstruct the case.', related:['customer-experience-support','project-coordination-support','back-office-quality-review'] },
+  'project-coordination-support': { audience:'Project teams that need current status, dependency follow-up, meeting records, action tracking, and handoff continuity.', problem:'Projects stall when status labels replace evidence and decisions have no named owner or due time.', inputs:'Project plan, source records, status definitions, meeting rhythm, dependency owners, and decision authority.', outputs:'Current action logs, evidence-linked status, meeting records, dependency notices, and decision requests.', boundary:'Scope, budget, priority tradeoffs, contractual promises, and acceptance decisions remain with project leadership.', example:'Begin with one workstream and test whether every update shows what changed, what is blocked, and who acts next.', related:['shared-services-administration','marketing-operations-support','technical-support-desk'] },
+  'back-office-quality-review': { audience:'Leaders who need independent sampling of administrative, support, finance, or data workflows.', problem:'Activity totals can look healthy while recurring defects, risky overrides, and incomplete handoffs remain hidden.', inputs:'Written standards, accepted examples, sampling rules, source access, defect categories, and escalation thresholds.', outputs:'Sample findings, defect evidence, trend notes, coaching inputs, accepted corrections, and unresolved risks.', boundary:'The reviewer reports evidence; policy changes, disciplinary decisions, risk acceptance, and final sign-off stay with client owners.', example:'Sample routine, returned, and escalated work so the review does not favor only easy completed items.', related:['data-management-support','customer-experience-support','finance-operations-support'] },
+};
 
-export function generateStaticParams() {
-  return fleetServices.map((service) => ({ slug: service.slug }));
-}
+export function generateStaticParams(){ return fleetServices.map((service) => ({ slug: service.slug })); }
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const service=fleetServices.find((item)=>item.slug===slug);if(!service)return{title:'Not found'};const url=`${base}/services/${service.slug}`;return{title:service.title,description:service.desc,alternates:{canonical:url},openGraph:{title:`${service.title} | ${site.brand}`,description:service.desc,url,siteName:site.brand,type:'website',images:[{url:serviceImages[fleetServices.findIndex(s=>s.slug===slug)]}]}};}
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const { slug } = await params;
-  const service = fleetServices.find((item) => item.slug === slug);
-
-  if (!service) return { title: 'Not found' };
-
-  const url = `${base}/services/${service.slug}`;
-
-  return {
-    title: service.title,
-    description: service.desc,
-    alternates: { canonical: url },
-    openGraph: {
-      title: `${service.title} | ${site.brand}`,
-      description: service.desc,
-      url,
-      siteName: site.brand,
-      type: 'website',
-    },
-  };
-}
-
-export default async function Service({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
-  const service = fleetServices.find((item) => item.slug === slug);
-
-  if (!service) notFound();
-
-  const url = `${base}/services/${service.slug}`;
-
-  return (
-    <>
-      <Header />
-      <main>
-        <JsonLd
-          data={{
-            '@context': 'https://schema.org',
-            '@graph': [
-              {
-                '@type': 'Service',
-                '@id': `${url}/#service`,
-                name: service.title,
-                serviceType: service.title,
-                description: service.desc,
-                url,
-                areaServed: {
-                  '@type': 'Country',
-                  name: 'Philippines',
-                },
-              },
-              {
-                '@type': 'BreadcrumbList',
-                '@id': `${url}/#breadcrumb`,
-                itemListElement: [
-                  {
-                    '@type': 'ListItem',
-                    position: 1,
-                    name: 'Home',
-                    item: base,
-                  },
-                  {
-                    '@type': 'ListItem',
-                    position: 2,
-                    name: 'Services',
-                    item: `${base}/services`,
-                  },
-                  {
-                    '@type': 'ListItem',
-                    position: 3,
-                    name: service.title,
-                    item: url,
-                  },
-                ],
-              },
-            ],
-          }}
-        />
-        <section className="fleet-hero variant-0">
-          <div className="container">
-            <p className="eyebrow">Philippines-based offshore operations support</p>
-            <h1>{service.title}</h1>
-            <p className="lead">{service.desc}</p>
-            <a className="btn primary" href="/contact-us">
-              Discuss this service
-            </a>
-          </div>
-        </section>
-        <section className="section">
-          <div className="container fleet-detail-grid">
-            <div className="card">
-              <h2>Work to include</h2>
-              <ul>{service.tasks.map((task) => <li key={task}>{task}</li>)}</ul>
-            </div>
-            <div className="card">
-              <h2>Controls to retain</h2>
-              <ul>{service.controls.map((control) => <li key={control}>{control}</li>)}</ul>
-            </div>
-            <div className="card">
-              <h2>First-week plan</h2>
-              <ul>{service.firstWeek.map((step) => <li key={step}>{step}</li>)}</ul>
-            </div>
-          </div>
-        </section>
-        <CTA />
-      </main>
-      <Footer />
-    </>
-  );
+export default async function Service({params}:{params:Promise<{slug:string}>}){
+  const {slug}=await params; const service=fleetServices.find((item)=>item.slug===slug); if(!service)notFound();
+  const context=contexts[service.slug]; const url=`${base}/services/${service.slug}`; const image=serviceImages[fleetServices.findIndex(s=>s.slug===service.slug)];
+  const related=context.related.map(s=>fleetServices.find(item=>item.slug===s)).filter(Boolean);
+  return <><Header/><main id="main-content"><JsonLd data={{'@context':'https://schema.org','@graph':[{'@type':'Service','@id':`${url}/#service`,name:service.title,serviceType:service.title,description:service.desc,url,areaServed:{'@type':'Country',name:'Philippines'}},{'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:base},{'@type':'ListItem',position:2,name:'Services',item:`${base}/services`},{'@type':'ListItem',position:3,name:service.title,item:url}]}]}}/>
+    <section className="fleet-hero service-detail-hero"><div className="container service-hero-grid"><div><p className="eyebrow">Philippines-based operations support</p><h1>{service.title}</h1><p className="lead">{service.desc}</p><a className="btn primary" href="/contact-us">Discuss this service</a></div><img className="service-hero-image" src={image} width="1200" height="800" alt={`${service.title} workflow planning and quality review`} /></div></section>
+    <article className="service-longform">
+      <section className="section"><div className="container prose-grid"><div><h2>Who this service fits</h2><p>{context.audience}</p><p>This service is most useful when the work repeats often enough to document, examples of accepted output exist, and a client-side owner can review early samples. It is not a substitute for executive judgment or an undefined request to “handle everything.”</p></div><aside className="service-callout"><h2>The operating problem</h2><p>{context.problem}</p></aside></div></section>
+      <section className="section service-tinted"><div className="container"><h2>Scope of work</h2><p className="section-intro">A role brief should name the queue, systems, finish line, and exception path. For {service.title.toLowerCase()}, the initial scope can include:</p><ul className="scope-list">{service.tasks.map(task=><li key={task}>{task}</li>)}<li>Maintain a visible status and evidence link for each completed item.</li><li>Route exceptions before making an unapproved assumption.</li></ul></div></section>
+      <section className="section"><div className="container service-two-col"><div><h2>Inputs and access</h2><p>{context.inputs}</p><p>Open access in stages. Use a named account, minimum permissions, and a record of who approved the role. A representative sample should prove that the instructions and source material are sufficient before live volume expands.</p></div><div><h2>Deliverables</h2><p>{context.outputs}</p><p>Every deliverable should point back to the request or source that created it. That trace makes review, correction, and handoff practical across time zones.</p></div></div></section>
+      <section className="section workflow-band"><div className="container"><h2>How the workflow runs</h2><div className="workflow-steps"><div><h3>Define the queue</h3><p>Agree on eligible work, required source material, priority, owner, and due rule.</p></div><div><h3>Practice safely</h3><p>Use representative examples and limited access to test the normal path and likely exceptions.</p></div><div><h3>Review evidence</h3><p>Compare sampled output with the written standard and record accepted or returned work.</p></div><div><h3>Expand deliberately</h3><p>Add volume or responsibility only after the first handoff remains stable and inspectable.</p></div></div></div></section>
+      <section className="section"><div className="container service-two-col"><div><h2>Human decisions and boundaries</h2><p>{context.boundary}</p><p>Write each boundary beside its escalation owner and response expectation. A correct pause is better than a fast action outside the role.</p></div><div><h2>Quality controls</h2><ul>{service.controls.map(control=><li key={control}>{control}</li>)}<li>Sample accepted, returned, and escalated work.</li><li>Track recurring ambiguity as a process issue, not only a person issue.</li></ul></div></div></section>
+      <section className="section service-tinted"><div className="container"><h2>Example engagement</h2><p>{context.example}</p><h3>What the first week should prove</h3><ul>{service.firstWeek.map(step=><li key={step}>{step}</li>)}<li>The team can identify the authoritative source and safe stopping point.</li><li>The client reviewer can find the evidence without reconstructing the work from chat.</li></ul></div></section>
+      <section className="section"><div className="container faq-layout"><div><h2>Frequently asked questions</h2><h3>Can the role start before every edge case is documented?</h3><p>Yes, if the normal path is clear and the worker has a safe escalation for anything outside it. Repeated exceptions should then become written guidance.</p><h3>How much access should the role receive?</h3><p>Only the systems and actions required for the approved scope. Review access whenever responsibilities change and remove it promptly when the assignment ends.</p><h3>Who owns the final result?</h3><p>The client retains accountability for policy, approvals, and business outcomes. The staffing workflow makes preparation, evidence, and exceptions visible to that owner.</p></div><aside><h2>Related services</h2>{related.map(item=><a className="related-service" href={`/services/${item!.slug}`} key={item!.slug}><strong>{item!.title}</strong><span>{item!.desc}</span></a>)}</aside></div></section>
+    </article><CTA/></main><Footer/></>;
 }

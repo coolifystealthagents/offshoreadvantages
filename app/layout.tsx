@@ -1,12 +1,15 @@
 import { AcrClient } from './acr-client';
 import Script from 'next/script';
 import './globals.css';
+import './v3.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://offshoreadvantages.com'),
   title: { default: 'Offshore Advantages | Plan a Philippines staffing role', template: '%s | Offshore Advantages' },
   description: 'Independent guidance for planning Philippines staffing roles, handoffs, access, and quality review with Filipino talent.',
+  icons: { icon: '/logo.svg', shortcut: '/logo.svg', apple: '/logo.svg' },
+  openGraph: { siteName: 'Offshore Advantages', images: [{ url: '/logo.svg', alt: 'Offshore Advantages logo' }] },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -31,7 +31,7 @@ export default function Home() {
 
   return <>
     <Header />
-    <main data-design="philippines-advantage-board-2026" data-gi-rollout="two-illustration-packs-one-icon-pack">
+    <main id="main-content" data-design="philippines-advantage-board-2026" data-gi-rollout="two-illustration-packs-one-icon-pack">
       <JsonLd data={schema} />
       <section className="hero">
         <div className="container hero-grid">
