@@ -1,3 +1,4 @@
+import Oct22MobileToc from '../../oct22-mobile-toc';
 import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import { Header, Footer, JsonLd } from "../../components";
@@ -672,7 +673,7 @@ export default async function Post({
   return (
     <>
       <Header />
-      <main id="main-content">
+      <main id="main-content"><Oct22MobileToc />
         <article className="section">
           <div className="container article-layout">
           <div className="article-shell">

@@ -1,3 +1,4 @@
+import Oct22MobileToc from '../../oct22-mobile-toc';
 import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
 import { Header, Footer } from "../../components";
@@ -18,7 +19,7 @@ export default async function ResearchArticle({params}:{params:Promise<{slug:str
  const jsonLd={"@context":"https://schema.org","@type":"Article",headline:post.title,description:post.excerpt,datePublished:post.published,...(post.modified?{dateModified:post.modified}:{}),mainEntityOfPage:`https://${site.domain}/research/${post.slug}`,author:organization,publisher:organization};
  const tocItems=[{id:"key-stats",label:"Key stats"},...post.sections.map(s=>({id:headingId(s.heading),label:s.heading})),...(post.serviceHandoff?[{id:"role-brief",label:"Put this into a role brief"}]:[]),{id:"sources",label:"Sources"},{id:"related-research",label:"Related research"}];
  const related=researchPosts.filter(p=>p.slug!==post.slug).slice(0,3);
- return <><Header/><main id="main-content"><article className="section"><div className="container article-layout"><div className="article-shell"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}/><p className="eyebrow">{site.brand} research · {post.cluster}</p><h1>{post.title}</h1><p className="lead">{post.excerpt}</p><img className="article-hero-image" src={editorialImage.src} alt={editorialImage.alt}/><p><time dateTime={post.published}>{formatReaderDate(post.published)}</time> · {post.sources.length} sources · Research methodology</p>
+ return <><Header/><main id="main-content"><Oct22MobileToc /><article className="section"><div className="container article-layout"><div className="article-shell"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}/><p className="eyebrow">{site.brand} research · {post.cluster}</p><h1>{post.title}</h1><p className="lead">{post.excerpt}</p><img className="article-hero-image" src={editorialImage.src} alt={editorialImage.alt}/><p><time dateTime={post.published}>Published {formatReaderDate(post.published)}</time> · {post.sources.length} sources · Research methodology</p>
  <section className="card" id="key-stats"><h2>Key stats</h2><ul>{post.stats.map(stat=><li key={stat}>{stat}</li>)}</ul></section>
  {post.sections.map(s=><section className="card" id={headingId(s.heading)} key={s.heading}><h2>{s.heading}</h2><p>{s.body}</p></section>)}
  {post.serviceHandoff?<section className="card" id="role-brief"><h2>Put this control into a role brief</h2><p>{post.serviceHandoff.body}</p><a href={post.serviceHandoff.href}>{post.serviceHandoff.label}</a></section>:null}
