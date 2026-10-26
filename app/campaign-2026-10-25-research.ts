@@ -1,5 +1,3 @@
-const published = '2026-10-25';
-
 export const october25ResearchPosts = [
   {
     "slug": "offshoreadvantages-attributing-rework-in-access-review",

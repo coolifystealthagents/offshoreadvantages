@@ -1,5 +1,3 @@
-const published = '2026-10-25';
-
 export const october25BlogPosts = [
   {
     "slug": "offshoreadvantages-build-a-role-scope-intake-record-that-survives-review",
