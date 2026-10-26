@@ -1,4 +1,5 @@
 import { october22ResearchPosts } from './campaign-2026-10-22';
+import { october26ResearchPosts } from './campaign-2026-10-26-research';
 import { october25ResearchPosts } from './campaign-2026-10-25-research';
 import { october8ResearchPosts } from './campaign-2026-10-08';
 import { october5ResearchPosts } from './campaign-2026-10-05-research';
