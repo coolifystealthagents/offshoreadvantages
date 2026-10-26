@@ -1,4 +1,5 @@
 import { october22ResearchPosts } from './campaign-2026-10-22';
+import { october25ResearchPosts } from './campaign-2026-10-25-research';
 import { october8ResearchPosts } from './campaign-2026-10-08';
 import { october5ResearchPosts } from './campaign-2026-10-05-research';
 import { october2ResearchPosts } from './campaign-2026-10-02-research';
@@ -900,5 +901,5 @@ const august17ResearchBatch: readonly ResearchPost[] = august17ResearchBatchBase
 const frozenAug10Order = ['philippines-offshore-approval-evidence-retention', 'philippines-offshore-handoff-rework-analysis', 'philippines-offshore-operator-readiness-gate', 'philippines-offshore-queue-aging-review', 'philippines-offshore-source-correction-log', 'philippines-offshore-work-instruction-versioning', 'philippines-offshore-workflow-reviewer-independence', 'philippines-offshore-workflow-risk-register', 'philippines-offshore-workflow-rollback-plan', 'philippines-task-definition-acceptance-criteria', 'philippines-workflow-owner-accountability'];
 // Publish the fully authored October research library; legacy generated slugs
 // redirect to /research from the dynamic route.
-export const researchPosts: readonly ResearchPost[] = [...october22ResearchPosts, ...october8ResearchPosts, ...october5ResearchPosts, ...october2ResearchPosts].sort((a, b) => b.published.localeCompare(a.published));
+export const researchPosts: readonly ResearchPost[] = [...october25ResearchPosts, ...october22ResearchPosts, ...october8ResearchPosts, ...october5ResearchPosts, ...october2ResearchPosts].sort((a, b) => b.published.localeCompare(a.published));
 export const postsPerPage = 20;
