@@ -310,6 +310,7 @@ const researchSpecs: ResearchSpec[] = [
     slug: 'philippines-calendar-coverage-forecast-research',
     title: 'Philippines Calendar Coverage Forecast Research',
     excerpt: 'A demand-and-capacity protocol for testing whether planned overlap covers real queue arrivals, absences, and decision-owner availability.',
+    modified: '2026-11-03',
     question: 'How accurately does the planned Philippines coverage calendar predict periods when work can be accepted, completed, reviewed, and escalated without unsafe carryover?',
     population: 'Include every thirty-minute interval in a declared twelve-week window, including weekends, local and client holidays, training, planned leave, unplanned absence, outages, launches, and intervals with zero demand. Retain daylight-saving transitions explicitly.',
     unit: 'The unit is a coverage interval linked to arrivals, ready work, assigned operators, productive availability, reviewer coverage, client-owner availability, completions, carryover, and oldest open item. Keep staffing schedules separate from actual usable capacity.',
@@ -324,6 +325,11 @@ const researchSpecs: ResearchSpec[] = [
       { name: 'US Bureau of Labor Statistics productivity program', url: 'https://www.bls.gov/productivity/' },
       { name: 'NIST contingency planning guide', url: 'https://csrc.nist.gov/pubs/sp/800/34/r1/upd1/final' },
     ],
+    serviceHandoff: {
+      href: '/services/shared-services-administration',
+      label: 'Explore Shared Services Administration',
+      body: 'Use Shared Services Administration to set up a Philippines-based coverage calendar with named owners, approved handoffs, and clear follow-up. The client keeps staffing levels, working-hour changes, policy choices, and exception decisions.',
+    },
   },
   {
     slug: 'offshore-role-expansion-control-study',
