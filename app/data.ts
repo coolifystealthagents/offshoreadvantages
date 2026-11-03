@@ -1,6 +1,7 @@
 import { october22BlogDetails, october22BlogPosts } from './campaign-2026-10-22';
 import { october26BlogDetails, october26BlogPosts } from './campaign-2026-10-26-blog';
 import { october27BlogDetails, october27BlogPosts } from './campaign-2026-10-27-blog';
+import { november03BlogDetails, november03BlogPosts } from './campaign-2026-11-03-blog';
 import { november02BlogDetails, november02BlogPosts } from './campaign-2026-11-02-blog';
 import { october25BlogDetails, october25BlogPosts } from './campaign-2026-10-25-blog';
 import { october8BlogDetails, october8BlogPosts } from './campaign-2026-10-08';
