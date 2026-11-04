@@ -1,4 +1,4 @@
-export const november03ResearchPosts = [
+export const november04ResearchPosts = [
   {
     "slug": "how-reliable-is-the-offshore-team-handoff-record",
     "title": "How reliable is the offshore team handoff record?",

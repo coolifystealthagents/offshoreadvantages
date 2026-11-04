@@ -1,4 +1,4 @@
-export const november03BlogPosts = [
+export const november04BlogPosts = [
   {
     "slug": "design-an-offshore-team-handoff-that-names-the-next-check",
     "title": "Design an offshore team handoff that names the next check",
@@ -121,7 +121,7 @@ export const november03BlogPosts = [
   }
 ];
 
-export const november03BlogDetails = {
+export const november04BlogDetails = {
   "offshoreadvantages-offshore-team-handoff-01-2026-11-04": {
     "keyTakeaways": [
       "An offshore offshore team handoff control exists to make the work reconstructable from a source, an owner, and a close. The delivery manager keeps the decision; the assistant may prepare the record and route exceptions. The November 3 review keeps the same source rule and a dated reviewer sign-off. A second reviewer can reproduce the entry from the saved evidence.",
