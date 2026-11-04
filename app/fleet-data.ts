@@ -2,6 +2,7 @@ import { october22ResearchPosts } from './campaign-2026-10-22';
 import { october26ResearchPosts } from './campaign-2026-10-26-research';
 import { october27ResearchPosts } from './campaign-2026-10-27-research';
 import { november03ResearchPosts } from './campaign-2026-11-03-research';
+import { november04ResearchPosts } from './campaign-2026-11-04-research';
 import { november02ResearchPosts } from './campaign-2026-11-02-research';
 import { october25ResearchPosts } from './campaign-2026-10-25-research';
 import { october8ResearchPosts } from './campaign-2026-10-08';
