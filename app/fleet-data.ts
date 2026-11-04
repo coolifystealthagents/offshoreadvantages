@@ -907,5 +907,5 @@ const frozenAug10Order = ['philippines-offshore-approval-evidence-retention', 'p
 // Publish the fully authored October research library; legacy generated slugs
 // redirect to /research from the dynamic route.
 export const researchPosts: readonly ResearchPost[] = [
-  ...november02ResearchPosts, ...october27ResearchPosts,...october26ResearchPosts, ...october25ResearchPosts, ...october22ResearchPosts, ...october8ResearchPosts, ...october5ResearchPosts, ...october2ResearchPosts].sort((a, b) => b.published.localeCompare(a.published));
+  ...november04ResearchPosts, ...november03ResearchPosts, ...november02ResearchPosts, ...october27ResearchPosts,...october26ResearchPosts, ...october25ResearchPosts, ...october22ResearchPosts, ...october8ResearchPosts, ...october5ResearchPosts, ...october2ResearchPosts].sort((a, b) => b.published.localeCompare(a.published));
 export const postsPerPage = 20;

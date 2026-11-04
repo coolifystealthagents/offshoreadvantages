@@ -104,9 +104,9 @@ export const todayBlogDetails = Object.fromEntries(todayBlogPosts.map((post) => 
 
 // Keep the public blog catalog focused on the fully authored October library.
 // Older generated URLs redirect to /blog instead of remaining as repetitive thin pages.
-export const allBlogPosts = [...november02BlogPosts, ...october27BlogPosts, ...october26BlogPosts, ...october25BlogPosts, ...october22BlogPosts, ...october8BlogPosts, ...october5BlogPosts, ...october2BlogPosts, ...blogPosts] as const;
+export const allBlogPosts = [...november04BlogPosts, ...november03BlogPosts, ...november02BlogPosts, ...october27BlogPosts, ...october26BlogPosts, ...october25BlogPosts, ...october22BlogPosts, ...october8BlogPosts, ...october5BlogPosts, ...october2BlogPosts, ...blogPosts] as const;
 
-export const campaignBlogDetails = { ...november02BlogDetails, ...october27BlogDetails, ...october26BlogDetails, ...october25BlogDetails, ...october22BlogDetails, ...october8BlogDetails, ...october5BlogDetails, ...october2BlogDetails, ...september28BlogDetails, ...september25BlogDetails, ...september24BlogDetails, ...september23Run2BlogDetails, ...september23BlogDetails, ...september19BlogDetails, ...september18BlogDetails, ...september10BlogDetails, ...september9BlogDetails, ...september8BlogDetails, ...september7BlogDetails, ...september4BlogDetails, ...september3BlogDetails, ...september2BlogDetails, ...september1BlogDetails, ...august31BlogDetails };
+export const campaignBlogDetails = { ...november04BlogDetails, ...november03BlogDetails, ...november02BlogDetails, ...october27BlogDetails, ...october26BlogDetails, ...october25BlogDetails, ...october22BlogDetails, ...october8BlogDetails, ...october5BlogDetails, ...october2BlogDetails, ...september28BlogDetails, ...september25BlogDetails, ...september24BlogDetails, ...september23Run2BlogDetails, ...september23BlogDetails, ...september19BlogDetails, ...september18BlogDetails, ...september10BlogDetails, ...september9BlogDetails, ...september8BlogDetails, ...september7BlogDetails, ...september4BlogDetails, ...september3BlogDetails, ...september2BlogDetails, ...september1BlogDetails, ...august31BlogDetails };
 
 export const blogDetails = {
   'offshore-advantages-provider-questions': {
