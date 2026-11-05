@@ -1,4 +1,3 @@
-import Oct22MobileToc from '../../oct22-mobile-toc';
 import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import { Header, Footer, JsonLd } from "../../components";
@@ -673,10 +672,10 @@ export default async function Post({
   return (
     <>
       <Header />
-      <main id="main-content"><Oct22MobileToc />
+      <main id="main-content">
         <article className="section">
           <div className="container article-layout">
-          <div className="article-shell">
+          <div className={"article-shell"+(published && published>="2026-11-05"?" continuous-article":"")}>{detail?<details className="batch-mobile-toc"><summary>Contents</summary><nav aria-label="Table of contents mobile">{[{id:"key-takeaways",label:"Key takeaways"},...detail.sections.map(section=>({id:headingId(section.title),label:section.title})),{id:"sources",label:"Sources"}].map(item=><a key={item.id} href={`#${item.id}`}>{item.label}</a>)}</nav></details>:null}
             <JsonLd data={schema} />
             <p className="eyebrow">{site.brand} guide</p>
             <h1>{post.title}</h1>
