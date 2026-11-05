@@ -1,10 +1,10 @@
 export const november05ResearchPosts = [
   {
-    "slug": "how-reliable-is-the-offshore-team-handoff-record",
-    "title": "How reliable is the offshore team handoff record?",
+    "slug": "how-reliable-is-the-offshore-team-handoff-record-for-the-november-review",
+    "title": "How reliable is the offshore team handoff record, for the November review?",
     "excerpt": "A repeatable review of handoff reliability in offshore operations, with definitions, sampling, limits, and reporting. November 5 edition.",
     "published": "2026-11-05",
-    "thumbnail": "/daily05/offshoreadvantages/how-reliable-is-the-offshore-team-handoff-record.png",
+    "thumbnail": "/daily05/offshoreadvantages/how-reliable-is-the-offshore-team-handoff-record-for-the-november-review.png",
     "cluster": "Quality Analysis",
     "stats": [
       "6 public sources",
@@ -81,11 +81,11 @@ export const november05ResearchPosts = [
     }
   },
   {
-    "slug": "what-does-an-offshore-quality-sample-actually-measure",
-    "title": "What does an offshore quality sample actually measure?",
+    "slug": "what-does-an-offshore-quality-sample-actually-measure-for-the-november-review",
+    "title": "What does an offshore quality sample actually measure, for the November review?",
     "excerpt": "A repeatable review of quality sample signal in offshore operations, with definitions, sampling, limits, and reporting. November 5 edition.",
     "published": "2026-11-05",
-    "thumbnail": "/daily05/offshoreadvantages/what-does-an-offshore-quality-sample-actually-measure.png",
+    "thumbnail": "/daily05/offshoreadvantages/what-does-an-offshore-quality-sample-actually-measure-for-the-november-review.png",
     "cluster": "Quality Analysis",
     "stats": [
       "6 public sources",
@@ -162,11 +162,11 @@ export const november05ResearchPosts = [
     }
   },
   {
-    "slug": "how-complete-is-the-offshore-access-review-evidence",
-    "title": "How complete is the offshore access review evidence?",
+    "slug": "how-complete-is-the-offshore-access-review-evidence-for-the-november-review",
+    "title": "How complete is the offshore access review evidence, for the November review?",
     "excerpt": "A repeatable review of access review coverage in offshore operations, with definitions, sampling, limits, and reporting. November 5 edition.",
     "published": "2026-11-05",
-    "thumbnail": "/daily05/offshoreadvantages/how-complete-is-the-offshore-access-review-evidence.png",
+    "thumbnail": "/daily05/offshoreadvantages/how-complete-is-the-offshore-access-review-evidence-for-the-november-review.png",
     "cluster": "Quality Analysis",
     "stats": [
       "6 public sources",
@@ -243,11 +243,11 @@ export const november05ResearchPosts = [
     }
   },
   {
-    "slug": "can-the-offshore-vendor-scorecard-be-reproduced-from-its-sources",
-    "title": "Can the offshore vendor scorecard be reproduced from its sources?",
+    "slug": "can-the-offshore-vendor-scorecard-be-reproduced-from-its-sources-for-the-november-review",
+    "title": "Can the offshore vendor scorecard be reproduced from its sources, for the November review?",
     "excerpt": "A repeatable review of vendor scorecard traceability in offshore operations, with definitions, sampling, limits, and reporting. November 5 edition.",
     "published": "2026-11-05",
-    "thumbnail": "/daily05/offshoreadvantages/can-the-offshore-vendor-scorecard-be-reproduced-from-its-sources.png",
+    "thumbnail": "/daily05/offshoreadvantages/can-the-offshore-vendor-scorecard-be-reproduced-from-its-sources-for-the-november-review.png",
     "cluster": "Quality Analysis",
     "stats": [
       "6 public sources",
@@ -324,11 +324,11 @@ export const november05ResearchPosts = [
     }
   },
   {
-    "slug": "how-stable-is-offshore-coverage-when-one-specialist-is-away",
-    "title": "How stable is offshore coverage when one specialist is away?",
+    "slug": "how-stable-is-offshore-coverage-when-one-specialist-is-away-for-the-november-review",
+    "title": "How stable is offshore coverage when one specialist is away, for the November review?",
     "excerpt": "A repeatable review of coverage continuity in offshore operations, with definitions, sampling, limits, and reporting. November 5 edition.",
     "published": "2026-11-05",
-    "thumbnail": "/daily05/offshoreadvantages/how-stable-is-offshore-coverage-when-one-specialist-is-away.png",
+    "thumbnail": "/daily05/offshoreadvantages/how-stable-is-offshore-coverage-when-one-specialist-is-away-for-the-november-review.png",
     "cluster": "Quality Analysis",
     "stats": [
       "6 public sources",
@@ -405,11 +405,11 @@ export const november05ResearchPosts = [
     }
   },
   {
-    "slug": "where-does-delay-accumulate-in-the-offshore-escalation-route",
-    "title": "Where does delay accumulate in the offshore escalation route?",
+    "slug": "where-does-delay-accumulate-in-the-offshore-escalation-route-for-the-november-review",
+    "title": "Where does delay accumulate in the offshore escalation route, for the November review?",
     "excerpt": "A repeatable review of escalation latency in offshore operations, with definitions, sampling, limits, and reporting. November 5 edition.",
     "published": "2026-11-05",
-    "thumbnail": "/daily05/offshoreadvantages/where-does-delay-accumulate-in-the-offshore-escalation-route.png",
+    "thumbnail": "/daily05/offshoreadvantages/where-does-delay-accumulate-in-the-offshore-escalation-route-for-the-november-review.png",
     "cluster": "Quality Analysis",
     "stats": [
       "6 public sources",
@@ -486,11 +486,11 @@ export const november05ResearchPosts = [
     }
   },
   {
-    "slug": "can-the-offshore-weekly-brief-be-rebuilt-from-its-evidence",
-    "title": "Can the offshore weekly brief be rebuilt from its evidence?",
+    "slug": "can-the-offshore-weekly-brief-be-rebuilt-from-its-evidence-for-the-november-review",
+    "title": "Can the offshore weekly brief be rebuilt from its evidence, for the November review?",
     "excerpt": "A repeatable review of brief reproducibility in offshore operations, with definitions, sampling, limits, and reporting. November 5 edition.",
     "published": "2026-11-05",
-    "thumbnail": "/daily05/offshoreadvantages/can-the-offshore-weekly-brief-be-rebuilt-from-its-evidence.png",
+    "thumbnail": "/daily05/offshoreadvantages/can-the-offshore-weekly-brief-be-rebuilt-from-its-evidence-for-the-november-review.png",
     "cluster": "Quality Analysis",
     "stats": [
       "6 public sources",
