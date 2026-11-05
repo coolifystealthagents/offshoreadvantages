@@ -198,11 +198,13 @@ export const november05BlogDetails = {
     "internalLinks": [
       {
         "label": "Services",
-        "href": "/services"
+        "href": "/services",
+        "note": "Related account support service."
       },
       {
         "label": "Contact",
-        "href": "/contact-us"
+        "href": "/contact-us",
+        "note": "Related account support service."
       }
     ],
     "externalBodyLink": {
@@ -278,11 +280,13 @@ export const november05BlogDetails = {
     "internalLinks": [
       {
         "label": "Services",
-        "href": "/services"
+        "href": "/services",
+        "note": "Related account support service."
       },
       {
         "label": "Contact",
-        "href": "/contact-us"
+        "href": "/contact-us",
+        "note": "Related account support service."
       }
     ],
     "externalBodyLink": {
@@ -358,11 +362,13 @@ export const november05BlogDetails = {
     "internalLinks": [
       {
         "label": "Services",
-        "href": "/services"
+        "href": "/services",
+        "note": "Related account support service."
       },
       {
         "label": "Contact",
-        "href": "/contact-us"
+        "href": "/contact-us",
+        "note": "Related account support service."
       }
     ],
     "externalBodyLink": {
@@ -438,11 +444,13 @@ export const november05BlogDetails = {
     "internalLinks": [
       {
         "label": "Services",
-        "href": "/services"
+        "href": "/services",
+        "note": "Related account support service."
       },
       {
         "label": "Contact",
-        "href": "/contact-us"
+        "href": "/contact-us",
+        "note": "Related account support service."
       }
     ],
     "externalBodyLink": {
@@ -518,11 +526,13 @@ export const november05BlogDetails = {
     "internalLinks": [
       {
         "label": "Services",
-        "href": "/services"
+        "href": "/services",
+        "note": "Related account support service."
       },
       {
         "label": "Contact",
-        "href": "/contact-us"
+        "href": "/contact-us",
+        "note": "Related account support service."
       }
     ],
     "externalBodyLink": {
@@ -598,11 +608,13 @@ export const november05BlogDetails = {
     "internalLinks": [
       {
         "label": "Services",
-        "href": "/services"
+        "href": "/services",
+        "note": "Related account support service."
       },
       {
         "label": "Contact",
-        "href": "/contact-us"
+        "href": "/contact-us",
+        "note": "Related account support service."
       }
     ],
     "externalBodyLink": {
@@ -678,11 +690,13 @@ export const november05BlogDetails = {
     "internalLinks": [
       {
         "label": "Services",
-        "href": "/services"
+        "href": "/services",
+        "note": "Related account support service."
       },
       {
         "label": "Contact",
-        "href": "/contact-us"
+        "href": "/contact-us",
+        "note": "Related account support service."
       }
     ],
     "externalBodyLink": {
@@ -758,11 +772,13 @@ export const november05BlogDetails = {
     "internalLinks": [
       {
         "label": "Services",
-        "href": "/services"
+        "href": "/services",
+        "note": "Related account support service."
       },
       {
         "label": "Contact",
-        "href": "/contact-us"
+        "href": "/contact-us",
+        "note": "Related account support service."
       }
     ],
     "externalBodyLink": {
