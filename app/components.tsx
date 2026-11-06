@@ -1,5 +1,5 @@
 import * as data from './data';
-import { fleetServices } from './fleet-data';
+
 const site = (data as any).site || {};
 const year = new Date().getFullYear();
 
@@ -9,7 +9,7 @@ export function JsonLd({ data }: { data: any }) {
 
 export function LogoMark() {
   return <span className="logo-mark-wrap">
-    <img className="logo-img" src="/logo.svg?v=20260730-niche-logo" alt="" />
+    <img className="logo-img" src="/logo.svg?v=20260730-niche-logo" alt="Offshore Advantages" />
     <span className="logo-copy"><strong>{site.brand}</strong><small>Philippines staffing planning</small></span>
   </span>;
 }
@@ -27,11 +27,20 @@ export function Header() {
   </header>;
 }
 
+const footerServiceLinks = [
+  ['/services/shared-services-administration', 'Shared services administration'],
+  ['/services/customer-experience-support', 'Customer experience support'],
+  ['/services/finance-operations-support', 'Finance operations support'],
+  ['/services/revenue-operations-support', 'Revenue operations support'],
+  ['/services/procurement-administration', 'Procurement administration'],
+  ['/services/data-management-support', 'Data management support'],
+];
+
 export function Footer() {
   return <footer className="footer legit-footer">
     <div className="footer-grid">
       <div className="footer-brand"><a className="footer-logo" href="/"><LogoMark /></a><p>Practical guidance for teams planning clearly scoped Philippines-based support roles.</p><p className="footer-note">This independent information site provides planning guidance. Qualified requests may be routed to a staffing provider; hiring and service terms are handled separately.</p></div>
-      <div><h3>Services</h3><div className="footer-links">{fleetServices.slice(0, 6).map(s => <a href={`/services/${s.slug}`} key={s.slug}>{s.title}</a>)}</div></div>
+      <div><h3>Services</h3><div className="footer-links">{footerServiceLinks.map(([href, title]) => <a href={href} key={href}>{title}</a>)}</div></div>
       <div><h3>Resources</h3><div className="footer-links"><a href="/blog">Blog</a><a href="/research">Research</a><a href="/contact-us">Contact Us</a><a href="/privacy">Privacy Policy</a><a href="/terms">Terms & Conditions</a></div></div>
     </div>
     <div className="footer-bottom"><span>© {year} {site.brand}. All rights reserved.</span><span>{site.domain}</span></div>
