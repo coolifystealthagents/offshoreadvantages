@@ -3,6 +3,7 @@ import { october26ResearchPosts } from './campaign-2026-10-26-research';
 import { october27ResearchPosts } from './campaign-2026-10-27-research';
 import { november03ResearchPosts } from './campaign-2026-11-03-research';
 import { november06ResearchPosts } from './campaign-2026-11-06-research';
+import { november09ResearchPosts } from './campaign-2026-11-09-research';
 import { november08ResearchPosts } from './campaign-2026-11-08-research';
 import { november07ResearchPosts } from './campaign-2026-11-07-research';
 import { november05ResearchPosts } from './campaign-2026-11-05-research';
@@ -911,6 +912,7 @@ const frozenAug10Order = ['philippines-offshore-approval-evidence-retention', 'p
 // Publish the fully authored October research library; legacy generated slugs
 // redirect to /research from the dynamic route.
 export const researchPosts: readonly ResearchPost[] = [
+  ...november09ResearchPosts,
   ...november08ResearchPosts,
   ...november07ResearchPosts, ...november06ResearchPosts, ...november05ResearchPosts,
   ...november04ResearchPosts, ...november03ResearchPosts, ...november02ResearchPosts, ...october27ResearchPosts,...october26ResearchPosts, ...october25ResearchPosts, ...october22ResearchPosts, ...october8ResearchPosts, ...october5ResearchPosts, ...october2ResearchPosts].sort((a, b) => b.published.localeCompare(a.published));
