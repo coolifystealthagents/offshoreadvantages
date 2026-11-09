@@ -306,49 +306,5 @@ export const november09ResearchPosts = [
       }
     ],
     "sources": [{"name": "NIST Cybersecurity Framework", "url": "https://www.nist.gov/cyberframework"}, {"name": "NIST Privacy Framework", "url": "https://www.nist.gov/privacy-framework"}, {"name": "U.S. Small Business Administration", "url": "https://www.sba.gov/"}, {"name": "U.S. Department of Labor", "url": "https://www.dol.gov/"}, {"name": "GAO Green Book", "url": "https://www.gao.gov/products/gao-14-704g"}]
-  },
-  {
-    "slug": "how-often-does-a-client-change-break-the-offshore-scope",
-    "title": "How often does a client change break the offshore scope?",
-    "excerpt": "A proposed protocol for measuring scope changes that are approved before the offshore team acts.",
-    "published": "2026-11-09",
-    "thumbnail": "/daily09/offshoreadvantages/how-often-does-a-client-change-break-the-offshore-scope.png",
-    "cluster": "offshore staffing",
-    "stats": ["Public method", "Fixed sample rule", "November 9, 2026 method date"],
-    "sections": [
-      {
-        "heading": "Question and scope",
-        "body": "This is a proposed research protocol, not a report of completed findings. It asks how often a client change breaks the offshore scope. The result would describe the change record. Record the exception and the person who approved it.\n\nThe protocol does not measure whether the change was a good idea. It measures whether the change was approved before work. A short note with four fields is easier to use than a long narrative. Record the date and the source so the next reviewer can repeat the check."
-      },
-      {
-        "heading": "Population and unit of analysis",
-        "body": "Define the population as scope changes during a stated window. The unit is one change, with the request, impact, approval, and start date recorded. Keep the evidence with the record rather than in a separate log. Ask whether a new reviewer could act on the record without a conversation.\n\nLink the change to the original brief so the same change is not counted twice. Name the owner in the same line as the action. Write the deadline as a date and a local time. Test the rule on one real shift before applying it to both."
-      },
-      {
-        "heading": "Definitions and measures",
-        "body": "Define a break as work that started before an approval. Define a clean change as an approval before the first task. Write the deadline as a date and a local time. Update the template when the same question appears twice.\n\nReport both separately. Name the owner in the same line as the action. A control that depends on memory is not yet a control. Use the same format for every handover so the next reader can scan it."
-      },
-      {
-        "heading": "Evidence standard",
-        "body": "Use the change note and the task log. A note without the approval is weak. Use the same format for every handover so the next reader can scan it. If the source is unclear, route the question instead of guessing.\n\nRecord the date and the approver. Review the first few notes together before the process expands. Keep the boundary visible in the place where the work is assigned. Keep the original note beside the corrected version."
-      },
-      {
-        "heading": "Sampling and collection",
-        "body": "Use a census of the changes. If sampling is necessary, stratify by client. Review the first few notes together before the process expands. Update the template when the same question appears twice.\n\nPilot the classification on a few changes and compare the reviewers. Clarify how an exploratory task is treated. Record the exception and the person who approved it. Test the rule on one real shift before applying it to both."
-      },
-      {
-        "heading": "Analysis and reporting",
-        "body": "Report the break and clean-change rates by client. Show the changes approved after work. Present the results as a description of the control, not a judgment about the client. Write the deadline as a date and a local time."
-      },
-      {
-        "heading": "Limits and sources of error",
-        "body": "The approval may be verbal. Mark it as verbal. The work may have started without a task record. If the source is unclear, route the question instead of guessing."
-      },
-      {
-        "heading": "Review cadence",
-        "body": "Repeat the review after a process change or at the same interval each quarter. Assign the follow-up to the account lead and set a date. If the source is unclear, route the question instead of guessing. Test the rule on one real shift before applying it to both."
-      }
-    ],
-    "sources": [{"name": "NIST Cybersecurity Framework", "url": "https://www.nist.gov/cyberframework"}, {"name": "NIST Privacy Framework", "url": "https://www.nist.gov/privacy-framework"}, {"name": "U.S. Small Business Administration", "url": "https://www.sba.gov/"}, {"name": "U.S. Department of Labor", "url": "https://www.dol.gov/"}, {"name": "GAO Green Book", "url": "https://www.gao.gov/products/gao-14-704g"}]
   }
 ];
