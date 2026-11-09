@@ -88,11 +88,11 @@ export const november08ResearchPosts = [
     "sources": [{"name": "NIST Cybersecurity Framework", "url": "https://www.nist.gov/cyberframework"}, {"name": "NIST Privacy Framework", "url": "https://www.nist.gov/privacy-framework"}, {"name": "U.S. Small Business Administration", "url": "https://www.sba.gov/"}, {"name": "U.S. Department of Labor", "url": "https://www.dol.gov/"}, {"name": "GAO Green Book", "url": "https://www.gao.gov/products/gao-14-704g"}]
   },
   {
-    "slug": "is-shared-inbox-ownership-clear-enough-to-audit",
-    "title": "Is shared inbox ownership clear enough to audit?",
+    "slug": "can-a-shared-inbox-ownership-audit-survive-a-shift-change",
+    "title": "Can a shared inbox ownership audit survive a shift change?",
     "excerpt": "A proposed protocol for measuring whether every open thread in a shared inbox has a named owner and a next action.",
     "published": "2026-11-08",
-    "thumbnail": "/daily08/offshoreadvantages/is-shared-inbox-ownership-clear-enough-to-audit.png",
+    "thumbnail": "/daily08/offshoreadvantages/can-a-shared-inbox-ownership-audit-survive-a-shift-change.png",
     "cluster": "Inbox control",
     "stats": ["5 public sources", "8 review sections", "November 8, 2026 verification date"],
     "sections": [
