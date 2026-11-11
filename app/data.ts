@@ -3,6 +3,11 @@ import { october26BlogDetails, october26BlogPosts } from './campaign-2026-10-26-
 import { october27BlogDetails, october27BlogPosts } from './campaign-2026-10-27-blog';
 import { november03BlogDetails, november03BlogPosts } from './campaign-2026-11-03-blog';
 import { november06BlogDetails, november06BlogPosts } from './campaign-2026-11-06-blog';
+import { november11BlogDetails, november11BlogPosts } from './campaign-2026-11-11-blog';
+import { november10BlogDetails, november10BlogPosts } from './campaign-2026-11-10-blog';
+import { november09BlogDetails, november09BlogPosts } from './campaign-2026-11-09-blog';
+import { november08BlogDetails, november08BlogPosts } from './campaign-2026-11-08-blog';
+import { november07BlogDetails, november07BlogPosts } from './campaign-2026-11-07-blog';
 import { november05BlogDetails, november05BlogPosts } from './campaign-2026-11-05-blog';
 import { november04BlogDetails, november04BlogPosts } from './campaign-2026-11-04-blog';
 import { november02BlogDetails, november02BlogPosts } from './campaign-2026-11-02-blog';
@@ -106,9 +111,17 @@ export const todayBlogDetails = Object.fromEntries(todayBlogPosts.map((post) => 
 
 // Keep the public blog catalog focused on the fully authored October library.
 // Older generated URLs redirect to /blog instead of remaining as repetitive thin pages.
-export const allBlogPosts = [...november06BlogPosts, ...november05BlogPosts, ...november04BlogPosts, ...november03BlogPosts, ...november02BlogPosts, ...october27BlogPosts, ...october26BlogPosts, ...october25BlogPosts, ...october22BlogPosts, ...october8BlogPosts, ...october5BlogPosts, ...october2BlogPosts, ...blogPosts] as const;
+export const allBlogPosts = [...november11BlogPosts,
+  ...november10BlogPosts,
+  ...november09BlogPosts,
+  ...november08BlogPosts,
+  ...november07BlogPosts, ...november06BlogPosts, ...november05BlogPosts, ...november04BlogPosts, ...november03BlogPosts, ...november02BlogPosts, ...october27BlogPosts, ...october26BlogPosts, ...october25BlogPosts, ...october22BlogPosts, ...october8BlogPosts, ...october5BlogPosts, ...october2BlogPosts, ...blogPosts] as const;
 
-export const campaignBlogDetails = { ...november06BlogDetails, ...november05BlogDetails, ...november04BlogDetails, ...november03BlogDetails, ...november02BlogDetails, ...october27BlogDetails, ...october26BlogDetails, ...october25BlogDetails, ...october22BlogDetails, ...october8BlogDetails, ...october5BlogDetails, ...october2BlogDetails, ...september28BlogDetails, ...september25BlogDetails, ...september24BlogDetails, ...september23Run2BlogDetails, ...september23BlogDetails, ...september19BlogDetails, ...september18BlogDetails, ...september10BlogDetails, ...september9BlogDetails, ...september8BlogDetails, ...september7BlogDetails, ...september4BlogDetails, ...september3BlogDetails, ...september2BlogDetails, ...september1BlogDetails, ...august31BlogDetails };
+export const campaignBlogDetails = { ...november11BlogDetails,
+  ...november10BlogDetails,
+  ...november09BlogDetails,
+  ...november08BlogDetails,
+  ...november07BlogDetails, ...november06BlogDetails, ...november05BlogDetails, ...november04BlogDetails, ...november03BlogDetails, ...november02BlogDetails, ...october27BlogDetails, ...october26BlogDetails, ...october25BlogDetails, ...october22BlogDetails, ...october8BlogDetails, ...october5BlogDetails, ...october2BlogDetails, ...september28BlogDetails, ...september25BlogDetails, ...september24BlogDetails, ...september23Run2BlogDetails, ...september23BlogDetails, ...september19BlogDetails, ...september18BlogDetails, ...september10BlogDetails, ...september9BlogDetails, ...september8BlogDetails, ...september7BlogDetails, ...september4BlogDetails, ...september3BlogDetails, ...september2BlogDetails, ...september1BlogDetails, ...august31BlogDetails };
 
 export const blogDetails = {
   'offshore-advantages-provider-questions': {
