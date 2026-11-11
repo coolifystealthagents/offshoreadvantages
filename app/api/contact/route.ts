@@ -15,7 +15,7 @@ function errorPage(request: NextRequest, status: number) {
 }
 function accepted(request: NextRequest) {
   if (request.headers.get('accept')?.includes('application/json')) return NextResponse.json({ ok: true }, { status: 200, headers: { 'cache-control': 'no-store' } });
-  const response = NextResponse.redirect(new URL('/thank-you?lead=accepted', request.url), 303);
+  const response = NextResponse.redirect(new URL('/thank-you?lead=accepted', 'https://offshoreadvantages.com'), 303);
   response.headers.set('cache-control', 'no-store');
   return response;
 }

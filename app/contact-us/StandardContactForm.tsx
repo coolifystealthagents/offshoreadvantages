@@ -63,7 +63,7 @@ export default function StandardContactForm({ endpoint = "/api/submit-lead", enc
       for (let i = 0; i < 20 && !(window as TrackerWindow).acrTracker?.trackLead; i += 1) {
         await new Promise((resolve) => window.setTimeout(resolve, 100));
       }
-      try { (window as TrackerWindow).acrTracker?.trackLead?.(payload); } catch {}
+      try { /* ACR captures the native submit event once. */ } catch {}
       window.location.assign("/thank-you");
     } catch {
       setError("We could not submit your request. Please try again.");
