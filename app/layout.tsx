@@ -4,6 +4,7 @@ import './globals.css';
 import './v3.css';
 import type { Metadata } from 'next';
 
+import './studio.css';
 export const metadata: Metadata = {
   metadataBase: new URL('https://offshoreadvantages.com'),
   title: { default: 'Offshore Advantages | Plan a Philippines staffing role', template: '%s | Offshore Advantages' },

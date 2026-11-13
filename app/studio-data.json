@@ -1,0 +1,547 @@
+{
+  "theme": "advantage",
+  "short": "Offshore Advantages",
+  "heading": [
+    "A wider perspective.",
+    "A stronger team."
+  ],
+  "label": "Thoughtful offshore staffing",
+  "intro": "Give capable people a clear place in your business. Build Philippines-based support around work that matters, with a role your manager can explain, review, and improve.",
+  "serviceHeading": "Find the right work to hand over.",
+  "storyHeading": "The advantage begins with a better brief.",
+  "story": "An offshore role works best when the everyday details are understood before hiring starts. We help turn scattered responsibilities into a considered support role: a useful output, an agreed handoff, and a person who can answer the difficult questions.",
+  "contact": "Let\u2019s find your next advantage.",
+  "close": "Make room for what comes next.",
+  "footer": "Practical offshore staffing support for leaders building thoughtful, well-managed teams in the Philippines.",
+  "words": [
+    "Clear responsibilities",
+    "Thoughtful handoffs",
+    "Visible progress"
+  ],
+  "stories": [
+    [
+      "Choose work with a useful finish line.",
+      "A shared inbox is a place, not a job description. Start with the requests that arrive there, the information each request needs, and what a completed response should contain. A well-defined role makes the workload easier to estimate and gives your new colleague a fair way to understand success."
+    ],
+    [
+      "Build a relationship around the handoff.",
+      "Offshore support should make the working day easier for both sides. Agree on overlap hours, where questions belong, and who can unblock a decision. Keep the handoff short enough to use every day, with links to current records rather than a second set of disconnected notes."
+    ],
+    [
+      "Learn from actual work.",
+      "Use a small, representative queue to calibrate the instructions. Look at finished examples together, discuss why something needed rework, and update the checklist. Expand responsibilities when the evidence is consistent and the manager has time to review the new scope."
+    ]
+  ],
+  "domain": "offshoreadvantages.com",
+  "brand": "Offshore Advantages",
+  "services": [
+    {
+      "slug": "shared-services-administration",
+      "title": "Shared Services Administration",
+      "description": "Triage internal requests and assign a documented owner and due date.",
+      "intro": "Triage internal requests and assign a documented owner and due date. Prepare routine documents from approved templates and link the source records. This role gives the recurring work a consistent owner and a reviewable record. Agree on the output and the approval boundary before the first live handoff.",
+      "audience": "leaders deciding whether Filipino talent fits a defined role",
+      "scope": [
+        "Triage internal requests and assign a documented owner and due date.",
+        "Prepare routine documents from approved templates and link the source records.",
+        "Maintain shared calendars, request statuses, and a daily open-item handoff."
+      ],
+      "inputs": [
+        "Representative requests and completed examples from your current shared services administration workflow.",
+        "The current instructions, required fields, systems, and access permissions for the role.",
+        "Named reviewers, response expectations, and the route for urgent questions or exceptions."
+      ],
+      "outputs": [
+        "A current shared services administration queue showing completed items, outstanding questions, and the next owner.",
+        "Organized source records and a concise handoff your manager can review without reconstructing the work.",
+        "An exception summary with the missing information, supporting evidence, and decision needed."
+      ],
+      "controls": [
+        "Use named accounts and limited permissions",
+        "Follow written approval and escalation rules",
+        "Review work with a client-side owner"
+      ],
+      "workflow": [
+        "Confirm scope and working hours",
+        "Practice with representative examples",
+        "Review the first completed work together"
+      ],
+      "boundaries": [
+        "Your authorized team retains policy changes, commercial commitments, sensitive decisions, and approval of exceptions.",
+        "Access is limited to the agreed role. Unclear instructions or conflicting evidence are referred to the named reviewer before the work proceeds."
+      ],
+      "scenarios": [
+        "A request arrives with incomplete information. The shared services administration record stays open with the missing field identified, a follow-up assigned, and the source attached. Your manager can see why it is waiting instead of treating the item as finished.",
+        "An item does not match the approved examples. The support professional prepares the relevant context and routes it to your named owner. The decision is recorded in the same workflow so the next handoff carries the answer forward."
+      ],
+      "faqs": [],
+      "related": [],
+      "image": "/studio-20261113/shared-services-administration.webp",
+      "alt": "Two women working together on laptops and documents in a bright, modern office setting.",
+      "position": "50% 45%"
+    },
+    {
+      "slug": "customer-experience-support",
+      "title": "Customer Experience Support",
+      "description": "Organize incoming customer questions by topic, urgency, and account context.",
+      "intro": "Organize incoming customer questions by topic, urgency, and account context. Prepare responses using your approved knowledge base and communication standards. This role gives the recurring work a consistent owner and a reviewable record. Agree on the output and the approval boundary before the first live handoff.",
+      "audience": "leaders deciding whether Filipino talent fits a defined role",
+      "scope": [
+        "Organize incoming customer questions by topic, urgency, and account context.",
+        "Prepare responses using your approved knowledge base and communication standards.",
+        "Record unresolved questions and route sensitive complaints to the designated owner."
+      ],
+      "inputs": [
+        "Representative requests and completed examples from your current customer experience support workflow.",
+        "The current instructions, required fields, systems, and access permissions for the role.",
+        "Named reviewers, response expectations, and the route for urgent questions or exceptions."
+      ],
+      "outputs": [
+        "A current customer experience support queue showing completed items, outstanding questions, and the next owner.",
+        "Organized source records and a concise handoff your manager can review without reconstructing the work.",
+        "An exception summary with the missing information, supporting evidence, and decision needed."
+      ],
+      "controls": [
+        "Use named accounts and limited permissions",
+        "Follow written approval and escalation rules",
+        "Review work with a client-side owner"
+      ],
+      "workflow": [
+        "Confirm scope and working hours",
+        "Practice with representative examples",
+        "Review the first completed work together"
+      ],
+      "boundaries": [
+        "Your authorized team retains policy changes, commercial commitments, sensitive decisions, and approval of exceptions.",
+        "Access is limited to the agreed role. Unclear instructions or conflicting evidence are referred to the named reviewer before the work proceeds."
+      ],
+      "scenarios": [
+        "A request arrives with incomplete information. The customer experience support record stays open with the missing field identified, a follow-up assigned, and the source attached. Your manager can see why it is waiting instead of treating the item as finished.",
+        "An item does not match the approved examples. The support professional prepares the relevant context and routes it to your named owner. The decision is recorded in the same workflow so the next handoff carries the answer forward."
+      ],
+      "faqs": [],
+      "related": [],
+      "image": "/studio-20261113/customer-experience-support.webp",
+      "alt": "Friendly customer support team with headphones standing in office.",
+      "position": "50% 28%"
+    },
+    {
+      "slug": "finance-operations-support",
+      "title": "Finance Operations Support",
+      "description": "Organize financial source documents and check required information before review.",
+      "intro": "Organize financial source documents and check required information before review. Maintain receivables or payables follow-up queues using approved status rules. This role gives the recurring work a consistent owner and a reviewable record. Agree on the output and the approval boundary before the first live handoff.",
+      "audience": "leaders deciding whether Filipino talent fits a defined role",
+      "scope": [
+        "Organize financial source documents and check required information before review.",
+        "Maintain receivables or payables follow-up queues using approved status rules.",
+        "Prepare reconciliations and exception records for the authorized finance reviewer."
+      ],
+      "inputs": [
+        "Representative requests and completed examples from your current finance operations support workflow.",
+        "The current instructions, required fields, systems, and access permissions for the role.",
+        "Named reviewers, response expectations, and the route for urgent questions or exceptions."
+      ],
+      "outputs": [
+        "A current finance operations support queue showing completed items, outstanding questions, and the next owner.",
+        "Organized source records and a concise handoff your manager can review without reconstructing the work.",
+        "An exception summary with the missing information, supporting evidence, and decision needed."
+      ],
+      "controls": [
+        "Use named accounts and limited permissions",
+        "Follow written approval and escalation rules",
+        "Review work with a client-side owner"
+      ],
+      "workflow": [
+        "Confirm scope and working hours",
+        "Practice with representative examples",
+        "Review the first completed work together"
+      ],
+      "boundaries": [
+        "Your authorized team retains policy changes, commercial commitments, sensitive decisions, and approval of exceptions.",
+        "Access is limited to the agreed role. Unclear instructions or conflicting evidence are referred to the named reviewer before the work proceeds."
+      ],
+      "scenarios": [
+        "A request arrives with incomplete information. The finance operations support record stays open with the missing field identified, a follow-up assigned, and the source attached. Your manager can see why it is waiting instead of treating the item as finished.",
+        "An item does not match the approved examples. The support professional prepares the relevant context and routes it to your named owner. The decision is recorded in the same workflow so the next handoff carries the answer forward."
+      ],
+      "faqs": [],
+      "related": [],
+      "image": "/studio-20261113/finance-operations-support.webp",
+      "alt": "Professional man working on laptop with documents and cash on table in a modern office setting.",
+      "position": "50% 45%"
+    },
+    {
+      "slug": "revenue-operations-support",
+      "title": "Revenue Operations Support",
+      "description": "Maintain CRM records, activity notes, and assigned follow-up dates.",
+      "intro": "Maintain CRM records, activity notes, and assigned follow-up dates. Prepare pipeline administration reports using your approved definitions. This role gives the recurring work a consistent owner and a reviewable record. Agree on the output and the approval boundary before the first live handoff.",
+      "audience": "leaders deciding whether Filipino talent fits a defined role",
+      "scope": [
+        "Maintain CRM records, activity notes, and assigned follow-up dates.",
+        "Prepare pipeline administration reports using your approved definitions.",
+        "Flag incomplete opportunity records and conflicting handoffs for the sales owner."
+      ],
+      "inputs": [
+        "Representative requests and completed examples from your current revenue operations support workflow.",
+        "The current instructions, required fields, systems, and access permissions for the role.",
+        "Named reviewers, response expectations, and the route for urgent questions or exceptions."
+      ],
+      "outputs": [
+        "A current revenue operations support queue showing completed items, outstanding questions, and the next owner.",
+        "Organized source records and a concise handoff your manager can review without reconstructing the work.",
+        "An exception summary with the missing information, supporting evidence, and decision needed."
+      ],
+      "controls": [
+        "Use named accounts and limited permissions",
+        "Follow written approval and escalation rules",
+        "Review work with a client-side owner"
+      ],
+      "workflow": [
+        "Confirm scope and working hours",
+        "Practice with representative examples",
+        "Review the first completed work together"
+      ],
+      "boundaries": [
+        "Your authorized team retains policy changes, commercial commitments, sensitive decisions, and approval of exceptions.",
+        "Access is limited to the agreed role. Unclear instructions or conflicting evidence are referred to the named reviewer before the work proceeds."
+      ],
+      "scenarios": [
+        "A request arrives with incomplete information. The revenue operations support record stays open with the missing field identified, a follow-up assigned, and the source attached. Your manager can see why it is waiting instead of treating the item as finished.",
+        "An item does not match the approved examples. The support professional prepares the relevant context and routes it to your named owner. The decision is recorded in the same workflow so the next handoff carries the answer forward."
+      ],
+      "faqs": [],
+      "related": [],
+      "image": "/studio-20261113/revenue-operations-support.webp",
+      "alt": "Three professionals engaged in a productive office discussion, exchanging documents and ideas.",
+      "position": "50% 45%"
+    },
+    {
+      "slug": "procurement-administration",
+      "title": "Procurement Administration",
+      "description": "Organize purchase requests, vendor documents, and approval evidence.",
+      "intro": "Organize purchase requests, vendor documents, and approval evidence. Follow up on missing quotation or delivery information within your instructions. This role gives the recurring work a consistent owner and a reviewable record. Agree on the output and the approval boundary before the first live handoff.",
+      "audience": "leaders deciding whether Filipino talent fits a defined role",
+      "scope": [
+        "Organize purchase requests, vendor documents, and approval evidence.",
+        "Follow up on missing quotation or delivery information within your instructions.",
+        "Prepare an exception list without selecting vendors or committing expenditure."
+      ],
+      "inputs": [
+        "Representative requests and completed examples from your current procurement administration workflow.",
+        "The current instructions, required fields, systems, and access permissions for the role.",
+        "Named reviewers, response expectations, and the route for urgent questions or exceptions."
+      ],
+      "outputs": [
+        "A current procurement administration queue showing completed items, outstanding questions, and the next owner.",
+        "Organized source records and a concise handoff your manager can review without reconstructing the work.",
+        "An exception summary with the missing information, supporting evidence, and decision needed."
+      ],
+      "controls": [
+        "Use named accounts and limited permissions",
+        "Follow written approval and escalation rules",
+        "Review work with a client-side owner"
+      ],
+      "workflow": [
+        "Confirm scope and working hours",
+        "Practice with representative examples",
+        "Review the first completed work together"
+      ],
+      "boundaries": [
+        "Your authorized team retains policy changes, commercial commitments, sensitive decisions, and approval of exceptions.",
+        "Access is limited to the agreed role. Unclear instructions or conflicting evidence are referred to the named reviewer before the work proceeds."
+      ],
+      "scenarios": [
+        "A request arrives with incomplete information. The procurement administration record stays open with the missing field identified, a follow-up assigned, and the source attached. Your manager can see why it is waiting instead of treating the item as finished.",
+        "An item does not match the approved examples. The support professional prepares the relevant context and routes it to your named owner. The decision is recorded in the same workflow so the next handoff carries the answer forward."
+      ],
+      "faqs": [],
+      "related": [],
+      "image": "/studio-20261113/procurement-administration.webp",
+      "alt": "Two professionals working together in a modern office setting, discussing documents.",
+      "position": "50% 45%"
+    },
+    {
+      "slug": "data-management-support",
+      "title": "Data Management Support",
+      "description": "Update records from approved source material with a traceable change history.",
+      "intro": "Update records from approved source material with a traceable change history. Review missing fields, inconsistent formats, and possible duplicate records. This role gives the recurring work a consistent owner and a reviewable record. Agree on the output and the approval boundary before the first live handoff.",
+      "audience": "leaders deciding whether Filipino talent fits a defined role",
+      "scope": [
+        "Update records from approved source material with a traceable change history.",
+        "Review missing fields, inconsistent formats, and possible duplicate records.",
+        "Prepare unresolved data conflicts for the owner instead of inferring a correction."
+      ],
+      "inputs": [
+        "Representative requests and completed examples from your current data management support workflow.",
+        "The current instructions, required fields, systems, and access permissions for the role.",
+        "Named reviewers, response expectations, and the route for urgent questions or exceptions."
+      ],
+      "outputs": [
+        "A current data management support queue showing completed items, outstanding questions, and the next owner.",
+        "Organized source records and a concise handoff your manager can review without reconstructing the work.",
+        "An exception summary with the missing information, supporting evidence, and decision needed."
+      ],
+      "controls": [
+        "Use named accounts and limited permissions",
+        "Follow written approval and escalation rules",
+        "Review work with a client-side owner"
+      ],
+      "workflow": [
+        "Confirm scope and working hours",
+        "Practice with representative examples",
+        "Review the first completed work together"
+      ],
+      "boundaries": [
+        "Your authorized team retains policy changes, commercial commitments, sensitive decisions, and approval of exceptions.",
+        "Access is limited to the agreed role. Unclear instructions or conflicting evidence are referred to the named reviewer before the work proceeds."
+      ],
+      "scenarios": [
+        "A request arrives with incomplete information. The data management support record stays open with the missing field identified, a follow-up assigned, and the source attached. Your manager can see why it is waiting instead of treating the item as finished.",
+        "An item does not match the approved examples. The support professional prepares the relevant context and routes it to your named owner. The decision is recorded in the same workflow so the next handoff carries the answer forward."
+      ],
+      "faqs": [],
+      "related": [],
+      "image": "/studio-20261113/data-management-support.webp",
+      "alt": "Office worker in eyeglasses taking notes at desk with computer in modern setting.",
+      "position": "50% 40%"
+    },
+    {
+      "slug": "marketing-operations-support",
+      "title": "Marketing Operations Support",
+      "description": "Maintain campaign calendars, asset registers, and approved publishing queues.",
+      "intro": "Maintain campaign calendars, asset registers, and approved publishing queues. Prepare reporting inputs and check campaign records against agreed definitions. This role gives the recurring work a consistent owner and a reviewable record. Agree on the output and the approval boundary before the first live handoff.",
+      "audience": "leaders deciding whether Filipino talent fits a defined role",
+      "scope": [
+        "Maintain campaign calendars, asset registers, and approved publishing queues.",
+        "Prepare reporting inputs and check campaign records against agreed definitions.",
+        "Coordinate content handoffs while your team retains strategy and final approval."
+      ],
+      "inputs": [
+        "Representative requests and completed examples from your current marketing operations support workflow.",
+        "The current instructions, required fields, systems, and access permissions for the role.",
+        "Named reviewers, response expectations, and the route for urgent questions or exceptions."
+      ],
+      "outputs": [
+        "A current marketing operations support queue showing completed items, outstanding questions, and the next owner.",
+        "Organized source records and a concise handoff your manager can review without reconstructing the work.",
+        "An exception summary with the missing information, supporting evidence, and decision needed."
+      ],
+      "controls": [
+        "Use named accounts and limited permissions",
+        "Follow written approval and escalation rules",
+        "Review work with a client-side owner"
+      ],
+      "workflow": [
+        "Confirm scope and working hours",
+        "Practice with representative examples",
+        "Review the first completed work together"
+      ],
+      "boundaries": [
+        "Your authorized team retains policy changes, commercial commitments, sensitive decisions, and approval of exceptions.",
+        "Access is limited to the agreed role. Unclear instructions or conflicting evidence are referred to the named reviewer before the work proceeds."
+      ],
+      "scenarios": [
+        "A request arrives with incomplete information. The marketing operations support record stays open with the missing field identified, a follow-up assigned, and the source attached. Your manager can see why it is waiting instead of treating the item as finished.",
+        "An item does not match the approved examples. The support professional prepares the relevant context and routes it to your named owner. The decision is recorded in the same workflow so the next handoff carries the answer forward."
+      ],
+      "faqs": [],
+      "related": [],
+      "image": "/studio-20261113/marketing-operations-support.webp",
+      "alt": "Two colleagues engaged in a focused discussion in a modern office setting with plants and documents.",
+      "position": "50% 45%"
+    },
+    {
+      "slug": "technical-support-desk",
+      "title": "Technical Support Desk",
+      "description": "Capture technical support requests with symptoms, environment, and source evidence.",
+      "intro": "Capture technical support requests with symptoms, environment, and source evidence. Follow documented troubleshooting steps within the assigned permissions. This role gives the recurring work a consistent owner and a reviewable record. Agree on the output and the approval boundary before the first live handoff.",
+      "audience": "leaders deciding whether Filipino talent fits a defined role",
+      "scope": [
+        "Capture technical support requests with symptoms, environment, and source evidence.",
+        "Follow documented troubleshooting steps within the assigned permissions.",
+        "Escalate unresolved or security-sensitive cases to the authorized technical owner."
+      ],
+      "inputs": [
+        "Representative requests and completed examples from your current technical support desk workflow.",
+        "The current instructions, required fields, systems, and access permissions for the role.",
+        "Named reviewers, response expectations, and the route for urgent questions or exceptions."
+      ],
+      "outputs": [
+        "A current technical support desk queue showing completed items, outstanding questions, and the next owner.",
+        "Organized source records and a concise handoff your manager can review without reconstructing the work.",
+        "An exception summary with the missing information, supporting evidence, and decision needed."
+      ],
+      "controls": [
+        "Use named accounts and limited permissions",
+        "Follow written approval and escalation rules",
+        "Review work with a client-side owner"
+      ],
+      "workflow": [
+        "Confirm scope and working hours",
+        "Practice with representative examples",
+        "Review the first completed work together"
+      ],
+      "boundaries": [
+        "Your authorized team retains policy changes, commercial commitments, sensitive decisions, and approval of exceptions.",
+        "Access is limited to the agreed role. Unclear instructions or conflicting evidence are referred to the named reviewer before the work proceeds."
+      ],
+      "scenarios": [
+        "A request arrives with incomplete information. The technical support desk record stays open with the missing field identified, a follow-up assigned, and the source attached. Your manager can see why it is waiting instead of treating the item as finished.",
+        "An item does not match the approved examples. The support professional prepares the relevant context and routes it to your named owner. The decision is recorded in the same workflow so the next handoff carries the answer forward."
+      ],
+      "faqs": [],
+      "related": [],
+      "image": "/studio-20261113/technical-support-desk.webp",
+      "alt": "A woman in a headset writing notes at a desk in a modern office with sticky notes on laptop and wall.",
+      "position": "50% 45%"
+    },
+    {
+      "slug": "project-coordination-support",
+      "title": "Project Coordination Support",
+      "description": "Maintain task ownership, dependencies, and due dates in the project system.",
+      "intro": "Maintain task ownership, dependencies, and due dates in the project system. Prepare meeting notes and follow up on agreed actions. This role gives the recurring work a consistent owner and a reviewable record. Agree on the output and the approval boundary before the first live handoff.",
+      "audience": "leaders deciding whether Filipino talent fits a defined role",
+      "scope": [
+        "Maintain task ownership, dependencies, and due dates in the project system.",
+        "Prepare meeting notes and follow up on agreed actions.",
+        "Keep blockers visible while project leads retain scope and priority decisions."
+      ],
+      "inputs": [
+        "Representative requests and completed examples from your current project coordination support workflow.",
+        "The current instructions, required fields, systems, and access permissions for the role.",
+        "Named reviewers, response expectations, and the route for urgent questions or exceptions."
+      ],
+      "outputs": [
+        "A current project coordination support queue showing completed items, outstanding questions, and the next owner.",
+        "Organized source records and a concise handoff your manager can review without reconstructing the work.",
+        "An exception summary with the missing information, supporting evidence, and decision needed."
+      ],
+      "controls": [
+        "Use named accounts and limited permissions",
+        "Follow written approval and escalation rules",
+        "Review work with a client-side owner"
+      ],
+      "workflow": [
+        "Confirm scope and working hours",
+        "Practice with representative examples",
+        "Review the first completed work together"
+      ],
+      "boundaries": [
+        "Your authorized team retains policy changes, commercial commitments, sensitive decisions, and approval of exceptions.",
+        "Access is limited to the agreed role. Unclear instructions or conflicting evidence are referred to the named reviewer before the work proceeds."
+      ],
+      "scenarios": [
+        "A request arrives with incomplete information. The project coordination support record stays open with the missing field identified, a follow-up assigned, and the source attached. Your manager can see why it is waiting instead of treating the item as finished.",
+        "An item does not match the approved examples. The support professional prepares the relevant context and routes it to your named owner. The decision is recorded in the same workflow so the next handoff carries the answer forward."
+      ],
+      "faqs": [],
+      "related": [],
+      "image": "/studio-20261113/project-coordination-support.webp",
+      "alt": "Diverse team engaged in a productive office meeting, discussing documents and ideas.",
+      "position": "50% 45%"
+    },
+    {
+      "slug": "back-office-quality-review",
+      "title": "Back-Office Quality Review",
+      "description": "Sample completed work against your approved checklist and source evidence.",
+      "intro": "Sample completed work against your approved checklist and source evidence. Record defect categories, correction requests, and reviewer comments. This role gives the recurring work a consistent owner and a reviewable record. Agree on the output and the approval boundary before the first live handoff.",
+      "audience": "leaders deciding whether Filipino talent fits a defined role",
+      "scope": [
+        "Sample completed work against your approved checklist and source evidence.",
+        "Record defect categories, correction requests, and reviewer comments.",
+        "Prepare recurring quality themes for the process owner to assess."
+      ],
+      "inputs": [
+        "Representative requests and completed examples from your current back-office quality review workflow.",
+        "The current instructions, required fields, systems, and access permissions for the role.",
+        "Named reviewers, response expectations, and the route for urgent questions or exceptions."
+      ],
+      "outputs": [
+        "A current back-office quality review queue showing completed items, outstanding questions, and the next owner.",
+        "Organized source records and a concise handoff your manager can review without reconstructing the work.",
+        "An exception summary with the missing information, supporting evidence, and decision needed."
+      ],
+      "controls": [
+        "Use named accounts and limited permissions",
+        "Follow written approval and escalation rules",
+        "Review work with a client-side owner"
+      ],
+      "workflow": [
+        "Confirm scope and working hours",
+        "Practice with representative examples",
+        "Review the first completed work together"
+      ],
+      "boundaries": [
+        "Your authorized team retains policy changes, commercial commitments, sensitive decisions, and approval of exceptions.",
+        "Access is limited to the agreed role. Unclear instructions or conflicting evidence are referred to the named reviewer before the work proceeds."
+      ],
+      "scenarios": [
+        "A request arrives with incomplete information. The back-office quality review record stays open with the missing field identified, a follow-up assigned, and the source attached. Your manager can see why it is waiting instead of treating the item as finished.",
+        "An item does not match the approved examples. The support professional prepares the relevant context and routes it to your named owner. The decision is recorded in the same workflow so the next handoff carries the answer forward."
+      ],
+      "faqs": [],
+      "related": [],
+      "image": "/studio-20261113/back-office-quality-review.webp",
+      "alt": "Two women collaborating in an office setting, focusing on documents.",
+      "position": "50% 45%"
+    }
+  ],
+  "photos": {
+    "home": {
+      "alt": "Group of colleagues in a modern office collaborating over documents and a laptop.",
+      "position": "50% 45%"
+    },
+    "services": {
+      "alt": "Professional team engaged in discussion around office desk, focusing on documents and collaboration.",
+      "position": "50% 45%"
+    },
+    "blog": {
+      "alt": "Asian woman in office setting, focused on writing notes at her desk.",
+      "position": "50% 45%"
+    },
+    "research": {
+      "alt": "A diverse group working on marketing strategies with charts and laptops in an office setting.",
+      "position": "50% 45%"
+    },
+    "shared-services-administration": {
+      "alt": "Two women working together on laptops and documents in a bright, modern office setting.",
+      "position": "50% 45%"
+    },
+    "customer-experience-support": {
+      "alt": "Friendly customer support team with headphones standing in office.",
+      "position": "50% 28%"
+    },
+    "finance-operations-support": {
+      "alt": "Professional man working on laptop with documents and cash on table in a modern office setting.",
+      "position": "50% 45%"
+    },
+    "revenue-operations-support": {
+      "alt": "Three professionals engaged in a productive office discussion, exchanging documents and ideas.",
+      "position": "50% 45%"
+    },
+    "procurement-administration": {
+      "alt": "Two professionals working together in a modern office setting, discussing documents.",
+      "position": "50% 45%"
+    },
+    "data-management-support": {
+      "alt": "Office worker in eyeglasses taking notes at desk with computer in modern setting.",
+      "position": "50% 40%"
+    },
+    "marketing-operations-support": {
+      "alt": "Two colleagues engaged in a focused discussion in a modern office setting with plants and documents.",
+      "position": "50% 45%"
+    },
+    "technical-support-desk": {
+      "alt": "A woman in a headset writing notes at a desk in a modern office with sticky notes on laptop and wall.",
+      "position": "50% 45%"
+    },
+    "project-coordination-support": {
+      "alt": "Diverse team engaged in a productive office meeting, discussing documents and ideas.",
+      "position": "50% 45%"
+    },
+    "back-office-quality-review": {
+      "alt": "Two women collaborating in an office setting, focusing on documents.",
+      "position": "50% 45%"
+    }
+  }
+}

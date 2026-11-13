@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { sendLeadFallbackToMattermost } from '../../lib/lead-fallback-mattermost';
 import { BoundedWindowLimiter, combineCountryCode, isAllowedOrigin, PayloadTooLargeError, readBoundedText } from '../../request-guards.mjs';
 
 const MAX_BODY_BYTES = 64_000;
@@ -59,6 +58,6 @@ export async function POST(request: NextRequest) {
     const result = await upstream.json().catch(() => null) as { ok?: boolean } | null;
     if (!upstream.ok || result?.ok !== true) return errorPage(request, 502);
   } catch { return errorPage(request, 502); }
-  void sendLeadFallbackToMattermost({ name, email, phone, business, message, companySize, positions, referral: referralLabel, pageUrl, userAgent: request.headers.get('user-agent') || '' });
+
   return accepted(request);
 }
