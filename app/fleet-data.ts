@@ -4,6 +4,7 @@ import { october27ResearchPosts } from './campaign-2026-10-27-research';
 import { november03ResearchPosts } from './campaign-2026-11-03-research';
 import { november06ResearchPosts } from './campaign-2026-11-06-research';
 import { november12ResearchPosts } from './campaign-2026-11-12-research';
+import { november16ResearchPosts } from './campaign-2026-11-16-research';
 import { november11ResearchPosts } from './campaign-2026-11-11-research';
 import { november10ResearchPosts } from './campaign-2026-11-10-research';
 import { november09ResearchPosts } from './campaign-2026-11-09-research';
@@ -915,6 +916,7 @@ const frozenAug10Order = ['philippines-offshore-approval-evidence-retention', 'p
 // Publish the fully authored October research library; legacy generated slugs
 // redirect to /research from the dynamic route.
 export const researchPosts: readonly ResearchPost[] = [
+  ...november16ResearchPosts,
   ...november12ResearchPosts,
   ...november11ResearchPosts,
   ...november10ResearchPosts,
