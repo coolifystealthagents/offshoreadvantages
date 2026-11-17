@@ -61,8 +61,8 @@ export const november16BlogPosts = [
   },
   {
     "slug": "plan-a-knowledge-handover-for-a-departing-offshore-specialist",
-    "title": "Plan knowledge handover for a departing offshore specialist",
-    "excerpt": "A departing specialist knowledge handover that names the decision, the evidence, and the owner Revisit the rule with one current example before the next client cycle.",
+    "title": "Plan a knowledge handover for a departing offshore specialist",
+    "excerpt": "A departing specialist handover that names the decision, the evidence, and the owner, with one current example checked before the next client cycle.",
     "minutes": 7,
     "image": "/daily16/offshoreadvantages/plan-a-knowledge-handover-for-a-departing-offshore-specialist.png",
     "citations": [
