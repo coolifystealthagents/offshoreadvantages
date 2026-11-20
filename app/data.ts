@@ -118,7 +118,7 @@ export const todayBlogDetails = Object.fromEntries(todayBlogPosts.map((post) => 
 // Keep the public blog catalog focused on the fully authored October library.
 // Older generated URLs redirect to /blog instead of remaining as repetitive thin pages.
 export const allBlogPosts = [...november20BlogPosts,
-  ...november18BlogPosts,
+  ...november19BlogPosts,
   ...november18BlogPosts,
   ...november17BlogPosts,
   ...november16BlogPosts,
@@ -130,7 +130,7 @@ export const allBlogPosts = [...november20BlogPosts,
   ...november07BlogPosts, ...november06BlogPosts, ...november05BlogPosts, ...november04BlogPosts, ...november03BlogPosts, ...november02BlogPosts, ...october27BlogPosts, ...october26BlogPosts, ...october25BlogPosts, ...october22BlogPosts, ...october8BlogPosts, ...october5BlogPosts, ...october2BlogPosts, ...blogPosts] as const;
 
 export const campaignBlogDetails = { ...november20BlogDetails,
-  ...november18BlogDetails,
+  ...november19BlogDetails,
   ...november18BlogDetails,
   ...november17BlogDetails,
   ...november16BlogDetails,
