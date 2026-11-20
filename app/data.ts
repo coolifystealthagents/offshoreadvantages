@@ -4,6 +4,7 @@ import { october27BlogDetails, october27BlogPosts } from './campaign-2026-10-27-
 import { november03BlogDetails, november03BlogPosts } from './campaign-2026-11-03-blog';
 import { november06BlogDetails, november06BlogPosts } from './campaign-2026-11-06-blog';
 import { november12BlogDetails, november12BlogPosts } from './campaign-2026-11-12-blog';
+import { november20BlogDetails, november20BlogPosts } from './campaign-2026-11-20-blog';
 import { november19BlogDetails, november19BlogPosts } from './campaign-2026-11-19-blog';
 import { november18BlogDetails, november18BlogPosts } from './campaign-2026-11-18-blog';
 import { november17BlogDetails, november17BlogPosts } from './campaign-2026-11-17-blog';
@@ -116,7 +117,8 @@ export const todayBlogDetails = Object.fromEntries(todayBlogPosts.map((post) => 
 
 // Keep the public blog catalog focused on the fully authored October library.
 // Older generated URLs redirect to /blog instead of remaining as repetitive thin pages.
-export const allBlogPosts = [...november19BlogPosts,
+export const allBlogPosts = [...november20BlogPosts,
+  ...november18BlogPosts,
   ...november18BlogPosts,
   ...november17BlogPosts,
   ...november16BlogPosts,
@@ -127,7 +129,8 @@ export const allBlogPosts = [...november19BlogPosts,
   ...november08BlogPosts,
   ...november07BlogPosts, ...november06BlogPosts, ...november05BlogPosts, ...november04BlogPosts, ...november03BlogPosts, ...november02BlogPosts, ...october27BlogPosts, ...october26BlogPosts, ...october25BlogPosts, ...october22BlogPosts, ...october8BlogPosts, ...october5BlogPosts, ...october2BlogPosts, ...blogPosts] as const;
 
-export const campaignBlogDetails = { ...november19BlogDetails,
+export const campaignBlogDetails = { ...november20BlogDetails,
+  ...november18BlogDetails,
   ...november18BlogDetails,
   ...november17BlogDetails,
   ...november16BlogDetails,
