@@ -1,4 +1,4 @@
-export const november22ResearchPosts = [
+export const november23ResearchPosts = [
   {
     "slug": "do-performance-reports-include-the-client-s-metrics",
     "title": "Do performance reports include the client's metrics?",

@@ -1,4 +1,4 @@
-export const november22BlogPosts = [
+export const november23BlogPosts = [
   {
     "slug": "review-an-offshore-team-performance-report",
     "title": "Review an offshore team performance report",
@@ -121,7 +121,7 @@ export const november22BlogPosts = [
   }
 ];
 
-export const november22BlogDetails = {
+export const november23BlogDetails = {
   "review-an-offshore-team-performance-report": {
     "updated": "2026-11-23",
     "keyTakeaways": [
