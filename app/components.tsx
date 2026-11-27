@@ -20,7 +20,7 @@ export function ParentBrand({ placement }: { placement: 'header' | 'footer' }) {
 }
 
 function LegacyHeader() {
-  return <><a className="skip-link" href="#main-content">Skip to main content</a><header className="nav">
+  return <><a className="skip-link" href="#main-content">Skip to main content</a><header data-site-header="sticky" className="nav">
     <div className="nav-inner">
       <a className="logo" href="/" aria-label={`${site.brand} home`}><LogoMark /></a>
       <nav className="links fleet-nav" aria-label="Main navigation">
@@ -33,11 +33,11 @@ function LegacyHeader() {
 }
 
 function LegacyFooter() {
-  return <footer className="footer legit-footer">
+  return <footer data-site-footer="true" className="footer legit-footer">
     <div className="footer-grid">
       <div className="footer-brand"><a className="footer-logo" href="/" aria-label={`${site.brand} home`}><LogoMark /></a><ParentBrand placement="footer" /><p>Practical guidance for teams planning clearly scoped Philippines-based support roles.</p><p className="footer-note">Offshore Advantages is a subsidiary information site in the StealthAgents portfolio. Qualified requests may be routed to the StealthAgents managed staffing team; hiring and service terms are confirmed during consultation.</p></div>
       <div><h3>Services</h3><div className="footer-links">{fleetServices.slice(0, 6).map(s => <a href={`/services/${s.slug}`} key={s.slug}>{s.title}</a>)}</div></div>
-      <div><h3>Resources</h3><div className="footer-links"><a href="/blog">Blog</a><a href="/research">Research</a><a href="/contact-us">Contact Us</a><a href="/privacy">Privacy Policy</a><a href="/terms">Terms & Conditions</a></div></div>
+      <div><h3>Resources</h3><div data-footer-menu="true" className="footer-links"><a href="/blog">Blog</a><a href="/research">Research</a><a href="/contact-us">Contact Us</a><a href="/privacy">Privacy Policy</a><a href="/terms">Terms & Conditions</a></div></div>
     </div>
     <div className="footer-bottom"><span>© {year} {site.brand}. All rights reserved.</span><span>{site.domain}</span></div>
   </footer>;

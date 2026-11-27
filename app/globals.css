@@ -1218,7 +1218,6 @@ button {
   animation: sa-testimonial-scroll 18s linear infinite;
   will-change: transform;
 }
-.sa-testimonial-viewport:hover .sa-testimonial-track,
 .sa-testimonial-viewport:focus-within .sa-testimonial-track {
   animation-play-state: paused;
 }
